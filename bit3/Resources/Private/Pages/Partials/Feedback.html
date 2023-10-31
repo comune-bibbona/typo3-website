@@ -1,0 +1,170 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Default">
+    <div class="bg-primary">
+        <div class="container">
+            <div class="row d-flex justify-content-center bg-primary">
+                <div class="col-12 col-lg-6">
+                    <f:cObject typoscriptObjectPath="lib.feedbackForm" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-grey-card shadow-contacts">
+        <div class="container">
+            <div class="row d-flex justify-content-center p-contacts">
+                <div class="col-12 col-lg-6">
+                    <div class="cmp-contacts">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <f:if condition="{settings.pages.id_faq}!='' || {settings.pages.id_assistenza}!='' || {settings.contacts.numero_verde}!='' || {settings.servizi.prenota_appuntamento}!='' || {settings.servizi.iscrizione_trasporto_scolastico} || {settings.servizi.iscrizione_mensa_scolastica} || {settings.servizi.iscrizione_asilo_nido} || {settings.servizi.pagamento_imu}">
+                                    <h2 class="title-medium-2-semi-bold">Contatta il comune</h2>
+                                    <ul class="contact-list p-0">
+                                        <f:if condition="{settings.pages.id_faq}!=''">
+                                            <li>
+                                                <f:link.page pageUid="{settings.pages.id_faq}" class="list-item" title="Leggi le domande frequenti" data="{element: 'faq'}">
+                                                    <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-help-circle"></use>
+                                                    </svg><span>Leggi le domande frequenti</span>
+                                                </f:link.page>
+                                            </li>
+                                        </f:if>
+                                        <f:if condition="{settings.pages.id_assistenza}!=''">
+                                            <li>
+                                                <f:link.page pageUid="{settings.pages.id_assistenza}" class="list-item" title="Richiedi assistenza" data="{element: 'contacts'}">
+                                                    <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-mail"></use>
+                                                    </svg><span>Richiedi assistenza</span>
+                                                </f:link.page>
+                                            </li>
+                                        </f:if>
+                                        <f:if condition="{settings.contacts.numero_verde}!=''">
+                                            <li>
+                                                <a class="list-item" href="tel:{settings.contacts.numero_verde}" title="Chiama il numero verde {settings.pages.numero_verde}" data-focus-mouse="false">
+                                                    <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-hearing"></use>
+                                                    </svg><span>Chiama il numero verde {settings.pages.numero_verde}</span>
+                                                </a>
+                                            </li>
+                                        </f:if>
+                                        <f:if condition="{settings.servizi.prenota_appuntamento.id}!='' || {settings.servizi.prenota_appuntamento.url}!=''">
+                                            <li>
+                                                <f:if condition="{settings.servizi.prenota_appuntamento.id}">
+                                                    <f:then>
+                                                        <f:link.page pageUid="{settings.servizi.prenota_appuntamento.id}" class="list-item" title="Prenota appuntamento" data="{element: 'appointment-booking'}" target="_blank">
+                                                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-calendar"></use>
+                                                            </svg><span>Prenota appuntamento</span>
+                                                        </f:link.page>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:link.external uri="{settings.servizi.prenota_appuntamento.url}" class="list-item" title="Prenota appuntamento" data="{element: 'appointment-booking'}" target="_blank">
+                                                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-calendar"></use>
+                                                            </svg><span>Prenota appuntamento</span>
+                                                        </f:link.external>
+                                                    </f:else>
+                                                </f:if>
+                                            </li>
+                                        </f:if>
+                                        <f:if condition="{settings.servizi.iscrizione_trasporto_scolastico.id}!='' || {settings.servizi.iscrizione_trasporto_scolastico.url}!=''">
+                                            <li>
+                                                <f:if condition="{settings.servizi.iscrizione_trasporto_scolastico.id}">
+                                                    <f:then>
+                                                        <f:link.page pageUid="{settings.servizi.iscrizione_trasporto_scolastico.id}" class="list-item" title="Iscrizione al Trasporto Scolastico" data="{element: 'service-link'}">
+                                                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-inbox"></use>
+                                                            </svg><span>Iscrizione al Trasporto Scolastico</span>
+                                                        </f:link.page>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:link.external uri="{settings.servizi.iscrizione_trasporto_scolastico.url}" class="list-item" title="Iscrizione al Trasporto Scolastico" data="{element: 'service-link'}" target="_blank">
+                                                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-inbox"></use>
+                                                            </svg><span>Iscrizione al Trasporto Scolastico</span>
+                                                        </f:link.external>
+                                                    </f:else>
+                                                </f:if>
+                                            </li>
+                                        </f:if>
+                                        <f:if condition="{settings.servizi.iscrizione_mensa_scolastica.id}!='' || {settings.servizi.iscrizione_mensa_scolastica.url}!=''">
+                                            <li>
+                                                <f:if condition="{settings.servizi.iscrizione_mensa_scolastica.id}">
+                                                    <f:then>
+                                                        <f:link.page pageUid="{settings.servizi.iscrizione_mensa_scolastica.id}" class="list-item" title="Iscrizione alla Mensa Scolastica" data="{element: 'service-link'}">
+                                                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-inbox"></use>
+                                                            </svg><span>Iscrizione alla Mensa Scolastica</span>
+                                                        </f:link.page>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:link.external uri="{settings.servizi.iscrizione_mensa_scolastica.url}" class="list-item" title="Iscrizione alla Mensa Scolastica" data="{element: 'service-link'}" target="_blank">
+                                                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-inbox"></use>
+                                                            </svg><span>Iscrizione alla Mensa Scolastica</span>
+                                                        </f:link.external>
+                                                    </f:else>
+                                                </f:if>
+                                            </li>
+                                        </f:if>
+                                        <f:if condition="{settings.servizi.iscrizione_asilo_nido.id}!='' || {settings.servizi.iscrizione_asilo_nido.url}!=''">
+                                            <li>
+                                                <f:if condition="{settings.servizi.iscrizione_asilo_nido.id}">
+                                                    <f:then>
+                                                        <f:link.page pageUid="{settings.servizi.iscrizione_asilo_nido.id}" class="list-item" title="Iscrizione all'Asilo Nido" data="{element: 'service-link'}">
+                                                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-inbox"></use>
+                                                            </svg><span>Iscrizione all'Asilo Nido</span>
+                                                        </f:link.page>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:link.external uri="{settings.servizi.iscrizione_asilo_nido.url}" class="list-item" title="Iscrizione all'Asilo Nido" data="{element: 'service-link'}" target="_blank">
+                                                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-inbox"></use>
+                                                            </svg><span>Iscrizione all'Asilo Nido</span>
+                                                        </f:link.external>
+                                                    </f:else>
+                                                </f:if>
+                                            </li>
+                                        </f:if>
+                                        <f:if condition="{settings.servizi.pagamento_imu.id}!='' || {settings.servizi.pagamento_imu.url}!=''">
+                                            <li>
+                                                <f:if condition="{settings.servizi.iscrizione_asilo_nido.id}">
+                                                    <f:then>
+                                                        <f:link.page pageUid="{settings.servizi.pagamento_imu.id}" class="list-item" title="Prenota appuntamento" data="{element: 'appointment-booking'}">
+                                                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-pa"></use>
+                                                            </svg><span>Pagamento Tributo IMU</span>
+                                                        </f:link.page>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:link.external uri="{settings.servizi.pagamento_imu.url}" class="list-item" title="Prenota appuntamento" data="{element: 'appointment-booking'}" target="_blank">
+                                                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-pa"></use>
+                                                            </svg><span>Pagamento Tributo IMU</span>
+                                                        </f:link.external>
+                                                    </f:else>
+                                                </f:if>
+                                            </li>
+                                        </f:if>
+                                    </ul>
+                                </f:if>
+                                <f:if condition="{settings.pages.id_segnala}!=''">
+                                    <h2 class="title-medium-2-semi-bold mt-4">Problemi in città</h2>
+                                    <ul class="contact-list p-0">
+                                        <li>
+                                            <f:link.page pageUid="{settings.pages.id_segnala}" class="list-item" title="Segnala disservizio" data="{element: 'report-inefficiency'}">
+                                                <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                                    <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-map-marker-circle"></use>
+                                                </svg><span>Segnala disservizio </span>
+                                            </f:link.page>
+                                        </li>
+                                    </ul>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>

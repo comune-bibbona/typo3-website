@@ -1,0 +1,12 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:for each="{categories}" as="category" iteration="iterator">
+		<f:if condition="{category.shortcut}">
+			<f:then>
+				<f:link.typolink parameter="{category.shortcut}" class="list-item">{category.title}</f:link.typolink>{f:if(condition: iterator.isLast, then: '', else: ', ')}
+			</f:then>
+			<f:else>
+				{category.title}{f:if(condition: iterator.isLast, then: '', else: ', ')}
+			</f:else>
+		</f:if>
+	</f:for>
+</html>

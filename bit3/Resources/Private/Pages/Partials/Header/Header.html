@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Default">
+    <f:render partial="CookieBar" section="Default" arguments="{_all}" />
+    <div class="it-header-center-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="it-header-center-content-wrapper">
+                        <div class="it-brand-wrapper">
+                            <a href="{baseUrl}">
+                                <f:if condition="{settings.testata.logo_istituzione}!=''">
+                                    <f:image class="icon" src="{settings.testata.logo_istituzione}" alt="{settings.testata.nome_istituzione}" maxWidth="82" maxHeight="82" />
+                                </f:if>
+                                <div class="it-brand-text">
+                                    <div class="it-brand-title">{settings.testata.nome_istituzione}</div>
+                                    <div class="it-brand-tagline d-none d-md-block">{settings.testata.tagline_istituzione}</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="it-right-zone">
+                            <f:render partial="Common/SocialLinks" section="Header" arguments="{_all}" />
+                            <f:render partial="Header/SearchBox" section="Box" arguments="{_all}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>

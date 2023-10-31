@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+    <div class="row g-4">
+        <f:for each="{menu}" as="page">
+            <div class="col-lg-6 col-xl-4">
+                <div class="card-wrapper border border-light rounded shadow-sm">
+                    <div class="card no-after rounded">
+                        <f:if condition="{page.files.0}">
+                            <div class="img-responsive-wrapper">
+                                <div class="img-responsive img-responsive-panoramic">
+                                    <figure class="img-wrapper">
+                                        <f:media file="{page.files.0}" />
+                                    </figure>
+                                </div>
+                            </div>
+                        </f:if>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="{page.link}" class="text-decoration-none" title="{page.title}" {f:if(condition: page.data.data_element, then: ' data-element="{page.data.data_element}"')} {f:if(condition: page.target, then: ' target="{page.target}"')}>{page.title}</a></h3>
+                            <p class="card-text text-secondary pb-3">
+                                <f:if condition="{page.data.abstract}">
+                                    <f:then>
+                                        {page.data.abstract}
+                                    </f:then>
+                                    <f:else>
+                                        {page.data.subtitle}
+                                    </f:else>
+                                </f:if>
+                            </p>
+                            <a class="read-more t-primary text-uppercase" href="{page.link}" aria-label="Leggi di più su {page.title}" >
+                                <span class="text">Leggi di più</span>
+                                <span class="visually-hidden">Leggi di più su {page.title}</span>
+                                <svg class="icon icon-inverse icon-xs ml-10">
+                                    <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-arrow-right"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</f:section>

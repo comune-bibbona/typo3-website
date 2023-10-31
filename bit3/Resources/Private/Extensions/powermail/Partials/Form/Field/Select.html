@@ -1,0 +1,20 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+
+<div class="form-group select-custom">
+	<f:render partial="Form/FieldLabel" arguments="{_all}" />
+
+	<vh:Form.SelectField
+			options="{field.modifiedSettings}"
+			property="{field.marker}"
+			class="form-control {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')}"
+			id="powermail_field_{field.marker}"
+			additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field)}"
+			multiple="{field.multiselectForField}"
+			value="{vh:Misc.PrefillField(field:field, mail:mail)}" />
+
+	<f:if condition="{field.multiselect}">
+		<f:if condition="{settings.validation.client}">
+			<div class="powermail_field_error_container powermail_field_error_container_{field.marker}"></div>
+		</f:if>
+	</f:if>
+</div>

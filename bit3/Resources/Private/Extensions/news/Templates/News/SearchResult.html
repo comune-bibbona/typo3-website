@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/SearchResult.html
+-->
+
+<f:section name="content">
+	<f:if condition="{search}">
+		<f:if condition="{news}">
+			<f:then>
+				<div class="row g-4">
+					<div class="alert alert-success" role="alert">
+						<f:translate key="search-text" arguments="{0:'{f:count(subject:news)}',1:search.subject}" />
+					</div>
+					<f:for each="{news}" as="newsItem" iteration="iterator">
+						<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+					</f:for>
+				</div>
+			</f:then>
+			<f:else>
+				<div class="alert alert-info" role="alert">
+					<f:translate key="search-noresult" />
+				</div>
+			</f:else>
+		</f:if>
+	</f:if>
+</f:section>
+</html>

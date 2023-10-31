@@ -1,0 +1,64 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Default" />
+<f:section name="Content">
+	<div class="site-configuration">
+		<h1><f:translate key="bit3.module.skin.title" /></h1>
+		<div class="alert alert-info alert-dismissible fade show mt-2 mb-2" role="alert">
+			<f:translate key="bit3.module.skin.info" />
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<f:form action="salvaSkin" name="pageconf">
+					<div class="card">
+						<div class="card-body row">
+							<div class="form-group col-sm-6">
+								<label for="header.nome_ente_appartenenza"><f:translate key="bit3.module.skin.belongInstitutionName" /></label>
+								<f:form.textfield name="header.nome_ente_appartenenza" value="{f:if(condition: '{vettSkinConf.header.nome_ente_appartenenza}', then: '{vettSkinConf.header.nome_ente_appartenenza}')}" class="form-control" placeholder="{costantsExtensionContatti.header.nome_ente_appartenenza}" />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="skin.path_logo_ente_appartenenza"><f:translate key="bit3.module.skin.belongInstitutionLogo" /></label>
+								<f:form.textfield class="form-control" name="skin.path_logo_ente_appartenenza" value="{f:if(condition: '{vettSkinConf.skin.path_logo_ente_appartenenza}', then: '{vettSkinConf.skin.path_logo_ente_appartenenza}')}" />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="header.link_ente_appartenenza"><f:translate key="bit3.module.skin.belongInstitutionUrl" /></label>
+								<f:form.textfield name="header.link_ente_appartenenza" value="{f:if(condition: '{vettSkinConf.header.link_ente_appartenenza}', then: '{vettSkinConf.header.link_ente_appartenenza}')}" class="form-control" placeholder="{costantsExtensionContatti.header.link_ente_appartenenza}" />
+							</div>
+						</div>
+						<div class="card-body row">
+							<div class="form-group col-sm-6">
+								<label for="header.nome_istituzione"><f:translate key="bit3.module.skin.institutionName" /></label>
+								<f:form.textfield name="header.nome_istituzione" value="{f:if(condition: '{vettSkinConf.header.nome_istituzione}', then: '{vettSkinConf.header.nome_istituzione}')}" class="form-control" placeholder="{costantsExtensionContatti.header.nome_istituzione}" />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="skin.path_logo" class="col-sm-4"><f:translate key="bit3.module.skin.institutionLogo" /></label>
+								<f:form.textfield class="form-control" name="skin.path_logo" value="{f:if(condition: '{vettSkinConf.skin.path_logo}', then: '{vettSkinConf.skin.path_logo}')}" />
+							</div>
+						</div>
+						<div class="card-body row">
+							<div class="form-group col-sm-3">
+								<label for="skin.primary_color"><f:translate key="bit3.module.skin.primaryColor" /> {f:if(condition: '{vettSkinConf.skin.primary_color}', then: '({vettSkinConf.skin.primary_color})')}</label>
+								<f:form.textfield name="skin.primary_color" value="{f:if(condition: '{vettSkinConf.skin.primary_color}', then: '{vettSkinConf.skin.primary_color}')}" type="color" class="form-control form-control-color"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label>{f:if(condition: '{vettSkinConf.skin.bg_primary_rgb}', then: 'RGB Primary Color {vettSkinConf.skin.bg_primary_rgb}')}</label>
+								<label>{f:if(condition: '{vettSkinConf.skin.darken_primary_color}', then: 'Darken Primary Color {vettSkinConf.skin.darken_primary_color}')}</label>
+								<label>{f:if(condition: '{vettSkinConf.skin.lighten_primary_color}', then: 'Lighten Primary Color {vettSkinConf.skin.lighten_primary_color}')}</label>
+								<label>{f:if(condition: '{vettSkinConf.skin.lightest_primary_color}', then: 'Lightest Primary Color {vettSkinConf.skin.lightest_primary_color}')}</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="header.secondary_navigation" class="col-sm-4"><f:translate key="bit3.module.skin.secondaryNavigation" /></label>
+								<f:form.textfield class="form-control" name="header.secondary_navigation" value="{f:if(condition: '{vettSkinConf.header.secondary_navigation}', then: '{vettSkinConf.header.secondary_navigation}')}" />
+								<small class="form-text"><f:translate key="bit3.module.skin.secondaryNavigation.info" /></small>
+							</div>
+						</div>
+						<div class="card-footer mt-3">
+							<f:form.button class="btn btn-primary"><f:translate key="bit3.module.buttons.save" /></f:form.button>
+						</div>
+					</div>
+				</f:form>
+			</div>
+		</div>
+	</div>
+</f:section>

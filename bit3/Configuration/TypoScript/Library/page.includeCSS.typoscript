@@ -1,0 +1,10 @@
+page.includeCSS {
+    bootstrap = EXT:bit3/Resources/Public/css/bootstrap-italia-comuni.min.css
+    bootstrap {
+        excludeFromConcatenation = 1
+        disableCompression = 1
+    }
+    style = EXT:bit3/Resources/Public/css/style.css
+    fonts = EXT:bit3/Resources/Public/css/fonts.css
+    bit3 = EXT:bit3/Resources/Public/css/bit3.css
+}

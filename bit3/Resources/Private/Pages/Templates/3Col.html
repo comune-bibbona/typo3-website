@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:render partial="Common/Hero" section="Default" arguments="{_all}" />
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-3">
+                <f:cObject typoscriptObjectPath="lib.content.column_left" />
+            </div>
+            <div class="col-md-6">
+                <f:cObject typoscriptObjectPath="lib.content.main" />
+            </div>
+            <div class="col-md-3">
+                <f:cObject typoscriptObjectPath="lib.content.column_right" />
+            </div>
+        </div>
+    </div>
+
+</f:section>
+</html>

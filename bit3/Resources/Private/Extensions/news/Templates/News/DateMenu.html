@@ -1,0 +1,54 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/DateMenu.html
+-->
+
+<f:section name="content">
+
+	<f:variable name="oggi"><f:format.date date="now" format="U" /></f:variable>
+
+	<f:if condition="{settings.templateLayout} == 4">
+		<f:then>
+			<f:for each="{news}" as="newsItem" iteration="iterator">
+				<f:variable name="dataNews"><f:format.date format="U">{newsItem.archive}</f:format.date></f:variable>
+				<f:if condition="{oggi}<{dataNews}">
+					<f:render partial="List/Item-Scadenze" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+				</f:if>
+			</f:for>
+			<footer class="widgetFooter">
+				<f:link.typolink class="more" parameter="{settings.listPid}">Tutte le scadenze</f:link.typolink>
+			</footer>
+		</f:then>
+		<f:else>
+			<div class="news-menu-view">
+				<ul>
+					<f:for each="{data.single}" key="year" as="months">
+						<li>
+							{year}
+							<ul>
+								<f:for each="{months}" key="month" as="count">
+									<f:if condition="{0:year, 1:month} == {0:overwriteDemand.year, 1:overwriteDemand.month}">
+										<f:then>
+											<li class="item itemactive">
+										</f:then>
+										<f:else>
+											<li class="item">
+										</f:else>
+									</f:if>
+									<f:link.action pageUid="{listPid}" arguments="{overwriteDemand:{year: year, month: month}}"><f:translate key="month.{month}" /> {year}</f:link.action>
+									({count} <f:translate key="{f:if(condition: '{count} == 1', then: 'entry', else: 'entries')}" />)
+									</li>
+								</f:for>
+							</ul>
+						</li>
+					</f:for>
+				</ul>
+			</div>
+		</f:else>
+	</f:if>
+
+</f:section>
+</html>

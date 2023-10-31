@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.custom {
+    elements {
+        bit3_tab {
+            iconIdentifier = ext-bit3-tab
+            title = LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:tab
+            description = LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:tab.description
+            tt_content_defValues {
+                CType = bit3_tab
+            }
+        }
+    }
+    show := addToList(bit3_tab)
+}

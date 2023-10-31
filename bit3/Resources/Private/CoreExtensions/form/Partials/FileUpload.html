@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<formvh:renderRenderable renderable="{element}">
+    <f:render partial="Field/Field" arguments="{element: element}" contentAs="elementContent">
+        <formvh:form.uploadedResource
+            property="{element.identifier}"
+            as="resource"
+            id="{element.uniqueIdentifier}"
+            class="{element.properties.elementClassAttribute} upload bit3"
+            errorClass="{element.properties.elementErrorClassAttribute}"
+            additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+            accept="{element.properties.allowedMimeTypes}"
+        >
+            <f:if condition="{resource}">
+                <div id="{element.uniqueIdentifier}-preview">
+                    {resource.originalResource.originalFile.name}
+                </div>
+            </f:if>
+        </formvh:form.uploadedResource>
+    </f:render>
+    <label for="{element.uniqueIdentifier}">
+        <svg class="icon icon-sm" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-upload"></use></svg>
+        <span>Upload</span>
+    </label>
+    <f:if condition="{element.properties.elementDescription}">
+        <small id="{element.uniqueIdentifier}Description" class="form-text">{formvh:translateElementProperty(element: element, property: 'elementDescription')}</small>
+    </f:if>
+</formvh:renderRenderable>
+</html>

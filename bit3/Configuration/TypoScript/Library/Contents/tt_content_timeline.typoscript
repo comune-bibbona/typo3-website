@@ -1,0 +1,19 @@
+tt_content {
+    bit3_timeline =< lib.customContentElement
+    bit3_timeline {
+        templateName = Timeline
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            10 {
+                table = tx_bit3_timeline_item
+                pidInList.field = pid
+                where {
+                    data = field:uid
+                    intval = 1
+                    wrap = tt_content=|
+                }
+                orderBy = sorting
+            }
+        }
+    }
+}

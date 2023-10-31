@@ -1,0 +1,68 @@
+plugin.tx_news {
+    settings {
+        detail.media.image.maxWidth = 400
+        list.media {
+            dummyImage = EXT:bit3/Resources/Public/Images/news-no-img.jpg
+            image.maxWidth = 443
+            image.maxHeight = 245
+        }
+        listPid = {$pages.id_archivio_news}
+        startingpoint = {$containers.id_folder_news}
+    }
+    view {
+        templateRootPaths {
+            100 = EXT:bit3/Resources/Private/Extensions/news/Templates/
+        }
+        partialRootPaths {
+            100 = EXT:bit3/Resources/Private/Extensions/news/Partials/
+        }
+        layoutRootPaths {
+            100 = EXT:bit3/Resources/Private/Extensions/news/Layouts/
+        }
+    }
+}
+
+[page["backend_layout"] == "pagets__NewsDetail"]
+    temp.newsTitle = RECORDS
+    temp.newsTitle {
+        dontCheckPid = 1
+        tables = tx_news_domain_model_news
+        source.data = GP:tx_news_pi1|news
+        source.intval = 1
+        conf.tx_news_domain_model_news = TEXT
+        conf.tx_news_domain_model_news {
+            field = title
+            htmlSpecialChars = 1
+        }
+        wrap = |
+    }
+    temp.newsTeaser < temp.newsTitle
+    temp.newsTeaser {
+        conf.tx_news_domain_model_news {
+            field = teaser
+            htmlSpecialChars = 1
+        }
+        wrap = |
+    }
+    temp.newsDate < temp.newsTitle
+    temp.newsDate {
+        conf.tx_news_domain_model_news {
+            field = datetime
+        }
+        wrap = |
+    }
+
+    config.pageTitle.stdWrap.override.cObject < temp.newsTitle
+
+    page.10.variables {
+        pageTitle >
+        pageTitle < temp.newsTitle
+
+        teaserNews = TEXT
+        teaserNews < temp.newsTeaser
+
+        newsDate = TEXT
+        newsDate < temp.newsDate
+    }
+
+[global]

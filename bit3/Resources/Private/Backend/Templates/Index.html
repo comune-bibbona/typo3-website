@@ -1,0 +1,50 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+>
+
+<f:layout name="Default" />
+
+<f:section name="Content">
+    <div class="site-<f:translate key="bit3.module.buttons.configure" />tion">
+        <h1><f:translate key="bit3.module.title" /></h1>
+        <div class="alert alert-info alert-dismissible fade show mt-2 mb-2" role="alert">
+            <f:translate key="bit3.module.info" />
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="card-container">
+            <div class="card card-size-fixed-small">
+                <div class="card-header"><h3 class="card-title"><f:translate key="bit3.module.skin.title" /></h3></div>
+                <div class="card-body"><f:translate key="bit3.module.skin.info" /></div>
+                <div class="card-footer"><f:link.action action="skin" class="btn btn-primary btn-box"><f:translate key="bit3.module.buttons.configure" /></f:link.action></div>
+            </div>
+            <div class="card card-size-fixed-small">
+                <div class="card-header"><h3 class="card-title"><f:translate key="bit3.module.contact.title" /></h3></div>
+                <div class="card-body"><f:translate key="bit3.module.contact.info" /></div>
+                <div class="card-footer"><f:link.action action="contatti" class="btn btn-primary btn-box"><f:translate key="bit3.module.buttons.configure" /></f:link.action></div>
+            </div>
+            <div class="card card-size-fixed-small">
+                <div class="card-header"><h3 class="card-title"><f:translate key="bit3.module.page.title" /></h3></div>
+                <div class="card-body"><f:translate key="bit3.module.page.info" /></div>
+                <div class="card-footer"><f:link.action action="page" class="btn btn-primary btn-box"><f:translate key="bit3.module.buttons.configure" /></f:link.action></div>
+            </div>
+            <div class="card card-size-fixed-small">
+                <div class="card-header"><h3 class="card-title"><f:translate key="bit3.module.service.title" /></h3></div>
+                <div class="card-body"><f:translate key="bit3.module.service.info" /></div>
+                <div class="card-footer"><f:link.action action="servizi" class="btn btn-primary btn-box"><f:translate key="bit3.module.buttons.configure" /></f:link.action></div>
+            </div>
+            <div class="card card-size-fixed-small">
+                <div class="card-header"><h3 class="card-title"><f:translate key="bit3.module.social.title" /></h3></div>
+                <div class="card-body"><f:translate key="bit3.module.social.info" /></div>
+                <div class="card-footer"><f:link.action action="social" class="btn btn-primary btn-box"><f:translate key="bit3.module.buttons.configure" /></f:link.action></div>
+            </div>
+            <div class="card card-size-fixed-small">
+                <div class="card-header"><h3 class="card-title"><f:translate key="bit3.module.cookies.title" /></h3></div>
+                <div class="card-body"><f:translate key="bit3.module.cookies.info" /></div>
+                <div class="card-footer"><f:link.action action="cookies" class="btn btn-primary btn-box"><f:translate key="bit3.module.buttons.configure" /></f:link.action></div>
+            </div>
+        </div>
+    </div>
+</f:section>
+</html>

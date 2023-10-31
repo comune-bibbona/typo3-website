@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Callout" />
+
+<f:section name="Main">
+    <f:switch expression="{data.layout}">
+        <f:case value="101">
+            <f:variable name="calloutclass" value=" success" />
+            <f:variable name="callouticon" value="it-check-circle" />
+        </f:case>
+        <f:case value="102">
+            <f:variable name="calloutclass" value=" warning" />
+            <f:variable name="callouticon" value="it-help-circle" />
+        </f:case>
+        <f:case value="103">
+            <f:variable name="calloutclass" value=" danger" />
+            <f:variable name="callouticon" value="it-close-circle" />
+        </f:case>
+        <f:case value="104">
+            <f:variable name="calloutclass" value=" important" />
+            <f:variable name="callouticon" value="it-info-circle" />
+        </f:case>
+        <f:case value="105">
+            <f:variable name="calloutclass" value=" note" />
+            <f:variable name="callouticon" value="it-info-circle" />
+        </f:case>
+        <f:defaultCase>
+            <f:variable name="callouticon" value="it-info-circle" />
+        </f:defaultCase>
+    </f:switch>
+    <div class="callout{calloutclass}">
+        <div class="callout-title"><svg class="icon"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#{callouticon}"></use></svg> {data.header}</div>
+        <f:format.html>{data.bodytext}</f:format.html>
+    </div>
+</f:section>
+</html>

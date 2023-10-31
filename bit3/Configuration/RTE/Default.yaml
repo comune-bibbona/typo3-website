@@ -1,0 +1,119 @@
+# Load default processing options
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+    config:
+        contentsCss: ["EXT:bit3/Resources/Public/css/backend/ckeditor.css"]
+
+        stylesSet:
+            - { name: "Lead", element: "p", attributes: { 'class': 'lead' } }
+            - { name: "Citation", element: "p", attributes: { 'class': 'blockquote' } }
+            - { name: "Small", element: "small" }
+            - { name: "Monospace", element: "code" }
+
+            - { name: "Table", element: "table", attributes: { 'class': 'table' } }
+            - { name: "Table Primary", element: "table", attributes: { 'class': 'table-primary' } }
+            - { name: "Table Secondary", element: "table", attributes: { 'class': 'table-secondary' } }
+            - { name: "Table Success", element: "table", attributes: { 'class': 'table-success' } }
+            - { name: "Table Danger", element: "table", attributes: { 'class': 'table-danger' } }
+            - { name: "Table Warning", element: "table", attributes: { 'class': 'table-warning' } }
+            - { name: "Table Info", element: "table", attributes: { 'class': 'table-info' } }
+            - { name: "Table Light", element: "table", attributes: { 'class': 'table-light' } }
+            - { name: "Table Dark", element: "table", attributes: { 'class': 'table-dark' } }
+            - { name: "Table Striped", element: "table", attributes: { 'class': 'table table-striped' } }
+            - { name: "Tabella con Bordi", element: "table", attributes: { 'class': 'table table-bordered' } }
+            - { name: "Tabella senza Bordi", element: "table", attributes: { 'class': 'table table-borderless' } }
+            - { name: "Tabella Compatta", element: "table", attributes: { 'class': 'table table-sm' } }
+
+            - { name: "Riga Primary", element: "tr", attributes: { 'class': 'table-primary' } }
+            - { name: "Riga Secondary", element: "tr", attributes: { 'class': 'table-secondary' } }
+            - { name: "Riga Success", element: "tr", attributes: { 'class': 'table-success' } }
+            - { name: "Riga Danger", element: "tr", attributes: { 'class': 'table-danger' } }
+            - { name: "Riga Warning", element: "tr", attributes: { 'class': 'table-warning' } }
+            - { name: "Riga Info", element: "tr", attributes: { 'class': 'table-info' } }
+            - { name: "Riga Light", element: "tr", attributes: { 'class': 'table-light' } }
+            - { name: "Riga Dark", element: "tr", attributes: { 'class': 'table-dark' } }
+
+            - { name: "Row Active", element: "tr", attributes: { 'class': 'table-active' } }
+            - { name: "Row Success", element: "tr", attributes: { 'class': 'table-success' } }
+            - { name: "Row Info", element: "tr", attributes: { 'class': 'table-info' } }
+            - { name: "Row Warning", element: "tr", attributes: { 'class': 'table-warning' } }
+            - { name: "Row Danger", element: "tr", attributes: { 'class': 'table-danger' } }
+
+            - { name: "Cell Active", element: "td", attributes: { 'class': 'table-active' } }
+            - { name: "Cell Success", element: "td", attributes: { 'class': 'table-success' } }
+            - { name: "Cell Info", element: "td", attributes: { 'class': 'table-info' } }
+            - { name: "Cell Warning", element: "td", attributes: { 'class': 'table-warning' } }
+            - { name: "Cell Danger", element: "td", attributes: { 'class': 'table-danger' } }
+
+            - { name: "Button Default", element: "a", attributes: { 'class': 'btn btn-default' } }
+            - { name: "Button Primary", element: "a", attributes: { 'class': 'btn btn-primary' } }
+            - { name: "Button Secondary", element: "a", attributes: { 'class': 'btn btn-secondary' } }
+            - { name: "Button Success", element: "a", attributes: { 'class': 'btn btn-success' } }
+            - { name: "Button Info", element: "a", attributes: { 'class': 'btn btn-info' } }
+            - { name: "Button Warning", element: "a", attributes: { 'class': 'btn btn-warning' } }
+            - { name: "Button Danger", element: "a", attributes: { 'class': 'btn btn-danger' } }
+
+            - { name: "Button Outline Default", element: "a", attributes: { 'class': 'btn btn-outline-default' } }
+            - { name: "Button Outline Primary", element: "a", attributes: { 'class': 'btn btn-outline-primary' } }
+            - { name: "Button Outline Secondary", element: "a", attributes: { 'class': 'btn btn-outline-secondary' } }
+            - { name: "Button Outline Success", element: "a", attributes: { 'class': 'btn btn-outline-success' } }
+            - { name: "Button Outline Info", element: "a", attributes: { 'class': 'btn btn-outline-info' } }
+            - { name: "Button Outline Warning", element: "a", attributes: { 'class': 'btn btn-outline-warning' } }
+            - { name: "Button Outline Danger", element: "a", attributes: { 'class': 'btn btn-outline-danger' } }
+
+            - { name: "Mark", element: "span", attributes: { 'class': 'mark' } }
+
+
+        format_tags: "p;h1;h2;h3;h4;h5;h6;pre"
+
+        toolbarGroups:
+            - { name: styles, groups: [ format, styles ] }
+            - { name: basicstyles, groups: [ basicstyles, align, cleanup ] }
+            - { name: paragraph,   groups: [ list, indent, blocks, align ] }
+            - { name: links, groups: [ links ] }
+            - { name: clipboard, groups: [clipboard, cleanup, undo] }
+            - "/"
+            - { name: insert }
+            - { name: table }
+            - { name: tabletools }
+            - { name: editing,   groups: [ find, selection, spellchecker ] }
+            - { name: document,  groups: [ mode, document, doctools ] }
+            - { name: tools }
+            - { name: others }
+
+        justifyClasses:
+            - text-left
+            - text-center
+            - text-right
+            - text-justify
+
+        extraPlugins:
+            - justify
+            - find
+            - bidi
+            - selectall
+            - autolink
+            - wordcount
+            - editorplaceholder
+
+        removePlugins:
+            - image
+
+        removeButtons:
+
+processing:
+    allowTags:
+        - u
+        - mark
+        - blockquote
+        - em
+        - strong
+        - small
+        - s
+        - code

@@ -1,0 +1,65 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item-Eventi.html
+-->
+
+<div class="col-lg-6 col-xl-4">
+	<div class="card-wrapper border border-light rounded shadow-sm">
+		<div class="card no-after rounded">
+			<div class="img-responsive-wrapper">
+				<div class="img-responsive img-responsive-panoramic">
+					<figure class="img-wrapper">
+						<f:if condition="{newsItem.mediaPreviews}">
+							<f:then>
+								<f:media class="img-responsive" file="{newsItem.mediaPreviews.0}" title="{newsItem.mediaPreviews.0.originalResource.title}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" width="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}" height="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
+							</f:then>
+							<f:else>
+								<f:if condition="{settings.displayDummyIfNoMedia}">
+									<f:image class="img-dummy img-responsive" src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+								</f:if>
+							</f:else>
+						</f:if>
+					</figure>
+					<div class="card-calendar d-flex flex-column justify-content-center">
+						<span class="card-date"><f:format.date format="%d">{newsItem.datetime}</f:format.date></span>
+						<span class="card-day"><f:format.date format="%B">{newsItem.datetime}</f:format.date></span>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="category-top">
+					<a class="category text-decoration-none">{newsItem.location.title}</a>
+				</div>
+				<h3 class="card-title">
+					<n:link newsItem="{newsItem}" class="text-decoration-none" settings="{settings}" title="{newsItem.title}" additionalAttributes="{data-element: 'live-button-events'}">
+						{newsItem.title}
+					</n:link>
+				</h3>
+				<p class="card-text text-secondary pb-3">
+					<n:removeMediaTags>
+						<f:if condition="{newsItem.teaser}">
+							<f:then>
+								{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.raw()}
+							</f:then>
+							<f:else>
+								{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+							</f:else>
+						</f:if>
+					</n:removeMediaTags>
+				</p>
+				<n:link newsItem="{newsItem}" class="read-more t-primary text-uppercase" settings="{settings}" title="{newsItem.title}" additionalAttributes="{data-element: 'live-button-events'}">
+					<span class="text">Leggi di più</span>
+					<span class="visually-hidden">Leggi di più su {newsItem.title}</span>
+					<svg class="icon icon-inverse icon-xs ml-10">
+						<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-arrow-right"></use>
+					</svg>
+				</n:link>
+			</div>
+		</div>
+	</div>
+</div>
+
+</html>

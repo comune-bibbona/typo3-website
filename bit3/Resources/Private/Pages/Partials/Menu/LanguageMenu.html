@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Menu">
+    <f:if condition="{languagenavigation}">
+        <f:if condition="{languagenavigation -> f:count()}>1">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Selezione lingua: lingua selezionata</span>
+                    <f:for each="{languagenavigation}" as="item">
+                        <f:if condition="{item.active}">
+                            <span>{item.title}</span>
+                        </f:if>
+                    </f:for>
+                    <svg class="icon"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-expand"></use></svg>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="link-list-wrapper">
+                                <ul class="link-list lang-menu">
+                                    <f:for each="{languagenavigation}" as="item">
+                                        <li>
+                                            <a class="dropdown-item list-item{f:if(condition: item.available, then: '', else: ' disabled')}" href="{item.link}" hreflang="{item.hreflang}" title="{item.navigationTitle}">
+                                                <img src="/typo3conf/ext/bit3/Resources/Public/Icons/Flags/{item.flag}.png" alt="{item.navigationTitle}"><span>{item.title} {f:if(condition: item.active, then: '<span class="visually-hidden">selezionata</span>')}</span>
+                                            </a>
+                                        </li>
+                                    </f:for>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:if>
+    </f:if>
+</f:section>
+</html>

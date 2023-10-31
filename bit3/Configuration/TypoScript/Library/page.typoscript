@@ -1,0 +1,209 @@
+page = PAGE
+page.typeNum = 0
+
+page.10 = FLUIDTEMPLATE
+page.10 {
+    format = html
+
+    file = EXT:bit3/Resources/Private/Pages/Templates/1Col.html
+    partialRootPath = EXT:bit3/Resources/Private/Pages/Partials/
+    layoutRootPath = EXT:bit3/Resources/Private/Pages/Layouts/
+
+    file.stdWrap.cObject = CASE
+    file.stdWrap.cObject {
+        key.data = levelfield:-1, backend_layout_next_level, slide
+        key.override.field = backend_layout
+
+        default = TEXT
+        default.value = EXT:bit3/Resources/Private/Pages/Templates/1Col.html
+
+        pagets__Home = TEXT
+        pagets__Home.value = EXT:bit3/Resources/Private/Pages/Templates/Home.html
+        pagets__1Col = TEXT
+        pagets__1Col.value = EXT:bit3/Resources/Private/Pages/Templates/1Col.html
+        pagets__2ColAsideLeft = TEXT
+        pagets__2ColAsideLeft.value = EXT:bit3/Resources/Private/Pages/Templates/2ColAsideLeft.html
+        pagets__2ColAsideRight = TEXT
+        pagets__2ColAsideRight.value = EXT:bit3/Resources/Private/Pages/Templates/2ColAsideRight.html
+        pagets__3Col = TEXT
+        pagets__3Col.value = EXT:bit3/Resources/Private/Pages/Templates/3Col.html
+        pagets__NewsDetail = TEXT
+        pagets__NewsDetail.value = EXT:bit3/Resources/Private/Pages/Templates/NewsDetail.html
+        pagets__Servizi = TEXT
+        pagets__Servizi.value = EXT:bit3/Resources/Private/Pages/Templates/Servizi.html
+        pagets__Cookies = TEXT
+        pagets__Cookies.value = EXT:bit3/Resources/Private/Pages/Templates/Cookies.html
+    }
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        10 {
+            levels = 2
+            expandAll = 1
+            includeSpacer = 1
+            as = mainnavigation
+        }
+        20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        20 {
+            entryLevel = 1
+            levels = 4
+            expandAll = 1
+            includeSpacer = 1
+            as = subnavigation
+        }
+        30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        30 {
+            special = list
+            special.value = {$header.secondary_navigation}
+            includeNotInMenu = 1
+            as = secondarynavigation
+        }
+        40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        40 {
+            special = rootline
+            special.range = 0|-1
+            includeNotInMenu = 1
+            as = breadcrumbs
+        }
+        50 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+        50 {
+            languages = auto
+            as = languagenavigation
+        }
+        60 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        60 {
+            special = list
+            special.value = {$pages.id_mappa},{$pages.id_credits}
+            includeNotInMenu = 1
+            as = footermenu
+        }
+        70 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        70 {
+            entryLevel = 1
+            levels = 4
+            expandAll = 1
+            includeSpacer = 1
+            as = sidebar
+        }
+        80 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        80 {
+            as = heroimage
+            references.fieldName = media
+        }
+    }
+    settings {
+        testata {
+            nome_istituzione = {$header.nome_istituzione}
+            logo_istituzione = {$skin.path_logo}
+            nome_ente_appartenenza = {$header.nome_ente_appartenenza}
+            logo_ente_appartenenza = {$skin.path_logo_ente_appartenenza}
+            link_ente_appartenenza = {$header.link_ente_appartenenza}
+        }
+        pages{
+            id_faq = {$pages.id_faq}
+            id_assistenza = {$pages.id_assistenza}
+            id_prenota = {$pages.id_prenota}
+            id_segnala = {$pages.id_segnala}
+            id_privacy = {$pages.id_privacy}
+            id_note_legali = {$pages.id_note_legali}
+            id_trasparenza = {$pages.id_trasparenza}
+            id_accessibilita = {$pages.id_accessibilita}
+            id_archivio_news = {$pages.id_archivio_news}
+            id_login = {$pages.id_login}
+            id_registration ={$pages.id_registration}
+            id_search_page = {$pages.id_search}
+        }
+        containers {
+            id_folder_news = {containers.id_folder_news}
+            id_folder_users = {containers.id_folder_users}
+        }
+        servizi {
+            iscrizione_trasporto_scolastico {
+                label = {$servizi.iscrizione_trasporto_scolastico.label}
+                url = {$servizi.iscrizione_trasporto_scolastico.url}
+                id = {$servizi.iscrizione_trasporto_scolastico.id}
+            }
+            iscrizione_mensa_scolastica {
+                label = {$servizi.iscrizione_mensa_scolastica.label}
+                url = {$servizi.iscrizione_mensa_scolastica.url}
+                id = {$servizi.iscrizione_mensa_scolastica.id}
+            }
+            iscrizione_asilo_nido {
+                label = {$servizi.iscrizione_asilo_nido.label}
+                url = {$servizi.iscrizione_asilo_nido.url}
+                id = {$servizi.iscrizione_asilo_nido.id}
+            }
+            pagamento_imu {
+                label = {$servizi.pagamento_imu.label}
+                url = {$servizi.pagamento_imu.url}
+                id = {$servizi.pagamento_imu.id}
+            }
+            prenota_appuntamento {
+                label = {$servizi.prenota_appuntamento.label}
+                url = {$servizi.prenota_appuntamento.url}
+                id = {$servizi.prenota_appuntamento.id}
+            }
+        }
+        cookies {
+            profiling = {$cookies.profiling}
+            webanalytics = {$cookies.webanalytics}
+        }
+        contacts {
+            address = {$contacts.address}
+            dati_fiscali = {$contacts.dati_fiscali}
+            email = {$contacts.email}
+            pec = {$contacts.pec}
+            tel = {$contacts.tel}
+            fax = {$contacts.fax}
+            numero_verde = {$contacts.numero_verde}
+        }
+        social {
+            facebook {
+                label = facebook
+                url = {$social.facebook.url}
+            }
+            twitter {
+                label = twitter
+                url = {$social.twitter.url}
+            }
+            instagram {
+                label = instagram
+                url = {$social.instagram.url}
+            }
+            youtube {
+                label = youtube
+                url = {$social.youtube.url}
+            }
+            vimeo {
+                label = vimeo
+                url = {$social.vimeo.url}
+            }
+            linkedin {
+                label = linkedin
+                url = {$social.linkedin.url}
+            }
+            telegram {
+                label = telegram
+                url = {$social.telegram.url}
+            }
+            rss {
+                label = rss
+                url = {$social.rss.url}
+            }
+        }
+        credits {
+            pnrr = {$copyrights.nextgenerationeu}
+            copyright = {$copyrights.copyright}
+            credits = {$copyrights.credits}
+        }
+    }
+    variables {
+        baseUrl = TEXT
+        baseUrl.value = {$config.baseUrl}
+        pageTitle = TEXT
+        pageTitle.data = page : title
+        pageSubTitle = TEXT
+        pageSubTitle.data = page : subtitle
+        pageUrl= TEXT
+        pageUrl.data = getIndpEnv:TYPO3_REQUEST_URL
+    }
+}

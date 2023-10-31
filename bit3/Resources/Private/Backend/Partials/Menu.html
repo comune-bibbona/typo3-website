@@ -1,0 +1,45 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Main">
+    <div role="tabpanel">
+        <ul class="nav nav-tabs t3js-tabs" role="tablist" id="tabs-DTM-67217d8b401cf5e72bbf5103d60f3e98" data-store-last-tab="1">
+            <li role="presentation" class="t3js-tabmenu-item">
+                <f:link.action title="Indice" controller="ModuleConf" action="index" class="{f:if(condition: '{action} == index', then: 'active')}">
+                    Indice
+                </f:link.action>
+            </li>
+            <li role="presentation" class="t3js-tabmenu-item">
+                <f:link.action title="Testata, Logo e Colori" controller="ModuleConf" action="skin" class="{f:if(condition: '{action} == skin', then: 'active')}">
+                    <f:translate key="bit3.module.skin.title" />
+                </f:link.action>
+            </li>
+            <li role="presentation" class="t3js-tabmenu-item ">
+                <f:link.action title="Contatti, Copyright e Credits" controller="ModuleConf" action="contatti" class="{f:if(condition: '{action} == contatti', then: 'active')}">
+                    <f:translate key="bit3.module.contact.title" />
+                </f:link.action>
+            </li>
+            <li role="presentation" class="t3js-tabmenu-item ">
+                <f:link.action title="Pagine e Contenitori" controller="ModuleConf" action="page" class="{f:if(condition: '{action} == page', then: 'active')}">
+                    <f:translate key="bit3.module.page.title" />
+                </f:link.action>
+            </li>
+            <li role="presentation" class="t3js-tabmenu-item ">
+                <f:link.action title="Configurazione Servizi" controller="ModuleConf" action="servizi" class="{f:if(condition: '{action} == servizi', then: 'active')}">
+                    <f:translate key="bit3.module.service.title" />
+                </f:link.action>
+            </li>
+            <li role="presentation" class="t3js-tabmenu-item ">
+                <f:link.action title="Social Links" controller="ModuleConf" action="social" class="{f:if(condition: '{action} == social', then: 'active')}">
+                    <f:translate key="bit3.module.social.title" />
+                </f:link.action>
+            </li>
+            <li role="presentation" class="t3js-tabmenu-item ">
+                <f:link.action title="Cookie e Web Analytics" controller="ModuleConf" action="cookies" class="{f:if(condition: '{action} == cookies', then: 'active')}">
+                    <f:translate key="bit3.module.social.title" />
+                </f:link.action>
+            </li>
+        </ul>
+    </div>
+
+
+</f:section>
+</html>

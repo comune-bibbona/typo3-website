@@ -1,0 +1,49 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+    <div class="row g-4">
+        <f:for each="{menu}" as="page">
+            <div class="col-lg-6 col-xl-4">
+                <f:if condition="{page.files.0}">
+                    <f:then>
+                        <div class="it-grid-item-wrapper it-grid-item-overlay">
+                            <a href="{page.link}" {f:if(condition: page.data.data_element, then: ' data-element="{page.data.data_element}"', else: ' data-element="topic-element"')} data-focus-mouse="false">
+                                <div class="img-responsive-wrapper">
+                                    <div class="img-responsive">
+                                        <div class="img-wrapper">
+                                            <f:media file="{page.files.0}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="it-griditem-text-wrapper">
+                                    <h3>{page.title}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <div class="cmp-card-simple card-wrapper pb-0 rounded border border-light">
+                            <div class="card shadow-sm rounded">
+                                <div class="card-body">
+                                    <a href="{page.link}" class="text-decoration-none" {f:if(condition: page.data.data_element, then: ' data-element="{page.data.data_element}"', else: ' data-element="topic-element"')} data-focus-mouse="false">
+                                    <h3 class="card-title t-primary title-xlarge">{page.title}</h3>
+                                    </a>
+                                    <p class="text-secondary mb-0 description">
+                                        <f:if condition="{page.data.abstract}">
+                                            <f:then>
+                                                {page.data.abstract}
+                                            </f:then>
+                                            <f:else>
+                                                {page.data.subtitle}
+                                            </f:else>
+                                        </f:if>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </f:else>
+                </f:if>
+            </div>
+        </f:for>
+    </div>
+</f:section>

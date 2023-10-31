@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Default">
+    <footer id="footer" class="it-footer">
+        <div class="it-footer-main">
+            <div class="container">
+                <section>
+                    <div class="row clearfix">
+                        <div class="col-12 footer-items-wrapper logo-wrapper">
+                            <f:if condition="{settings.credits.pnrr} > 0">
+                                <img class="ue-logo" src="/typo3conf/ext/bit3/Resources/Public/svg/logo-eu-inverted.svg" alt="logo Unione Europea">
+                            </f:if>
+                            <div class="it-brand-wrapper">
+                                <a href="/" data-focus-mouse="false">
+                                    <f:if condition="{settings.testata.logo_istituzione}">
+                                        <f:image class="icon" src="{settings.testata.logo_istituzione}" alt="{settings.testata.nome_istituzione}" maxWidth="48" maxHeight="48" />
+                                    </f:if>
+                                    <div class="it-brand-text">
+                                        <h2 class="no_toc">{settings.testata.nome_istituzione}</h2>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 pb-2">
+                            <f:cObject typoscriptObjectPath="lib.content.footer.left" />
+                        </div>
+                        <div id="footerCenter" class="col-lg-6 col-md-6 col-sm-12 pb-2">
+                            <f:cObject typoscriptObjectPath="lib.content.footer.center" />
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 pb-2">
+                            <f:cObject typoscriptObjectPath="lib.content.footer.right" />
+                        </div>
+
+                        <div class="col-md-9 mt-md-4 footer-items-wrapper">
+                            <h3 class="footer-heading-title">Contatti</h3>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <f:render partial="Footer/Contacts" section="Default" arguments="{_all}" />
+                                </div>
+                                <div class="col-md-4">
+                                    <f:render partial="Footer/Menu" section="MiddleLeft" arguments="{_all}" />
+                                </div>
+                                <div class="col-md-4">
+                                    <f:render partial="Footer/Menu" section="MiddleRight" arguments="{_all}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mt-md-4 footer-items-wrapper">
+                            <f:render partial="Common/SocialLinks" section="Footer" arguments="{_all}" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="col-12 footer-items-wrapper">
+                            <f:render partial="Footer/Menu" section="Bottom" arguments="{_all}" />
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+</f:section>

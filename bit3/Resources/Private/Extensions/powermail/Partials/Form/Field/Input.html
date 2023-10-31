@@ -1,0 +1,13 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+
+<div class="form-group">
+	<f:render partial="Form/FieldLabel" arguments="{_all}" />
+	<f:form.textfield
+			type="{vh:Validation.FieldTypeFromValidation(field:field)}"
+			property="{field.marker}"
+			placeholder="{field.placeholder}"
+			value="{vh:Misc.PrefillField(field:field, mail:mail)}"
+			class="form-control {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')}"
+			additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field)}"
+			id="powermail_field_{field.marker}" />
+</div>

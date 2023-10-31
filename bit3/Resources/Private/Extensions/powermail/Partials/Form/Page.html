@@ -1,0 +1,9 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+<fieldset class="powermail_fieldset powermail_fieldset_{page.uid} {page.css}">
+	<f:for each="{page.fields}" as="field" iteration="iteration">
+		<vh:misc.createRowTags columns="1" iteration="{iteration}">
+			<f:render partial="Form/Field/{vh:String.Upper(string:field.type)}" arguments="{field:field}" />
+			<div class="clearfix"></div>
+		</vh:misc.createRowTags>
+	</f:for>
+</fieldset>

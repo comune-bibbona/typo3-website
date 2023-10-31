@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="it" datatype="plaintext" original="messages" date="2020-03-25T11:48:33Z" product-name="bit3">
+        <header/>
+        <body>
+            <trans-unit id="bit3.module.title" xml:space="preserve">
+				<source>Configurazione Sito Web</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.info" xml:space="preserve">
+				<source>Utilizzando questo modulo puoi configurare il tuo tema modificando il layout, le informazioni di contatto, le pagine, i contenitori, i link ai social e web analytics.</source>
+			</trans-unit>
+
+            <trans-unit id="bit3.module.buttons.configure" xml:space="preserve">
+				<source>Configura</source>
+			</trans-unit>
+
+			<trans-unit id="bit3.module.buttons.save" xml:space="preserve">
+				<source>Salva</source>
+			</trans-unit>
+
+            <trans-unit id="bit3.module.skin.title" xml:space="preserve">
+				<source>Testata, Logo e Colori</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.skin.info" xml:space="preserve">
+				<source>Configurazione dei nomi degli enti, dei loghi e dei colori primari e secondari utilizzate nel sito.</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.skin.belongInstitutionName" xml:space="preserve">
+				<source>Nome Ente di Appartenza</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.skin.belongInstitutionLogo" xml:space="preserve">
+				<source>Logo Ente di Appartenza</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.skin.belongInstitutionUrl" xml:space="preserve">
+				<source>Link Ente di Appartenza</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.skin.institutionName" xml:space="preserve">
+				<source>Nome Istituzione</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.skin.institutionLogo" xml:space="preserve">
+				<source>Logo Istituzione</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.skin.primaryColor" xml:space="preserve">
+				<source>Primary Color</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.skin.secondaryNavigation" xml:space="preserve">
+				<source>Navigazione Secondaria</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.skin.secondaryNavigation.info" xml:space="preserve">
+				<source>Inserire, separati da virgola, gli id delle pagine da far comparire nel menù di destra</source>
+			</trans-unit>
+
+            <trans-unit id="bit3.module.contact.title" xml:space="preserve">
+				<source>Contatti, Copyright e Credits</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.contact.info" xml:space="preserve">
+				<source>Configurazione dei contatti del sito, dei testi per Copyright e Credits e dell'utilizzo dei fondi di NextGeneratioEU.</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.contact.contact" xml:space="preserve">
+				<source>Contatti</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.contact.contact.address" xml:space="preserve">
+				<source>Indirizzo</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.contact.contact.taxData" xml:space="preserve">
+				<source>Dati Fiscali (Partita IVA/Codice Fiscale, Codice Univoco...)</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.contact.contact.email" xml:space="preserve">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.contact.contact.pec" xml:space="preserve">
+				<source>PEC</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.contact.contact.phone" xml:space="preserve">
+				<source>Telefono</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.contact.contact.fax" xml:space="preserve">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.contact.contact.greenNumber" xml:space="preserve">
+				<source>Numero Verde</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.contact.credit" xml:space="preserve">
+				<source>Copyright e Credits</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.contact.credit.nextGenerationEU" xml:space="preserve">
+				<source>Finanziato dall'Unione europea NextGenerationEU</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.contact.credit.copyright" xml:space="preserve">
+				<source>Copyright</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.contact.credit.credits" xml:space="preserve">
+				<source>Credits</source>
+			</trans-unit>
+
+            <trans-unit id="bit3.module.page.title" xml:space="preserve">
+				<source>Pagine e Contenitori</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.page.info" xml:space="preserve">
+				<source>Configurazione delle pagine utilizzate dalle varie funzionalità del sito e delle folder che contengono news e utenti, puoi utilizzare l'albero delle pagine qui a sinistra per controllare gli id da inserire.</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page" xml:space="preserve">
+				<source>Pagine</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.faq" xml:space="preserve">
+				<source>Pagina Domande Frequenti</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.assistance" xml:space="preserve">
+				<source>Pagina Richiedi Assistenza</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.bookAppointment" xml:space="preserve">
+				<source>Pagina Prenota Appuntamento</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.disservice" xml:space="preserve">
+				<source>Pagina Segnala Disservizio</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.newsArchive" xml:space="preserve">
+				<source>Pagina di Archivio News</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.searchPage" xml:space="preserve">
+				<source>Pagina di Ricerca</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.loginPage" xml:space="preserve">
+				<source>Pagina di Login</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.userRegistration" xml:space="preserve">
+				<source>Pagina di Registrazione Utente</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.privacy" xml:space="preserve">
+				<source>Pagina contente l'informativa Privacy</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.legalNotice" xml:space="preserve">
+				<source>Pagina contenente le note legali</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.transparency" xml:space="preserve">
+				<source>Pagina Amministrazione Trasparente</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.accessibility" xml:space="preserve">
+				<source>Pagina Dichiarazione di Accessibilità</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.siteMap" xml:space="preserve">
+				<source>Pagina con la Mappa del Sito Web</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.page.credits" xml:space="preserve">
+				<source>Pagina dei Credits</source>
+			</trans-unit>
+
+			<trans-unit id="bit3.module.page.container" xml:space="preserve">
+				<source>Contenitori</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.container.news" xml:space="preserve">
+				<source>Contenitore News</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.container.users" xml:space="preserve">
+				<source>Contenitore Utenti</source>
+			</trans-unit>
+
+            <trans-unit id="bit3.module.service.title" xml:space="preserve">
+				<source>Configurazione Servizi</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.service.info" xml:space="preserve">
+				<source>Configurazione dei servizi Pacchetto Cittadino Informato e Cittadino Attivo.</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.informed" xml:space="preserve">
+				<source>Cittadino Informato</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.informed.id" xml:space="preserve">
+				<source>Pagina</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.informed.url" xml:space="preserve">
+				<source>Url Servizio Esterno</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.informed.bookAppointment" xml:space="preserve">
+				<source>Prenota Appuntamento</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.active" xml:space="preserve">
+				<source>Cittadino Attivo</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.active.id" xml:space="preserve">
+				<source>Pagina</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.active.url" xml:space="preserve">
+				<source>Url Servizio Esterno</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.active.schoolBus" xml:space="preserve">
+				<source>Iscrizione Trasporto Scolastico</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.active.schoolCanteen" xml:space="preserve">
+				<source>Iscrizione Mensa Scolastica</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.active.nursery" xml:space="preserve">
+				<source>Iscrizione Asilo Nido</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.active.imuPayment" xml:space="preserve">
+				<source>Pagamento Tributo IMU</source>
+			</trans-unit>
+
+            <trans-unit id="bit3.module.social.title" xml:space="preserve">
+				<source>Social Links</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.social.info" xml:space="preserve">
+				<source>Configurazione delle pagine social linkate nel sito.</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.social.facebook" xml:space="preserve">
+				<source>Facebook</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.social.twitter" xml:space="preserve">
+				<source>Twitter</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.social.instagram" xml:space="preserve">
+				<source>Instagram</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.social.youtube" xml:space="preserve">
+				<source>YouTube</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.social.vimeo" xml:space="preserve">
+				<source>Vimeo</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.social.linkedin" xml:space="preserve">
+				<source>LinkedIn</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.social.telegram" xml:space="preserve">
+				<source>Telegram</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.social.rss" xml:space="preserve">
+				<source>RSS</source>
+			</trans-unit>
+
+            <trans-unit id="bit3.module.cookies.title" xml:space="preserve">
+				<source>Cookie e Web Analytics</source>
+			</trans-unit>
+            <trans-unit id="bit3.module.cookies.info" xml:space="preserve">
+				<source>Dichiarazione dell'uso di cookie sul sito e delle funzionalità analytics</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.cookies" xml:space="preserve">
+				<source>Cookies</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.cookies.info" xml:space="preserve">
+				<source>Dichiarazione dell'uso di cookie sul sito per le funzionalità del cookie banner</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.cookies.profiling" xml:space="preserve">
+				<source>Profilazione (utilizzati se nel sito vengono inseriti video di youtube, vimeo, google maps, widget social...)</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.cookies.profiling.used" xml:space="preserve">
+				<source>Utilizzati</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.cookies.analytics" xml:space="preserve">
+				<source>Web Analytics (funziona solo se è configurato li codice di tracciamento Matomo sottostante)</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.cookies.analytics.1" xml:space="preserve">
+				<source>Non Attivo</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.cookies.analytics.2" xml:space="preserve">
+				<source>Attivo Pseudonimizzato</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.cookies.analytics.3" xml:space="preserve">
+				<source>Attivo</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.analytics" xml:space="preserve">
+				<source>Analytics</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.analytics.info" xml:space="preserve">
+				<source>Configurazione delle funzionalità analytics</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.analytics.trackingUrl" xml:space="preserve">
+				<source>Tracking Url</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.analytics.siteId" xml:space="preserve">
+				<source>SiteId</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.cookies.analytics.example" xml:space="preserve">
+				<source>Nell'esempio sottostante di codice per il tracciamento Matomo puoi vedere dove trovare i valori da inserire (in rosso).</source>
+			</trans-unit>
+
+        </body>
+    </file>
+</xliff>

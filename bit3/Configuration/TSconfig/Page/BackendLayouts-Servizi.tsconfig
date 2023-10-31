@@ -1,0 +1,87 @@
+mod.web_layout.BackendLayouts {
+    Servizi {
+        icon = EXT:bit3/Resources/Public/Icons/BackendLayouts/Servizi.jpg
+        name = Servizi
+        title = Servizi
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 2
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Intro
+                                colPos = 20
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = A chi è rivolto
+                                colPos = 21
+                            }
+                        }
+                    }
+                    3 {
+                        columns {
+                            1 {
+                                name = Come fare
+                                colPos = 22
+                            }
+                        }
+                    }
+                    4 {
+                        columns {
+                            1 {
+                                name = Cosa serve
+                                colPos = 23
+                            }
+                        }
+                    }
+                    5 {
+                        columns {
+                            1 {
+                                name = Cosa si ottiene
+                                colPos = 24
+                            }
+                        }
+                    }
+                    6 {
+                        columns {
+                            1 {
+                                name = Tempi e scadenze
+                                colPos = 25
+                            }
+                        }
+                    }
+                    7 {
+                        columns {
+                            1 {
+                                name = Accedi al servizio
+                                colPos = 26
+                            }
+                        }
+                    }
+                    8 {
+                        columns {
+                            1 {
+                                name = Condizioni di servizio
+                                colPos = 27
+                            }
+                        }
+                    }
+                    9 {
+                        columns {
+                            1 {
+                                name = Contatti
+                                colPos = 28
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

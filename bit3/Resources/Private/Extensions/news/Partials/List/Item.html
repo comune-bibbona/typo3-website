@@ -1,0 +1,57 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+<n:excludeDisplayedNews newsItem="{newsItem}" />
+<div class="col-md-6 col-xl-4">
+	<div class="card-wrapper border border-light rounded shadow-sm">
+		<div class="card no-after rounded">
+			<div class="row g-2 g-md-0 flex-md-column">
+				<div class="img-responsive-wrapper">
+					<div class="img-responsive img-responsive-panoramic">
+						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+							<figure class="img-wrapper">
+								<f:if condition="{newsItem.mediaPreviews}">
+									<f:then>
+										<f:media class="img-responsive" file="{newsItem.mediaPreviews.0}" title="{newsItem.mediaPreviews.0.originalResource.title}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" width="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}" height="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
+									</f:then>
+									<f:else>
+										<f:if condition="{settings.displayDummyIfNoMedia}">
+											<f:image class="img-dummy img-responsive" src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+										</f:if>
+									</f:else>
+								</f:if>
+							</figure>
+						</n:link>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="card-body rounded-top">
+						<div class="category-top">
+							<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}" />
+						</div>
+						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="text-decoration-none">
+							{newsItem.title}
+						</n:link>
+						<p class="card-text">
+							<n:removeMediaTags>
+								<f:if condition="{newsItem.teaser}">
+									<f:then>
+										{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+									</f:then>
+									<f:else>
+										{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+									</f:else>
+								</f:if>
+							</n:removeMediaTags>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</html>

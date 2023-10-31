@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Tab" />
+
+<f:section name="Horizontal">
+    <f:if condition="{records}">
+        <f:then>
+            <ul class="nav nav-tabs nav-tabs-cards" id="Tab" role="tablist">
+                <f:for each="{records}" as="record" iteration="iterator">
+                    <li class="nav-item"><a class="nav-link{f:if(condition: '{iterator.index} == 0', then: ' active')}" id="tab{record.data.uid}-tab" data-bs-toggle="tab" href="#tab{record.data.uid}" role="tab" aria-controls="tab{record.data.uid}" aria-selected="{f:if(condition: '{iterator.index} == 0', then: 'true', else: 'false')}">{record.data.header}</a></li>
+                </f:for>
+            </ul>
+            <div class="tab-content" id="TabContent">
+                <f:for each="{records}" as="record" iteration="iterator">
+                    <div class="tab-pane p-4 fade{f:if(condition: '{iterator.index} == 0', then: ' show active')}" id="tab{record.data.uid}" role="tabpanel" aria-labelledby="tab{record.data.uid}-tab"><f:format.html>{record.data.bodytext}</f:format.html></div>
+                </f:for>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="alert alert-danger" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> No tab-item.</div>
+        </f:else>
+    </f:if>
+</f:section>
+<f:section name="Vertical">
+    <f:if condition="{records}">
+        <f:then>
+            <div class="bit3-tabs">
+                <div class="row{f:if(condition: '{data.layout} == 103', then: ' flex-row-reverse')}">
+                    <div class="col-4 col-md-3">
+                        <div class="nav nav-tabs nav-tabs-vertical" id="nav-vertical-tab" role="tablist" aria-orientation="vertical">
+                            <f:for each="{records}" as="record" iteration="iterator">
+                                <a class="nav-link{f:if(condition: '{iterator.index} == 0', then: ' active')}" id="nav-vertical-tab{record.data.uid}-tab" data-bs-toggle="tab" href="#nav-vertical-tab{record.data.uid}" role="tab" aria-controls="nav-vertical-tab{record.data.uid}" aria-selected="{f:if(condition: '{iterator.index} == 0', then: 'true', else: 'false')}">{record.data.header}</a>
+                            </f:for>
+                        </div>
+                    </div>
+                    <div class="col-8 col-md-9">
+                        <div class="tab-content" id="nav-vertical-tabContent">
+                            <f:for each="{records}" as="record" iteration="iterator">
+                                <div class="tab-pane p-3 fade{f:if(condition: '{iterator.index} == 0', then: ' show active')}" id="nav-vertical-tab{record.data.uid}" role="tabpanel" aria-labelledby="nav-vertical-tab{record.data.uid}-tab"><f:format.html>{record.data.bodytext}</f:format.html></div>
+                            </f:for>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="alert alert-danger" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> No tab-item.</div>
+        </f:else>
+    </f:if>
+</f:section>
+</html>

@@ -1,0 +1,65 @@
+page {
+    meta {
+        viewport = width=device-width, initial-scale=1, shrink-to-fit=no
+        X-UA-Compatible = IE=edge
+        X-UA-Compatible.attribute = http-equiv
+        keywords =
+        keywords {
+            override.field = keywords
+        }
+        og:title =
+        og:title {
+            attribute = property
+            field = title
+            replace = 1
+        }
+        og:site_name =
+        og:site_name {
+            attribute = property
+            data = TSFE:tmpl|setup|sitetitle
+        }
+        og:description =
+        og:description {
+            attribute = property
+            field = description
+        }
+        og:image {
+            attribute = property
+            stdWrap.cObject = FILES
+            stdWrap.cObject {
+                references {
+                    data = levelfield:-1, media, slide
+                }
+                maxItems = 1
+                renderObj = COA
+                renderObj {
+                    10 = IMG_RESOURCE
+                    10 {
+                        file {
+                            import.data = file:current:uid
+                            treatIdAsReference = 1
+                            width = 560
+                            height = 292
+                        }
+                        stdWrap {
+                            typolink {
+                                parameter.data = TSFE:lastImgResourceInfo|3
+                                returnLast = url
+                                forceAbsoluteUrl = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        og:url =
+        og:url {
+            attribute = property
+            data = getIndpEnv:TYPO3_REQUEST_URL
+        }
+        og:url.attribute = property
+        og:locale = in_IT
+        og:locale.attribute = property
+        refresh.attribute = http-equiv
+    }
+}

@@ -1,0 +1,91 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item-Slide-Background.html
+-->
+<!--- image -->
+<div class="it-hero-wrapper it-dark it-overlay">
+	<div class="img-responsive-wrapper">
+		<f:if condition="{newsItem.mediaPreviews}">
+			<!-- media preview element -->
+			<f:then>
+				<div class="img-responsive">
+					<div class="img-wrapper">
+						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+							<f:alias map="{mediaElement: '{newsItem.mediaPreviews.0}'}">
+								<f:if condition="{mediaElement.originalResource.type} == 2">
+									<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="1920" maxHeight="620" />
+								</f:if>
+								<f:if condition="{mediaElement.originalResource.type} == 4">
+									<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+								</f:if>
+								<f:if condition="{mediaElement.originalResource.type} == 5">
+									<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+								</f:if>
+							</f:alias>
+						</n:link>
+					</div>
+				</div>
+			</f:then>
+			<f:else>
+				<f:if condition="{settings.displayDummyIfNoMedia}">
+				<span class="no-media-element">
+					<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+						<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}" />
+					</n:link>
+				</span>
+				</f:if>
+			</f:else>
+		</f:if>
+	</div>
+	<!--- texts-->
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-6">
+				<!--start card-->
+				<div class="card-wrapper card-space slide-in-top">
+					<div class="card card-bg card-big no-after">
+						<div class="card-body">
+							<div class="head-tags">
+								<span class="data">
+									<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+										<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+									</time>
+								</span>
+							</div>
+							<h2 class="card-title">
+								<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="u-color-95 u-textClean">{newsItem.title}</n:link>
+							</h2>
+							<p class="card-text">
+								<n:removeMediaTags>
+									<f:if condition="{newsItem.teaser}">
+										<f:then>
+											{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+										</f:then>
+										<f:else>
+											{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+										</f:else>
+									</f:if>
+								</n:removeMediaTags>
+							</p>
+							<div class="it-card-footer">
+								<n:link class="read-more" newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+									<span class="text">Leggi di più</span>
+									<svg class="icon">
+										<use xlink:href="/typo3conf/ext/bit3/Resources/Public/svg/sprites.svg#it-arrow-right"></use></svg>
+									</svg>
+								</n:link>
+								<a class="scrollLink btn btn-sm btn-primary" href="#news">Vai a tutte le notizie</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end card-->
+			</div>
+		</div>
+	</div>
+</div>
+
+</html>

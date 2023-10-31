@@ -1,0 +1,13 @@
+lib.parseFunc_RTE {
+    externalBlocks {
+        table{
+            stdWrap{
+                HTMLparser.tags.table.fixAttrib.class.list := addToList(table, table-primary, table-secondary, table-success, table-danger, table-warning, table-info, table-light, table-dark, table-striped, table-bordered, table-borderless, table-sm)
+                wrap = <div class="table-responsive">|</div>
+            }
+        }
+    }
+}
+
+
+

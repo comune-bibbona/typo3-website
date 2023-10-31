@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:render partial="Common/Hero" section="Default" arguments="{_all}" />
+
+    <div class="bg-grey-card py-5">
+        <div class="container">
+            <div class="row row-column-menu-left mt-3">
+                <div class="col-12 col-lg-8 offset-lg-1">
+                    <div class="it-page-sections-container">
+                        <f:cObject typoscriptObjectPath="lib.content.main" />
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 mb-4 border-col">
+                    <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-aside">
+                        <f:cObject typoscriptObjectPath="lib.content.column_right" />
+                        <f:render partial="Menu/Menu" section="Sidebar" arguments="{_all}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</f:section>
+</html>

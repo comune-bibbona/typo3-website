@@ -1,0 +1,16 @@
+config.doctype = html5
+
+# configuro la lingua di default
+config.language = it
+config.locale_all = it_IT
+config.htmlTag_langKey = it-IT
+config.sys_language_uid = 0
+config.htmlTag_setParams = lang="it" dir="ltr" class="no-js"
+
+page.shortcutIcon = {$skin.favicon}
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:bit3/Configuration/TypoScript/Library/" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:bit3/Configuration/TypoScript/Library/Backend/" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:bit3/Configuration/TypoScript/Library/CoreExtensions/" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:bit3/Configuration/TypoScript/Library/Extensions/" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:bit3/Configuration/TypoScript/Library/Contents/" extensions="typoscript">

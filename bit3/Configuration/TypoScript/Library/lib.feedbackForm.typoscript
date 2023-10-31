@@ -1,0 +1,25 @@
+lib.feedbackForm = USER
+lib.feedbackForm {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = Form
+    pluginName = Formframework
+    vendorName = TYPO3\CMS
+
+    settings < plugin.tx_form.settings
+    settings {
+        persistenceIdentifier = EXT:bit3/Resources/Private/Forms/feedbackAccessibilita.form.yaml
+        overrideFinishers = 1
+    }
+    view < plugin.tx_form.view
+    view {
+        templateRootPaths {
+            110 = EXT:bit3/Resources/Private/CoreExtensions/form/Templates/
+        }
+        partialRootPaths {
+            110 = EXT:bit3/Resources/Private/CoreExtensions/form/Partials/
+        }
+        layoutRootPaths {
+            110 = EXT:bit3/Resources/Private/CoreExtensions/form/Layouts/
+        }
+    }
+}

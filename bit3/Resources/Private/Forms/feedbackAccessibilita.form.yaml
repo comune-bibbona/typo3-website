@@ -1,0 +1,72 @@
+
+renderingOptions:
+  submitButtonLabel: 'Invia la valutazione'
+type: Form
+identifier: feedbackForm
+label: FeedbackForm
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Feedback Accessibilità'
+      recipients:
+        abramotesoro@gmail.com: ''
+      senderAddress: metsmtpsender@archicoop.it
+      senderName: 'Feedback dal sito'
+      addHtmlPart: true
+      attachUploads: true
+      useFluidEmail: false
+      title: ''
+    identifier: EmailToSender
+  -
+    options:
+      message: 'Grazie, il tuo parere ci aiuterà a migliorare il servizio!'
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: ''
+      nextButtonLabel: ''
+    type: Page
+    identifier: page-1
+    label: ''
+    renderables:
+      -
+        properties:
+          options:
+            1: '1'
+            2: '2'
+            3: '3'
+            4: '4'
+            5: '5'
+        type: RadioButton
+        identifier: radiobutton-1
+        label: 'Quanto sono chiare le informazioni su questa pagina?'
+      -
+        properties:
+          options:
+            'A volte le indicazioni non erano chiare': 'A volte le indicazioni non erano chiare'
+            'A volte le indicazioni non erano complete': 'A volte le indicazioni non erano complete'
+            'A volte non capivo se stavo procedendo correttamente': 'A volte non capivo se stavo procedendo correttamente'
+            'Ho avuto problemi tecnici': 'Ho avuto problemi tecnici'
+            Altro: Altro
+        type: RadioButton
+        identifier: radiobutton-2
+        label: 'Dove hai incontrato maggiori difficoltà?'
+      -
+        properties:
+          options:
+            'Le indicazioni erano chiare': 'Le indicazioni erano chiare'
+            'Le indicazioni erano complete': 'Le indicazioni erano complete'
+            'Capivo sempre che stavo procedendo correttamente': 'Capivo sempre che stavo procedendo correttamente'
+            'Non ho avuto problemi tecnici': 'Non ho avuto problemi tecnici'
+            Altro: Altro
+        type: RadioButton
+        identifier: radiobutton-3
+        label: 'Quali sono stati gli aspetti che hai preferito? '
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: 'Vuoi aggiungere altri dettagli?'

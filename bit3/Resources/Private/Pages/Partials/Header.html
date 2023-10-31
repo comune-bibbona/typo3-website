@@ -1,0 +1,39 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Default">
+    <div class="it-header-wrapper">
+        <f:render partial="Header/SlimHeader" section="Default" arguments="{_all}" />
+        <div class="it-nav-wrapper">
+            <f:render partial="Header/Header" section="Default" arguments="{_all}" />
+            <div class="it-header-navbar-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav class="navbar navbar-expand-lg has-megamenu" aria-label="Navigazione principale">
+                                <button class="custom-navbar-toggler" type="button" aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione" data-bs-toggle="navbarcollapsible" data-bs-target="#nav4">
+                                    <svg class="icon bg-override">
+                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-burger"></use>
+                                    </svg>
+                                </button>
+                                <div class="navbar-collapsable" id="nav4" style="display: none;">
+                                    <div class="overlay" style="display: none;"></div>
+                                    <div class="close-div">
+                                        <button class="btn close-menu" type="button">
+                                            <span class="visually-hidden">Nascondi la navigazione</span>
+                                            <svg class="icon">
+                                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-close-big"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="menu-wrapper">
+                                        <f:render partial="Menu/Menu" section="Main" arguments="{_all}" />
+                                        <f:render partial="Menu/Menu" section="Secondary" arguments="{_all}" />
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>

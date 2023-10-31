@@ -1,0 +1,32 @@
+lib.content.footer.left = COA
+lib.content.footer.left {
+    10 < styles.content.get
+    10 {
+        select.where = colPos=11
+        slide = -1
+    }
+}
+lib.content.footer.center = COA
+lib.content.footer.center {
+    10 < styles.content.get
+    10 {
+        select.where = colPos=12
+        slide = -1
+    }
+}
+lib.content.footer.right = COA
+lib.content.footer.right {
+    10 < styles.content.get
+    10 {
+        select.where = colPos=13
+        slide = -1
+    }
+}
+lib.content.footer.4 = COA
+lib.content.footer.4 {
+    10 < styles.content.get
+    10 {
+        select.where = colPos=14
+        slide = -1
+    }
+}

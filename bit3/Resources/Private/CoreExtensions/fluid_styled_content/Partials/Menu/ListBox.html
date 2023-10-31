@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+    <div class="it-list-wrapper">
+        <ul class="it-list">
+            <f:for each="{menu}" as="page">
+                <li>
+                    <div class="list-item">
+                        <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+                            <div class="it-right-zone">
+                                <span class="text">
+                                    {page.title}
+                                    <f:if condition="{page.data.abstract}"><em>{page.data.abstract}</em></f:if>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</f:section>

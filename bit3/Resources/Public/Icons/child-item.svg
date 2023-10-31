@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="256"
+   id="svg2"
+   version="1.1"
+   sodipodi:docname="child-item.svg"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     id="namedview866"
+     showgrid="false"
+     inkscape:zoom="2.1378932"
+     inkscape:cx="168.44811"
+     inkscape:cy="186.72642"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2"
+     inkscape:document-rotation="0"
+     inkscape:snap-page="true" />
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient2279"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2277" />
+    </linearGradient>
+    <clipPath
+       id="clipPath5383"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5385"
+         d="m 24.3333,46.0004 26.1669,0 0,-23.0004 -26.1669,0 0,23.0004 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5359"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5361"
+         d="m 18,43 28,0 0,-28 -28,0 0,28 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5347"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5349"
+         d="M 0,64 64,64 64,0 0,0 0,64 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5478"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5480"
+         d="m 24.3333,46.0004 26.1669,0 0,-23.0004 -26.1669,0 0,23.0004 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5454"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5456"
+         d="m 18,43 28,0 0,-28 -28,0 0,28 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5442"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5444"
+         d="M 0,64 64,64 64,0 0,0 0,64 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5549"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5551"
+         d="m 12.2873,54 39.4254,0 0,-48 -39.4254,0 0,48 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5537"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5539"
+         d="M 0,64 64,64 64,0 0,0 0,64 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3416"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path3418"
+         d="M 0,64 64,64 64,0 0,0 0,64 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3428"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path3430"
+         d="m 9,44.3637 46,0 L 55,16 9,16 9,44.3637 Z" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g2547"
+     transform="matrix(0.97349684,0,0,0.97349684,-249.87247,1.2375099)">
+    <g
+       id="g868"
+       transform="matrix(11.868393,0,0,11.868393,-20.80734,-20.611248)">
+      <g
+         id="g1495"
+         transform="matrix(0.52046614,0,0,0.52046614,22.088724,0.20481082)">
+        <path
+           d="M 24,30 V 24"
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           id="path835" />
+        <path
+           d="M 6,30 H 24 42 V 42 H 6 Z"
+           fill="#2f88ff"
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           id="path837"
+           style="fill:#96ccee;fill-opacity:1" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="6"
+           x2="6"
+           y1="12.5"
+           y2="11.5"
+           id="line839" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="6"
+           x2="6"
+           y1="18"
+           y2="17"
+           id="line841" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="6"
+           x2="6"
+           y1="7"
+           y2="6"
+           id="line843" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="42"
+           x2="42"
+           y1="12.5"
+           y2="11.5"
+           id="line845" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="42"
+           x2="42"
+           y1="18"
+           y2="17"
+           id="line847" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="42"
+           x2="42"
+           y1="7"
+           y2="6"
+           id="line849" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="42"
+           x2="41"
+           y1="18"
+           y2="18"
+           id="line851" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="7"
+           x2="6"
+           y1="18"
+           y2="18"
+           id="line853" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="7"
+           x2="6"
+           y1="6"
+           y2="6"
+           id="line855" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="14"
+           x2="13"
+           y1="6"
+           y2="6"
+           id="line857" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="21"
+           x2="20"
+           y1="6"
+           y2="6"
+           id="line859" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="21"
+           x2="20"
+           y1="18"
+           y2="18"
+           id="line861" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="28"
+           x2="27"
+           y1="6"
+           y2="6"
+           id="line863" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="14"
+           x2="13"
+           y1="18"
+           y2="18"
+           id="line865" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="28"
+           x2="27"
+           y1="18"
+           y2="18"
+           id="line867" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="35"
+           x2="34"
+           y1="6"
+           y2="6"
+           id="line869" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="35"
+           x2="34"
+           y1="18"
+           y2="18"
+           id="line871" />
+        <line
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="4"
+           x1="42"
+           x2="41"
+           y1="6"
+           y2="6"
+           id="line873" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Accordion" />
+<f:section name="SearchBox">
+    <div class="cmp-input-search">
+        <div class="form-group autocomplete-wrapper mb-2 mb-lg-4">
+            <div class="input-group">
+                <label for="search-faq" class="visually-hidden active">Cerca nelle domande frequenti</label>
+                <input type="search" class="autocomplete form-control" placeholder="Cerca" id="search-faq" name="autocomplete-three" data-bs-autocomplete="[]" data-focus-mouse="false"><ul class="autocomplete-list"></ul>
+
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" id="button-3">Invio</button>
+                </div>
+
+                <span class="autocomplete-icon" aria-hidden="true">
+                    <svg class="icon icon-sm icon-primary">
+                    <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-search"></use>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    <f:asset.script identifier="filterFAQ" src="EXT:bit3/Resources/Public/js/filterFAQ.js" defer="true" />
+</f:section>
+<f:section name="Main">
+    <f:if condition="{records}">
+        <f:then>
+            <f:for each="{records}" as="record" iteration="iteration">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="heading{record.data.uid}">
+                        <button class="accordion-button title-snall-semi-bold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{record.data.uid}" aria-expanded="true" aria-controls="collapse{record.data.uid}">
+                            <div class="button-wrapper">
+                                <span class="faq">{record.data.header}</span>
+                                <div class="icon-wrapper">
+                                    <svg class="icon icon-xs me-1 icon-primary">
+                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#" xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#"></use>
+                                    </svg><span class=""></span>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div id="collapse{record.data.uid}" class="accordion-collapse collapse" aria-labelledby="heading{record.data.uid}" data-bs-parent="#c{data.uid}">
+                        <div class="accordion-body mb-3">
+                            <f:format.html>{record.data.bodytext}</f:format.html>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </f:then>
+        <f:else>
+            <div class="alert alert-danger" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> No accordion-item.</div>
+        </f:else>
+    </f:if>
+</f:section>
+</html>

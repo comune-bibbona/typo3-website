@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Box">
+    <f:if condition="{settings.pages.id_search_page}>0">
+        <div class="it-search-wrapper">
+            <span class="d-none d-md-block">Cerca</span>
+            <button class="search-link rounded-icon" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Cerca nel sito" data-focus-mouse="false">
+                <svg class="icon">
+                    <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-search"></use>
+                </svg>
+            </button>
+        </div>
+    </f:if>
+</f:section>
+<f:section name="Modal">
+    <f:if condition="{settings.pages.id_search_page}>0">
+        <div class="modal fade search-modal" id="search-modal" tabindex="-1" style="display: none;" data-focus-mouse="false" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content perfect-scrollbar">
+                    <div class="modal-body">
+                        <f:cObject typoscriptObjectPath="lib.searchbox" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:if>
+</f:section>

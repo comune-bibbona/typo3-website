@@ -1,0 +1,80 @@
+mod.web_layout.BackendLayouts {
+    Home {
+        icon = EXT:bit3/Resources/Public/Icons/BackendLayouts/Home.jpg
+        name = Home
+        title = Home
+        config {
+            backend_layout {
+                colCount = 12
+                rowCount = 5
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Slideshow
+                                colPos = 4
+                                colspan = 12
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Servizi e Uffici
+                                colPos = 1
+                                colspan = 4
+                            }
+                            2 {
+                                name = Amministrazione
+                                colPos = 2
+                                colspan = 4
+                            }
+                            3 {
+                                name = Vivere il Comune
+                                colPos = 3
+                                colspan = 4
+                            }
+                        }
+                    }
+                    3 {
+                        columns {
+                            1 {
+                                name = Bottoni
+                                colPos = 0
+                                colspan = 12
+                            }
+                        }
+                    }
+                    4 {
+                        columns {
+                            1 {
+                                name = Ultime Notizie
+                                colPos = 5
+                                colspan = 12
+                            }
+                        }
+                    }
+                    5 {
+                        columns {
+                            1 {
+                                name = Footer Sx
+                                colPos = 11
+                                colspan = 3
+                            }
+                            2{
+                                name = Footer Center
+                                colPos = 12
+                                colspan = 6
+                            }
+                            4{
+                                name = Footer Dx
+                                colPos = 13
+                                colspan = 3
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

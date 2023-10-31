@@ -1,0 +1,84 @@
+
+<f:layout name="Default" />
+
+<f:section name="Content">
+	<div class="site-configuration">
+		<h1><f:translate key="bit3.module.contact.title" /></h1>
+		<div class="alert alert-info alert-dismissible fade show mt-2 mb-2" role="alert">
+			<f:translate key="bit3.module.contact.info" />
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<f:form action="salvaContatti" name="contatticonf">
+					<div class="card">
+						<div class="card-header">
+							<h2 class="card-title"><f:translate key="bit3.module.contact.contact" /></h2>
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="form-group col-sm-6">
+									<label for="contacts.address"><f:translate key="bit3.module.contact.contact.address" /></label>
+									<f:form.textarea name="contacts.address" value="{f:if(condition: '{vettContattiConf.contacts.address}', then: '{vettContattiConf.contacts.address}')}" class="form-control" placeholder="{costantsExtensionContatti.contacts.address}" />
+								</div>
+								<div class="form-group col-sm-6">
+									<label for="contacts.dati_fiscali"><f:translate key="bit3.module.contact.contact.taxData" /></label>
+									<f:form.textarea name="contacts.dati_fiscali" value="{f:if(condition: '{vettContattiConf.contacts.dati_fiscali}', then: '{vettContattiConf.contacts.dati_fiscali}')}" class="form-control" placeholder="{costantsExtensionContatti.contacts.dati_fiscali}"/>
+								</div>
+								<div class="form-group col-sm-4">
+									<label for="contacts.email"><f:translate key="bit3.module.contact.contact.email" /></label>
+									<f:form.textfield name="contacts.email" value="{f:if(condition: '{vettContattiConf.contacts.email}', then: '{vettContattiConf.contacts.email}')}" class="form-control" placeholder="{costantsExtensionContatti.contacts.email}"/>
+								</div>
+								<div class="form-group col-sm-4">
+									<label for="contacts.pec"><f:translate key="bit3.module.contact.contact.pec" /></label>
+									<f:form.textfield name="contacts.pec" value="{f:if(condition: '{vettContattiConf.contacts.pec}', then: '{vettContattiConf.contacts.pec}')}" class="form-control" placeholder="{costantsExtensionContatti.contacts.pec}"/>
+								</div>
+								<div class="form-group col-sm-4">
+									<label for="contacts.tel"><f:translate key="bit3.module.contact.contact.phone" /></label>
+									<f:form.textfield name="contacts.tel" value="{f:if(condition: '{vettContattiConf.contacts.tel}', then: '{vettContattiConf.contacts.tel}')}" class="form-control" placeholder="{costantsExtensionContatti.contacts.tel}"/>
+								</div>
+								<div class="form-group col-sm-4">
+									<label for="contacts.fax"><f:translate key="bit3.module.contact.contact.fax" /></label>
+									<f:form.textfield name="contacts.fax" value="{f:if(condition: '{vettContattiConf.contacts.fax}', then: '{vettContattiConf.contacts.fax}')}" class="form-control" placeholder="{costantsExtensionContatti.contacts.fax}"/>
+								</div>
+								<div class="form-group col-sm-4">
+									<label for="contacts.numero_verde"><f:translate key="bit3.module.contact.contact.greenNumber" /></label>
+									<f:form.textfield name="contacts.numero_verde" value="{f:if(condition: '{vettContattiConf.contacts.numero_verde}', then: '{vettContattiConf.contacts.numero_verde}')}" class="form-control" placeholder="{costantsExtensionContatti.contacts.numero_verde}"/>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer mt-3">
+							<f:form.button class="btn btn-primary"><f:translate key="bit3.module.buttons.save" /></f:form.button>
+						</div>
+					</div>
+				</f:form>
+			</div>
+			<div class="col-sm-12">
+				<f:form action="salvaCopyrightAndCredits" name="copyrightconf">
+					<div class="card">
+						<div class="card-header">
+							<h2 class="card-title"><f:translate key="bit3.module.contact.credit" /></h2>
+						</div>
+						<div class="card-body row">
+							<div class="form-group col-sm-12">
+								<label for="copyrights.nextgenerationeu"><f:translate key="bit3.module.contact.credit.nextGenerationEU" /></label>
+								<f:form.checkbox id="nextgenerationeu" name="copyrights.nextgenerationeu" value="1" checked="{vettContattiConf.copyrights.nextgenerationeu} == 1" />
+							</div>
+							<div class="form-group col-sm-12">
+								<label for="copyrights.copyright"><f:translate key="bit3.module.contact.credit.copyright" /></label>
+								<f:form.textfield name="copyrights.copyright" value="{f:if(condition: '{vettContattiConf.copyrights.copyright}', then: '{vettContattiConf.copyrights.copyright}')}" class="form-control" placeholder="{constantsExtensionCopyrightConf.copyrights.copyright}"/>
+							</div>
+							<div class="form-group col-sm-12">
+								<label for="copyrights.credits"><f:translate key="bit3.module.contact.credit.credits" /></label>
+								<f:form.textfield name="copyrights.credits" value="{f:if(condition: '{vettContattiConf.copyrights.credits}', then: '{vettContattiConf.copyrights.credits}')}" class="form-control" placeholder="{constantsExtensionCopyrightConf.copyrights.credits}"/>
+							</div>
+						</div>
+						<div class="card-footer mt-3">
+							<f:form.button class="btn btn-primary"><f:translate key="bit3.module.buttons.save" /></f:form.button>
+						</div>
+					</div>
+				</f:form>
+			</div>
+		</div>
+	</div>
+</f:section>

@@ -1,0 +1,99 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Uploads" />
+<f:section name="Main">
+    <f:if condition="{files}">
+        <ul class="upload-file-list">
+            <f:for each="{files}" as="file" iteration="fileIterator">
+                <li class="upload-file {f:if(condition: '{data.filelink_size}', then: 'success')}">
+                    <f:if condition="{data.uploads_type} == 1">
+                        <f:switch expression="{file.extension}">
+                            <f:case value="pdf">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-pdf-ext"></use></svg>
+                            </f:case>
+                            <f:case value="odt">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-odt"></use></svg>
+                            </f:case>
+                            <f:case value="txt">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-txt"></use></svg>
+                            </f:case>
+                            <f:case value="ods">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-ods"></use></svg>
+                            </f:case>
+                            <f:case value="xml">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-xml"></use></svg>
+                            </f:case>
+                            <f:case value="csv">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-csv"></use></svg>
+                            </f:case>
+                            <f:case value="audio">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-audio"></use></svg>
+                            </f:case>
+                            <f:case value="video">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-video"></use></svg>
+                            </f:case>
+                            <f:case value="odp">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-odp"></use></svg>
+                            </f:case>
+                            <f:case value="">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-compressed"></use></svg>
+                            </f:case>
+                            <f:case value="">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-sheet"></use></svg>
+                            </f:case>
+                            <f:case value="">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file-json"></use></svg>
+                            </f:case>
+                            <f:case value="jpg">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-camera"></use></svg>
+                            </f:case>
+                            <f:case value="png">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-camera"></use></svg>
+                            </f:case>
+                            <f:case value="gif">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-camera"></use></svg>
+                            </f:case>
+                            <f:case value="bmp">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-camera"></use></svg>
+                            </f:case>
+                            <f:case value="tiff">
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-camera"></use></svg>
+                            </f:case>
+                            <f:defaultCase>
+                                <svg class="icon" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file"></use></svg>
+                            </f:defaultCase>
+                        </f:switch>
+                    </f:if>
+                    <f:if condition="{data.uploads_type} == 2">
+                        <f:if condition="{file.type} > 1">
+                            <f:if condition="{f:uri.image(src: 'file:{f:if(condition: file.originalFile, then: \'file:{file.originalFile.uid}\', else: \'file:{file.uid}\')}')} != '/'">
+                                <f:then>
+                                    <a href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: file.title, then: ' title="{file.title}"')}>
+                                        <f:media file="{file}" width="150" alt="{file.properties.alternative}" />
+                                    </a>
+                                </f:then>
+                                <f:else>
+                                    <img src="{f:uri.resource(path: 'Icons/FileIcons/{file.extension}.gif', extensionName: 'frontend')}" alt="">
+                                </f:else>
+                            </f:if>
+                        </f:if>
+                    </f:if>
+                    <p>
+                        <a href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: file.title, then: ' title="{file.title}"')}>
+                            <span class="ce-uploads-fileName">{f:if(condition: file.properties.title, then: file.properties.title, else: file.name) -> f:format.htmlspecialchars()}</span>
+                        </a>
+                        <f:if condition="{data.filelink_size}">
+                            <span class="upload-file-weight"><f:format.bytes value="{file.properties.size}" /></span>
+                        </f:if>
+                        <f:if condition="{file.properties.description}">
+                            <f:if condition="{data.uploads_description}">
+                                <br><small>{file.properties.description}</small>
+                            </f:if>
+                        </f:if>
+                    </p>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+
+</f:section>
+</html>

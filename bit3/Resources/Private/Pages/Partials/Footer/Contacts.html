@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+    <p class="footer-info">
+        <f:if condition="{settings.testata.nome_istituzione}">
+            {settings.testata.nome_istituzione}<br>
+        </f:if>
+        <f:if condition="{settings.contacts.address}!=''">
+            <f:format.html>{settings.contacts.address}</f:format.html>
+        </f:if>
+        <f:if condition="{settings.contacts.dati_fiscali}!=''">
+            <f:format.html>{settings.contacts.dati_fiscali}</f:format.html>
+        </f:if>
+        <a href="#">Ufficio Relazioni con il Pubblico</a><br>
+        <f:if condition="{settings.contacts.tel}!=''">
+            Telefono: {settings.contacts.tel}<br>
+        </f:if>
+        <f:if condition="{settings.contacts.tel}!=''">
+            Fax: {settings.contacts.fax}<br>
+        </f:if>
+        <f:if condition="{settings.contacts.email}!=''">
+            Email: <f:link.email email="{settings.contacts.email}" /><br>
+        </f:if>
+        <f:if condition="{comune.bibbon@apec.it}!=''">
+            PEC: <f:link.email email="{settings.contacts.pec}" /><br>
+        </f:if>
+    </p>
+</f:section>
+
+</html>

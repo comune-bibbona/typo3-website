@@ -1,0 +1,106 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Callout" />
+
+<f:section name="Main">
+    <f:switch expression="{data.layout}">
+        <f:case value="101">
+            <f:variable name="grid" value="col-12 col-lg-10" />
+            <f:variable name="cardicon" value="it-star-full" />
+            <f:variable name="avatarsize" value="size-xxl" />
+        </f:case>
+        <f:case value="102">
+            <f:variable name="grid" value="col-12 col-lg-8" />
+            <f:variable name="cardicon" value="it-star-outline" />
+            <f:variable name="avatarsize" value="size-xl" />
+        </f:case>
+        <f:case value="103">
+            <f:variable name="grid" value="col-12 col-lg-8" />
+            <f:variable name="cardicon" value="it-user" />
+            <f:variable name="avatarsize" value="size-xl" />
+        </f:case>
+        <f:case value="104">
+            <f:variable name="grid" value="col-12 col-lg-8" />
+            <f:variable name="cardicon" value="it-pa" />
+            <f:variable name="avatarsize" value="size-xl" />
+        </f:case>
+        <f:defaultCase>
+            <f:variable name="grid" value="col-12 col-lg-8" />
+            <f:variable name="cardicon" value="it-pa" />
+            <f:variable name="avatarsize" value="size-xl" />
+        </f:defaultCase>
+    </f:switch>
+
+    <f:if condition="{data.layout}>0">
+        <f:then>
+
+
+            <div class="{grid}">
+                <div class="card-wrapper card-space mt-5">
+                    <div class="card card-bg card-big border-bottom-card">
+                        <f:if condition="{data.layout}==101">
+                            <div class="flag-icon"></div>
+                        </f:if>
+                        <f:if condition="{data.subheader}">
+                            <div class="etichetta">
+                                <f:if condition="{cardicon}">
+                                    <svg class="icon">
+                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#{cardicon}"></use>
+                                    </svg>
+                                </f:if>
+                                <span>{data.subheader}</span>
+                            </div>
+                        </f:if>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-lg-4">
+                                    <div class="avatar {avatarsize}">
+                                        <f:for each="{files}" as="image">
+                                            <f:media file="{image}" alt="{data.header}" loading="{settings.media.lazyLoading}" />
+                                        </f:for>
+                                    </div>
+                                    <h3 class="card-title h5">{data.header}</h3>
+                                </div>
+                                <div class="col-12 col-lg-8 pt-3">
+                                    <f:format.html>{data.bodytext}</f:format.html>
+                                </div>
+                            </div>
+                            <f:if condition="{data.header_link}">
+                                <f:link.typolink parameter="{data.header_link}" class="read-more">
+                                    <span class="text">Leggi di più</span>
+                                    <span class="visually-hidden">{data.header_link}</span>
+                                    <svg class="icon">
+                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-arrow-right"></use>
+                                    </svg>
+                                </f:link.typolink>
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="col-12 col-md-8 col-lg-6 mb-30">
+                <div class="card-wrapper rounded h-auto mt-10">
+                    <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
+                        <div class="card-body pe-3">
+                            <p class="card-title text-paragraph-regular-medium-semi mb-3">
+                                <a class="text-decoration-none" href="#" data-element="service-area">{data.header}</a>
+                            </p>
+                            <div class="card-text">
+                                <f:format.html>{data.bodytext}</f:format.html>
+                            </div>
+                        </div>
+                        <div class="avatar size-xl">
+                            <f:for each="{files}" as="image">
+                                <f:media file="{image}" alt="{data.header}" loading="{settings.media.lazyLoading}" />
+                            </f:for>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:else>
+    </f:if>
+</f:section>
+
+</html>

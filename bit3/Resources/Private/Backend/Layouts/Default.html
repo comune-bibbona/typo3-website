@@ -1,0 +1,24 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:render section="Before" arguments="{_all}" optional="true" />
+
+<div class="module {moduleClass}" data-module-id="{moduleId}" data-module-name="{moduleName}">
+   <div class="module-loading-indicator"></div>
+
+   <div role="tabpanel">
+      <f:render partial="Menu" section="Main" arguments="{_all}" />
+      <div class="tab-content">
+         <div role="tabpanel" class="tab-pane active">
+            <div class="panel panel-tab">
+               <div class="panel-body">
+                  <f:render section="Content" />
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<f:render section="After" arguments="{_all}" optional="true" />
+
+</html>

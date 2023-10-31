@@ -1,0 +1,68 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item-Home-Hero.html
+-->
+
+	<div class="col-lg-6 order-2 order-lg-1">
+		<div class="card mb-5">
+			<div class="card-body pb-5 px-0">
+				<div class="category-top">
+					<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}" />
+				</div>
+				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="text-decoration-none" data="{focus-mouse: 'false'}">
+					<h3 class="card-title">{newsItem.title}</h3>
+				</n:link>
+				<p class="mb-4 pt-3 lora">
+					<n:removeMediaTags>
+						<f:if condition="{newsItem.teaser}">
+							<f:then>
+								{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+							</f:then>
+							<f:else>
+								{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+							</f:else>
+						</f:if>
+					</n:removeMediaTags>
+				</p>
+
+				<f:if condition="{settings.listPid}">
+					<f:link.typolink parameter="{settings.listPid}" class="read-more pb-3">
+						<span class="text">Tutte le novità</span>
+						<svg class="icon">
+							<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-arrow-right"></use>
+						</svg>
+					</f:link.typolink>
+				</f:if>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 order-1 order-lg-2 px-0 px-lg-3">
+
+
+		<f:if condition="{newsItem.mediaPreviews}">
+			<f:then>
+			</f:then>
+			<f:else>
+				<f:if condition="{settings.displayDummyIfNoMedia}">
+					<f:image class="img-dummy img-responsive" src="{settings.list.media.dummyImage}" title="" alt="" loading="{settings.list.media.image.lazyLoading}"  maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+				</f:if>
+			</f:else>
+		</f:if>
+
+
+		<f:if condition="{newsItem.mediaPreviews}">
+			<f:then>
+				<f:media class="img-fluid" file="{newsItem.mediaPreviews.0}" title="{newsItem.mediaPreviews.0.originalResource.title}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" width="800" height="600" />
+			</f:then>
+			<f:else>
+				<f:if condition="{settings.displayDummyIfNoMedia}">
+					<f:image class="img-fluid" src="{settings.list.media.dummyImage}" title="" alt="" />
+				</f:if>
+			</f:else>
+		</f:if>
+	</div>
+
+</html>

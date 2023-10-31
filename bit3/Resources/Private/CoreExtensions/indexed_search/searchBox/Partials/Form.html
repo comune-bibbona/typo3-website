@@ -1,0 +1,48 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:form action="search" method="post" id="tx_indexedsearch" pageUid="{settings.targetPid}">
+	<div class="tx-indexedsearch-hidden-fields">
+		<f:form.hidden name="search[_sections]" value="0" />
+		<f:form.hidden name="search[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_" />
+		<f:form.hidden name="search[pointer]" id="tx_indexedsearch_pointer" value="0" />
+		<f:form.hidden name="search[ext]" value="{searchParams.ext}" />
+		<f:form.hidden name="search[searchType]" value="{searchParams.searchType}" />
+		<f:form.hidden name="search[defaultOperand]" value="{searchParams.defaultOperand}" />
+		<f:form.hidden name="search[mediaType]" value="{searchParams.mediaType}" />
+		<f:form.hidden name="search[sortOrder]" value="{searchParams.sortOrder}" />
+		<f:form.hidden name="search[group]" value="{searchParams.group}" />
+		<f:form.hidden name="search[languageUid]" value="{searchParams.languageUid}" />
+		<f:form.hidden name="search[desc]" value="{searchParams.desc}" />
+		<f:form.hidden name="search[numberOfResults]" value="{searchParams.numberOfResults}" />
+		<f:form.hidden name="search[extendedSearch]" value="{searchParams.extendedSearch}" />
+	</div>
+	<div class="container">
+		<div class="row variable-gutters">
+			<div class="col">
+				<div class="modal-title">
+					<button class="search-link d-md-none" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Chiudi e torna alla pagina precedente">
+						<svg class="icon icon-md">
+							<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-arrow-left"></use>
+						</svg>
+					</button>
+					<h2><f:translate key="form.legend" /></h2>
+					<button class="search-link d-none d-md-block" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Chiudi e torna alla pagina precedente">
+						<svg class="icon icon-md">
+							<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-close-big"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="form-group autocomplete-wrapper">
+					<label for="autocomplete-two" class="visually-hidden"><f:translate key="form.searchFor" /></label>
+					<input type="search" class="autocomplete ps-5" placeholder="{f:translate(key: 'form.searchFor')}" id="autocomplete-two" name="autocomplete-two" data-bs-autocomplete="[]">
+					<span class="autocomplete-icon" aria-hidden="true">
+                      <svg class="icon"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-search"></use></svg>
+                    </span>
+					<f:form.submit name="search[submitButton]" value="{f:translate(key: 'form.submit')}" id="tx-indexedsearch-searchbox-button-submit" class="btn btn-primary tx-indexedsearch-searchbox-submit" />
+				</div>
+			</div>
+		</div>
+	</div>
+</f:form>
+
+</html>

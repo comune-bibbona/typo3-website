@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.custom {
+    elements {
+        bit3_callout {
+            iconIdentifier = ext-bit3-callout
+            title = LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:callout
+            description = LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:callout.description
+            tt_content_defValues {
+                CType = bit3_callout
+            }
+        }
+    }
+    show := addToList(bit3_callout)
+}

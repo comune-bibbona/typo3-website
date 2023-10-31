@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_TIMESTAMP" notifyRemoteChanges="true">
+    <serverData>
+      <paths name="Bibbona - Staging Aruba">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/typo3conf/ext/bit3" local="$PROJECT_DIR$/bit3" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

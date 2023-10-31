@@ -1,0 +1,20 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          110: EXT:bit3/Resources/Private/Forms/
+        allowSaveToExtensionPaths: true
+        allowDeleteFromExtensionPaths: true
+
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  100: 'EXT:bit3/Resources/Private/CoreExtensions/form/Templates/'
+                partialRootPaths:
+                  100: 'EXT:bit3/Resources/Private/CoreExtensions/form/Partials/'
+                layoutRootPaths:
+                  100: 'EXT:bit3/Resources/Private/CoreExtensions/form/Layouts/'

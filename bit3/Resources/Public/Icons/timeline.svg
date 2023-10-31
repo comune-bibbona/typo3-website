@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="256"
+   id="svg2"
+   version="1.1"
+   sodipodi:docname="timeline.svg"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     id="namedview866"
+     showgrid="false"
+     inkscape:zoom="2.1378932"
+     inkscape:cx="54.538585"
+     inkscape:cy="123.58014"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2"
+     inkscape:document-rotation="0"
+     inkscape:snap-page="true" />
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient2279"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2277" />
+    </linearGradient>
+    <clipPath
+       id="clipPath5383"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5385"
+         d="m 24.3333,46.0004 26.1669,0 0,-23.0004 -26.1669,0 0,23.0004 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5359"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5361"
+         d="m 18,43 28,0 0,-28 -28,0 0,28 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5347"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5349"
+         d="M 0,64 64,64 64,0 0,0 0,64 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5478"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5480"
+         d="m 24.3333,46.0004 26.1669,0 0,-23.0004 -26.1669,0 0,23.0004 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5454"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5456"
+         d="m 18,43 28,0 0,-28 -28,0 0,28 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5442"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5444"
+         d="M 0,64 64,64 64,0 0,0 0,64 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5549"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5551"
+         d="m 12.2873,54 39.4254,0 0,-48 -39.4254,0 0,48 z" />
+    </clipPath>
+    <clipPath
+       id="clipPath5537"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path5539"
+         d="M 0,64 64,64 64,0 0,0 0,64 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3416"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path3418"
+         d="M 0,64 64,64 64,0 0,0 0,64 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3428"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path3430"
+         d="m 9,44.3637 46,0 L 55,16 9,16 9,44.3637 Z" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <circle
+     style="fill:#c0c3ee;stroke-width:24.1302"
+     id="path1455"
+     cx="127.14567"
+     cy="84.26757"
+     r="47.560085" />
+  <path
+     d="M 127.50871,151.13006 A 66.62043,66.62043 0 1 0 60.888282,84.509634 66.62043,66.62043 0 0 0 127.50871,151.13006 Z m 0,-113.254731 a 46.634301,46.634301 0 1 1 -46.6343,46.634305 46.634301,46.634301 0 0 1 46.6343,-46.634305 z M 156.48859,75.62691 H 136.39143 V 51.199416 H 118.62599 V 93.39236 h 37.8626 z m 59.84735,142.12358 v -33.31022 h -22.2068 v 33.31022 H 138.61212 V 184.44027 H 116.4053 v 33.31022 H 60.888282 v -33.31022 h -22.20681 v 33.31022 H 5.3712583 v 22.20678 H 249.64616 v -22.20678 z"
+     id="path835"
+     style="stroke-width:11.1034" />
+</svg>

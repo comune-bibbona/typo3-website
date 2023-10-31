@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:b="http://typo3.org/ns/Aip/Bit3/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+    <f:for each="{menu}" as="page">
+        <div class="cmp-card-latest-messages mb-3 mb-30" data-bs-toggle="modal" data-bs-target="#">
+            <div class="card shadow-sm px-4 pt-4 pb-4 rounded">
+                <f:if condition="{page.data.categories} > 0">
+                    <span class="visually-hidden">Categoria:</span>
+                    <div class="card-header border-0 p-0">
+                        <f:for each="{b:CategoriesOutput(recUid: page.data.uid, tableName: 'pages')}" as="category" iteration="iterator">
+                            <f:if condition="{iterator.index}>0"> - </f:if><a class="text-decoration-none title-xsmall-bold mb-2 category text-uppercase" href="{category.slug}">{category.title}</a>
+                        </f:for>
+                    </div>
+                </f:if>
+                <div class="card-body p-0 my-2">
+                    <h3 class="green-title-big t-primary mb-8"><a href="{page.link}" class="text-decoration-none" title="{page.title}" {f:if(condition: page.data.data_element, then: ' data-element="{page.data.data_element}"', else: 'data-element="service-link"')} data-focus-mouse="false">{page.title}</a></h3>
+                    <p class="text-paragraph">
+                        <f:if condition="{page.data.abstract}">
+                            <f:then>
+                                {page.data.abstract}
+                            </f:then>
+                            <f:else>
+                                {page.data.subtitle}
+                            </f:else>
+                        </f:if>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </f:for>
+</f:section>

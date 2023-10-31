@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <div class="container-fluid">
+        <div class="row it-masonry" data-bs-toggle="masonry">
+            <f:for each="{gallery.rows}" as="row">
+                <f:for each="{row.columns}" as="column">
+                    <f:if condition="{column.media}">
+                        <div class="{bootstrapCol}">
+                            <div class="it-grid-item-wrapper">
+                                <div class="img-responsive-wrapper">
+                                    <div class="img-responsive">
+                                        <div class="img-wrapper">
+                                            <f:render partial="Media/TypeGalleryBootstrapItalia" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="it-griditem-text-wrapper">
+                                <f:if condition="{column.media.description}">
+                                    <span class="it-griditem-text">{column.media.description}</span>
+                                    <svg class="icon">
+                                      <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-code-circle"></use>
+                                    </svg>
+                                </f:if>
+                            </span>
+                            </div>
+                        </div>
+                    </f:if>
+                </f:for>
+            </f:for>
+        </div>
+    </div>
+</html>

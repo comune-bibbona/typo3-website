@@ -1,0 +1,16 @@
+module.tx_bit3 {
+    settings {
+        cssFile = EXT:bit3/Resources/Public/css/backend/backend.css
+    }
+    view {
+        partialRootPaths {
+            10 = EXT:bit3/Resources/Private/Backend/Partials/
+        }
+        templateRootPaths {
+            10 = EXT:bit3/Resources/Private/Backend/Templates/
+        }
+        layoutRootPaths {
+            10 = EXT:bit3/Resources/Private/Backend/Layouts/
+        }
+    }
+}

@@ -1,0 +1,24 @@
+lib.searchbox = USER
+lib.searchbox {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = IndexedSearch
+    pluginName = Pi2
+    vendorName = TYPO3\CMS
+
+    settings < plugin.tx_indexedsearch.settings
+    settings {
+        targetPid = {$pages.id_search}
+    }
+    view < plugin.tx_indexedsearch.view
+    view {
+        templateRootPaths {
+            100 = EXT:bit3/Resources/Private/CoreExtensions/indexed_search/searchBox/Templates/
+        }
+        partialRootPaths {
+            100 = EXT:bit3/Resources/Private/CoreExtensions/indexed_search/searchBox/Partials/
+        }
+        layoutRootPaths {
+            100 = EXT:bit3/Resources/Private/CoreExtensions/indexed_search/searchBox/Layouts/
+        }
+    }
+}

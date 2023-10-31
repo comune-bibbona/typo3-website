@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2020-03-25T11:48:33Z" product-name="template-bootstrap">
+        <header/>
+        <body>
+			<trans-unit id="wizard.tab" xml:space="preserve">
+				<source>Bootstrap Italia</source>
+			</trans-unit>
+			<trans-unit id="accordion" xml:space="preserve">
+				<source>Accordion</source>
+			</trans-unit>
+			<trans-unit id="accordion.description" xml:space="preserve">
+				<source>Contenuto accordion per gestire contenuti TextPic Apri/Chiudi</source>
+			</trans-unit>
+			<trans-unit id="accordion.titolo" xml:space="preserve">
+				<source>Titolo (non visibile in frontend)</source>
+			</trans-unit>
+			<trans-unit id="accordion.elementi" xml:space="preserve">
+				<source>Elementi</source>
+			</trans-unit>
+			<trans-unit id="accordion.item" xml:space="preserve">
+				<source>Elemento</source>
+			</trans-unit>
+			<trans-unit id="childItem" xml:space="preserve">
+				<source>Elemento</source>
+			</trans-unit>
+			<trans-unit id="childItem.header" xml:space="preserve">
+				<source>Titolo</source>
+			</trans-unit>
+			<trans-unit id="childItem.bodytext" xml:space="preserve">
+				<source>Testo</source>
+			</trans-unit>
+			<trans-unit id="callout" xml:space="preserve">
+				<source>Callout</source>
+			</trans-unit>
+			<trans-unit id="callout.description" xml:space="preserve">
+				<source>Contenuto callout per porre in evidenza messaggi di testo</source>
+			</trans-unit>
+			<trans-unit id="callout.titolo" xml:space="preserve">
+				<source>Titolo (compare nella cornice)</source>
+			</trans-unit>
+			<trans-unit id="callout.bodytext" xml:space="preserve">
+				<source>Testo della callout</source>
+			</trans-unit>
+			<trans-unit id="card" xml:space="preserve">
+				<source>Card</source>
+			</trans-unit>
+			<trans-unit id="card.description" xml:space="preserve">
+				<source>Contenuto card per rappresentare schede di persone (sindaco, assessori, consiglieri)</source>
+			</trans-unit>
+			<trans-unit id="card.titolo" xml:space="preserve">
+				<source>Titolo</source>
+			</trans-unit>
+			<trans-unit id="card.ruolo" xml:space="preserve">
+				<source>Ruolo</source>
+			</trans-unit>
+			<trans-unit id="card.bodytext" xml:space="preserve">
+				<source>Testo della card</source>
+			</trans-unit>
+			<trans-unit id="card.immagine" xml:space="preserve">
+				<source>Immagine della card</source>
+			</trans-unit>
+			<trans-unit id="card.link" xml:space="preserve">
+				<source>Link alla pagina</source>
+			</trans-unit>
+			<trans-unit id="tab" xml:space="preserve">
+				<source>Tab</source>
+			</trans-unit>
+			<trans-unit id="tab.description" xml:space="preserve">
+				<source>Contenuto tab per gestire contenuti TextPic visibili nel rispettivo tab</source>
+			</trans-unit>
+			<trans-unit id="tab.palette.header" xml:space="preserve">
+				<source>Configurazioni Tab</source>
+			</trans-unit>
+			<trans-unit id="tab.titolo" xml:space="preserve">
+				<source>Titolo</source>
+			</trans-unit>
+			<trans-unit id="timeline" xml:space="preserve">
+				<source>Timeline</source>
+			</trans-unit>
+			<trans-unit id="timeline.description" xml:space="preserve">
+				<source>Contenuto timeline per avere una cronologia di eventi</source>
+			</trans-unit>
+			<trans-unit id="timeline.palette.header" xml:space="preserve">
+				<source>Titolo e Data</source>
+			</trans-unit>
+			<trans-unit id="timeline.titolo" xml:space="preserve">
+				<source>Titolo</source>
+			</trans-unit>
+			<trans-unit id="timeline.data" xml:space="preserve">
+				<source>Data evento</source>
+			</trans-unit>
+			<trans-unit id="page.dataelement" xml:space="preserve">
+                <source>data-element</source>
+            </trans-unit>
+			<trans-unit id="image.layout" xml:space="preserve">
+                <source>Layout</source>
+            </trans-unit>
+            <trans-unit id="image.layout.default" xml:space="preserve">
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="image.layout.thumbnail" xml:space="preserve">
+                <source>Thumbnail</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

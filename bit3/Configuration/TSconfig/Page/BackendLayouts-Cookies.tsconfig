@@ -1,0 +1,24 @@
+mod.web_layout.BackendLayouts {
+    Cookies {
+        icon = EXT:bit3/Resources/Public/Icons/BackendLayouts/Cookies.jpg
+        name = Cookies
+        title = Configurazione Cookies
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Informativo Utilizzo Cookies
+                                colspan = 3
+                                colPos = 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

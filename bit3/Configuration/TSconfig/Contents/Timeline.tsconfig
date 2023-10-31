@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.custom {
+    elements {
+        bit3_timeline {
+            iconIdentifier = ext-bit3-timeline
+            title = LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:timeline
+            description = LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:timeline.description
+            tt_content_defValues {
+                CType = bit3_timeline
+            }
+        }
+    }
+    show := addToList(bit3_timeline)
+}

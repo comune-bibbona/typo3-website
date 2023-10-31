@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.newsdetail')}">
+        <f:cObject typoscriptObjectPath="lib.newsdetail" />
+    </f:if>
+
+    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.main')}">
+        <div class="bg-grey-card py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <f:cObject typoscriptObjectPath="lib.content.main" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:if>
+
+</f:section>
+</html>

@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{gallery.rows}">
+
+    <f:switch expression="{gallery.count.columns}">
+        <f:case value="1">
+            <f:render partial="Media/GalleryDefault" arguments="{_all}" />
+        </f:case>
+        <f:case value="2">
+            <f:variable name="bootstrapCol">col-sm-6 mb-4</f:variable>
+        </f:case>
+        <f:case value="3">
+            <f:variable name="bootstrapCol">col-sm-6 col-lg-4 mb-4</f:variable>
+        </f:case>
+        <f:case value="4">
+            <f:variable name="bootstrapCol">col-sm-6 col-lg-3 mb-4</f:variable>
+        </f:case>
+        <f:case value="6">
+            <f:variable name="bootstrapCol">col-sm-6 col-lg-2 mb-4</f:variable>
+        </f:case>
+        <f:defaultCase>
+            <f:render partial="Media/GalleryDefault" arguments="{_all}" />
+        </f:defaultCase>
+    </f:switch>
+    <f:if condition="{bootstrapCol}">
+        <f:if condition="{data.layout} == 201">
+            <f:then>
+                <f:render partial="Media/GalleryBootstrapItaliaMasonry" arguments="{_all}" />
+            </f:then>
+            <f:else>
+                <f:render partial="Media/GalleryBootstrapItalia" arguments="{_all}" />
+            </f:else>
+        </f:if>
+    </f:if>
+
+</f:if>
+</html>

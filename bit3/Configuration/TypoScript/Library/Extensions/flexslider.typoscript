@@ -1,0 +1,13 @@
+plugin.tx_wsflexslider {
+    view {
+        templateRootPaths {
+            100 = EXT:bit3/Resources/Private/Extensions/flexslider/Templates/
+        }
+        partialRootPaths {
+            100 = EXT:bit3/Resources/Private/Extensions/flexslider/Partials/
+        }
+        layoutRootPaths {
+            100 = EXT:bit3/Resources/Private/Extensions/flexslider/Partials/
+        }
+    }
+}

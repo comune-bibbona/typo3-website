@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Default">
+
+    <f:if condition="{heroimage.0}">
+        <section class="hero-img {f:if(condition: '{heroimage.0.properties.description}', then: 'mb-20 mb-lg-50')}">
+            <section class="it-hero-wrapper it-hero-small-size cmp-hero-img-small">
+                <div class="img-responsive-wrapper">
+                    <div class="img-responsive">
+                        <div class="img-wrapper">
+                            <f:media class="img-fluid" file="{heroimage.0}" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <f:if condition="{heroimage.0.properties.description}">
+                <p class="title-xsmall cmp-hero-img-small__description">{heroimage.0.properties.description}</p>
+            </f:if>
+        </section>
+    </f:if>
+
+</f:section>

@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<formvh:renderRenderable renderable="{element}">
+    <fieldset id="{element.uniqueIdentifier}" class="Form-fieldset {f:if(condition: element.properties.elementClassAttribute, then: ' {element.properties.elementClassAttribute}')}">
+        <f:if condition="{element.label}">
+            <legend class="Form-legend">{formvh:translateElementProperty(element: element, property: 'label')}</legend>
+        </f:if>
+        <div class="Grid Grid--withGutter u-padding-all-l">
+            <f:for each="{element.elements}" as="element">
+                <div class="Grid-cell u-lg-size1of2">
+                    <div class="Form-field">
+                        <f:render partial="{element.templateName}" arguments="{element: element}" />
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </fieldset>
+</formvh:renderRenderable>
+</html>

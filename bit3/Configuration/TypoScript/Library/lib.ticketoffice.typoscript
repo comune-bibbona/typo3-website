@@ -1,0 +1,12 @@
+lib.ticketoffice = COA
+lib.ticketoffice {
+    10 = IMAGE
+    10 {
+        file = EXT:bit3/Resources/Public/Images/ticket.png
+        altText = ticket
+        titleText = ticket
+    }
+    20 = TEXT
+    20.value = <span>Buy Ticket</span>
+}
+lib.ticketoffice.wrap = <a href="#" class="ticket">|</a>

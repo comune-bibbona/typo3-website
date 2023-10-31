@@ -1,0 +1,183 @@
+
+renderingOptions:
+  submitButtonLabel: Invia
+type: Form
+identifier: disserviziForm
+label: 'Segnalazione Disservizi'
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'segnalazione disservizio'
+      recipients:
+        abramotesoro@gmail.com: ''
+      senderAddress: metsmtpsender@archicoop.it
+      senderName: 'segnalazione disservizio'
+      carbonCopyRecipients:
+        '': ''
+      addHtmlPart: true
+      attachUploads: true
+      translation:
+        language: Default
+      useFluidEmail: false
+      title: ''
+    identifier: EmailToReceiver
+  -
+    options:
+      subject: 'segnalazione disservizio'
+      recipients:
+        '{email}': ''
+        tesoro@archicoop.it: ''
+      senderAddress: metsmtpsender@archicoop.it
+      senderName: 'segnalazione disservizio'
+      addHtmlPart: true
+      attachUploads: true
+      useFluidEmail: false
+      title: ''
+    identifier: EmailToSender
+  -
+    options:
+      message: "Grazie, abbiamo ricevuto la tua segnalazione AN4059281.\n\nSarà visibile sulla lista di tutte segnalazioni una volta presa in carico dall’amministrazione.\n\nAbbiamo inviato il riepilogo all’email:\ngiulia.bianchi@gmail.com"
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: Indietro
+      nextButtonLabel: Avanti
+    type: Page
+    identifier: page-1
+    label: 'Step 1 - Privacy'
+    renderables:
+      -
+        properties:
+          text: "Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell’articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).\n\nPer i dettagli sul trattamento dei dati personali consulta l’ informativa sulla privacy."
+        type: StaticText
+        identifier: statictext-1
+        label: 'Accettazione Privacy'
+      -
+        type: Checkbox
+        identifier: checkbox-1
+        label: 'Ho letto e compreso l''informativa sulla privacy.'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: 'E'' necessario leggere l''informativa sulla privacy e confermare'
+            -
+              code: 1221560718
+              message: 'E'' necessario leggere l''informativa sulla privacy e confermare'
+            -
+              code: 1347992400
+              message: 'E'' necessario leggere l''informativa sulla privacy e confermare'
+            -
+              code: 1347992453
+              message: 'E'' necessario leggere l''informativa sulla privacy e confermare'
+        validators:
+          -
+            identifier: NotEmpty
+  -
+    renderingOptions:
+      previousButtonLabel: Indietro
+      nextButtonLabel: Avanti
+    type: Page
+    identifier: page-2
+    label: 'Step 2 - Segnalazione'
+    renderables:
+      -
+        type: Fieldset
+        identifier: fieldset-1
+        label: Luogo
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-1
+            label: 'Indica il luogo del disservizio'
+      -
+        type: Fieldset
+        identifier: fieldset-2
+        label: Disservizio
+        renderables:
+          -
+            properties:
+              options:
+                'Danneggiamento ': 'Danneggiamento proprietà pubblica'
+              fluidAdditionalAttributes:
+                required: required
+            type: SingleSelect
+            identifier: singleselect-1
+            label: 'Tipo di disservizio'
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-2
+            label: Titolo
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-3
+            label: Dettagli
+            properties:
+              elementDescription: 'Inserire al massimo 200 caratteri'
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            properties:
+              saveToFileMount: '1:/user_upload/'
+              allowedMimeTypes:
+                - image/jpeg
+                - image/png
+                - image/bmp
+            type: ImageUpload
+            identifier: imageupload-1
+            label: Immagini
+      -
+        type: Fieldset
+        identifier: fieldset-3
+        label: 'Autore della segnalazione'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-4
+            label: Nome
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-5
+            label: 'Codice Fiscale'
+          -
+            defaultValue: ''
+            type: Telephone
+            identifier: telephone-1
+            label: Telefono
+          -
+            defaultValue: ''
+            type: Email
+            identifier: email-1
+            label: Email
+            validators:
+              -
+                identifier: EmailAddress
+  -
+    renderingOptions:
+      previousButtonLabel: Indietro
+      nextButtonLabel: Avanti
+    type: SummaryPage
+    identifier: summarypage-1
+    label: 'Riepilogo dati segnalazione'

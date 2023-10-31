@@ -1,0 +1,106 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Default" />
+<f:section name="Content">
+	<div class="site-configuration">
+		<h1><f:translate key="bit3.module.service.title" /></h1>
+		<div class="alert alert-info alert-dismissible fade show mt-2 mb-2" role="alert">
+			<f:translate key="bit3.module.service.info" />
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<f:form action="salvaServiziInformato" name="serviziconf">
+					<div class="card">
+						<div class="card-header">
+							<h2 class="card-title"><f:translate key="bit3.module.service.informed" /></h2>
+						</div>
+						<div class="card-body row">
+							<div class="form-group col-sm-6">
+								<label for="servizi.prenota_appuntamento.url"><f:translate key="bit3.module.service.informed.bookAppointment" /></label>
+								<f:form.textfield name="servizi.prenota_appuntamento.url" value="{f:if(condition: '{vettServiziConf.servizi.prenota_appuntamento.url}', then: '{vettServiziConf.servizi.prenota_appuntamento.url}')}" class="form-control" placeholder="{costantsExtensionservizi.servizi.prenota_appuntamento.url}"/>
+							</div>
+						</div>
+						<div class="card-footer mt-3">
+							<f:form.button class="btn btn-primary"><f:translate key="bit3.module.buttons.save" /></f:form.button>
+						</div>
+					</div>
+				</f:form>
+			</div>
+			<div class="col-sm-12">
+				<f:form action="salvaServiziAttivo" name="serviziconf">
+					<div class="card">
+						<div class="card-header">
+							<h2 class="card-title"><f:translate key="bit3.module.service.active" /></h2>
+						</div>
+						<div class="card-body row">
+							<div class="col-sm-6">
+								<div class="border bg-light p-2 mb-2">
+									<label class="my-2"><b><f:translate key="bit3.module.service.active.schoolBus" /></b></label>
+									<div class="row">
+										<div class="form-group col-sm-3">
+											<label for="servizi.iscrizione_trasporto_scolastico.id"><f:translate key="bit3.module.service.active.id" /></label>
+											<f:form.textfield name="servizi.iscrizione_trasporto_scolastico.id" value="{f:if(condition: '{vettServiziConf.servizi.iscrizione_trasporto_scolastico.id}', then: '{vettServiziConf.servizi.iscrizione_trasporto_scolastico.id}')}" class="form-control" placeholder="{costantsExtensionservizi.servizi.iscrizione_trasporto_scolastico.id}"/>
+										</div>
+										<div class="form-group col-sm-9">
+											<label for="servizi.iscrizione_trasporto_scolastico.url"><f:translate key="bit3.module.service.active.url" /></label>
+											<f:form.textfield name="servizi.iscrizione_trasporto_scolastico.url" value="{f:if(condition: '{vettServiziConf.servizi.iscrizione_trasporto_scolastico.url}', then: '{vettServiziConf.servizi.iscrizione_trasporto_scolastico.url}')}" class="form-control" placeholder="{costantsExtensionservizi.servizi.iscrizione_trasporto_scolastico.url}"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="border bg-light p-2 mb-2">
+									<label class="my-2"><b><f:translate key="bit3.module.service.active.schoolCanteen" /></b></label>
+									<div class="row">
+										<div class="form-group col-sm-3">
+											<label for="servizi.iscrizione_mensa_scolastica.id"><f:translate key="bit3.module.service.active.id" /></label>
+											<f:form.textfield name="servizi.iscrizione_mensa_scolastica.id" value="{f:if(condition: '{vettServiziConf.servizi.iscrizione_mensa_scolastica.id}', then: '{vettServiziConf.servizi.iscrizione_mensa_scolastica.id}')}" class="form-control" placeholder="{costantsExtensionservizi.servizi.iscrizione_mensa_scolastica.id}"/>
+										</div>
+										<div class="form-group col-sm-9">
+											<label for="servizi.iscrizione_mensa_scolastica.url"><f:translate key="bit3.module.service.active.url" /></label>
+											<f:form.textfield name="servizi.iscrizione_mensa_scolastica.url" value="{f:if(condition: '{vettServiziConf.servizi.iscrizione_mensa_scolastica.url}', then: '{vettServiziConf.servizi.iscrizione_mensa_scolastica.url}')}" class="form-control" placeholder="{costantsExtensionservizi.servizi.iscrizione_mensa_scolastica.url}"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="border bg-light p-2 mb-2">
+									<label class="my-2"><b><f:translate key="bit3.module.service.active.nursery" /></b></label>
+									<div class="row">
+										<div class="form-group col-sm-3">
+											<label for="servizi.iscrizione_asilo_nido.id"><f:translate key="bit3.module.service.active.id" /></label>
+											<f:form.textfield name="servizi.iscrizione_asilo_nido.id" value="{f:if(condition: '{vettServiziConf.servizi.iscrizione_asilo_nido.id}', then: '{vettServiziConf.servizi.iscrizione_asilo_nido.id}')}" class="form-control" placeholder="{costantsExtensionservizi.servizi.iscrizione_asilo_nido.id}"/>
+										</div>
+										<div class="form-group col-sm-9">
+											<label for="servizi.iscrizione_asilo_nido.url"><f:translate key="bit3.module.service.active.url" /></label>
+											<f:form.textfield name="servizi.iscrizione_asilo_nido.url" value="{f:if(condition: '{vettServiziConf.servizi.iscrizione_asilo_nido.url}', then: '{vettServiziConf.servizi.iscrizione_asilo_nido.url}')}" class="form-control" placeholder="{costantsExtensionservizi.servizi.iscrizione_asilo_nido.url}"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="border bg-light p-2 mb-2">
+									<label class="my-2"><b><f:translate key="bit3.module.service.active.imuPayment" /></b></label>
+									<div class="row">
+										<div class="form-group col-sm-3">
+											<label for="servizi.pagamento_imu.id"><f:translate key="bit3.module.service.active.id" /></label>
+											<f:form.textfield name="servizi.pagamento_imu.id" value="{f:if(condition: '{vettServiziConf.servizi.pagamento_imu.id}', then: '{vettServiziConf.servizi.pagamento_imu.id}')}" class="form-control" placeholder="{costantsExtensionservizi.servizi.pagamento_imu.id}"/>
+										</div>
+										<div class="form-group col-sm-9">
+											<label for="servizi.pagamento_imu.url"><f:translate key="bit3.module.service.active.url" /></label>
+											<f:form.textfield name="servizi.pagamento_imu.url" value="{f:if(condition: '{vettServiziConf.servizi.pagamento_imu.url}', then: '{vettServiziConf.servizi.pagamento_imu.url}')}" class="form-control" placeholder="{costantsExtensionservizi.servizi.pagamento_imu.url}"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer mt-3">
+							<f:form.button class="btn btn-primary"><f:translate key="bit3.module.buttons.save" /></f:form.button>
+						</div>
+					</div>
+				</f:form>
+			</div>
+		</div>
+	</div>
+</f:section>

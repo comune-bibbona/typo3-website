@@ -1,0 +1,77 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:section name="MiddleLeft">
+    <f:if condition="
+        {settings.pages.id_faq}!='' ||
+        {settings.pages.id_prenota}!='' ||
+        {settings.pages.id_segnala}!=''
+        ">
+        <ul class="footer-list">
+            <f:if condition="{settings.pages.id_faq}!=''">
+                <li>
+                    <f:link.typolink parameter="{settings.pages.id_faq}" additionalAttributes="{data-element: 'faq'}">Leggi le FAQ</f:link.typolink>
+                </li>
+            </f:if>
+            <f:if condition="{settings.pages.id_prenota}!=''">
+                <li>
+                    <f:link.typolink parameter="{settings.pages.id_prenota}">Prenotazione appuntamento</f:link.typolink>
+                </li>
+            </f:if>
+            <f:if condition="{settings.pages.id_segnala}!=''">
+                <li>
+                    <f:link.typolink parameter="{settings.pages.id_segnala}" additionalAttributes="{data-element: 'report-inefficiency'}">Segnalazione disservizio</f:link.typolink>
+                </li>
+            </f:if>
+            <f:if condition="{settings.pages.id_assistenza}!=''">
+                <li>
+                    <f:link.typolink parameter="{settings.pages.id_assistenza}" additionalAttributes="{data-element: 'report-inefficiency'}">Richiesta d'assistenza</f:link.typolink>
+                </li>
+            </f:if>
+        </ul>
+    </f:if>
+</f:section>
+<f:section name="MiddleRight">
+    <f:if condition="
+        {settings.pages.id_privacy}!='' ||
+        {settings.pages.id_note_legali}!='' ||
+        {settings.pages.id_trasparenza}!='' ||
+        {settings.pages.id_accessibilita}!=''
+        ">
+        <ul class="footer-list">
+            <f:if condition="{settings.pages.id_trasparenza}!=''">
+                <li>
+                    <f:link.typolink parameter="{settings.pages.id_trasparenza}">Amministrazione trasparente</f:link.typolink>
+                </li>
+            </f:if>
+            <f:if condition="{settings.pages.id_privacy}!=''">
+                <li>
+                    <f:link.typolink parameter="{settings.pages.id_privacy}" additionalAttributes="{data-element: 'privacy-policy-link'}">Informativa privacy</f:link.typolink>
+                </li>
+            </f:if>
+            <f:if condition="{settings.pages.id_note_legali}!=''">
+                <li>
+                    <f:link.typolink parameter="{settings.pages.id_note_legali}" additionalAttributes="{data-element: 'legal-notes'}">Note legali</f:link.typolink>
+                </li>
+            </f:if>
+            <f:if condition="{settings.pages.id_accessibilita}!=''">
+                <li>
+                    <f:link.typolink parameter="{settings.pages.id_accessibilita}" additionalAttributes="{data-element: 'accessibility-link'}">Dichiarazione di accessibilità</f:link.typolink>
+                </li>
+            </f:if>
+        </ul>
+    </f:if>
+</f:section>
+<f:section name="Bottom">
+    <h3 class="visually-hidden">Sezione Link Utili</h3>
+    <div class="footer-bottom">
+        <f:if condition="{footermenu}">
+            <f:for each="{footermenu}" as="footerMenuItem">
+                <a href="{footerMenuItem.link}" target="{footerMenuItem.target}" title="{footerMenuItem.title}">
+                    <span>{footerMenuItem.title}</span>
+                </a>
+            </f:for>
+        </f:if>
+    </div>
+</f:section>
+
+</html>

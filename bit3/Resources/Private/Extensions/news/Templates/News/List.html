@@ -1,0 +1,135 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	<!--TYPO3SEARCH_end-->
+	<f:if condition="{news}">
+		<f:then>
+			<f:switch expression="{settings.templateLayout}">
+				<f:case value="1">
+					<div class="container">
+						<div class="row">
+							<f:if condition="{settings.hidePagination}">
+								<f:then>
+									<f:for each="{news}" as="newsItem" iteration="iterator">
+										<f:render partial="List/Item-Home-Hero" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+									</f:for>
+								</f:then>
+								<f:else>
+									<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+										<f:render partial="List/Item-Home-Hero" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+									</f:for>
+									<f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+								</f:else>
+							</f:if>
+						</div>
+					</div>
+				</f:case>
+				<f:case value="3">
+					<div class="row g-4">
+						<f:if condition="{settings.hidePagination}">
+							<f:then>
+								<f:for each="{news}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item-Archive" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:for>
+								<div class="col text-end">
+									<f:if condition="{settings.listPid}!=''">
+										<f:link.page pageUid="{settings.listPid}" class="btn btn-sm btn-primary" title="Vai all'archivio delle notizie">Vai all'archivio delle notizie</f:link.page>
+									</f:if>
+								</div>
+							</f:then>
+							<f:else>
+								<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item-Archive" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:for>
+								<f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+							</f:else>
+						</f:if>
+					</div>
+				</f:case>
+				<f:case value="4">
+					<div class="row g-4">
+						<f:if condition="{settings.hidePagination}">
+							<f:then>
+								<f:for each="{news}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item-Eventi" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:for>
+								<f:if condition="{settings.listPid}!=''">
+									<div class="d-flex justify-content-end">
+										<f:link.page pageUid="{settings.listPid}" class="btn btn-outline-primary full-mb" additionalAttributes="{data-element: 'live-button-events'}" title="Vai a tutti gli eventi">
+											Tutti gli eventi
+											<svg class="icon icon-primary icon-xs ml-10">
+												<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-arrow-right"></use>
+											</svg>
+										</f:link.page>
+									</div>
+								</f:if>
+							</f:then>
+							<f:else>
+								<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item-Eventi" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:for>
+								<f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+							</f:else>
+						</f:if>
+					</div>
+				</f:case>
+				<f:case value="5">
+					<!-- NewsSlideShow -->
+					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<f:for each="{news}" as="newsItem" iteration="iterator">
+								<div class="carousel-item {f:if(condition: '{iterator.isFirst}', then: 'active')}">
+									<f:render partial="List/Item-Slide" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</div>
+							</f:for>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</a>
+					</div>
+				</f:case>
+				<f:defaultCase>
+					<div class="row g-4">
+						<f:if condition="{settings.hidePagination}">
+							<f:then>
+								<f:for each="{news}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:for>
+								<div class="col text-end">
+									<f:if condition="{settings.listPid}!=''">
+										<f:link.page pageUid="{settings.listPid}" class="btn btn-sm btn-primary" title="Vai all'archivio delle notizie">Vai all'archivio delle notizie</f:link.page>
+									</f:if>
+								</div>
+							</f:then>
+							<f:else>
+								<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:for>
+								<f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+							</f:else>
+						</f:if>
+					</div>
+				</f:defaultCase>
+			</f:switch>
+		</f:then>
+		<f:else>
+			<div class="Callout Callout--must u-text-r-xs" role="note">
+				<h2 class="Callout-title u-text-r-l"><f:translate key="list_nonewsfound" /></h2>
+			</div>
+		</f:else>
+	</f:if>
+	<!--TYPO3SEARCH_begin-->
+</f:section>
+</html>

@@ -1,0 +1,178 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Breadcrumbs">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+                <f:render partial="Menu/Menu" section="Breadcrumbs" arguments="{_all}" />
+            </div>
+        </div>
+    </div>
+</f:section>
+<f:section name="PageHead">
+    <div class="container">
+        <f:if condition="{data.backend_layout} == 'pagets__NewsDetail'">
+            <f:then>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10">
+                        <div class="cmp-hero">
+                            <section class="it-hero-wrapper bg-white align-items-start">
+                                <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
+                                    <f:if condition="{pageTitle}">
+                                        <h1 class="text-black hero-title" data-element="page-name">{pageTitle}</h1>
+                                    </f:if>
+                                    <f:if condition="{teaserNews}">
+                                        <p class="text-black">{teaserNews}</p>
+                                    </f:if>
+                                    <f:if condition="{newsDate}">
+                                        <div class="row mt-5 mb-4">
+                                            <div class="col-6">
+                                                <small>Data:</small>
+                                                <p class="fw-semibold font-monospace text-black">
+                                                    <time itemprop="datePublished" datetime="{f:format.date(date:newsDate, format:'%e %B %Y')}">
+                                                        <f:format.date format="%e %B %Y">{newsDate}</f:format.date>
+                                                    </time>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </f:if>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="row justify-content-center row-shadow">
+                    <div class="col-12 col-lg-10">
+                        <f:if condition="{data.backend_layout} == 'pagets__Servizi'">
+                            <f:then>
+                                <f:render partial="Header/PageHead" section="ServiziHead" arguments="{_all}" />
+                            </f:then>
+                            <f:else>
+                                <f:render partial="Header/PageHead" section="DefaultHead" arguments="{_all}" />
+                            </f:else>
+                        </f:if>
+                    </div>
+                </div>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+<f:section name="ServiziHead">
+    <div class="cmp-heading pb-3 pb-lg-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="title-xxxlarge" data-element="service-title">{pageTitle}</h1>
+                <f:if condition="{pageSubTitle}">
+                    <div class="hero-text">
+                        <p>{pageSubTitle}</p>
+                    </div>
+                </f:if>
+                <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.column_right')}">
+                    <ul class="d-flex flex-wrap gap-1 my-3">
+                        <li>
+                            <div class="chip chip-simple text-button" data-element="service-status">
+                                <span class="chip-label">Servizio attivo</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <f:cObject typoscriptObjectPath="lib.content.column_right" />
+                </f:if>
+                <f:switch expression="{data.uid}">
+                    <f:case value="{settings.servizi.iscrizione_trasporto_scolastico.id}">
+                        <f:if condition="{settings.servizi.iscrizione_trasporto_scolastico.url}">
+                            <f:variable name="extLink">{settings.servizi.iscrizione_trasporto_scolastico.url}</f:variable>
+                        </f:if>
+                        <f:variable name="dataElement">service-iscrizione-trasporto-scolastico</f:variable>
+                        <f:variable name="extLabel">Richiedi Iscrizione Online</f:variable>
+                    </f:case>
+                    <f:case value="{settings.servizi.iscrizione_mensa_scolastica.id}">
+                        <f:if condition="{settings.servizi.iscrizione_mensa_scolastica.url}">
+                            <f:variable name="extLink">{settings.servizi.iscrizione_mensa_scolastica.url}</f:variable>
+                        </f:if>
+                        <f:variable name="dataElement">service-iscrizione-mensa-scolastica</f:variable>
+                        <f:variable name="extLabel">Richiedi Iscrizione Online</f:variable>
+                    </f:case>
+                    <f:case value="{settings.servizi.iscrizione_asilo_nido.id}">
+                        <f:if condition="{settings.servizi.iscrizione_asilo_nido.url}">
+                            <f:variable name="extLink">{settings.servizi.iscrizione_asilo_nido.url}</f:variable>
+                        </f:if>
+                        <f:variable name="dataElement">service-iscrizione-asilo-nido</f:variable>
+                        <f:variable name="extLabel">Richiedi Iscrizione Online</f:variable>
+                    </f:case>
+                    <f:case value="{settings.servizi.pagamento_imu.id}">
+                        <f:if condition="{settings.servizi.pagamento_imu.url}">
+                            <f:variable name="extLink">{settings.servizi.pagamento_imu.url}</f:variable>
+                        </f:if>
+                        <f:variable name="dataElement">appointment-booking</f:variable>
+                        <f:variable name="extLabel">Pagamento IMU Online</f:variable>
+                    </f:case>
+                    <f:case value="{settings.servizi.prenota_appuntamento.id}">
+                        <f:if condition="{settings.servizi.prenota_appuntamento.url}">
+                            <f:variable name="extLink">{settings.servizi.prenota_appuntamento.url}</f:variable>
+                        </f:if>
+                        <f:variable name="dataElement">appointment-booking</f:variable>
+                        <f:variable name="extLabel">Prenota Appuntamento Online</f:variable>
+                    </f:case>
+                    <f:defaultCase></f:defaultCase>
+                </f:switch>
+                <f:if condition="{extLink}">
+                    <p>
+                        <f:link.external uri="{extLink}" class="btn btn-primary" title="{extLink}" data="{element: '{dataElement}'}" target="_blank">
+                            <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-inbox"></use>
+                            </svg><span>{extLabel}</span>
+                        </f:link.external>
+                    </p>
+                </f:if>
+            </div>
+            <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
+                <div class="dropdown">
+                    <button aria-label="condividi sui social" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0" type="button" id="shareActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-focus-mouse="false">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-share"></use></svg><small>Condividi</small>
+                    </button>
+                    <div class="dropdown-menu shadow-lg" aria-labelledby="shareActions">
+                        <div class="link-list-wrapper">
+                            <ul class="link-list" role="menu">
+                                <li role="none"><a class="list-item" href="https://www.facebook.com/sharer/sharer.php?u={pageUrl}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-facebook"></use></svg><span>Facebook</span></a></li>
+                                <li role="none"><a class="list-item" href="https://twitter.com/intent/tweet?text=Ti+consiglio+di+visitare+questo+sito:+{pageUrl}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-twitter"></use></svg><span>Twitter</span></a></li>
+                                <li role="none"><a class="list-item" href="https://www.linkedin.com/sharing/share-offsite/?url={pageUrl}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-linkedin"></use></svg><span>Linkedin</span></a></li>
+                                <li role="none"><a class="list-item" href="whatsapp://send" data-text="{pageTitle}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-whatsapp"></use></svg><span>Whatsapp</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button aria-label="vedi azioni da compiere sulla pagina" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0" type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-more-items"></use></svg><small>Vedi azioni</small>
+                    </button>
+                    <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
+                        <div class="link-list-wrapper">
+                            <ul class="link-list" role="menu">
+                                <li role="none"><a class="list-item" href="#" role="menuitem" onclick="window.print()"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-print"></use></svg><span>Stampa</span></a></li>
+                                <li role="none"><a class="list-item" href="#" role="menuitem" onclick="listenElements(this, '[data-audio]')"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-hearing"></use></svg><span>Ascolta</span></a></li>
+                                <li role="none"><a class="list-item" href="mailto:?subject=Ti consiglio di visitare questo sito&body=link alla pagina: {pageUrl}" role="menuitem"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-mail"></use></svg><span>Invia</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>
+<f:section name="DefaultHead">
+    <div class="cmp-hero">
+        <section class="it-hero-wrapper bg-white align-items-start">
+            <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
+                <f:if condition="{pageTitle}">
+                    <h1 class="text-black hero-title" data-element="page-name">{pageTitle}</h1>
+                </f:if>
+                <f:if condition="{pageSubTitle}">
+                    <div class="hero-text">
+                        <p>{pageSubTitle}</p>
+                    </div>
+                </f:if>
+            </div>
+        </section>
+    </div>
+</f:section>

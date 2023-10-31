@@ -1,0 +1,24 @@
+mod.web_layout.BackendLayouts {
+    NewsDetail {
+        icon = EXT:bit3/Resources/Public/Icons/BackendLayouts/NewsDetail.jpg
+        name = NewsDetail
+        title = NewsDetail
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Contenuto Principale
+                                colspan = 3
+                                colPos = 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,196 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Header">
+    <f:if condition="
+        {settings.social.facebook.url}!='' ||
+        {settings.social.twitter.url}!='' ||
+        {settings.social.instagram.url}!='' ||
+        {settings.social.youtube.url}!='' ||
+        {settings.social.vimeo.url}!='' ||
+        {settings.social.linkedin.url}!='' ||
+        {settings.social.telegram.url}!='' ||
+        {settings.social.rss.url}!=''
+        ">
+        <div class="it-socials d-none d-md-flex">
+            <span>Seguici su</span>
+            <ul>
+                <f:if condition="{settings.social.facebook.url}">
+                    <li>
+                        <a href="{settings.social.facebook.url}" aria-label="{settings.social.facebook.label}" target="_blank">
+                            <svg class="icon">
+                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-facebook"></use>
+                            </svg>
+                            <span class="visually-hidden">{settings.social.facebook.label}</span>
+                        </a>
+                    </li>
+                </f:if>
+                <f:if condition="{settings.social.twitter.url}">
+                    <li>
+                        <a href="{settings.social.twitter.url}" aria-label="{settings.social.twitter.label}" target="_blank">
+                            <svg class="icon">
+                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-twitter"></use>
+                            </svg>
+                            <span class="visually-hidden">{settings.social.twitter.label}</span>
+                        </a>
+                    </li>
+                </f:if>
+                <f:if condition="{settings.social.instagram.url}">
+                    <li>
+                        <a href="{settings.social.instagram.url}" aria-label="{settings.social.instagram.label}" target="_blank">
+                            <svg class="icon">
+                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-instagram"></use>
+                            </svg>
+                            <span class="visually-hidden">{settings.social.instagram.label}</span>
+                        </a>
+                    </li>
+                </f:if>
+                <f:if condition="{settings.social.youtube.url}">
+                    <li>
+                        <a href="{settings.social.youtube.url}" aria-label="{settings.social.youtube.label}" target="_blank">
+                            <svg class="icon">
+                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-youtube"></use>
+                            </svg>
+                            <span class="visually-hidden">{settings.social.youtube.label}</span>
+                        </a>
+                    </li>
+                </f:if>
+                <f:if condition="{settings.social.vimeo.url}">
+                    <li>
+                        <a href="{settings.social.vimeo.url}" aria-label="{settings.social.vimeo.label}" target="_blank">
+                            <svg class="icon">
+                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-vimeo"></use>
+                            </svg>
+                            <span class="visually-hidden">{settings.social.vimeo.label}</span>
+                        </a>
+                    </li>
+                </f:if>
+                <f:if condition="{settings.social.linkedin.url}">
+                    <li>
+                        <a href="{settings.social.linkedin.url}" aria-label="{settings.social.linkedin.label}" target="_blank">
+                            <svg class="icon">
+                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-linkedin"></use>
+                            </svg>
+                            <span class="visually-hidden">{settings.social.linkedin.label}</span>
+                        </a>
+                    </li>
+                </f:if>
+                <f:if condition="{settings.social.telegram.url}">
+                    <li>
+                        <a href="{settings.social.telegram.url}" aria-label="{settings.social.telegram.label}" target="_blank">
+                            <svg class="icon">
+                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-telegram"></use>
+                            </svg>
+                            <span class="visually-hidden">{settings.social.telegram.label}</span>
+                        </a>
+                    </li>
+                </f:if>
+                <f:if condition="{settings.social.rss.url}">
+                    <li>
+                        <a href="{settings.social.rss.url}" aria-label="{settings.social.rss.label}" target="_blank">
+                            <svg class="icon">
+                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-rss"></use>
+                            </svg>
+                            <span class="visually-hidden">{settings.social.rss.label}</span>
+                        </a>
+                    </li>
+                </f:if>
+            </ul>
+        </div>
+    </f:if>
+</f:section>
+
+<f:section name="Footer">
+    <f:if condition="
+        {settings.social.facebook.url}!='' ||
+        {settings.social.twitter.url}!='' ||
+        {settings.social.instagram.url}!='' ||
+        {settings.social.youtube.url}!='' ||
+        {settings.social.vimeo.url}!='' ||
+        {settings.social.linkedin.url}!='' ||
+        {settings.social.telegram.url}!='' ||
+        {settings.social.rss.url}!=''
+        ">
+        <h3 class="footer-heading-title">Seguici su</h3>
+        <ul class="list-inline text-start social">
+            <f:if condition="{settings.social.facebook.url}">
+                <li class="list-inline-item">
+                    <a href="{settings.social.facebook.url}" aria-label="{settings.social.facebook.label}" class="p-1 text-white" target="_blank">
+                        <svg class="icon icon-sm icon-white align-top">
+                            <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-facebook"></use>
+                        </svg>
+                        <span class="visually-hidden">{settings.social.facebook.label}</span>
+                    </a>
+                </li>
+            </f:if>
+            <f:if condition="{settings.social.twitter.url}">
+                <li class="list-inline-item">
+                    <a href="{settings.social.twitter.url}" aria-label="{settings.social.twitter.label}" class="p-1 text-white" target="_blank">
+                        <svg class="icon icon-sm icon-white align-top">
+                            <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-twitter"></use>
+                        </svg>
+                        <span class="visually-hidden">{settings.social.twitter.label}</span>
+                    </a>
+                </li>
+            </f:if>
+            <f:if condition="{settings.social.instagram.url}">
+                <li class="list-inline-item">
+                    <a href="{settings.social.instagram.url}" aria-label="{settings.social.instagram.label}" class="p-1 text-white" target="_blank">
+                        <svg class="icon icon-sm icon-white align-top">
+                            <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-instagram"></use>
+                        </svg>
+                        <span class="visually-hidden">{settings.social.instagram.label}</span>
+                    </a>
+                </li>
+            </f:if>
+            <f:if condition="{settings.social.youtube.url}">
+                <li class="list-inline-item">
+                    <a href="{settings.social.youtube.url}" aria-label="{settings.social.youtube.label}" class="p-1 text-white" target="_blank">
+                        <svg class="icon icon-sm icon-white align-top">
+                            <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-youtube"></use>
+                        </svg>
+                        <span class="visually-hidden">{settings.social.youtube.label}</span>
+                    </a>
+                </li>
+            </f:if>
+            <f:if condition="{settings.social.vimeo.url}">
+                <li class="list-inline-item">
+                    <a href="{settings.social.vimeo.url}" aria-label="{settings.social.vimeo.label}" class="p-1 text-white" target="_blank">
+                        <svg class="icon icon-sm icon-white align-top">
+                            <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-vimeo"></use>
+                        </svg>
+                        <span class="visually-hidden">{settings.social.vimeo.label}</span>
+                    </a>
+                </li>
+            </f:if>
+            <f:if condition="{settings.social.linkedin.url}">
+                <li class="list-inline-item">
+                    <a href="{settings.social.linkedin.url}" aria-label="{settings.social.linkedin.label}" class="p-1 text-white" target="_blank">
+                        <svg class="icon icon-sm icon-white align-top">
+                            <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-linkedin"></use>
+                        </svg>
+                        <span class="visually-hidden">{settings.social.linkedin.label}</span>
+                    </a>
+                </li>
+            </f:if>
+            <f:if condition="{settings.social.telegram.url}">
+                <li class="list-inline-item">
+                    <a href="{settings.social.telegram.url}" aria-label="{settings.social.telegram.label}" class="p-1 text-white" target="_blank">
+                        <svg class="icon icon-sm icon-white align-top">
+                            <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-telegram"></use>
+                        </svg>
+                        <span class="visually-hidden">{settings.social.telegram.label}</span>
+                    </a>
+                </li>
+            </f:if>
+            <f:if condition="{settings.social.rss.url}">
+                <li class="list-inline-item">
+                    <a href="{settings.social.rss.url}" aria-label="{settings.social.rss.label}" class="p-1 text-white" target="_blank">
+                        <svg class="icon icon-sm icon-white align-top">
+                            <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-rss"></use>
+                        </svg>
+                        <span class="visually-hidden">{settings.social.rss.label}</span>
+                    </a>
+                </li>
+            </f:if>
+        </ul>
+    </f:if>
+</f:section>

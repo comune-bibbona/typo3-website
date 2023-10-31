@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Home" />
+<f:section name="Main">
+
+    <f:cObject typoscriptObjectPath="lib.content.home.slideshow" />
+
+    <div class="section macro-aree">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 col-xl-4 pr-0 pr-md-5 mb-3">
+                    <f:cObject typoscriptObjectPath="lib.content.home.evidence.left" />
+                </div>
+                <div class="col-12 col-lg-6 col-xl-4 pr-0 pr-md-5 mb-3">
+                    <f:cObject typoscriptObjectPath="lib.content.home.evidence.center" />
+                </div>
+                <div class="col-12 col-lg-6 col-xl-4 pr-0 pr-md-5 mb-3">
+                    <f:cObject typoscriptObjectPath="lib.content.home.evidence.right" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section scorciatoie">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 pr-0 ">
+                    <f:cObject typoscriptObjectPath="lib.content.home.buttons" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="news" class="section news">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <f:cObject typoscriptObjectPath="lib.content.home.news" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</f:section>
+</html>
+
+

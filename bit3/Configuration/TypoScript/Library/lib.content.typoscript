@@ -1,0 +1,99 @@
+lib.content.main = COA
+lib.content.main {
+    10 < styles.content.get
+    10.select.where = colPos=0
+}
+lib.content.column_left = COA
+lib.content.column_left {
+    10 < styles.content.get
+    10.select.where = colPos=1
+}
+lib.content.column_right = COA
+lib.content.column_right {
+    10 < styles.content.get
+    10.select.where = colPos=2
+}
+
+lib.content.home {
+    slideshow = COA
+    slideshow {
+        10 < styles.content.get
+        10.select.where = colPos=4
+    }
+    evidence.left = COA
+    evidence.left {
+        10 < styles.content.get
+        10.select.where = colPos=1
+    }
+    evidence.center = COA
+    evidence.center {
+        10 < styles.content.get
+        10.select.where = colPos=2
+    }
+    evidence.right = COA
+    evidence.right {
+        10 < styles.content.get
+        10.select.where = colPos=3
+    }
+    buttons = COA
+    buttons {
+        10 < styles.content.get
+        10.select.where = colPos=0
+    }
+    news = COA
+    news {
+        10 < styles.content.get
+        10.select.where = colPos=5
+    }
+
+}
+
+lib.content.service {
+    intro = COA
+    intro {
+        10 < styles.content.get
+        10.select.where = colPos=20
+    }
+    details {
+        addressed = COA
+        addressed {
+            10 < styles.content.get
+            10.select.where = colPos=21
+        }
+        howto = COA
+        howto {
+            10 < styles.content.get
+            10.select.where = colPos=22
+        }
+        needed = COA
+        needed {
+            10 < styles.content.get
+            10.select.where = colPos=23
+        }
+        achieved = COA
+        achieved {
+            10 < styles.content.get
+            10.select.where = colPos=24
+        }
+        calendartext = COA
+        calendartext {
+            10 < styles.content.get
+            10.select.where = colPos=25
+        }
+        bookingaccess = COA
+        bookingaccess {
+            10 < styles.content.get
+            10.select.where = colPos=26
+        }
+        file = COA
+        file {
+            10 < styles.content.get
+            10.select.where = colPos=27
+        }
+        area = COA
+        area {
+            10 < styles.content.get
+            10.select.where = colPos=28
+        }
+    }
+}

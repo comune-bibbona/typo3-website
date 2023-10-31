@@ -1,0 +1,12 @@
+lib.customContentElement =< lib.contentElement
+lib.customContentElement {
+    templateRootPaths {
+        200 = EXT:bit3/Resources/Private/Contents/Templates/
+    }
+    partialRootPaths {
+        200 = EXT:bit3/Resources/Private/Contents/Partials/
+    }
+    layoutRootPaths {
+        200 = EXT:bit3/Resources/Private/Contents/Layouts/
+    }
+}

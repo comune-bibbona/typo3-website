@@ -1,0 +1,12 @@
+tt_content {
+    bit3_card =< lib.customContentElement
+    bit3_card {
+        templateName = Card
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+            }
+        }
+    }
+}

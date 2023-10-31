@@ -1,0 +1,22 @@
+lib.newsdetail = USER
+lib.newsdetail {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = News
+    pluginName = Pi1
+    vendorName = GeorgRinger
+    switchableControllerActions {
+        News {
+            1 = detail
+        }
+    }
+    settings =< plugin.tx_news.settings
+    settings {
+        singleNews.field = uid
+        useStdWrap = singleNews
+        insertRecord = 1
+        listPid = {$id_archivio_news}
+        backPid = {$id_archivio_news}
+        templateLayout = 99
+    }
+    view =< plugin.tx_news.view
+}

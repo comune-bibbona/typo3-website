@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:if condition="{settings.cssFile}">
+	<f:asset.css identifier="ext-news" href="{settings.cssFile}" />
+</f:if>
+
+<f:if condition="{newsItem}">
+	<f:then>
+		<f:if condition="{settings.templateLayout} == 99">
+			<f:then>
+				<f:render section="detailNews" />
+			</f:then>
+			<f:else>
+				<div class="news card-news">
+					<div class="card-wrapper" itemscope="itemscope" itemtype="http://schema.org/Article">
+						<div class="card card-img card-bg no-after">
+							<f:render section="default" />
+						</div>
+					</div>
+				</div>
+			</f:else>
+		</f:if>
+	</f:then>
+	<f:else>
+		<f:render section="nonews" />
+	</f:else>
+</f:if>
+
+</html>

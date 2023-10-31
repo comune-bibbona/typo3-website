@@ -1,0 +1,6 @@
+tt_content {
+    bit3_callout =< lib.customContentElement
+    bit3_callout {
+        templateName = Callout
+    }
+}

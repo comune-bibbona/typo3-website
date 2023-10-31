@@ -1,0 +1,29 @@
+mod.web_layout.BackendLayouts {
+    2ColAsideRight {
+        icon = EXT:bit3/Resources/Public/Icons/BackendLayouts/2ColAsideRight.jpg
+        name = 2ColAsideRight
+        title = 2ColAsideRight
+        config {
+            backend_layout {
+                colCount = 3
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Contenuto Principale
+								colspan = 2
+                                colPos = 0
+                            }
+                            2 {
+                                name = Colonna Destra
+								colspan = 1
+                                colPos = 2
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

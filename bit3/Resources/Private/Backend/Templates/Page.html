@@ -1,0 +1,112 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Default" />
+<f:section name="Content">
+	<div class="site-configuration">
+		<h1><f:translate key="bit3.module.page.title" /></h1>
+		<div class="alert alert-info alert-dismissible fade show mt-2 mb-2" role="alert">
+			<f:translate key="bit3.module.page.info" />
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<f:form action="salvaPage" name="pageconf">
+					<div class="card">
+						<div class="card-header">
+							<h2 class="card-title"><f:translate key="bit3.module.page.page" /></h2>
+						</div>
+						<div class="card-body row">
+							<div class="form-group col-sm-3">
+								<label for="pages.id_faq"><f:translate key="bit3.module.page.page.faq" /></label>
+								<f:form.textfield name="pages.id_faq" value="{f:if(condition: '{vettPageConf.pages.id_faq}', then: '{vettPageConf.pages.id_faq}')}" class="form-control" placeholder="{costantsExtension.pages.id_faq}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="pages.id_assistenza"><f:translate key="bit3.module.page.page.assistance" /></label>
+								<f:form.textfield name="pages.id_assistenza" value="{f:if(condition: '{vettPageConf.pages.id_assistenza}', then: '{vettPageConf.pages.id_assistenza}')}" class="form-control" placeholder="{costantsExtension.pages.id_assistenza}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="pages.id_prenota"><f:translate key="bit3.module.page.page.bookAppointment" /></label>
+								<f:form.textfield name="pages.id_prenota" value="{f:if(condition: '{vettPageConf.pages.id_prenota}', then: '{vettPageConf.pages.id_prenota}')}" class="form-control" placeholder="{costantsExtension.pages.id_prenota}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="pages.id_segnala"><f:translate key="bit3.module.page.page.disservice" /></label>
+								<f:form.textfield name="pages.id_segnala" value="{f:if(condition: '{vettPageConf.pages.id_segnala}', then: '{vettPageConf.pages.id_segnala}')}" class="form-control" placeholder="{costantsExtension.pages.id_segnala}"/>
+							</div>
+						</div>
+						<div class="card-body row">
+							<div class="form-group col-sm-3">
+								<label for="pages.id_archivio_news"><f:translate key="bit3.module.page.page.newsArchive" /></label>
+								<f:form.textfield name="pages.id_archivio_news" value="{f:if(condition: '{vettPageConf.pages.id_archivio_news}', then: '{vettPageConf.pages.id_archivio_news}')}" class="form-control" placeholder="{costantsExtension.pages.id_archivio_news}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="pages.id_search"><f:translate key="bit3.module.page.page.searchPage" /></label>
+								<f:form.textfield name="pages.id_search" value="{f:if(condition: '{vettPageConf.pages.id_search}', then: '{vettPageConf.pages.id_search}')}" class="form-control" placeholder="{costantsExtension.pages.id_search}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="pages.id_login"><f:translate key="bit3.module.page.page.loginPage" /></label>
+								<f:form.textfield name="pages.id_login" value="{f:if(condition: '{vettPageConf.pages.id_login}', then: '{vettPageConf.pages.id_login}')}" class="form-control" placeholder="{costantsExtension.pages.id_login}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="pages.id_registration"><f:translate key="bit3.module.page.page.userRegistration" /></label>
+								<f:form.textfield name="pages.id_registration" value="{f:if(condition: '{vettPageConf.pages.id_registration}', then: '{vettPageConf.pages.id_registration}')}" class="form-control" placeholder="{costantsExtension.pages.id_registration}"/>
+							</div>
+						</div>
+						<div class="card-body row">
+							<div class="form-group col-sm-3">
+								<label for="pages.id_privacy"><f:translate key="bit3.module.page.page.privacy" /></label>
+								<f:form.textfield name="pages.id_privacy" value="{f:if(condition: '{vettPageConf.pages.id_privacy}', then: '{vettPageConf.pages.id_privacy}')}" class="form-control" placeholder="{costantsExtension.pages.id_privacy}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="pages.id_note_legali"><f:translate key="bit3.module.page.page.legalNotice" /></label>
+								<f:form.textfield name="pages.id_note_legali" value="{f:if(condition: '{vettPageConf.pages.id_note_legali}', then: '{vettPageConf.pages.id_note_legali}')}" class="form-control"placeholder="{costantsExtension.pages.id_note_legali}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="pages.id_trasparenza"><f:translate key="bit3.module.page.page.transparency" /></label>
+								<f:form.textfield name="pages.id_trasparenza" value="{f:if(condition: '{vettPageConf.pages.id_trasparenza}', then: '{vettPageConf.pages.id_trasparenza}')}" class="form-control"placeholder="{costantsExtension.pages.id_trasparenza}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="pages.id_accessibilita"><f:translate key="bit3.module.page.page.accessibility" /></label>
+								<f:form.textfield name="pages.id_accessibilita" value="{f:if(condition: '{vettPageConf.pages.id_accessibilita}', then: '{vettPageConf.pages.id_accessibilita}')}" class="form-control"placeholder="{costantsExtension.pages.id_accessibilita}"/>
+							</div>
+						</div>
+						<div class="card-body row">
+							<div class="form-group col-sm-3">
+								<label for="pages.id_mappa"><f:translate key="bit3.module.page.page.siteMap" /></label>
+								<f:form.textfield name="pages.id_mappa" value="{f:if(condition: '{vettPageConf.pages.id_mappa}', then: '{vettPageConf.pages.id_mappa}')}" class="form-control" placeholder="{costantsExtension.pages.id_mappa}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="pages.id_credits"><f:translate key="bit3.module.page.page.credits" /></label>
+								<f:form.textfield name="pages.id_credits" value="{f:if(condition: '{vettPageConf.pages.id_credits}', then: '{vettPageConf.pages.id_credits}')}" class="form-control" placeholder="{costantsExtension.pages.id_credits}"/>
+							</div>
+						</div>
+						<div class="card-footer mt-3">
+							<f:form.button class="btn btn-primary"><f:translate key="bit3.module.buttons.save" /></f:form.button>
+						</div>
+					</div>
+				</f:form>
+			</div>
+			<div class="col-sm-12">
+				<f:form action="salvaContainer" name="pageconf">
+					<div class="card">
+						<div class="card-header">
+							<h2 class="card-title"><f:translate key="bit3.module.page.container" /></h2>
+						</div>
+						<div class="card-body row">
+							<div class="form-group col-sm-3">
+								<label for="containers.id_folder_news"><f:translate key="bit3.module.page.container.news" /></label>
+								<f:form.textfield name="containers.id_folder_news" value="{f:if(condition: '{vettPageConf.containers.id_folder_news}', then: '{vettPageConf.containers.id_folder_news}')}" class="form-control" placeholder="{costantsExtension.containers.id_folder_news}"/>
+							</div>
+							<div class="form-group col-sm-3">
+								<label for="containers.id_folder_users"><f:translate key="bit3.module.page.container.users" /></label>
+								<f:form.textfield name="containers.id_folder_users" value="{f:if(condition: '{vettPageConf.containers.id_folder_users}', then: '{vettPageConf.containers.id_folder_users}')}" class="form-control" placeholder="{costantsExtension.containers.id_folder_users}"/>
+							</div>
+						</div>
+						<div class="card-footer mt-3">
+							<f:form.button class="btn btn-primary"><f:translate key="bit3.module.buttons.save" /></f:form.button>
+						</div>
+					</div>
+				</f:form>
+			</div>
+		</div>
+	</div>
+</f:section>

@@ -1,0 +1,411 @@
+/****************************************************************************************
+# Default css file for content edited with CKEditor
+#
+# Copyright (c) 2023, Archimede Informatica. All rights reserved.
+# For licensing, see LICENSE.md or http://ckeditor.com/license
+#
+# Defines a few class selectors that can be simply taken as examples by anyone who needs to configure the RTE.
+# This css file is referenced by property RTE.default.contentCSS in TSconfig.
+# ***************************************************************************************/
+
+.cke_editable body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    margin: 20px;
+    word-wrap: break-word;
+}
+
+.cke_editable blockquote,
+.cke_editable .blockquote {
+    font-size: inherit;
+    margin: 1.5rem 0;
+    margin-left: 0px;
+    margin-left: 8px;
+    border-left: 4px solid #0bd9d2;
+    padding: 4px 16px;
+}
+.cke_editable .cke_editable_ltr blockquote {
+    padding-left: 20px;
+    padding-right: 8px;
+    border-left-width: 5px;
+}
+
+.cke_editable .cke_editable_rtl blockquote {
+    padding-left: 8px;
+    padding-right: 20px;
+    border-right-width: 5px;
+}
+
+.cke_editable a {
+    color: #0782C1;
+}
+
+.cke_editable ol,ul,dl {
+    /* IE7: reset rtl list margin. (#7334) */
+    *margin-right: 0px;
+    /* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
+    padding: 0 40px;
+}
+
+.cke_editable h1,
+.cke_editable h2,
+.cke_editable h3,
+.cke_editable h4,
+.cke_editable h5,
+.cke_editable h6 {
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.cke_editable hr {
+    border: 0px;
+    border-top: 1px solid #ccc;
+}
+
+.cke_editable img.right {
+    border: 1px solid #ccc;
+    float: right;
+    margin-left: 15px;
+    padding: 5px;
+}
+
+.cke_editable img.left {
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 15px;
+    padding: 5px;
+}
+
+.cke_editable pre {
+    white-space: pre-wrap; /* CSS 2.1 */
+    word-wrap: break-word; /* IE7 */
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+
+.cke_editable table {
+    --bs-table-color: hsl(0deg, 0%, 10%);
+    --bs-table-bg: transparent;
+    --bs-table-border-color: hsl(210deg, 4%, 78%);
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: hsl(0deg, 0%, 10%);
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: hsl(0deg, 0%, 10%);
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: hsl(0deg, 0%, 10%);
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width:100%;
+    margin-bottom:16px;
+    color:var(--bs-table-color);
+    vertical-align:top;
+    border-color:var(--bs-table-border-color)
+}
+
+.cke_editable table th,
+.cke_editable table td {
+    padding: 0.25rem;
+    vertical-align: top;
+}
+
+.cke_editable table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #eceeef;
+}
+.cke_editable .table>:not(caption)>*>* {
+    padding:.5rem .5rem;
+    background-color:var(--bs-table-bg);
+    border-bottom-width:1px;
+    box-shadow:inset 0 0 0 9999px var(--bs-table-accent-bg)
+}
+.cke_editable .table>tbody {
+    vertical-align:inherit
+}
+.cke_editable .table>thead {
+    vertical-align:bottom
+}
+.cke_editable .table-group-divider {
+    border-top:2px solid currentcolor
+}
+.cke_editable .caption-top {
+    caption-side:top
+}
+.cke_editable .table-sm>:not(caption)>*>* {
+    padding:.25rem .25rem
+}
+.cke_editable .table-bordered>:not(caption)>* {
+    border-width:1px 0
+}
+.cke_editable .table-bordered>:not(caption)>*>* {
+    border-width:0 1px
+}
+.cke_editable .table-borderless>:not(caption)>*>* {
+    border-bottom-width:0
+}
+.cke_editable .table-borderless>:not(:first-child) {
+    border-top-width:0
+}
+.cke_editable .table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color:var(--bs-table-striped-color)
+}
+.cke_editable .table-striped-columns>:not(caption)>tr>:nth-child(even) {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color:var(--bs-table-striped-color)
+}
+.cke_editable .table-active {
+    --bs-table-accent-bg: var(--bs-table-active-bg);
+    color:var(--bs-table-active-color)
+}
+.cke_editable .table-hover>tbody>tr:hover>* {
+    --bs-table-accent-bg: var(--bs-table-hover-bg);
+    color:var(--bs-table-hover-color)
+}
+.cke_editable .table-primary {
+    --bs-table-color: hsl(0deg, 0%, 0%);
+    --bs-table-bg: #cce0f5;
+    --bs-table-border-color: #b8cadd;
+    --bs-table-striped-bg: #c2d5e9;
+    --bs-table-striped-color: hsl(0deg, 0%, 0%);
+    --bs-table-active-bg: #b8cadd;
+    --bs-table-active-color: hsl(0deg, 0%, 0%);
+    --bs-table-hover-bg: #bdcfe3;
+    --bs-table-hover-color: hsl(0deg, 0%, 0%);
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
+}
+.cke_editable .table-secondary {
+    --bs-table-color: hsl(0deg, 0%, 0%);
+    --bs-table-bg: #dfe2e6;
+    --bs-table-border-color: #c9cbcf;
+    --bs-table-striped-bg: #d4d7db;
+    --bs-table-striped-color: hsl(0deg, 0%, 0%);
+    --bs-table-active-bg: #c9cbcf;
+    --bs-table-active-color: hsl(0deg, 0%, 0%);
+    --bs-table-hover-bg: #ced1d5;
+    --bs-table-hover-color: hsl(0deg, 0%, 0%);
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
+}
+.cke_editable .table-success {
+    --bs-table-color: hsl(0deg, 0%, 0%);
+    --bs-table-bg: #cce6dd;
+    --bs-table-border-color: #b8cfc7;
+    --bs-table-striped-bg: #c2dbd2;
+    --bs-table-striped-color: hsl(0deg, 0%, 0%);
+    --bs-table-active-bg: #b8cfc7;
+    --bs-table-active-color: hsl(0deg, 0%, 0%);
+    --bs-table-hover-bg: #bdd5cc;
+    --bs-table-hover-color: hsl(0deg, 0%, 0%);
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
+}
+.cke_editable .table-info {
+    --bs-table-color: hsl(0deg, 0%, 0%);
+    --bs-table-bg: #dfe2e6;
+    --bs-table-border-color: #c9cbcf;
+    --bs-table-striped-bg: #d4d7db;
+    --bs-table-striped-color: hsl(0deg, 0%, 0%);
+    --bs-table-active-bg: #c9cbcf;
+    --bs-table-active-color: hsl(0deg, 0%, 0%);
+    --bs-table-hover-bg: #ced1d5;
+    --bs-table-hover-color: hsl(0deg, 0%, 0%);
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
+}
+.cke_editable .table-warning {
+    --bs-table-color: hsl(0deg, 0%, 0%);
+    --bs-table-bg: #ebdecc;
+    --bs-table-border-color: #d4c8b8;
+    --bs-table-striped-bg: #dfd3c2;
+    --bs-table-striped-color: hsl(0deg, 0%, 0%);
+    --bs-table-active-bg: #d4c8b8;
+    --bs-table-active-color: hsl(0deg, 0%, 0%);
+    --bs-table-hover-bg: #d9cdbd;
+    --bs-table-hover-color: hsl(0deg, 0%, 0%);
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
+}
+.cke_editable .table-danger {
+    --bs-table-color: hsl(0deg, 0%, 0%);
+    --bs-table-bg: #f5d6db;
+    --bs-table-border-color: #ddc1c5;
+    --bs-table-striped-bg: #e9cbd0;
+    --bs-table-striped-color: hsl(0deg, 0%, 0%);
+    --bs-table-active-bg: #ddc1c5;
+    --bs-table-active-color: hsl(0deg, 0%, 0%);
+    --bs-table-hover-bg: #e3c6cb;
+    --bs-table-hover-color: hsl(0deg, 0%, 0%);
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
+}
+.cke_editable .table-light {
+    --bs-table-color: hsl(0deg, 0%, 0%);
+    --bs-table-bg: hsl(255deg, 32.2033898305%, 92.625%);
+    --bs-table-border-color: #d2cfda;
+    --bs-table-striped-bg: #dddbe6;
+    --bs-table-striped-color: hsl(0deg, 0%, 0%);
+    --bs-table-active-bg: #d2cfda;
+    --bs-table-active-color: hsl(0deg, 0%, 0%);
+    --bs-table-hover-bg: #d8d5e0;
+    --bs-table-hover-color: hsl(0deg, 0%, 0%);
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
+}
+.cke_editable .table-dark {
+    --bs-table-color: hsl(0deg, 0%, 100%);
+    --bs-table-bg: hsl(210deg, 54%, 20%);
+    --bs-table-border-color: #2e4761;
+    --bs-table-striped-bg: #233d58;
+    --bs-table-striped-color: hsl(0deg, 0%, 100%);
+    --bs-table-active-bg: #2e4761;
+    --bs-table-active-color: hsl(0deg, 0%, 100%);
+    --bs-table-hover-bg: #28425c;
+    --bs-table-hover-color: hsl(0deg, 0%, 100%);
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
+}
+.cke_editable .table-responsive {
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch
+}
+@media(max-width: 575.98px) {
+    .cke_editable .table-responsive-sm {
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch
+    }
+}
+@media(max-width: 767.98px) {
+    .cke_editable .table-responsive-md {
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch
+    }
+}
+@media(max-width: 991.98px) {
+    .cke_editable .table-responsive-lg {
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch
+    }
+}
+@media(max-width: 1199.98px) {
+    .cke_editable .table-responsive-xl {
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch
+    }
+}
+@media(max-width: 1399.98px) {
+    .cke_editable .table-responsive-xxl {
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch
+    }
+}
+
+.cke_editable .marker,
+.cke_editable .mark {
+    background-color: Yellow;
+}
+
+.cke_editable span[lang] {
+    font-style: italic;
+}
+
+.cke_editable figure {
+    text-align: center;
+    border: solid 1px #ccc;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.05);
+    padding: 10px;
+    margin: 10px 20px;
+    display: inline-block;
+}
+
+.cke_editable figure > figcaption {
+    text-align: center;
+    display: block; /* For IE8 */
+}
+
+.cke_editable a > img {
+    padding: 1px;
+    margin: 1px;
+    border: none;
+    outline: 1px solid #0782C1;
+}
+
+/* Widget Styles */
+.cke_editable .code-featured {
+    border: 5px solid red;
+}
+
+.cke_editable .math-featured {
+    padding: 20px;
+    box-shadow: 0 0 2px rgba(200, 0, 0, 1);
+    background-color: rgba(255, 0, 0, 0.05);
+    margin: 10px;
+}
+
+.cke_editable .image-clean {
+    border: 0;
+    background: none;
+    padding: 0;
+}
+
+.cke_editable .image-clean > figcaption {
+    font-size: .9em;
+    text-align: right;
+}
+
+.cke_editable .image-grayscale {
+    background-color: white;
+    color: #666;
+}
+
+.cke_editable .image-grayscale img,
+.cke_editable img.image-grayscale {
+    filter: grayscale(100%);
+}
+
+.cke_editable .embed-240p {
+    max-width: 426px;
+    max-height: 240px;
+    margin:0 auto;
+}
+
+.cke_editable .embed-360p {
+    max-width: 640px;
+    max-height: 360px;
+    margin:0 auto;
+}
+
+.cke_editable .embed-480p {
+    max-width: 854px;
+    max-height: 480px;
+    margin:0 auto;
+}
+
+.cke_editable .embed-720p {
+    max-width: 1280px;
+    max-height: 720px;
+    margin:0 auto;
+}
+
+.cke_editable .embed-1080p {
+    max-width: 1920px;
+    max-height: 1080px;
+    margin:0 auto;
+}
+
+/** text-alignment **/
+.cke_editable .text-left {
+    text-align: left;
+}
+.cke_editable .text-center {
+    text-align: center;
+}
+.cke_editable .text-right {
+    text-align: right;
+}
+.cke_editable .text-justify {
+    text-align: justify;
+}

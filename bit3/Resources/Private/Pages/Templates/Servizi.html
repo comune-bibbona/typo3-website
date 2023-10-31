@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+    <div class="container">
+        <div class="row row-column-menu-left mt-lg-80 mt-3">
+            <div class="col-12 col-lg-3 mb-4 border-col">
+                <f:render partial="Menu/ServiceMenu" section="Default" />
+            </div>
+            <div class="col-12 col-lg-8 offset-lg-1">
+                <div class="it-page-sections-container">
+                    <section class="it-page-section mb-30" id="addressed" data-element="service-addressed">
+                        <f:cObject typoscriptObjectPath="lib.content.service.details.addressed" />
+                    </section>
+                    <section class="it-page-section mb-30" id="howto" data-element="service-how-to">
+                        <f:cObject typoscriptObjectPath="lib.content.service.details.howto" />
+                    </section>
+                    <section class="it-page-section mb-30" id="needed" data-element="service-needed">
+                        <f:cObject typoscriptObjectPath="lib.content.service.details.needed" />
+                    </section>
+                    <section class="it-page-section mb-30" id="achieved" data-element="service-achieved">
+                        <f:cObject typoscriptObjectPath="lib.content.service.details.achieved" />
+                    </section>
+                    <section class="it-page-section mb-30" id="calendartext" data-element="service-calendar-text">
+                        <f:cObject typoscriptObjectPath="lib.content.service.details.calendartext" />
+                    </section>
+                    <section class="it-page-section mb-30" id="bookingaccess" data-element="service-booking-access">
+                        <f:cObject typoscriptObjectPath="lib.content.service.details.bookingaccess" />
+                    </section>
+                    <section class="it-page-section mb-30" id="file" data-element="service-file">
+                        <f:cObject typoscriptObjectPath="lib.content.service.details.file" />
+                    </section>
+                    <section class="it-page-section mb-30" id="area" data-element="service-area">
+                        <f:cObject typoscriptObjectPath="lib.content.service.details.area" />
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</f:section>
+</html>

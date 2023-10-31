@@ -1,0 +1,141 @@
+#rimuovo tutti i layout non default da tutti i ctype
+TCEFORM.tt_content.layout {
+    removeItems = 1,2,3
+}
+
+#aggiungo i layout per i menu ai menu con un solo livello
+TCEFORM.tt_content {
+    layout {
+        types {
+            bit3_accordion {
+                addItems {
+                    101 = Top Filter
+                }
+            }
+            bit3_callout {
+                addItems {
+                    101 = Success
+                    102 = Warning
+                    103 = Danger
+                    104 = Important
+                    105 = Note
+                }
+            }
+            bit3_card{
+                addItems {
+                    101 = Sindaco
+                    102 = Assessore
+                    103 = Consigliere
+                    104 = Dirigente
+                }
+            }
+            bit3_tab {
+                addItems {
+                    101 = Orizzontale
+                    102 = Verticale Sinistra
+                    103 = Verticale Destra
+                }
+            }
+            bit3_timeline {
+                addItems {
+                    101 = Compatta
+                }
+            }
+            text {
+                addItems {
+                    201 = Sfondo Semitrasparente
+                }
+            }
+            image {
+                addItems {
+                    201 = Masonry
+                }
+            }
+            textpic {
+                addItems {
+                    201 = Masonry
+                }
+            }
+            textmedia {
+                addItems {
+                    201 = Masonry
+                }
+            }
+            menu_abstract {
+                addItems {
+                    101 = List Box
+                    102 = Bottoni
+                    103 = Footer Menu
+                    104 = Card Menu
+                    105 = Service Menu
+                    106 = Menu Argomenti
+                }
+            }
+            menu_categorized_content {
+                addItems {
+                    101 = List Box
+                    102 = Bottoni
+                    103 = Footer Menu
+                }
+            }
+            menu_categorized_pages {
+                addItems {
+                    101 = List Box
+                    102 = Bottoni
+                    103 = Footer Menu
+                }
+            }
+            menu_pages {
+                addItems {
+                    101 = List Box
+                    102 = Bottoni
+                    103 = Footer Menu
+                    104 = Card Menu
+                    105 = Service Menu
+                    106 = Menu Argomenti
+                }
+            }
+            menu_recently_updated {
+                addItems {
+                    101 = List Box
+                    102 = Bottoni
+                    103 = Footer Menu
+                }
+            }
+            menu_related_pages {
+                addItems {
+                    101 = List Box
+                    102 = Bottoni
+                    103 = Footer Menu
+                    104 = Card Menu
+                }
+            }
+            menu_section {
+                addItems {
+                    110 = Indice Pagina
+                }
+            }
+            menu_sitemap {
+                addItems {
+                    104 = Site Map
+                    105 = Site Map Orizzontale
+                }
+            }
+            menu_subpages {
+                addItems {
+                    101 = List Box
+                    102 = Bottoni
+                    103 = Footer Menu
+                    104 = Card Menu
+                    105 = Service Menu
+                    106 = Menu Argomenti
+                }
+            }
+            uploads {
+                addItems {
+                    101 = Card
+                }
+            }
+        }
+    }
+}

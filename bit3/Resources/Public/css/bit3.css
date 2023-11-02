@@ -607,6 +607,12 @@ p.text-right {
     margin: 0 auto;
 }
 
+@media (min-width: 1200px) {
+    .it-list-wrapper .it-list a.list-item:hover{
+        color: var(--primary-color);
+    }
+}
+
 /* IndexedSearch */
 .searchbox legend,
 .searchbox label {
@@ -686,7 +692,7 @@ p.text-right {
     cursor: pointer;
     user-select: none;
     border: 0 solid transparent;
-    background-color: #007a52;
+    background-color: var(--primary-color);
     color: #fff;
     border-radius: 4px;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -694,6 +700,11 @@ p.text-right {
     font-size: 16px;
     white-space: normal;
     text-decoration: none;
+}
+.search-modal .modal-title .search-link svg,
+.search-modal .form-group .autocomplete-icon .icon,
+.search-modal .form-group .input-group-prepend svg {
+    fill: var(--primary-color);
 }
 
 /* Scheda Sindaco */

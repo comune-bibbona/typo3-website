@@ -3,14 +3,17 @@
 <f:layout name="Tab" />
 
 <f:section name="Horizontal">
+    <f:debug>{_all}</f:debug>
     <f:if condition="{records}">
         <f:then>
-            <ul class="nav nav-tabs nav-tabs-cards" id="Tab" role="tablist">
-                <f:for each="{records}" as="record" iteration="iterator">
-                    <li class="nav-item"><a class="nav-link{f:if(condition: '{iterator.index} == 0', then: ' active')}" id="tab{record.data.uid}-tab" data-bs-toggle="tab" href="#tab{record.data.uid}" role="tab" aria-controls="tab{record.data.uid}" aria-selected="{f:if(condition: '{iterator.index} == 0', then: 'true', else: 'false')}">{record.data.header}</a></li>
-                </f:for>
-            </ul>
-            <div class="tab-content" id="TabContent">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab{data.uid}" role="tablist">
+                    <f:for each="{records}" as="record" iteration="iterator">
+                        <a class="nav-link{f:if(condition: '{iterator.index} == 0', then: ' active')}" id="tab{record.data.uid}-tab" data-bs-toggle="tab" href="#tab{record.data.uid}" role="tab" aria-controls="nav-tab{record.data.uid}" aria-selected="{f:if(condition: '{iterator.index} == 0', then: 'true', else: 'false')}">{record.data.header}</a>
+                    </f:for>
+                </div>
+            </nav>
+            <div class="tab-content" id="TabContent{data.uid}">
                 <f:for each="{records}" as="record" iteration="iterator">
                     <div class="tab-pane p-4 fade{f:if(condition: '{iterator.index} == 0', then: ' show active')}" id="tab{record.data.uid}" role="tabpanel" aria-labelledby="tab{record.data.uid}-tab"><f:format.html>{record.data.bodytext}</f:format.html></div>
                 </f:for>

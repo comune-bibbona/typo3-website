@@ -138,6 +138,15 @@
                                                     <f:for each="{sidebarItem.children}" as="sidebarChild">
                                                         <li>
                                                             <a class="list-item {f:if(condition: sidebarChild.active, then: 'active')}" href="{sidebarChild.link}" target="{sidebarChild.target}" title="{sidebarChild.title}" {f:if(condition: sidebarChild.data.data_element, then: ' data-element="{sidebarChild.data.data_element}"')}><span>{sidebarChild.title}</span></a>
+                                                            <f:if condition="{sidebarChild.children}">
+                                                                <ul class="link-sublist collapse {f:if(condition: sidebarChild.active, then: 'show')}">
+                                                                    <f:for each="{sidebarChild.children}" as="sidebarThirdLevel">
+                                                                        <li>
+                                                                            <a class="list-item {f:if(condition: sidebarThirdLevel.active, then: 'active')}" href="{sidebarThirdLevel.link}" target="{sidebarThirdLevel.target}" title="{sidebarThirdLevel.title}" {f:if(condition: sidebarThirdLevel.data.data_element, then: ' data-element="{sidebarThirdLevel.data.data_element}"')}><span>{sidebarThirdLevel.title}</span></a>
+                                                                        </li>
+                                                                    </f:for>
+                                                                </ul>
+                                                            </f:if>
                                                         </li>
                                                     </f:for>
                                                 </ul>

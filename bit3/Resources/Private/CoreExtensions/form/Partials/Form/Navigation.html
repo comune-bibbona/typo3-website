@@ -1,36 +1,29 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
-<nav class="pagination-wrapper pagination-total">
-    <ul class="pagination">
-        <f:if condition="{form.previousPage}">
-            <li class="page-item">
-                <f:form.button class="page-link" type="button" onclick="document.forms['{form.formDefinition.identifier}'].submit();" formnovalidate="formnovalidate">
-                    <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-left"></use></svg>
-                    {formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'previousButtonLabel')}
-                    <span class="visually-hidden">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'previousButtonLabel')}</span>
-                </f:form.button>
-            </li>
-        </f:if>
-        <f:if condition="{form.nextPage}">
-            <f:then>
-                <li class="page-item">
-                    <f:form.button class="page-link" property="__currentPage" value="{form.nextPage.index}">
-                        <span class="visually-hidden">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'nextButtonLabel')}</span>
-                        {formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'nextButtonLabel')}
-                        <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-right"></use></svg>
-                    </f:form.button>
-                </li>
-            </f:then>
-            <f:else>
-                <li>
-                    <span class="btn-group next submit">
-                        <f:form.button property="__currentPage" value="{form.pages -> f:count()}" class="btn btn-primary">
-                            {formvh:translateElementProperty(element: form, renderingOptionProperty: 'submitButtonLabel')}
-                        </f:form.button>
-                    </span>
-                </li>
-            </f:else>
-        </f:if>
-    </ul>
-</nav>
+
+<div class="mt-5">
+    <f:if condition="{form.previousPage}">
+        <f:form.button class="btn btn-primary mobile-full" type="button" onclick="document.forms['{form.formDefinition.identifier}'].submit();" formnovalidate="formnovalidate">
+            <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-left"></use></svg>
+            {formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'previousButtonLabel')}
+            <span class="visually-hidden">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'previousButtonLabel')}</span>
+        </f:form.button>
+    </f:if>
+    <f:if condition="{form.nextPage}">
+        <f:then>
+            <f:form.button class="btn btn-primary mobile-full" property="__currentPage" value="{form.nextPage.index}">
+                <span class="visually-hidden">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'nextButtonLabel')}</span>
+                {formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'nextButtonLabel')}
+                <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-right"></use></svg>
+            </f:form.button>
+        </f:then>
+        <f:else>
+        <span class="btn-group next submit">
+            <f:form.button property="__currentPage" value="{form.pages -> f:count()}" class="btn btn-primary mobile-full">
+                {formvh:translateElementProperty(element: form, renderingOptionProperty: 'submitButtonLabel')}
+            </f:form.button>
+        </span>
+        </f:else>
+    </f:if>
+</div>
 
 </html>

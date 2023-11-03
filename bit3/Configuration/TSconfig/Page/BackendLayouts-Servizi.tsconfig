@@ -6,7 +6,7 @@ mod.web_layout.BackendLayouts {
         config {
             backend_layout {
                 colCount = 1
-                rowCount = 10
+                rowCount = 11
                 rows {
                     1 {
                         columns {
@@ -67,7 +67,7 @@ mod.web_layout.BackendLayouts {
                     8 {
                         columns {
                             1 {
-                                name = Accedi al servizio
+                                name = Costi
                                 colPos = 27
                             }
                         }
@@ -75,7 +75,7 @@ mod.web_layout.BackendLayouts {
                     9 {
                         columns {
                             1 {
-                                name = Condizioni di servizio
+                                name = Accedi al servizio
                                 colPos = 28
                             }
                         }
@@ -83,8 +83,16 @@ mod.web_layout.BackendLayouts {
                     10 {
                         columns {
                             1 {
-                                name = Contatti
+                                name = Condizioni di servizio
                                 colPos = 29
+                            }
+                        }
+                    }
+                    11 {
+                        columns {
+                            1 {
+                                name = Contatti
+                                colPos = 30
                             }
                         }
                     }

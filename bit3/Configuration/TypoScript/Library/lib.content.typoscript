@@ -85,20 +85,25 @@ lib.content.service {
             10 < styles.content.get
             10.select.where = colPos=26
         }
+        costs = COA
+        costs {
+            10 < styles.content.get
+            10.select.where = colPos=27
+        }
         bookingaccess = COA
         bookingaccess {
             10 < styles.content.get
-            10.select.where = colPos=27
+            10.select.where = colPos=28
         }
         file = COA
         file {
             10 < styles.content.get
-            10.select.where = colPos=28
+            10.select.where = colPos=29
         }
         area = COA
         area {
             10 < styles.content.get
-            10.select.where = colPos=29
+            10.select.where = colPos=30
         }
     }
 }

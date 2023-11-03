@@ -22,51 +22,76 @@
                                 <div id="collapse-menu" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
                                     <div class="accordion-body">
                                         <ul class="link-list" data-element="page-index">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#addressed">
-                                                    <span class="title-medium">A chi è rivolto</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#description">
-                                                    <span class="title-medium">Descrizione</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#howto">
-                                                    <span class="title-medium">Come fare</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#needed">
-                                                    <span class="title-medium">Cosa serve</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#achieved">
-                                                    <span class="title-medium">Cosa si ottiene</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#calendartext">
-                                                    <span class="title-medium">Tempi e scadenze</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#bookingaccess">
-                                                    <span class="title-medium">Accedi al servizio</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#file">
-                                                    <span class="title-medium">Condizioni di servizio</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#area">
-                                                    <span class="title-medium">Contatti</span>
-                                                </a>
-                                            </li>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.addressed')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#addressed">
+                                                        <span class="title-medium">A chi è rivolto</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.description)}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#description">
+                                                        <span class="title-medium">Descrizione</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.howto')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#howto">
+                                                        <span class="title-medium">Come fare</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.needed')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#needed">
+                                                        <span class="title-medium">Cosa serve</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.achieved')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#achieved">
+                                                        <span class="title-medium">Cosa si ottiene</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.calendartext')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#calendartext">
+                                                        <span class="title-medium">Tempi e scadenze</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.costs')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#costs">
+                                                        <span class="title-medium">Costi</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.bookingaccess')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#bookingaccess">
+                                                        <span class="title-medium">Accedi al servizio</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.file')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#file">
+                                                        <span class="title-medium">Condizioni di servizio</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.area')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#area">
+                                                        <span class="title-medium">Contatti</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
                                         </ul>
                                     </div>
                                 </div>

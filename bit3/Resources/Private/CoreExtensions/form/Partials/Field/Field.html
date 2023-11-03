@@ -15,31 +15,33 @@
 			</f:format.raw>
 		</f:then>
 		<f:else>
-			<div class="{f:if(condition: '{element.type}!=Checkbox && {element.type}!=MultiCheckbox && {element.type}!=SingleSelect && {element.type}!=MultiSelect && {element.type}!=RadioButton && {element.type}!=FileUpload && {element.type}!=ImageUpload && {element.type}!=DatePicker', then: 'form-group')} mt-5{f:if(condition: '{validationResults.errors.0}', then: ' has-error')}">
-				<f:if condition="{doNotShowLabel} != 1">
-					<f:if condition="{element.properties.fluidAdditionalAttributes.placeholder} || {element.type} == 'Date' ">
-						<f:then>
-							<label class="control-label active" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element: element, property: 'label')}<f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if></label>
-						</f:then>
-						<f:else>
-							<label class="control-label" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element: element, property: 'label')}<f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if></label>
-						</f:else>
+			<div class="text-area-wrapper p-3 px-lg-4 pt-lg-3 bg-white {f:if(condition: '{element.type}!=Checkbox && {element.type}!=MultiCheckbox && {element.type}!=SingleSelect && {element.type}!=MultiSelect && {element.type}!=RadioButton && {element.type}!=FileUpload && {element.type}!=ImageUpload && {element.type}!=DatePicker', then: 'form-group')} mt-5{f:if(condition: '{validationResults.errors.0}', then: ' has-error')}">
+				<div class="form-group cmp-input mb-0">
+					<f:if condition="{doNotShowLabel} != 1">
+						<f:if condition="{element.properties.fluidAdditionalAttributes.placeholder} || {element.type} == 'Date' ">
+							<f:then>
+								<label class="cmp-input__label active" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element: element, property: 'label')}<f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if></label>
+							</f:then>
+							<f:else>
+								<label class="cmp-input__label" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element: element, property: 'label')}<f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if></label>
+							</f:else>
+						</f:if>
 					</f:if>
-				</f:if>
-				<f:format.raw>
-					{elementContent}
-					<f:if condition="{validationResults.flattenedErrors}">
-					<span class="error help-block" role="alert">
-						<f:for each="{validationResults.errors}" as="error">
-							<f:format.htmlspecialchars>{formvh:translateElementError(element: element, error: error)}</f:format.htmlspecialchars>
-							<br />
-						</f:for>
-					</span>
+					<f:format.raw>
+						{elementContent}
+						<f:if condition="{validationResults.flattenedErrors}">
+						<span class="error help-block" role="alert">
+							<f:for each="{validationResults.errors}" as="error">
+								<f:format.htmlspecialchars>{formvh:translateElementError(element: element, error: error)}</f:format.htmlspecialchars>
+								<br />
+							</f:for>
+						</span>
+						</f:if>
+					</f:format.raw>
+					<f:if condition="{element.properties.elementDescription}">
+						<small id="{element.uniqueIdentifier}Description" class="form-text">{formvh:translateElementProperty(element: element, property: 'elementDescription')}</small>
 					</f:if>
-				</f:format.raw>
-				<f:if condition="{element.properties.elementDescription}">
-					<small id="{element.uniqueIdentifier}Description" class="form-text">{formvh:translateElementProperty(element: element, property: 'elementDescription')}</small>
-				</f:if>
+				</div>
 			</div>
 		</f:else>
 	</f:if>

@@ -1,18 +1,24 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
 <formvh:renderRenderable renderable="{element}">
-    <fieldset id="{element.uniqueIdentifier}" class="Form-fieldset {f:if(condition: element.properties.elementClassAttribute, then: ' {element.properties.elementClassAttribute}')}">
-        <f:if condition="{element.label}">
-            <legend class="Form-legend">{formvh:translateElementProperty(element: element, property: 'label')}</legend>
-        </f:if>
-        <div class="Grid Grid--withGutter u-padding-all-l">
-            <f:for each="{element.elements}" as="element">
-                <div class="Grid-cell u-lg-size1of2">
-                    <div class="Form-field">
-                        <f:render partial="{element.templateName}" arguments="{element: element}" />
-                    </div>
+    <section id="{element.uniqueIdentifier}" class="it-page-section {f:if(condition: element.properties.elementClassAttribute, then: ' {element.properties.elementClassAttribute}')}">
+        <div class="cmp-card mb-40">
+            <div class="card has-bkg-grey shadow-sm p-big p-lg-4">
+                <div class="card-header border-0 p-0 mb-lg-30 m-0">
+                    <f:if condition="{element.label}">
+                        <div class="d-flex">
+                            <h2 class="title-xxlarge mb-1">{formvh:translateElementProperty(element: element, property: 'label')}</h2>
+                        </div>
+                    </f:if>
                 </div>
-            </f:for>
+                <div class="card-body p-0">
+                    <f:for each="{element.elements}" as="element">
+                        <div class="select-wrapper p-md-3 p-lg-4 pb-lg-0 select-partials">
+                            <f:render partial="{element.templateName}" arguments="{element: element}" />
+                        </div>
+                    </f:for>
+                </div>
+            </div>
         </div>
-    </fieldset>
+    </section>
 </formvh:renderRenderable>
 </html>

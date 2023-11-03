@@ -6,7 +6,7 @@ mod.web_layout.BackendLayouts {
         config {
             backend_layout {
                 colCount = 1
-                rowCount = 2
+                rowCount = 10
                 rows {
                     1 {
                         columns {
@@ -27,7 +27,7 @@ mod.web_layout.BackendLayouts {
                     3 {
                         columns {
                             1 {
-                                name = Come fare
+                                name = Descrizione
                                 colPos = 22
                             }
                         }
@@ -35,7 +35,7 @@ mod.web_layout.BackendLayouts {
                     4 {
                         columns {
                             1 {
-                                name = Cosa serve
+                                name = Come fare
                                 colPos = 23
                             }
                         }
@@ -43,7 +43,7 @@ mod.web_layout.BackendLayouts {
                     5 {
                         columns {
                             1 {
-                                name = Cosa si ottiene
+                                name = Cosa serve
                                 colPos = 24
                             }
                         }
@@ -51,7 +51,7 @@ mod.web_layout.BackendLayouts {
                     6 {
                         columns {
                             1 {
-                                name = Tempi e scadenze
+                                name = Cosa si ottiene
                                 colPos = 25
                             }
                         }
@@ -59,7 +59,7 @@ mod.web_layout.BackendLayouts {
                     7 {
                         columns {
                             1 {
-                                name = Accedi al servizio
+                                name = Tempi e scadenze
                                 colPos = 26
                             }
                         }
@@ -67,7 +67,7 @@ mod.web_layout.BackendLayouts {
                     8 {
                         columns {
                             1 {
-                                name = Condizioni di servizio
+                                name = Accedi al servizio
                                 colPos = 27
                             }
                         }
@@ -75,8 +75,16 @@ mod.web_layout.BackendLayouts {
                     9 {
                         columns {
                             1 {
-                                name = Contatti
+                                name = Condizioni di servizio
                                 colPos = 28
+                            }
+                        }
+                    }
+                    10 {
+                        columns {
+                            1 {
+                                name = Contatti
+                                colPos = 29
                             }
                         }
                     }

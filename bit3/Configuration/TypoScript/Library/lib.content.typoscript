@@ -60,40 +60,45 @@ lib.content.service {
             10 < styles.content.get
             10.select.where = colPos=21
         }
+        description = COA
+        description {
+            10 < styles.content.get
+            10.select.where = colPos=22
+        }
         howto = COA
         howto {
             10 < styles.content.get
-            10.select.where = colPos=22
+            10.select.where = colPos=23
         }
         needed = COA
         needed {
             10 < styles.content.get
-            10.select.where = colPos=23
+            10.select.where = colPos=24
         }
         achieved = COA
         achieved {
             10 < styles.content.get
-            10.select.where = colPos=24
+            10.select.where = colPos=25
         }
         calendartext = COA
         calendartext {
             10 < styles.content.get
-            10.select.where = colPos=25
+            10.select.where = colPos=26
         }
         bookingaccess = COA
         bookingaccess {
             10 < styles.content.get
-            10.select.where = colPos=26
+            10.select.where = colPos=27
         }
         file = COA
         file {
             10 < styles.content.get
-            10.select.where = colPos=27
+            10.select.where = colPos=28
         }
         area = COA
         area {
             10 < styles.content.get
-            10.select.where = colPos=28
+            10.select.where = colPos=29
         }
     }
 }

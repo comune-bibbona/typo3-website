@@ -781,7 +781,7 @@ dl.ce-bullets dd.last-dd:last-child {
     margin-top: 0;
 }
 
-/* Feedback Form */
+/* Form */
 div#feedbackForm- {
     padding: 1.78rem;
     background-color: #ffffff;
@@ -802,6 +802,14 @@ div#feedbackForm- {
     div#feedbackForm- {
         margin: 80px 0;
     }
+}
+
+.upload[type="file"] + label {
+    background-color: var(--primary-color);
+}
+.form-check [type="checkbox"]:checked + label::after {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 
 /* Contents */

@@ -5,16 +5,16 @@
 	<f:if condition="{menu}">
 		<f:switch expression="{data.layout}">
 			<f:case value="101">
-				<f:render partial="Menu/ListBox" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
+				<f:render partial="Menu/ListBox" section="Default" arguments="{menu: menu}" />
 			</f:case>
 			<f:case value="102">
-				<f:render partial="Menu/Buttons" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
+				<f:render partial="Menu/Buttons" section="Default" arguments="{menu: menu}" />
 			</f:case>
 			<f:case value="103">
-				<f:render partial="Menu/FooterMenu" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
+				<f:render partial="Menu/FooterMenu" section="Default" arguments="{menu: menu}" />
 			</f:case>
 			<f:defaultCase>
-				<f:render partial="Menu/Default" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
+				<f:render partial="Menu/Default" section="Default" arguments="{menu: menu}" />
 			</f:defaultCase>
 		</f:switch>
 

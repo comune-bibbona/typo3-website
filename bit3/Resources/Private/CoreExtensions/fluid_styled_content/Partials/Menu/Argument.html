@@ -7,7 +7,7 @@
                 <f:if condition="{page.files.0}">
                     <f:then>
                         <div class="it-grid-item-wrapper it-grid-item-overlay">
-                            <a href="{page.link}" {f:if(condition: data_element, then: ' data-element="{data_element}"', else: ' data-element="topic-element"')} data-focus-mouse="false">
+                            <a href="{page.link}" {f:if(condition: page.data.data_element, then: ' data-element="{page.data.data_element}"', else: ' data-element="topic-element"')} data-focus-mouse="false">
                                 <div class="img-responsive-wrapper">
                                     <div class="img-responsive">
                                         <div class="img-wrapper">
@@ -25,7 +25,7 @@
                         <div class="cmp-card-simple card-wrapper pb-0 rounded border border-light">
                             <div class="card shadow-sm rounded">
                                 <div class="card-body">
-                                    <a href="{page.link}" class="text-decoration-none" {f:if(condition: data_element, then: ' data-element="{data_element}"', else: ' data-element="topic-element"')} data-focus-mouse="false">
+                                    <a href="{page.link}" class="text-decoration-none" {f:if(condition: page.data.data_element, then: ' data-element="{page.data.data_element}"', else: ' data-element="topic-element"')} data-focus-mouse="false">
                                     <h3 class="card-title t-primary title-xlarge">{page.title}</h3>
                                     </a>
                                     <p class="text-secondary mb-0 description">

@@ -3,7 +3,7 @@
 <f:section name="Default">
     <div class="col-12 pr-0 ">
         <f:for each="{menu}" as="page">
-            <a class="btn btn-primary btn-lg btn-block m-1" href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}" {f:if(condition: data_element, then: ' data-element="{data_element}"')}>
+            <a class="btn btn-primary btn-lg btn-block m-1" href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
                 {page.title}</span>
             </a>
         </f:for>

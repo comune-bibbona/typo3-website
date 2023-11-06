@@ -114,7 +114,9 @@
                         <f:variable name="dataElement">appointment-booking</f:variable>
                         <f:variable name="extLabel">Prenota Appuntamento Online</f:variable>
                     </f:case>
-                    <f:defaultCase></f:defaultCase>
+                    <f:defaultCase>
+                        <f:cObject typoscriptObjectPath="lib.content.service.intro" />
+                    </f:defaultCase>
                 </f:switch>
                 <f:if condition="{extLink}">
                     <p>

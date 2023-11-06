@@ -753,6 +753,9 @@ li.upload-file  a {
     word-break: break-all;
     white-space: break-spaces;
 }
+.upload[type="file"] + label:hover {
+    background-color: var(--darken-primary-color);
+}
 
 /* Bullets */
 ul.ce-bullets,

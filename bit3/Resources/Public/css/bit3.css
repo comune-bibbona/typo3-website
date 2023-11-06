@@ -1,3 +1,8 @@
+a {
+    word-break: break-all;
+    white-space: break-spaces;
+}
+
 .logo {
     margin-right: 10px;
 }

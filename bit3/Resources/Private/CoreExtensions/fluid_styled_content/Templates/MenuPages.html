@@ -1,30 +1,29 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 <f:section name="Main">
-
 	<f:if condition="{menu}">
 		<f:switch expression="{data.layout}">
 			<f:case value="101">
-				<f:render partial="Menu/ListBox" section="Default" arguments="{menu: menu}" />
+				<f:render partial="Menu/ListBox" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
 			</f:case>
 			<f:case value="102">
-				<f:render partial="Menu/Buttons" section="Default" arguments="{menu: menu}" />
+				<f:render partial="Menu/Buttons" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
 			</f:case>
 			<f:case value="103">
 				<h3 class="footer-heading-title">{data.header}</h3>
-				<f:render partial="Menu/FooterMenu" section="Default" arguments="{menu: menu}" />
+				<f:render partial="Menu/FooterMenu" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
 			</f:case>
 			<f:case value="104">
-				<f:render partial="Menu/Card" section="Default" arguments="{menu: menu}" />
+				<f:render partial="Menu/Card" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
 			</f:case>
 			<f:case value="105">
-				<f:render partial="Menu/Service" section="Default" arguments="{menu: menu}" />
+				<f:render partial="Menu/Service" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
 			</f:case>
 			<f:case value="106">
-				<f:render partial="Menu/Argument" section="Default" arguments="{menu: menu}" />
+				<f:render partial="Menu/Argument" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
 			</f:case>
 			<f:defaultCase>
-				<f:render partial="Menu/Default" section="Default" arguments="{menu: menu}" />
+				<f:render partial="Menu/Default" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
 			</f:defaultCase>
 		</f:switch>
 

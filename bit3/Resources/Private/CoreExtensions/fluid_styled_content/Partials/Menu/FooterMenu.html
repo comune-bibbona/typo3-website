@@ -5,7 +5,7 @@
         <ul class="footer-list">
         <f:for each="{menu}" as="page">
             <li>
-                <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+                <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}" {f:if(condition: data_element, then: ' data-element="{data_element}"')}>
                    {page.title}
                 </a>
             </li>

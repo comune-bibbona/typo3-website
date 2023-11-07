@@ -31,28 +31,6 @@
 						</div>
 					</div>
 				</f:case>
-				<f:case value="3">
-					<div class="row g-4">
-						<f:if condition="{settings.hidePagination}">
-							<f:then>
-								<f:for each="{news}" as="newsItem" iteration="iterator">
-									<f:render partial="List/Item-Archive" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
-								</f:for>
-								<div class="col text-end">
-									<f:if condition="{settings.listPid}!=''">
-										<f:link.page pageUid="{settings.listPid}" class="btn btn-sm btn-primary" title="Vai all'archivio delle notizie">Vai all'archivio delle notizie</f:link.page>
-									</f:if>
-								</div>
-							</f:then>
-							<f:else>
-								<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-									<f:render partial="List/Item-Archive" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
-								</f:for>
-								<f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-							</f:else>
-						</f:if>
-					</div>
-				</f:case>
 				<f:case value="4">
 					<div class="row g-4">
 						<f:if condition="{settings.hidePagination}">

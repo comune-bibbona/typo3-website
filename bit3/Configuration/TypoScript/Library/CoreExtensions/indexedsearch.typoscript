@@ -5,6 +5,7 @@ plugin.tx_indexedsearch {
         displayRules = 0
         displayAdvancedSearchLink = 0
         targetPid = {$pages.id_search_page}
+        page_links = 3
     }
     view {
         templateRootPaths {

@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+
+<div class="col-12 col-lg-6 mb-4">
+    <div class="card-wrapper">
+        <div class="card">
+            <div class="card-body">
+                <div class="category-top">
+                    <a class="category">{row.icon -> f:format.raw()}</a>
+                    <span class="data">{row.rating}</span>
+                </div>
+                <h3 class="card-title big-heading h5 ">{row.title -> f:format.raw()}</h3>
+                <p class="card-text font-serif">{row.description -> f:format.raw()}</p>
+                <span class="card-signature">
+                    <f:translate key="result.created" /> <f:format.date>@{row.created}</f:format.date><br>
+                    <f:translate key="result.modified" /> <f:format.date>@{row.modified}</f:format.date><br>
+                    <f:translate key="result.path" /> <f:format.html>{row.path}</f:format.html>
+                </span>
+                <f:if condition="{row.subresults}">
+                    <p class="tx-indexedsearch-list">
+                        <f:for each="{row.subresults.items}" as="subrow">
+                            <f:render partial="Searchresult" arguments="{row: subrow}" />
+                        </f:for>
+                    </p>
+                </f:if>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

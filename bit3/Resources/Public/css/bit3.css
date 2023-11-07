@@ -819,6 +819,20 @@ div#feedbackForm- {
     background-color: var(--primary-color);
 }
 
+input.upload.bit3 {
+    position: static;
+    z-index: 1;
+}
+
+label.uploadLabel.bit3 {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    opacity: 1;
+}
+
+
+
 /* Contents */
 .tab-content {
     background-color: #ffffff;

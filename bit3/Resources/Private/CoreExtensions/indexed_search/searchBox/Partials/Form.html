@@ -33,12 +33,12 @@
 					</button>
 				</div>
 				<div class="form-group autocomplete-wrapper">
-					<label for="autocomplete-two" class="visually-hidden"><f:translate key="form.searchFor" /></label>
-					<input type="search" class="autocomplete ps-5" placeholder="{f:translate(key: 'form.searchFor')}" id="autocomplete-two" name="autocomplete-two" data-bs-autocomplete="[]">
+					<label for="tx-indexedsearch-searchbox-sword" class="visually-hidden"><f:translate key="form.searchFor" /></label>
+					<f:form.textfield name="search[sword]" class="autocomplete ps-5" value="{sword}" id="tx-indexedsearch-searchbox-sword" placeholder="{f:translate(key: 'form.searchFor')}" />
 					<span class="autocomplete-icon" aria-hidden="true">
                       <svg class="icon"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-search"></use></svg>
                     </span>
-					<f:form.submit name="search[submitButton]" value="{f:translate(key: 'form.submit')}" id="tx-indexedsearch-searchbox-button-submit" class="btn btn-primary tx-indexedsearch-searchbox-submit" />
+					<f:form.submit name="search[submitButton]" value="{f:translate(key: 'form.submit')}" id="tx-indexedsearch-searchbox-button-submit" class="btn btn-primary tx-indexedsearch-searchbox-button" />
 				</div>
 			</div>
 		</div>

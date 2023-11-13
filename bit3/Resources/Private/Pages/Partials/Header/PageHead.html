@@ -68,7 +68,7 @@
                         <p>{pageSubTitle}</p>
                     </div>
                 </f:if>
-                <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.column_right')}">
+                <f:if condition="{data.data_element} == 'service-link'">
                     <ul class="d-flex flex-wrap gap-1 my-3">
                         <li>
                             <div class="chip chip-simple text-button" data-element="service-status">
@@ -76,7 +76,6 @@
                             </div>
                         </li>
                     </ul>
-                    <f:cObject typoscriptObjectPath="lib.content.column_right" />
                 </f:if>
                 <f:switch expression="{data.uid}">
                     <f:case value="{settings.servizi.iscrizione_trasporto_scolastico.id}">

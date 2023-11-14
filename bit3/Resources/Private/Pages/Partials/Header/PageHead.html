@@ -58,6 +58,15 @@
         </f:if>
     </div>
 </f:section>
+<f:section name="ServizioAttivo">
+    <ul class="d-flex flex-wrap gap-1 my-3">
+        <li>
+            <div class="chip chip-simple text-button" data-element="service-status">
+                <span class="chip-label">Servizio attivo</span>
+            </div>
+        </li>
+    </ul>
+</f:section>
 <f:section name="ServiziHead">
     <div class="cmp-heading pb-3 pb-lg-4">
         <div class="row">
@@ -67,15 +76,6 @@
                     <div class="hero-text">
                         <p>{pageSubTitle}</p>
                     </div>
-                </f:if>
-                <f:if condition="{data.data_element} == 'service-link'">
-                    <ul class="d-flex flex-wrap gap-1 my-3">
-                        <li>
-                            <div class="chip chip-simple text-button" data-element="service-status">
-                                <span class="chip-label">Servizio attivo</span>
-                            </div>
-                        </li>
-                    </ul>
                 </f:if>
                 <f:switch expression="{data.uid}">
                     <f:case value="{settings.servizi.iscrizione_trasporto_scolastico.id}">
@@ -114,10 +114,14 @@
                         <f:variable name="extLabel">Prenota Appuntamento Online</f:variable>
                     </f:case>
                     <f:defaultCase>
+                        <f:if condition="{data.data_element} == 'service-link'">
+                            <f:render partial="Header/PageHead" section="ServizioAttivo" arguments="{_all}" />
+                        </f:if>
                         <f:cObject typoscriptObjectPath="lib.content.service.intro" />
                     </f:defaultCase>
                 </f:switch>
                 <f:if condition="{extLink}">
+                    <f:render partial="Header/PageHead" section="ServizioAttivo" arguments="{_all}" />
                     <p>
                         <f:link.external uri="{extLink}" class="btn btn-primary" title="{extLink}" data="{element: '{dataElement}'}" target="_blank">
                             <svg class="icon icon-primary icon-sm" aria-hidden="true">

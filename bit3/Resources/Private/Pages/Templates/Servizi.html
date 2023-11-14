@@ -40,6 +40,16 @@
                     <section class="it-page-section mb-30" id="area" data-element="service-area">
                         <f:cObject typoscriptObjectPath="lib.content.service.details.area" />
                     </section>
+                    <f:if condition="{data.categories}">
+                        <section class="it-page-section mb-30" id="arguments">
+                            <div class="row">
+                                <div class="col-12 mb-30">
+                                    <f:render partial="Common/Categories" section="Default" arguments="{categories: data.categories, uid: data.uid, table : 'pages'}" />
+                                    <f:render partial="Common/LastUpdate" section="Default" arguments="{date : data.lastUpdated}" />
+                                </div>
+                            </div>
+                        </section>
+                    </f:if>
                 </div>
             </div>
         </div>

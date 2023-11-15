@@ -4,7 +4,8 @@
     <f:if condition="
         {settings.pages.id_faq}!='' ||
         {settings.pages.id_prenota}!='' ||
-        {settings.pages.id_segnala}!=''
+        {settings.pages.id_segnala}!='' ||
+        {settings.pages.id_assistenza}!= ''
         ">
         <ul class="footer-list">
             <f:if condition="{settings.pages.id_faq}!=''">
@@ -24,7 +25,7 @@
             </f:if>
             <f:if condition="{settings.pages.id_assistenza}!=''">
                 <li>
-                    <f:link.typolink parameter="{settings.pages.id_assistenza}">Richiesta d'assistenza</f:link.typolink>
+                    <f:link.typolink parameter="{settings.pages.id_assistenza}" additionalAttributes="{data-element: 'request-assistance'}">Richiesta d'assistenza</f:link.typolink>
                 </li>
             </f:if>
         </ul>

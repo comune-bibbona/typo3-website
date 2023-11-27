@@ -69,7 +69,8 @@ TCEFORM.tt_content {
                     103 = Footer Menu
                     104 = Card Menu
                     105 = Service Menu
-                    106 = Menu Argomenti
+                    106 = Menu Argomenti Immagine
+                    107 = Menu Argomenti Testo
                 }
             }
             menu_categorized_content {
@@ -93,7 +94,8 @@ TCEFORM.tt_content {
                     103 = Footer Menu
                     104 = Card Menu
                     105 = Service Menu
-                    106 = Menu Argomenti
+                    106 = Menu Argomenti Immagine
+                    107 = Menu Argomenti Testo
                 }
             }
             menu_recently_updated {
@@ -129,7 +131,8 @@ TCEFORM.tt_content {
                     103 = Footer Menu
                     104 = Card Menu
                     105 = Service Menu
-                    106 = Menu Argomenti
+                    106 = Menu Argomenti Immagine
+                    107 = Menu Argomenti Testo
                 }
             }
             uploads {

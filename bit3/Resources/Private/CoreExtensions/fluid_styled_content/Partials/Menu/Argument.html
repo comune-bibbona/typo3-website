@@ -47,3 +47,31 @@
         </f:for>
     </div>
 </f:section>
+
+<f:section name="OnlyText">
+    <div class="row g-4">
+        <f:for each="{menu}" as="page">
+            <div class="col-lg-6 col-xl-4">
+                <div class="cmp-card-simple card-wrapper pb-0 rounded border border-light">
+                    <div class="card shadow-sm rounded">
+                        <div class="card-body">
+                            <a href="{page.link}" class="text-decoration-none" {f:if(condition: data_element, then: ' data-element="{data_element}"', else: ' data-element="topic-element"')} data-focus-mouse="false">
+                            <h3 class="card-title t-primary title-xlarge">{page.title}</h3>
+                            </a>
+                            <p class="text-secondary mb-0 description">
+                                <f:if condition="{page.data.abstract}">
+                                    <f:then>
+                                        {page.data.abstract}
+                                    </f:then>
+                                    <f:else>
+                                        {page.data.subtitle}
+                                    </f:else>
+                                </f:if>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</f:section>

@@ -1,0 +1,55 @@
+mod.web_layout.BackendLayouts {
+    Argomento {
+        icon = EXT:bit3/Resources/Public/Icons/BackendLayouts/Argomento.jpg
+        name = Argomento
+        title = Argomento
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 5
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Intro
+                                colPos = 3
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Novità
+                                colPos = 0
+                            }
+                        }
+                    }
+                    3 {
+                        columns {
+                            1 {
+                                name = Amministrazione
+                                colPos = 1
+                            }
+                        }
+                    }
+                    4 {
+                        columns {
+                            1 {
+                                name = Servizi
+                                colPos = 2
+                            }
+                        }
+                    }
+                    5 {
+                        columns {
+                            1 {
+                                name = Documenti
+                                colPos = 4
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

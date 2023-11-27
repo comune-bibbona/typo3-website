@@ -19,3 +19,55 @@
     </f:if>
 
 </f:section>
+
+<f:section name="Argomento">
+    <f:debug>{_all}</f:debug>
+    <div class="it-hero-wrapper it-wrapped-container" id="main-container">
+
+        <f:if condition="{heroimage.0}">
+            <div class="img-responsive-wrapper">
+                <div class="img-responsive">
+                    <div class="img-wrapper">
+                        <f:media class="img-fluid" file="{heroimage.0}" />
+                    </div>
+                </div>
+            </div>
+        </f:if>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 drop-shadow">
+                    <div class="it-hero-card it-hero-bottom-overlapping rounded px-lg-5 py-4 py-lg-5">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <f:render partial="Menu/Menu" section="Breadcrumbs" arguments="{_all}" />
+                            </div>
+                        </div>
+                        <div class="row justify-content-between mt-lg-2">
+                            <div class="col-12 col-lg-5 pl-lg-5">
+                                <h1 class="mb-3">{pageTitle}</h1>
+                                <h2 class="visually-hidden" id="news-details">Dettagli dell'argomento</h2>
+                                <f:if condition="{pageSubTitle}">
+                                    <p class="text-secondary mb-5">
+                                        {pageSubTitle}
+                                    </p>
+                                </f:if>
+                            </div>
+
+                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.top')}">
+                                <div class="col-12 col-lg-5">
+                                    <div class="card-wrapper card-column">
+                                        <h3 class="title-xsmall-semi-bold text-secondary">Questo argomento è gestito da:</h3>
+                                        <f:cObject typoscriptObjectPath="lib.content.top" />
+                                    </div>
+                                </div>
+                            </f:if>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>

@@ -1,0 +1,17 @@
+<f:spaceless>
+
+    <f:render partial="Header" section="Default" arguments="{_all}" />
+
+    <main>
+        <!--TYPO3SEARCH_begin-->
+        <f:render section="Main" />
+        <!--TYPO3SEARCH_end-->
+    </main>
+
+    <f:render partial="Feedback" section="Default" arguments="{_all}" />
+
+    <f:render partial="Header/SearchBox" section="Modal" arguments="{_all}" />
+
+    <f:render partial="Footer" section="Default" arguments="{_all}" />
+
+</f:spaceless>

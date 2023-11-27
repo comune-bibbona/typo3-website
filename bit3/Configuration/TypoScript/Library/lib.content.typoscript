@@ -13,6 +13,16 @@ lib.content.column_right {
     10 < styles.content.get
     10.select.where = colPos=2
 }
+lib.content.top = COA
+lib.content.top{
+    10 < styles.content.get
+    10.select.where = colPos=3
+}
+lib.content.bottom = COA
+lib.content.bottom{
+    10 < styles.content.get
+    10.select.where = colPos=4
+}
 
 lib.content.home {
     slideshow = COA

@@ -23,6 +23,7 @@ TCEFORM.tt_content {
             }
             bit3_card{
                 addItems {
+                    100 = Larghezza Piena
                     101 = Sindaco
                     102 = Assessore
                     103 = Consigliere

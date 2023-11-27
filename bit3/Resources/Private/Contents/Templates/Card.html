@@ -4,6 +4,9 @@
 
 <f:section name="Main">
     <f:switch expression="{data.layout}">
+        <f:case value="100">
+            <f:variable name="grid" value="" />
+        </f:case>
         <f:case value="101">
             <f:variable name="grid" value="col-12 col-lg-10" />
             <f:variable name="cardicon" value="it-star-full" />
@@ -25,16 +28,12 @@
             <f:variable name="avatarsize" value="size-xl" />
         </f:case>
         <f:defaultCase>
-            <f:variable name="grid" value="col-12 col-lg-8" />
-            <f:variable name="cardicon" value="it-pa" />
-            <f:variable name="avatarsize" value="size-xl" />
+            <f:variable name="grid" value="col-12 col-md-8 col-lg-6 mb-30" />
         </f:defaultCase>
     </f:switch>
 
-    <f:if condition="{data.layout}>0">
+    <f:if condition="{data.layout}>100">
         <f:then>
-
-
             <div class="{grid}">
                 <div class="card-wrapper card-space mt-5">
                     <div class="card card-bg card-big border-bottom-card">
@@ -80,7 +79,7 @@
             </div>
         </f:then>
         <f:else>
-            <div class="col-12 col-md-8 col-lg-6 mb-30">
+            <div class="{grid}">
                 <div class="card-wrapper rounded h-auto mt-10">
                     <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
                         <div class="card-body pe-3">

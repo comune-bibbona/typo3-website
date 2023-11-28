@@ -9,8 +9,14 @@
             <div class="row row-column-menu-left mt-3">
                 <div class="col-12 col-lg-3 mb-4 border-col">
                     <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-aside">
-                        <f:cObject typoscriptObjectPath="lib.content.column_left" />
-                        <f:render partial="Menu/Menu" section="Sidebar" arguments="{_all}" />
+                        <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.column_left')}">
+                            <f:then>
+                                <f:cObject typoscriptObjectPath="lib.content.column_left" />
+                            </f:then>
+                            <f:else>
+                                <f:render partial="Menu/Menu" section="Sidebar" arguments="{_all}" />
+                            </f:else>
+                        </f:if>
                     </div>
                 </div>
                 <div class="col-12 col-lg-8 offset-lg-1">

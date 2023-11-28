@@ -1,30 +1,52 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
+
 <f:section name="Main">
 
 	<f:if condition="{menu}">
-		<f:switch expression="{data.layout}">
-			<f:case value="101">
-				<f:render partial="Menu/ListBox" section="Default" arguments="{menu: menu}" />
-			</f:case>
-			<f:case value="102">
-				<f:render partial="Menu/Buttons" section="Default" arguments="{menu: menu}" />
-			</f:case>
-			<f:case value="103">
-				<f:render partial="Menu/FooterMenu" section="Default" arguments="{menu: menu}" />
-			</f:case>
-			<f:case value="104">
-				<f:render partial="Menu/SiteMap" section="Default" arguments="{menu: menu}" />
-			</f:case>
-			<f:case value="105">
-				<f:render partial="Menu/SiteMapH" section="Default" arguments="{menu: menu}" />
-			</f:case>
-			<f:defaultCase>
-				<f:render partial="Menu/Default" section="Default" arguments="{menu: menu}" />
-			</f:defaultCase>
-		</f:switch>
-
+		<div class="link-list-wrapper">
+			<ul class="link-list">
+				<f:for each="{menu}" as="page" key="itemkey">
+					<f:if condition="{itemkey}>0">
+						<li class="divider"></li>
+					</f:if>
+					<li>
+						<a href="{page.link}" class="list-item large medium" title="{page.title}"{f:if(condition: page.target, then: ' target="{page.target}"')} >
+							<span class="list-item-title">{page.title}</span>
+						</a>
+						<f:if condition="{page.hasSubpages}>0">
+							<f:render section="Child" arguments="{menu: page.children, uid: page.title}" />
+						</f:if>
+					</li>
+				</f:for>
+			</ul>
+		</div>
 	</f:if>
 
 </f:section>
+
+<f:section name="Child">
+	<f:if condition="{menu}">
+		<ul class="link-sublist" id="{uid}">
+			<f:for each="{menu}" as="page">
+				<li>
+					<a href="{page.link}" class="list-item" title="{page.title}"{f:if(condition: page.target, then: ' target="{page.target}"')}>
+						<f:if condition="{page.hasSubpages}>0">
+							<f:then>
+								<span class="fw-semibold">/ {page.title}</span>
+							</f:then>
+							<f:else>
+								<span>{page.title}</span>
+							</f:else>
+						</f:if>
+					</a>
+					<f:if condition="{page.hasSubpages}>0">
+						<f:render section="Child" arguments="{menu: page.children, uid: page.title}" />
+					</f:if>
+				</li>
+			</f:for>
+		</ul>
+	</f:if>
+</f:section>
+
 </html>

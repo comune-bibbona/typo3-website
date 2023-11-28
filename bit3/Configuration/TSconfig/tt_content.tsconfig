@@ -118,12 +118,6 @@ TCEFORM.tt_content {
                     110 = Indice Pagina
                 }
             }
-            menu_sitemap {
-                addItems {
-                    104 = Site Map
-                    105 = Site Map Orizzontale
-                }
-            }
             menu_subpages {
                 addItems {
                     101 = List Box

@@ -6,7 +6,7 @@ mod.web_layout.BackendLayouts {
         config {
             backend_layout {
                 colCount = 3
-                rowCount = 1
+                rowCount = 2
                 rows {
                     1 {
                         columns {
@@ -19,6 +19,15 @@ mod.web_layout.BackendLayouts {
                                 name = Contenuto Principale
 								colspan = 2
                                 colPos = 0
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Contenuto Bottom
+                                colspan = 3
+                                colPos = 2
                             }
                         }
                     }

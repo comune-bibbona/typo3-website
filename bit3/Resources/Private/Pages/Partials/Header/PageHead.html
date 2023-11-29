@@ -80,35 +80,35 @@
                 <f:switch expression="{data.uid}">
                     <f:case value="{settings.servizi.iscrizione_trasporto_scolastico.id}">
                         <f:if condition="{settings.servizi.iscrizione_trasporto_scolastico.url}">
-                            <f:variable name="extLink">{settings.servizi.iscrizione_trasporto_scolastico.url}</f:variable>
+                            <f:variable name="extLink">{settings.servizi.iscrizione_trasporto_scolastico.url}&callback_url={pageUrl}</f:variable>
                         </f:if>
                         <f:variable name="dataElement">service-iscrizione-trasporto-scolastico</f:variable>
                         <f:variable name="extLabel">Richiedi Iscrizione Online</f:variable>
                     </f:case>
                     <f:case value="{settings.servizi.iscrizione_mensa_scolastica.id}">
                         <f:if condition="{settings.servizi.iscrizione_mensa_scolastica.url}">
-                            <f:variable name="extLink">{settings.servizi.iscrizione_mensa_scolastica.url}</f:variable>
+                            <f:variable name="extLink">{settings.servizi.iscrizione_mensa_scolastica.url}&callback_url={pageUrl}</f:variable>
                         </f:if>
                         <f:variable name="dataElement">service-iscrizione-mensa-scolastica</f:variable>
                         <f:variable name="extLabel">Richiedi Iscrizione Online</f:variable>
                     </f:case>
                     <f:case value="{settings.servizi.iscrizione_asilo_nido.id}">
                         <f:if condition="{settings.servizi.iscrizione_asilo_nido.url}">
-                            <f:variable name="extLink">{settings.servizi.iscrizione_asilo_nido.url}</f:variable>
+                            <f:variable name="extLink">{settings.servizi.iscrizione_asilo_nido.url}&callback_url={pageUrl}</f:variable>
                         </f:if>
                         <f:variable name="dataElement">service-iscrizione-asilo-nido</f:variable>
                         <f:variable name="extLabel">Richiedi Iscrizione Online</f:variable>
                     </f:case>
                     <f:case value="{settings.servizi.pagamento_imu.id}">
                         <f:if condition="{settings.servizi.pagamento_imu.url}">
-                            <f:variable name="extLink">{settings.servizi.pagamento_imu.url}</f:variable>
+                            <f:variable name="extLink">{settings.servizi.pagamento_imu.url}&callback_url={pageUrl}</f:variable>
                         </f:if>
                         <f:variable name="dataElement">appointment-booking</f:variable>
                         <f:variable name="extLabel">Pagamento IMU Online</f:variable>
                     </f:case>
                     <f:case value="{settings.servizi.prenota_appuntamento.id}">
                         <f:if condition="{settings.servizi.prenota_appuntamento.url}">
-                            <f:variable name="extLink">{settings.servizi.prenota_appuntamento.url}</f:variable>
+                            <f:variable name="extLink">{settings.servizi.prenota_appuntamento.url}&callback_url={pageUrl}</f:variable>
                         </f:if>
                         <f:variable name="dataElement">appointment-booking</f:variable>
                         <f:variable name="extLabel">Prenota Appuntamento Online</f:variable>
@@ -123,7 +123,7 @@
                 <f:if condition="{extLink}">
                     <f:render partial="Header/PageHead" section="ServizioAttivo" arguments="{_all}" />
                     <p>
-                        <f:link.external uri="{extLink}" class="btn btn-primary" title="{extLink}" data="{element: '{dataElement}'}" target="_blank">
+                        <f:link.external uri="{extLink}" class="btn btn-primary" title="{extLabel}" data="{element: '{dataElement}'}" target="_blank">
                             <svg class="icon icon-primary icon-sm" aria-hidden="true">
                                 <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-inbox"></use>
                             </svg><span>{extLabel}</span>

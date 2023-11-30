@@ -530,8 +530,9 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 		$constantValue='';
 
 		foreach ($constantNames as $constantName){
-			if ($this->request->hasArgument($constantName)) {
-				$constantValue = trim($this->request->getArgument($constantName));
+			$constantNameInput = str_replace(".", "_", $constantName);
+			if ($this->request->hasArgument($constantNameInput)) {
+				$constantValue = trim($this->request->getArgument($constantNameInput));
 				if($constantValue==='' || $constantValue==null) {
 					unset($vettTSConstants[$constantName]);
 				} else {

@@ -138,6 +138,14 @@ a.read-more .icon {
 .rating:not(:checked) > label:hover ~ label svg {
     fill: var(--primary-color);
 }
+.form-check [type="radio"]:checked + label::before {
+    border-color: var(--primary-color);
+}
+.form-check [type="radio"]:checked + label::after {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
 .pagination .page-item .page-link[aria-current],
 .pagination .page-item .page-link:hover {
     border: 1px solid var(--primary-color);

@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+	<f:if condition="{newsItem.categories}">
+		<f:then>
+			<f:if condition="{newsItem.categories.0.images}">
+				<f:then>
+					<f:image class="img-dummy img-responsive" src="/fileadmin/{newsItem.categories.0.images.0.originalResource.identifier}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+				</f:then>
+				<f:else>
+					<f:image class="img-dummy img-responsive" src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:image class="img-dummy img-responsive" src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+		</f:else>
+	</f:if>
+</f:section>
+
+</html>

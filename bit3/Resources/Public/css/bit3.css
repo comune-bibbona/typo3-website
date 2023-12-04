@@ -10,13 +10,16 @@
 .it-hero-wrapper {
     background: var(--primary-color);
 }
+.navbar .navbar-collapsable .navbar-nav li a.nav-link {
+    color: var(--primary-color);
+}
 @media (min-width: 992px) {
     .it-header-navbar-wrapper {
         background: var(--primary-color);
     }
-}
-.navbar .navbar-collapsable .navbar-nav li a.nav-link {
-    color: var(--primary-color);
+    .navbar .navbar-collapsable .navbar-nav li a.nav-link {
+        color: #fff;
+    }
 }
 .navbar .navbar-collapsable .navbar-nav li a.nav-link.active {
     border-left: 3px solid var(--primary-color);

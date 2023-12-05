@@ -11,7 +11,7 @@
                         <f:else>
                             <li class="nav-item{f:if(condition: mainnavigationItem.active, then: ' active')}">
                                 <a class="nav-link {f:if(condition: mainnavigationItem.active, then: ' active')}" href="{mainnavigationItem.link}" aria-current="page" target="{mainnavigationItem.target}" {f:if(condition: mainnavigationItem.data.data_element, then: ' data-element="{mainnavigationItem.data.data_element}"')} data-focus-mouse="false">
-                                <span>{mainnavigationItem.title}</span>
+                                <span><f:format.htmlentitiesDecode>{mainnavigationItem.title}</f:format.htmlentitiesDecode></span>
                                 </a>
                             </li>
                         </f:else>
@@ -27,7 +27,7 @@
             <ul class="navbar-nav navbar-secondary">
                 <f:for each="{secondarynavigation}" as="secondarynavigationItem">
                     <li class="nav-item{f:if(condition: secondarynavigationItem.active, then: ' active')}">
-                        <a class="nav-link{f:if(condition: secondarynavigationItem.active, then: ' active')}" href="{secondarynavigationItem.link}" title="{secondarynavigationItem.title}" target="{secondarynavigationItem.target}" {f:if(condition: secondarynavigationItem.data.data_element, then: ' data-element="{secondarynavigationItem.data.data_element}"', else: 'data-element="custom-submenu"')}>{secondarynavigationItem.title}</a>
+                        <a class="nav-link{f:if(condition: secondarynavigationItem.active, then: ' active')}" href="{secondarynavigationItem.link}" title="{secondarynavigationItem.title}" target="{secondarynavigationItem.target}" {f:if(condition: secondarynavigationItem.data.data_element, then: ' data-element="{secondarynavigationItem.data.data_element}"', else: 'data-element="custom-submenu"')}><f:format.htmlentitiesDecode>{secondarynavigationItem.title}</f:format.htmlentitiesDecode></a>
                     </li>
                 </f:for>
             </ul>
@@ -48,7 +48,7 @@
                                 <f:if condition="{subnavigationItem.children}">
                                     <f:then>
                                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="mainNavDropdown{subnavigationItem.data.uid}" {f:if(condition: subnavigationItem.data.data_element, then: ' data-element="{subnavigationItem.data.data_element}"')}">
-                                            <span>{subnavigationItem.title}</span>
+                                            <span><f:format.htmlentitiesDecode>{subnavigationItem.title}</f:format.htmlentitiesDecode></span>
                                             <svg class="icon icon-xs">
                                                 <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-expand"></use>
                                             </svg>
@@ -62,7 +62,7 @@
                                                                 <li class="nav-item v-divider"></li>
                                                             </f:then>
                                                             <f:else>
-                                                                <li><a class="dropdown-item list-item" href="{subnavigationChild.link}" title="subnavigationChild.title" {f:if(condition: subnavigationChild.data.data_element, then: ' data-element="{subnavigationChild.data.data_element}"')}"><span>{subnavigationChild.title}</span></a></li>
+                                                                <li><a class="dropdown-item list-item" href="{subnavigationChild.link}" title="subnavigationChild.title" {f:if(condition: subnavigationChild.data.data_element, then: ' data-element="{subnavigationChild.data.data_element}"')}"><span><f:format.htmlentitiesDecode>{subnavigationChild.title}</f:format.htmlentitiesDecode></span></a></li>
                                                             </f:else>
                                                         </f:if>
                                                     </f:for>
@@ -72,7 +72,7 @@
                                     </f:then>
                                     <f:else>
                                         <a class="nav-link {f:if(condition: subnavigationItem.active, then: 'active')}" href="{subnavigationItem.link}" target="{subnavigationItem.target}" title="{subnavigationItem.title}" {f:if(condition: subnavigationItem.data.data_element, then: ' data-element="{subnavigationItem.data.data_element}"')} data-focus-mouse="false">
-                                            <span>{subnavigationItem.title}</span>
+                                        <span><f:format.htmlentitiesDecode>{subnavigationItem.title}</f:format.htmlentitiesDecode></span>
                                         </a>
                                     </f:else>
                                 </f:if>
@@ -98,7 +98,7 @@
                                             <f:format.htmlentitiesDecode>{pageTitle}</f:format.htmlentitiesDecode>
                                         </f:then>
                                         <f:else>
-                                            {breadcrumb.title}<f:if condition="{breadcrumb.hasSubpages} > 0"><span class="separator">/</span></f:if>
+                                            <f:format.htmlentitiesDecode>{breadcrumb.title}</f:format.htmlentitiesDecode><f:if condition="{breadcrumb.hasSubpages} > 0"><span class="separator">/</span></f:if>
                                         </f:else>
                                     </f:if>
                                 </li>
@@ -130,30 +130,21 @@
                                             <f:then>
                                                 <a class="list-item large medium right-icon {f:if(condition: sidebarItem.active, then: 'active')}" href="#collapse{sidebarItem.data.uid}" data-bs-toggle="collapse" aria-expanded="{f:if(condition: sidebarItem.active, then: 'true', else: 'false')}" aria-controls="collapse{sidebarItem.data.uid}" data-focus-mouse="false">
                                                   <span class="list-item-title-icon-wrapper">
-                                                    <span>{sidebarItem.title}</span>
+                                                    <span><f:format.htmlentitiesDecode>{sidebarItem.title}</f:format.htmlentitiesDecode></span>
                                                     <svg class="icon icon-sm icon-primary right" aria-hidden="true"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-expand"></use></svg>
                                                   </span>
                                                 </a>
                                                 <ul class="link-sublist collapse {f:if(condition: sidebarItem.active, then: 'show')}" id="collapse{sidebarItem.data.uid}" style="">
                                                     <f:for each="{sidebarItem.children}" as="sidebarChild">
                                                         <li>
-                                                            <a class="list-item {f:if(condition: sidebarChild.active, then: 'active')}" href="{sidebarChild.link}" target="{sidebarChild.target}" title="{sidebarChild.title}" {f:if(condition: sidebarChild.data.data_element, then: ' data-element="{sidebarChild.data.data_element}"')}><span>{sidebarChild.title}</span></a>
-                                                            <f:if condition="{sidebarChild.children}">
-                                                                <ul class="link-sublist collapse {f:if(condition: sidebarChild.active, then: 'show')}">
-                                                                    <f:for each="{sidebarChild.children}" as="sidebarThirdLevel">
-                                                                        <li>
-                                                                            <a class="list-item {f:if(condition: sidebarThirdLevel.active, then: 'active')}" href="{sidebarThirdLevel.link}" target="{sidebarThirdLevel.target}" title="{sidebarThirdLevel.title}" {f:if(condition: sidebarThirdLevel.data.data_element, then: ' data-element="{sidebarThirdLevel.data.data_element}"')}><span>{sidebarThirdLevel.title}</span></a>
-                                                                        </li>
-                                                                    </f:for>
-                                                                </ul>
-                                                            </f:if>
+                                                            <a class="list-item {f:if(condition: sidebarChild.active, then: 'active')}" href="{sidebarChild.link}" target="{sidebarChild.target}" title="{sidebarChild.title}" {f:if(condition: sidebarChild.data.data_element, then: ' data-element="{sidebarChild.data.data_element}"')}><span><f:format.htmlentitiesDecode>{sidebarChild.title}</f:format.htmlentitiesDecode></span></a>
                                                         </li>
                                                     </f:for>
                                                 </ul>
                                             </f:then>
                                             <f:else>
                                                 <a class="list-item large medium {f:if(condition: sidebarItem.active, then: 'active')}" href="{sidebarItem.link}" target="{sidebarItem.target}" title="{sidebarItem.title}" {f:if(condition: sidebarItem.data.data_element, then: ' data-element="{sidebarItem.data.data_element}"')} data-focus-mouse="false">
-                                                    <span>{sidebarItem.title}</span>
+                                                <span><f:format.htmlentitiesDecode>{sidebarItem.title}</f:format.htmlentitiesDecode></span>
                                                 </a>
                                             </f:else>
                                         </f:if>

@@ -95,7 +95,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">
                                     <f:if condition="{data.backend_layout} == 'pagets__NewsDetail'">
                                         <f:then>
-                                            {pageTitle}
+                                            <f:format.htmlentitiesDecode>{pageTitle}</f:format.htmlentitiesDecode>
                                         </f:then>
                                         <f:else>
                                             {breadcrumb.title}<f:if condition="{breadcrumb.hasSubpages} > 0"><span class="separator">/</span></f:if>
@@ -104,7 +104,7 @@
                                 </li>
                             </f:then>
                             <f:else>
-                                <li class="breadcrumb-item"><a href="{breadcrumb.link}" title="{breadcrumb.title}" {f:if(condition: breadcrumb.data.data_element, then: ' data-element="{breadcrumb.data.data_element}"')}>{breadcrumb.title}</a><span class="separator">/</span></li>
+                                <li class="breadcrumb-item"><a href="{breadcrumb.link}" title="{breadcrumb.title}" {f:if(condition: breadcrumb.data.data_element, then: ' data-element="{breadcrumb.data.data_element}"')}><f:format.htmlentitiesDecode>{breadcrumb.title}</f:format.htmlentitiesDecode></a><span class="separator">/</span></li>
                             </f:else>
                         </f:if>
                     </f:for>

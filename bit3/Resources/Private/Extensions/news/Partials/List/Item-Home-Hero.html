@@ -13,7 +13,7 @@
 					<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}" />
 				</div>
 				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="text-decoration-none" data="{focus-mouse: 'false'}">
-					<h3 class="card-title">{newsItem.title}</h3>
+					<h3 class="card-title"><f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode></h3>
 				</n:link>
 				<p class="mb-4 pt-3 lora">
 					<n:removeMediaTags>

@@ -35,7 +35,7 @@
 				</time>
 			</span>
 		</div>
-		<h3 class="card-title" itemprop="headline">{newsItem.title}</h3>
+		<h3 class="card-title" itemprop="headline"><f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode></h3>
 		<div class="card-text">
 			<f:format.html>{newsItem.bodytext}</f:format.html>
 			<f:if condition="{newsItem.categories}">
@@ -58,7 +58,7 @@
 						<li>
 							<span class="news-related-news-date"><f:format.date format="{f:translate(key:'dateFormat')}">{related.datetime}</f:format.date></span>
 							<n:link newsItem="{related}" settings="{settings}" title="{related.title}">
-								{related.title}
+								<f:format.htmlentitiesDecode>{related.title}</f:format.htmlentitiesDecode>
 							</n:link>
 						</li>
 

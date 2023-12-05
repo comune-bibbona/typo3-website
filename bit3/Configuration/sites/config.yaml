@@ -1,0 +1,59 @@
+base: /
+languages:
+  -
+    title: Italiano
+    enabled: true
+    base: /
+    typo3Language: it
+    locale: it_IT.UTF-8
+    iso-639-1: it
+    navigationTitle: Italiano
+    hreflang: it_IT
+    direction: ltr
+    flag: it
+    languageId: 0
+rootPageId: 872
+routeEnhancers:
+  NewsPlugin:
+    type: Extbase
+    limitToPages:
+      - 562
+      - 616
+      - 642
+      - 646
+      - 884
+      - 1135
+      - 1321
+      - 1322
+      - 1323
+      - 1324
+    extension: News
+    plugin: Pi1
+    routes:
+      -
+        routePath: '/blog/{page}'
+        _controller: 'News::list'
+        _arguments:
+          page: '@widget_0/currentPage'
+      -
+        routePath: '/tag/{tag_name}'
+        _controller: 'News::list'
+        _arguments:
+          tag_name: overwriteDemand/tags
+      -
+        routePath: '/{news_title}'
+        _controller: 'News::detail'
+        _arguments:
+          news_title: news
+      -
+        routePath: '/archivio/{year}/{month}'
+        _controller: 'News::archive'
+    defaultController: 'News::list'
+    defaults:
+      page: '0'
+    aspects:
+      news_title:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_news
+        routeFieldName: path_segment
+websiteTitle: 'Comune di Bibbona'

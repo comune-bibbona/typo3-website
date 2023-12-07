@@ -65,4 +65,12 @@ plugin.tx_news {
         newsDate < temp.newsDate
     }
 
+    page.meta {
+        og:title >
+        og:image >
+    }
 [global]
+
+
+
+

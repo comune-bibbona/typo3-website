@@ -8,6 +8,9 @@
 
 <f:if condition="{newsItem}">
 	<f:then>
+		<f:if condition="{settings.detail.showMetaTags}">
+			<f:render partial="Detail/Opengraph" arguments="{newsItem: newsItem, settings:settings}" />
+		</f:if>
 		<f:if condition="{settings.templateLayout} == 99">
 			<f:then>
 				<f:render section="detailNews" />

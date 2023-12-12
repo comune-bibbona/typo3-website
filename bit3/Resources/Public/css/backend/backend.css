@@ -17,7 +17,8 @@
     border-top: 3px solid #d2d6de;
 }
 
-.t3-grid-cell[data-colpos="0"] {
+.t3-grid-cell[data-colpos="0"],
+.t3-grid-cell[data-colpos="6"] {
     border-top-color: #810c03;
 }
 

@@ -2,10 +2,10 @@
 	<f:for each="{categories}" as="category" iteration="iterator">
 		<f:if condition="{category.shortcut}">
 			<f:then>
-				<f:link.typolink parameter="{category.shortcut}" class="list-item">{category.title}</f:link.typolink>{f:if(condition: iterator.isLast, then: '', else: ', ')}
+				<f:link.typolink parameter="{category.shortcut}" class="list-item">{category.title}</f:link.typolink>
 			</f:then>
 			<f:else>
-				{category.title}{f:if(condition: iterator.isLast, then: '', else: ', ')}
+				{category.title}
 			</f:else>
 		</f:if>
 	</f:for>

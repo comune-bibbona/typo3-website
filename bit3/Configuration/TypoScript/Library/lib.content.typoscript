@@ -45,10 +45,15 @@ lib.content.home {
         10 < styles.content.get
         10.select.where = colPos=3
     }
-    buttons = COA
-    buttons {
+    topnews = COA
+    topnews {
         10 < styles.content.get
         10.select.where = colPos=0
+    }
+    calendario = COA
+    calendario {
+        10 < styles.content.get
+        10.select.where = colPos=6
     }
     news = COA
     news {

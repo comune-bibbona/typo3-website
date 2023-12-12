@@ -2,7 +2,9 @@
 <f:layout name="Home" />
 <f:section name="Main">
 
-    <f:cObject typoscriptObjectPath="lib.content.home.slideshow" />
+    <section id="head-section">
+        <f:cObject typoscriptObjectPath="lib.content.home.slideshow" />
+    </section>
 
     <div class="section macro-aree">
         <div class="container">
@@ -20,17 +22,27 @@
         </div>
     </div>
 
-    <div class="section scorciatoie">
+    <div id="news" class="section section-muted pb-90 pb-lg-50 px-lg-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 pr-0 ">
-                    <f:cObject typoscriptObjectPath="lib.content.home.buttons" />
+                    <f:cObject typoscriptObjectPath="lib.content.home.topnews" />
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="news" class="section news">
+    <section id="calendario" class="section section-muted pb-90 pb-lg-50 px-lg-5">
+        <div class="container">
+            <div class="row row-calendar">
+                <div class="col-12 pr-0 ">
+                    <f:cObject typoscriptObjectPath="lib.content.home.calendario" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section news">
         <div class="container">
             <div class="row">
                 <div class="col-12">

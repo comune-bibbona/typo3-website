@@ -649,6 +649,12 @@ p.text-right {
     }
 }
 
+.card .card-calendar.card-calendar-start {
+    right: unset;
+    left: 32px;
+}
+
+
 /* IndexedSearch */
 .searchbox legend,
 .searchbox label {

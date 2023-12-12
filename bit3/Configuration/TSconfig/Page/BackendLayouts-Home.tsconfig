@@ -6,7 +6,7 @@ mod.web_layout.BackendLayouts {
         config {
             backend_layout {
                 colCount = 12
-                rowCount = 5
+                rowCount = 6
                 rows {
                     1 {
                         columns {
@@ -39,7 +39,7 @@ mod.web_layout.BackendLayouts {
                     3 {
                         columns {
                             1 {
-                                name = Bottoni
+                                name = Notizie in Evidenza
                                 colPos = 0
                                 colspan = 12
                             }
@@ -48,13 +48,22 @@ mod.web_layout.BackendLayouts {
                     4 {
                         columns {
                             1 {
-                                name = Ultime Notizie
-                                colPos = 5
+                                name = Calendario
+                                colPos = 6
                                 colspan = 12
                             }
                         }
                     }
                     5 {
+                        columns {
+                            1 {
+                                name = Altri Contenuti
+                                colPos = 5
+                                colspan = 12
+                            }
+                        }
+                    }
+                    6 {
                         columns {
                             1 {
                                 name = Footer Sx

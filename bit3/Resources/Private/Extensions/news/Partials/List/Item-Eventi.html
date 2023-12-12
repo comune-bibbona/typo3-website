@@ -5,7 +5,6 @@
 	=====================
 		Partials/List/Item-Eventi.html
 -->
-
 <div class="col-lg-6 col-xl-4">
 	<div class="card-wrapper border border-light rounded shadow-sm">
 		<div class="card no-after rounded">
@@ -23,10 +22,7 @@
 							</f:else>
 						</f:if>
 					</figure>
-					<div class="card-calendar d-flex flex-column justify-content-center">
-						<span class="card-date"><f:format.date format="%d">{newsItem.datetime}</f:format.date></span>
-						<span class="card-day"><f:format.date format="%B">{newsItem.datetime}</f:format.date></span>
-					</div>
+					<f:render partial="General/EventDate" arguments="{eventStart: newsItem.datetime, eventEnd: newsItem.eventEnd}" />
 				</div>
 			</div>
 			<div class="card-body">

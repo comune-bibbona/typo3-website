@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{f:format.date(date: eventEnd)}">
+	<f:then>
+		<f:if condition="{f:format.date(date: eventStart, format: 'Y')} != {f:format.date(date: eventEnd, format: 'Y')}">
+			<f:then>
+				<div class="card-calendar card-calendar-start d-flex flex-column justify-content-center">
+					<span class="card-date"><f:format.date format="%d">{eventStart}</f:format.date></span>
+					<span class="card-month"><f:format.date format="%B">{eventStart}</f:format.date></span>
+					<span class="card-year"><f:format.date format="Y">{eventStart}</f:format.date></span>
+				</div>
+				<div class="card-calendar d-flex flex-column justify-content-center">
+					<span class="card-date"><f:format.date format="%d">{eventEnd}</f:format.date></span>
+					<span class="card-month"><f:format.date format="%B">{eventEnd}</f:format.date></span>
+					<span class="card-year"><f:format.date format="Y">{eventEnd}</f:format.date></span>
+				</div>
+			</f:then>
+			<f:else>
+				<f:if condition="{f:format.date(date: eventStart, format: 'n')} != {f:format.date(date: eventEnd, format: 'n')}">
+					<f:then>
+						<div class="card-calendar card-calendar-start d-flex flex-column justify-content-center">
+							<span class="card-date"><f:format.date format="%d">{eventStart}</f:format.date></span>
+							<span class="card-month"><f:format.date format="%B">{eventStart}</f:format.date></span>
+						</div>
+						<div class="card-calendar d-flex flex-column justify-content-center">
+							<span class="card-date"><f:format.date format="%d">{eventEnd}</f:format.date></span>
+							<span class="card-month"><f:format.date format="%B">{eventEnd}</f:format.date></span>
+						</div>
+					</f:then>
+					<f:else>
+						<div class="card-calendar d-flex flex-column justify-content-center">
+							<span class="card-date"><f:format.date format="%d">{eventStart}</f:format.date>-<f:format.date format="%d">{eventEnd}</f:format.date> </span>
+							<span class="card-month"><f:format.date format="%B">{eventStart}</f:format.date></span>
+						</div>
+					</f:else>
+				</f:if>
+			</f:else>
+		</f:if>
+	</f:then>
+	<f:else>
+		<div class="card-calendar d-flex flex-column justify-content-center">
+			<span class="card-date"><f:format.date format="%d">{eventStart}</f:format.date></span>
+			<span class="card-month"><f:format.date format="%B">{eventStart}</f:format.date></span>
+		</div>
+	</f:else>
+</f:if>
+</html>

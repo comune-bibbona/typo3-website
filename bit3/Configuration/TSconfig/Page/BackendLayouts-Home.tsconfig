@@ -39,8 +39,8 @@ mod.web_layout.BackendLayouts {
                     3 {
                         columns {
                             1 {
-                                name = Notizie in Evidenza
-                                colPos = 0
+                                name = Calendario
+                                colPos = 6
                                 colspan = 12
                             }
                         }
@@ -48,8 +48,8 @@ mod.web_layout.BackendLayouts {
                     4 {
                         columns {
                             1 {
-                                name = Calendario
-                                colPos = 6
+                                name = Notizie in Evidenza
+                                colPos = 0
                                 colspan = 12
                             }
                         }

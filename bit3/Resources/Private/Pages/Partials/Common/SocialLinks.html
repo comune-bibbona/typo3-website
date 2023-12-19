@@ -8,6 +8,7 @@
         {settings.social.vimeo.url}!='' ||
         {settings.social.linkedin.url}!='' ||
         {settings.social.telegram.url}!='' ||
+        {settings.social.whatsapp.url}!='' ||
         {settings.social.rss.url}!=''
         ">
         <div class="it-socials d-none d-md-flex">
@@ -83,6 +84,16 @@
                         </a>
                     </li>
                 </f:if>
+                <f:if condition="{settings.social.whatsapp.url}">
+                    <li>
+                        <a href="{settings.social.whatsapp.url}" aria-label="{settings.social.whatsapp.label}" target="_blank">
+                            <svg class="icon">
+                                <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-whatsapp"></use>
+                            </svg>
+                            <span class="visually-hidden">{settings.social.whatsapp.label}</span>
+                        </a>
+                    </li>
+                </f:if>
                 <f:if condition="{settings.social.rss.url}">
                     <li>
                         <a href="{settings.social.rss.url}" aria-label="{settings.social.rss.label}" target="_blank">
@@ -107,6 +118,7 @@
         {settings.social.vimeo.url}!='' ||
         {settings.social.linkedin.url}!='' ||
         {settings.social.telegram.url}!='' ||
+        {settings.social.whatsapp.url}!='' ||
         {settings.social.rss.url}!=''
         ">
         <h3 class="footer-heading-title">Seguici su</h3>
@@ -178,6 +190,16 @@
                             <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-telegram"></use>
                         </svg>
                         <span class="visually-hidden">{settings.social.telegram.label}</span>
+                    </a>
+                </li>
+            </f:if>
+            <f:if condition="{settings.social.whatsapp.url}">
+                <li class="list-inline-item">
+                    <a href="{settings.social.whatsapp.url}" aria-label="{settings.social.whatsapp.label}" class="p-1 text-white" target="_blank">
+                        <svg class="icon icon-sm icon-white align-top">
+                            <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-whatsapp"></use>
+                        </svg>
+                        <span class="visually-hidden">{settings.social.whatsapp.label}</span>
                     </a>
                 </li>
             </f:if>

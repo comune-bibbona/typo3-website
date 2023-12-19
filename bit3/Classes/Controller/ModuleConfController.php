@@ -430,6 +430,7 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                             'social.vimeo.url',
                             'social.linkedin.url',
                             'social.telegram.url',
+							'social.whatsapp.url',
                             'social.rss.url');
 
         $this->updateContstants($constantNames);

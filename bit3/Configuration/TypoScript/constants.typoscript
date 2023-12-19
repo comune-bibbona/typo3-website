@@ -128,7 +128,9 @@ social {
     linkedin.url =
     # cat=Site/08_Social/7; type=string; label= Link alla canale Telegram
     telegram.url =
-    # cat=Site/08_Social/8; type=string; label= Link alla pagina RSS Feed
+    # cat=Site/08_Social/8; type=string; label= Link alla canale Whatsapp
+    whatsapp.url =
+    # cat=Site/08_Social/9; type=string; label= Link alla pagina RSS Feed
     rss.url =
 }
 

@@ -186,6 +186,10 @@ page.10 {
                 label = telegram
                 url = {$social.telegram.url}
             }
+            whatsapp {
+                label = whatsapp
+                url = {$social.whatsapp.url}
+            }
             rss {
                 label = rss
                 url = {$social.rss.url}

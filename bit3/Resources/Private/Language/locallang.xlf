@@ -221,6 +221,9 @@
 			<trans-unit id="bit3.module.social.telegram" xml:space="preserve">
 				<source>Telegram</source>
 			</trans-unit>
+			<trans-unit id="bit3.module.social.whatsapp" xml:space="preserve">
+				<source>Whatsapp</source>
+			</trans-unit>
 			<trans-unit id="bit3.module.social.rss" xml:space="preserve">
 				<source>RSS</source>
 			</trans-unit>

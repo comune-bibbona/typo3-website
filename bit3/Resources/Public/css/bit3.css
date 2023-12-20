@@ -654,6 +654,18 @@ p.text-right {
     left: 32px;
 }
 
+.card .bg-logo {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    background-image: var(--bg-logo);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: 70% 70%;
+}
+
 
 /* IndexedSearch */
 .searchbox legend,

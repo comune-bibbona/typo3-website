@@ -30,6 +30,7 @@ page.headerData.20.value (
         --lighten-primary-color: {$skin.lighten_primary_color};
         --lightest-primary-color: {$skin.lightest_primary_color};
         --bs-link-color: {$skin.primary_color};
+        --bg-logo: url('{$skin.path_logo}');
     }
 </style>
 )

@@ -790,12 +790,18 @@ p.text-right {
 .upload-file-list .upload-file.success p small {
     color: #333333;
 }
+.upload-file-list .upload-file.success svg {
+    fill: var(--primary-color);
+}
 li.upload-file  a {
     word-break: break-all;
     white-space: break-spaces;
 }
 .upload[type="file"] + label:hover {
     background-color: var(--darken-primary-color);
+}
+.card.card-upload::after {
+    content: none;
 }
 
 /* Bullets */

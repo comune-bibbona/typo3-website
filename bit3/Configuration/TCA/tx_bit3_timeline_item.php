@@ -54,12 +54,22 @@ return [
 	'types' => [
 		'0' => [
 			'showitem' => '			
-			--palette--;;,date;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:timeline.data,
+			--palette--;;tempo,
 			--palette--;;,header;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:timeline.titolo,
 			--palette--;;,bodytext;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:childItem.bodytext,   
 			--palette--;;,link;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel
 			--palette--;;,categories;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
         	',
+		],
+	],
+	'palettes' => [
+		'tempo' => [
+			'label' => 'LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:timeline.palette.tempo',
+			'showitem' => '
+			--palette--;;,date;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:timeline.data,
+			--palette--;;,durata;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:timeline.durata,
+			--palette--;;,unitaditempo;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:timeline.unitaditempo,
+			',
 		],
 	],
 	'columns' => [
@@ -104,6 +114,46 @@ return [
 				'renderType' => 'inputDateTime',
 				'eval' => 'date,int',
 				'default' => 0
+			]
+		],
+		'durata' => [
+			'exclude' => true,
+			'label' => $ll . 'timeline.durata',
+			'config' => [
+				'type' => 'input',
+				'eval' => 'int',
+				'size' => 4,
+			]
+		],
+		'unitaditempo' => [
+			'exclude' => true,
+			'label' => $ll . 'timeline.unitaditempo',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'items' => [
+					[
+						'label' => $ll . 'timeline.unitaditempo.ore',
+						'value' => 'ore',
+					],
+					[
+						'label' => $ll . 'timeline.unitaditempo.giorni',
+						'value' => 'giorni',
+					],
+					[
+						'label' => $ll . 'timeline.unitaditempo.settimane',
+						'value' => 'settimane',
+					],
+					[
+						'label' => $ll . 'timeline.unitaditempo.mesi',
+						'value' => 'mesi',
+					],
+					[
+						'label' => $ll . 'timeline.unitaditempo.anni',
+						'value' => 'anni',
+					],
+				],
+				'default' => 'giorni',
 			]
 		],
 		'link' => [

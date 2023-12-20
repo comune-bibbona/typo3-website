@@ -84,11 +84,35 @@
 			<trans-unit id="timeline.palette.header" xml:space="preserve">
 				<source>Titolo e Data</source>
 			</trans-unit>
+			<trans-unit id="timeline.palette.tempo" xml:space="preserve">
+				<source>Data o tempo trascorso dall'evento precedente (il tempo trascorso viene utilizzato se la data non è impostata)</source>
+			</trans-unit>
 			<trans-unit id="timeline.titolo" xml:space="preserve">
 				<source>Titolo</source>
 			</trans-unit>
 			<trans-unit id="timeline.data" xml:space="preserve">
 				<source>Data evento</source>
+			</trans-unit>
+			<trans-unit id="timeline.durata" xml:space="preserve">
+				<source>Tempo trascorso dall'evento precedente</source>
+			</trans-unit>
+			<trans-unit id="timeline.unitaditempo" xml:space="preserve">
+				<source>Unità di tempo della durata</source>
+			</trans-unit>
+			<trans-unit id="timeline.unitaditempo.ore" xml:space="preserve">
+				<source>ore</source>
+			</trans-unit>
+			<trans-unit id="timeline.unitaditempo.giorni" xml:space="preserve">
+				<source>giorni</source>
+			</trans-unit>
+			<trans-unit id="timeline.unitaditempo.settimane" xml:space="preserve">
+				<source>settimane</source>
+			</trans-unit>
+			<trans-unit id="timeline.unitaditempo.mesi" xml:space="preserve">
+				<source>mesi</source>
+			</trans-unit>
+			<trans-unit id="timeline.unitaditempo.anni" xml:space="preserve">
+				<source>anni</source>
 			</trans-unit>
 			<trans-unit id="page.dataelement" xml:space="preserve">
                 <source>data-element</source>

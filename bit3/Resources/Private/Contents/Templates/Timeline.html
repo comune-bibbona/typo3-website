@@ -13,9 +13,19 @@
                 <f:for each="{records}" as="record" iteration="iteration">
                     <div class="calendar-date">
                         <h3 class="calendar-date-day">
-                            <small class="calendar-date-day__year"><f:format.date format="Y">{record.data.date}</f:format.date></small>
-                            <span class="title-xxlarge-regular d-flex justify-content-center"><f:format.date format="d">{record.data.date}</f:format.date></span>
-                            <small class="calendar-date-day__month"><f:format.date format="M">{record.data.date}</f:format.date></small>
+                            <f:if condition="{record.data.date}>0">
+                                <f:then>
+                                    <small class="calendar-date-day__year"><f:format.date format="Y">{record.data.date}</f:format.date></small>
+                                    <span class="title-xxlarge-regular d-flex justify-content-center"><f:format.date format="d">{record.data.date}</f:format.date></span>
+                                    <small class="calendar-date-day__month"><f:format.date format="M">{record.data.date}</f:format.date></small>
+                                </f:then>
+                                <f:else>
+                                    <f:if condition="{record.data.durata}>0">
+                                        <span class="title-xxlarge-regular d-flex justify-content-center">{record.data.durata}</span>
+                                        <small class="calendar-date-day__month">{record.data.unitaditempo}</small>
+                                    </f:if>
+                                </f:else>
+                            </f:if>
                         </h3>
                         <div class="calendar-date-description rounded">
                             <div class="calendar-date-description-content">

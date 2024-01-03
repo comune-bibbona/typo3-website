@@ -803,6 +803,9 @@ li.upload-file  a {
 .card.card-upload::after {
     content: none;
 }
+.card .categoryicon-top .icon {
+    fill: var(--primary-color);
+}
 
 /* Bullets */
 ul.ce-bullets,

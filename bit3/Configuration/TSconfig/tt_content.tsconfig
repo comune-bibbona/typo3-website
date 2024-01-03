@@ -131,7 +131,8 @@ TCEFORM.tt_content {
             }
             uploads {
                 addItems {
-                    101 = Card
+                    101 = Card Minimale
+                    102 = Card Completa (con categorie)
                 }
             }
         }

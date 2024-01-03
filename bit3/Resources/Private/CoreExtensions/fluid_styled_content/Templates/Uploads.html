@@ -1,5 +1,6 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:b="http://typo3.org/ns/Aip/Bit3/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Uploads" />
+
 <f:section name="Main">
     <f:if condition="{files}">
         <ul class="upload-file-list">
@@ -42,7 +43,7 @@
 
 </f:section>
 
-<f:section name="Card">
+<f:section name="CardMinimale">
     <f:if condition="{files}">
         <f:for each="{files}" as="file" iteration="fileIterator">
 
@@ -86,5 +87,47 @@
     </f:if>
 
 </f:section>
+
+<f:section name="CardCompleta">
+    <f:if condition="{files}">
+        <div class="row g-4">
+            <f:for each="{files}" as="fileReference" iteration="fileIterator">
+                <div class="col-md-6 col-xl-4">
+                    <div class="card-wrapper border border-light rounded shadow-sm pb-0">
+                        <div class="card no-after rounded">
+                            <div class="card-body rounded-top">
+                                <div class="categoryicon-top">
+                                    <f:debug>{_all}</f:debug>
+                                    <svg class="icon icon-sm" aria-hidden="true">
+                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file"></use>
+                                    </svg>
+                                    <f:if condition="{b:FileCategoriesOutput(recUid: fileReference.properties.uid_local)}">
+                                        <span class="text fw-semibold">
+                                            <f:render partial="Categories" section="Default" arguments="{fileReference: fileReference}" />
+                                        </span>
+                                    </f:if>
+                                </div>
+                                <f:link.file file="{fileReference}" class="text-decoration-none" target="_blank">
+                                    <f:if condition="{fileReference.title}">
+                                        <f:then>
+                                            <h3 class="card-title h4">{fileReference.title}</h3>
+                                        </f:then>
+                                        <f:else>
+                                            <h3 class="card-title h4">{fileReference.name}</h3>
+                                        </f:else>
+                                    </f:if>
+                                </f:link.file>
+                                <f:if condition="{fileReference.title}">
+                                    <p class="text-secondary mb-0">{fileReference.title}</p>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+</f:section>
+
 
 </html>

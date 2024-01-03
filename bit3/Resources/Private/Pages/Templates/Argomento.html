@@ -54,5 +54,18 @@
         </section>
     </f:if>
 
+    <f:if condition="{data.categories}">
+        <section id="argomenti">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-12 mb-30">
+                        <f:render partial="Common/Categories" section="Default" arguments="{categories: data.categories, uid: data.uid, table : 'pages'}" />
+                        <f:render partial="Common/LastUpdate" section="Default" arguments="{date : data.lastUpdated}" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </f:if>
+
 </f:section>
 </html>

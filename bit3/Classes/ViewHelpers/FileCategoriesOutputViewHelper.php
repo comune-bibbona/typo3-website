@@ -84,21 +84,6 @@ class FileCategoriesOutputViewHelper extends AbstractViewHelper implements ViewH
 			$queryBuilder->expr()->eq('scrmm.tablenames', $queryBuilder->createNamedParameter($tableName))
 		);
 
-		/*
-		$queryBuilder->select('sys_category.uid', 'sys_category.title', 'sys_category.slug', 'sys_category_record_mm.uid_foreign', 'sys_category_record_mm.tablenames');
-		$queryBuilder->from('sys_category');
-		$queryBuilder->join(
-			'sys_category',
-			'sys_category_record_mm',
-			'sys_category_record_mm',
-			$queryBuilder->expr()->eq('sys_category_record_mm.uid_local', $queryBuilder->quoteIdentifier('sys_category.uid'))
-		);
-		$queryBuilder->where(
-			$queryBuilder->expr()->eq('sys_category_record_mm.uid_foreign', $queryBuilder->createNamedParameter($recUid, \PDO::PARAM_INT)),
-			$queryBuilder->expr()->eq('sys_category_record_mm.tablenames', $queryBuilder->createNamedParameter($tableName))
-		);
-		*/
-
 		$result = $queryBuilder->execute();
 		$res = [];
 		$i = 1;

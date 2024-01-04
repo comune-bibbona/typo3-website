@@ -65,7 +65,7 @@ class CategoriesOutputViewHelper extends AbstractViewHelper implements ViewHelpe
 		/**
 		 * select the fields that will be returned, use asterisk for all
 		 */
-		$queryBuilder->select('sys_category.uid', 'sys_category.title', 'sys_category.slug', 'sys_category_record_mm.uid_foreign', 'sys_category_record_mm.tablenames');
+		$queryBuilder->select('sys_category.uid', 'sys_category.title', 'sys_category.slug', 'sys_category.single_pid', 'sys_category_record_mm.uid_foreign', 'sys_category_record_mm.tablenames');
 		$queryBuilder->from('sys_category');
 		$queryBuilder->join(
 			'sys_category',

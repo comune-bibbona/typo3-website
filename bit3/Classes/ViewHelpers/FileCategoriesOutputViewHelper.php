@@ -58,7 +58,7 @@ class FileCategoriesOutputViewHelper extends AbstractViewHelper implements ViewH
 		/**
 		 * select the fields that will be returned, use asterisk for all
 		 */
-		$queryBuilder->select('sc.uid', 'sc.title', 'sc.slug', 'scrmm.uid_foreign', 'scrmm.tablenames');
+		$queryBuilder->select('sc.uid', 'sc.title', 'sc.slug', 'sc.single_pid', 'scrmm.uid_foreign', 'scrmm.tablenames');
 		$queryBuilder->from('sys_file_reference');
 		$queryBuilder->join(
 			'sys_file_reference',

@@ -1,14 +1,25 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:section name="Default">
 
+
+
     <f:if condition="{categories}">
         <span class="text-paragraph-small">Argomenti:</span>
         <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
             <f:for each="{b:CategoriesOutput(recUid: uid, tableName: table)}" as="category">
                 <li>
-                    <a class="chip chip-simple" href="{category.slug}" data-element="service-topic" data-focus-mouse="false">
-                        <span class="chip-label">{category.title}</span>
-                    </a>
+                    <f:if condition="{category.single_pid}">
+                        <f:then>
+                            <f:link.page pageUid="{category.single_pid}" class="chip chip-simple" data="{element: 'service-topic', focus-mouse: 'false'}">
+                                <span class="chip-label">{category.title}</span>
+                            </f:link.page>
+                        </f:then>
+                        <f:else>
+                            <a class="chip chip-simple" href="{category.slug}" data-element="service-topic" data-focus-mouse="false">
+                                <span class="chip-label">{category.title}</span>
+                            </a>
+                        </f:else>
+                    </f:if>
                 </li>
             </f:for>
         </ul>

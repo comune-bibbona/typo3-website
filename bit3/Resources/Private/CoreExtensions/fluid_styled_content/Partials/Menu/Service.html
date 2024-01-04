@@ -35,7 +35,7 @@
                     </div>
                 </f:if>
                 <div class="card-body p-0 my-2">
-                    <h3 class="green-title-big t-primary mb-8"><a href="{page.link}" class="cardTitle text-decoration-none" title="{page.title}" {f:if(condition: data_element, then: ' data-element="{data_element}"', else: 'data-element="service-link"')} data-focus-mouse="false">{page.title}</a></h3>
+                    <h3 class="green-title-big t-primary mb-8"><a href="{page.link}" class="cardTitle text-decoration-none" title="{page.title}" {f:if(condition: '{data_element}', then: ' data-element="{data_element}"', else: 'data-element="service-link"')} data-focus-mouse="false">{page.title}</a></h3>
                     <p class="text-paragraph">
                         <f:if condition="{page.data.abstract}">
                             <f:then>
@@ -55,6 +55,6 @@
 <f:section name="Default">
     <f:render section="SearchBox" optional="true" />
     <div class="filterCard">
-        <f:render section="Main" arguments="{menu: menu, data_element: data.data_element}" />
+        <f:render section="Main" arguments="{menu: menu, data_element: data_element}" />
     </div>
 </f:section>

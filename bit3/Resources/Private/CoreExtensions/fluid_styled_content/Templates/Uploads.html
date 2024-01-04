@@ -100,7 +100,7 @@
                                     <svg class="icon icon-sm" aria-hidden="true">
                                         <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file"></use>
                                     </svg>
-                                    <f:if condition="{b:FileCategoriesOutput(recUid: fileReference.properties.uid_local)}">
+                                    <f:if condition="{b:FileCategoriesOutput(recUid: fileReference.properties.uid_local, parentUid: fileReference.properties.uid_foreign)}">
                                         <span class="text fw-semibold">
                                             <f:render partial="Categories" section="Default" arguments="{fileReference: fileReference}" />
                                         </span>

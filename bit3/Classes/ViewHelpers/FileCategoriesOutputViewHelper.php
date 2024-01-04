@@ -37,7 +37,8 @@ class FileCategoriesOutputViewHelper extends AbstractViewHelper implements ViewH
 
 	public function initializeArguments()
 	{
-		$this->registerArgument('recUid', 'integer', 'record UID, e.g. of a content element', true);
+		$this->registerArgument('recUid', 'integer', 'record UID of the file resource (sys_file_reference)', true);
+		$this->registerArgument('parentUid', 'integer', 'record UID of the content element which include the resource', true);
 	}
 
 	/**
@@ -46,6 +47,7 @@ class FileCategoriesOutputViewHelper extends AbstractViewHelper implements ViewH
 	public function render()
 	{
 		$recUid = $this->arguments['recUid'];
+		$parentUid = $this->arguments['parentUid'];
 		$tableName = 'sys_file_metadata';
 
 		/**
@@ -78,6 +80,7 @@ class FileCategoriesOutputViewHelper extends AbstractViewHelper implements ViewH
 		);
 		$queryBuilder->where(
 			$queryBuilder->expr()->eq('sys_file_reference.uid_local', $queryBuilder->createNamedParameter($recUid, \PDO::PARAM_INT)),
+			$queryBuilder->expr()->eq('sys_file_reference.uid_foreign', $queryBuilder->createNamedParameter($parentUid, \PDO::PARAM_INT)),
 			$queryBuilder->expr()->eq('scrmm.tablenames', $queryBuilder->createNamedParameter($tableName))
 		);
 

@@ -5,7 +5,14 @@
 	<f:if condition="{menu}">
 		<f:switch expression="{data.layout}">
 			<f:case value="101">
-				<f:render partial="Menu/ListBox" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
+				<f:if condition="{data.header_layout} == 100">
+					<f:then>
+						<f:render partial="Menu/ListBox" section="Default" arguments="{menu: menu, header: data.header, data_element: data.data_element}" />
+					</f:then>
+					<f:else>
+						<f:render partial="Menu/ListBox" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
+					</f:else>
+				</f:if>
 			</f:case>
 			<f:case value="102">
 				<f:render partial="Menu/Buttons" section="Default" arguments="{menu: menu, data_element: data.data_element}" />

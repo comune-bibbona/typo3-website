@@ -2,6 +2,9 @@
 
 <f:section name="Default">
     <div class="it-list-wrapper">
+        <f:if condition="{header}">
+            <h2 class="title-xsmall-semi-bold"><span>{header}</span></h2>
+        </f:if>
         <ul class="it-list">
             <f:for each="{menu}" as="page">
                 <li>

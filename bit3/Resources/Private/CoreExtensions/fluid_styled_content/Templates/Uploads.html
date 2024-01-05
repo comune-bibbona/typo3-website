@@ -96,9 +96,28 @@
                     <div class="card-wrapper border border-light rounded shadow-sm pb-0">
                         <div class="card no-after rounded">
                             <div class="card-body rounded-top">
+                                <f:switch expression="{fileReference.originalFile.properties.extension}">
+                                    <f:case value="txt"><f:variable name="extension">it-file-txt</f:variable></f:case>
+                                    <f:case value="pdf"><f:variable name="extension">it-file-pdf-ext</f:variable></f:case>
+                                    <f:case value="ods"><f:variable name="extension">it-file-ods</f:variable></f:case>
+                                    <f:case value="odt"><f:variable name="extension">it-file-odt</f:variable></f:case>
+                                    <f:case value="xml"><f:variable name="extension">it-file-xml</f:variable></f:case>
+                                    <f:case value="mp3"><f:variable name="extension">it-file-audio</f:variable></f:case>
+                                    <f:case value="wav"><f:variable name="extension">it-file-audio</f:variable></f:case>
+                                    <f:case value="ogg"><f:variable name="extension">it-file-audio</f:variable></f:case>
+                                    <f:case value="oga"><f:variable name="extension">it-file-audio</f:variable></f:case>
+                                    <f:case value="zip"><f:variable name="extension">it-file-compressed</f:variable></f:case>
+                                    <f:case value="rar"><f:variable name="extension">it-file-compressed</f:variable></f:case>
+                                    <f:case value="tar"><f:variable name="extension">it-file-compressed</f:variable></f:case>
+                                    <f:case value="gzip"><f:variable name="extension">it-file-compressed</f:variable></f:case>
+                                    <f:case value="odp"><f:variable name="extension">it-file-odp</f:variable></f:case>
+                                    <f:case value="ppt"><f:variable name="extension">it-file-ppt</f:variable></f:case>
+                                    <f:case value="csv"><f:variable name="extension">it-file-csv</f:variable></f:case>
+                                    <f:defaultCase><f:variable name="extension">it-file</f:variable></f:defaultCase>
+                                </f:switch>
                                 <div class="categoryicon-top">
                                     <svg class="icon icon-sm" aria-hidden="true">
-                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file"></use>
+                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#{extension}"></use>
                                     </svg>
                                     <f:if condition="{b:FileCategoriesOutput(recUid: fileReference.properties.uid_local, parentUid: fileReference.properties.uid_foreign)}">
                                         <span class="text fw-semibold">

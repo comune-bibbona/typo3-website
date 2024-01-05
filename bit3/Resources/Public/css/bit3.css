@@ -119,6 +119,9 @@ a:hover {
 .cmp-accordion .accordion-header .accordion-button:not(.collapsed) {
     color: var(--primary-color);
 }
+.card a {
+    display: inline;
+}
 .card .card-body .category-top a.category {
     color: var(--primary-color);
 }

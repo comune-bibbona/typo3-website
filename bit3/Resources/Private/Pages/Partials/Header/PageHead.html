@@ -18,7 +18,7 @@
                             <section class="it-hero-wrapper bg-white align-items-start">
                                 <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
                                     <f:if condition="{pageTitle}">
-                                        <h1 class="text-black hero-title" data-element="page-name"><f:format.htmlentitiesDecode>{pageTitle}</f:format.htmlentitiesDecode></h1>
+                                        <h1 class="text-black hero-title" data-element="{data.data_element}"><f:format.htmlentitiesDecode>{pageTitle}</f:format.htmlentitiesDecode></h1>
                                     </f:if>
                                     <f:if condition="{teaserNews}">
                                         <p class="text-black"><f:format.htmlentitiesDecode>{teaserNews}</f:format.htmlentitiesDecode></p>
@@ -170,7 +170,7 @@
         <section class="it-hero-wrapper bg-white align-items-start">
             <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
                 <f:if condition="{pageTitle}">
-                    <h1 class="text-black hero-title" data-element="page-name">{pageTitle}</h1>
+                    <h1 class="text-black hero-title" data-element="{data.data_element}">{pageTitle}</h1>
                 </f:if>
                 <f:if condition="{pageSubTitle}">
                     <div class="hero-text">

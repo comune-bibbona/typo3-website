@@ -51,6 +51,20 @@ plugin.tx_news {
         }
         wrap = |
     }
+    temp.newsUid < temp.newsTitle
+    temp.newsUid {
+        conf.tx_news_domain_model_news {
+            field = uid
+        }
+        wrap = |
+    }
+    temp.newsCategory < temp.newsTitle
+    temp.newsCategory {
+        conf.tx_news_domain_model_news {
+            field = categories
+        }
+        wrap = |
+    }
 
     config.pageTitle.stdWrap.override.cObject < temp.newsTitle
 
@@ -63,6 +77,12 @@ plugin.tx_news {
 
         newsDate = TEXT
         newsDate < temp.newsDate
+
+        newsUid = TEXT
+        newsUid < temp.newsUid
+
+        newsCategories = TEXT
+        newsCategories < temp.newsCategory
     }
 
     page.meta {

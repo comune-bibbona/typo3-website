@@ -213,17 +213,6 @@
 									</div>
 								</li>
 							</f:if>
-							<f:if condition="{newsItem.categories}">
-								<li>
-									<div class="list-item">
-										<div class="it-right-zone">
-											<span class="text">
-												categorie: <i><f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}" /></i>
-											</span>
-										</div>
-									</div>
-								</li>
-							</f:if>
 						</ul>
 						<f:if condition="{newsItem.allRelatedSorted}">
 							<div class="news-aside-box border-bottom p-2">

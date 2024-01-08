@@ -140,7 +140,6 @@
 		<div class="row border-top border-light row-column-menu-left py-5">
 			<aside class="col-lg-3">
 				<div class="cmp-navscroll sticky-top">
-
 					<nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INDICE DELLA PAGINA" data-bs-navscroll="">
 						<div class="navbar-custom" id="navbarNavProgress">
 							<div class="menu-wrapper">
@@ -184,13 +183,134 @@
 							</div>
 						</div>
 					</nav>
+					<f:if condition="{newsItem.allRelatedSorted}">
+						<nav class="navbar it-navscroll-wrapper navbar-expand-lg border-top" aria-label="NEWS CORRELATE">
+							<div class="navbar-custom" id="navbarRelatedProgress">
+								<div class="menu-wrapper">
+									<div class="link-list-wrapper">
+										<div class="accordion">
+											<div class="accordion-item">
+												  <span class="accordion-header" id="accordion-index-related">
+													<button class="accordion-button pb-10 px-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-index-related" aria-expanded="false" aria-controls="collapse-index-related">
+													  NEWS CORRELATE
+													  <svg class="icon icon-xs right">
+														<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-expand"></use>
+													  </svg>
+													</button>
+												  </span>
+												<div id="collapse-index-related" class="accordion-collapse collapse" role="region" aria-labelledby="accordion-index-related">
+													<div class="accordion-body">
+														<ul class="link-list">
+															<f:for each="{newsItem.allRelatedSorted}" as="related">
+																<li class="nav-item">
+																	<n:link newsItem="{related}" settings="{settings}" title="{related.title}" class="nav-link">
+																		<span class="title-medium">
+																			{related.title}
+																		</span>
+																	</n:link>
+																</li>
+															</f:for>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</nav>
 
-					<div class="it-list-wrapper">
-						<ul class="it-list">
-							<f:if condition="{newsItem.author}">
-								<li>
-									<div class="list-item">
-										<div class="it-right-zone">
+					</f:if>
+
+					<f:if condition="{newsItem.relatedFiles}">
+						<nav class="navbar it-navscroll-wrapper navbar-expand-lg border-top" aria-label="FILE CORRELATI">
+							<div class="navbar-custom" id="navbarFilesProgress">
+								<div class="menu-wrapper">
+									<div class="link-list-wrapper">
+										<div class="accordion">
+											<div class="accordion-item">
+												  <span class="accordion-header" id="accordion-index-files">
+													<button class="accordion-button pb-10 px-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-index-files" aria-expanded="false" aria-controls="collapse-index-files">
+													  FILE CORRELATI
+													  <svg class="icon icon-xs right">
+														<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-expand"></use>
+													  </svg>
+													</button>
+												  </span>
+												<div id="collapse-index-files" class="accordion-collapse collapse" role="region" aria-labelledby="accordion-index-files">
+													<div class="accordion-body">
+														<ul class="link-list">
+															<f:for each="{newsItem.relatedFiles}" as="relatedFile">
+																<li class="nav-item">
+																	<a href="{relatedFile.originalResource.publicUrl -> f:format.htmlspecialchars()}" title="{f:if(condition:relatedFile.originalResource.title, then:relatedFile.originalResource.title, else:relatedFile.originalResource.name)}" class="nav-link" target="_blank">
+																		<span class="title-medium">
+																			{f:if(condition:relatedFile.originalResource.title, then:relatedFile.originalResource.title, else:relatedFile.originalResource.name)}
+																		</span>
+																	</a>
+																</li>
+															</f:for>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</nav>
+					</f:if>
+
+					<f:if condition="{newsItem.relatedLinks}">
+						<nav class="navbar it-navscroll-wrapper navbar-expand-lg border-top" aria-label="LINK CORRELATI">
+							<div class="navbar-custom" id="navbarLinkProgress">
+								<div class="menu-wrapper">
+									<div class="link-list-wrapper">
+										<div class="accordion">
+											<div class="accordion-item">
+												  <span class="accordion-header" id="accordion-index-links">
+													<button class="accordion-button pb-10 px-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-index-links" aria-expanded="false" aria-controls="collapse-index-links">
+													  LINK CORRELATI
+													  <svg class="icon icon-xs right">
+														<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-expand"></use>
+													  </svg>
+													</button>
+												  </span>
+												<div id="collapse-index-links" class="accordion-collapse collapse" role="region" aria-labelledby="accordion-index-links">
+													<div class="accordion-body">
+														<ul class="link-list">
+															<f:for each="{newsItem.relatedLinks}" as="relatedLink">
+																<f:debug>{relatedLink}</f:debug>
+																<li class="nav-item">
+																	<f:link.typolink parameter="{relatedLink.uri}" title="{relatedLink.title}" target="{n:targetLink(link:relatedLink.uri)}" class="nav-link">
+																		<span class="title-medium">
+																			{f:if(condition: relatedLink.title, then: relatedLink.title, else: relatedLink.uri)}
+																		</span>
+																	</f:link.typolink>
+																</li>
+															</f:for>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</nav>
+					</f:if>
+
+				</div>
+				<div>
+
+				</div>
+
+
+				<div class="it-list-wrapper">
+					<ul class="it-list">
+						<f:if condition="{newsItem.author}">
+							<li>
+								<div class="list-item">
+									<div class="it-right-zone">
 											<span class="text">
 											<f:if condition="{newsItem.authorEmail}">
 												<f:then>
@@ -201,87 +321,19 @@
 												</f:else>
 											</f:if>
 											</span>
-										</div>
 									</div>
-								</li>
-							</f:if>
-							<f:if condition="{newsItem.keywords}">
-								<li>
-									<div class="list-item">
-										<div class="it-right-zone"><span class="text">keywords: <i>{newsItem.keywords}</i></span>
-										</div>
+								</div>
+							</li>
+						</f:if>
+						<f:if condition="{newsItem.keywords}">
+							<li>
+								<div class="list-item">
+									<div class="it-right-zone"><span class="text">keywords: <i>{newsItem.keywords}</i></span>
 									</div>
-								</li>
-							</f:if>
-						</ul>
-						<f:if condition="{newsItem.allRelatedSorted}">
-							<div class="news-aside-box border-bottom p-2">
-								<h4>
-									<f:translate key="related-news" />
-								</h4>
-								<div class="it-list-wrapper">
-									<ul class="it-list">
-									<f:for each="{newsItem.allRelatedSorted}" as="related">
-										<li>
-											<n:link newsItem="{related}" settings="{settings}" title="{related.title}" class="list-item">
-												<div class="it-right-zone">
-													<span class="text">
-														{related.title}
-													</span>
-												</div>
-											</n:link>
-										</li>
-									</f:for>
-									</ul>
 								</div>
-							</div>
+							</li>
 						</f:if>
-						<f:if condition="{newsItem.relatedFiles}">
-							<div class="news-aside-box border-bottom p-2">
-								<h4>
-									<f:translate key="related-files" />
-								</h4>
-								<div class="it-list-wrapper">
-									<ul class="it-list">
-									<f:for each="{newsItem.relatedFiles}" as="relatedFile">
-										<li>
-											<a href="{relatedFile.originalResource.publicUrl -> f:format.htmlspecialchars()}" class="list-item" target="_blank">
-												<div class="it-right-zone">
-													<span class="text">
-														{f:if(condition:relatedFile.originalResource.title, then:relatedFile.originalResource.title, else:relatedFile.originalResource.name)}
-													</span>
-												</div>
-											</a>
-										</li>
-									</f:for>
-									</ul>
-								</div>
-							</div>
-						</f:if>
-						<f:if condition="{newsItem.relatedLinks}">
-							<div class="news-aside-box border-bottom p-2">
-								<h4>
-									<f:translate key="related-links" />
-								</h4>
-								<div class="it-list-wrapper">
-									<ul class="it-list">
-										<f:for each="{newsItem.relatedLinks}" as="relatedLink">
-											<li>
-												<f:link.typolink parameter="{relatedLink.uri}" title="{relatedLink.title}" target="{n:targetLink(link:relatedLink.uri)}" class="list-item">
-													<div class="it-right-zone">
-														<span class="text">
-															{f:if(condition: relatedLink.title, then: relatedLink.title, else: relatedLink.uri)}
-														</span>
-														<f:if condition="{relatedLink.description}"><span class="metadata">{relatedLink.description}</span></f:if>
-													</div>
-												</f:link.typolink>
-											</li>
-										</f:for>
-									</ul>
-								</div>
-							</div>
-						</f:if>
-					</div>
+					</ul>
 				</div>
 			</aside>
 			<section class="col-lg-9 it-page-sections-container border-light">

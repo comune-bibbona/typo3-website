@@ -29,6 +29,10 @@
         background-color: rgba(var(--bs-primary-rgb),.05);
     }
 }
+.navbar .nav-item {
+    word-break: break-all;
+}
+
 
 .it-footer-main {
     background-color: var(--darken-primary-color);

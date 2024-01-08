@@ -279,7 +279,6 @@
 													<div class="accordion-body">
 														<ul class="link-list">
 															<f:for each="{newsItem.relatedLinks}" as="relatedLink">
-																<f:debug>{relatedLink}</f:debug>
 																<li class="nav-item">
 																	<f:link.typolink parameter="{relatedLink.uri}" title="{relatedLink.title}" target="{n:targetLink(link:relatedLink.uri)}" class="nav-link">
 																		<span class="title-medium">

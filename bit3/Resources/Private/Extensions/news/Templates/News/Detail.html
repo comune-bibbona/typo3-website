@@ -141,6 +141,50 @@
 			<aside class="col-lg-3">
 				<div class="cmp-navscroll sticky-top">
 
+					<nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INDICE DELLA PAGINA" data-bs-navscroll="">
+						<div class="navbar-custom" id="navbarNavProgress">
+							<div class="menu-wrapper">
+								<div class="link-list-wrapper">
+									<div class="accordion">
+										<div class="accordion-item">
+										  <span class="accordion-header" id="accordion-index-news">
+											<button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-index-news" aria-expanded="true" aria-controls="collapse-index-news">
+											  INDICE DELLA PAGINA
+											  <svg class="icon icon-xs right">
+												<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-expand"></use>
+											  </svg>
+											</button>
+										  </span>
+											<div class="progress">
+												<div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="61.9352467251391" aria-valuemin="0" aria-valuemax="100" style="width: 61.9352%;"></div>
+											</div>
+											<div id="collapse-index-news" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-index-news">
+												<div class="accordion-body">
+													<ul class="link-list" data-element="page-index">
+														<f:if condition="{newsItem.bodytext}">
+															<li class="nav-item">
+																<a class="nav-link" href="#descrizione">
+																	<span class="title-medium">Descrizione</span>
+																</a>
+															</li>
+														</f:if>
+														<f:if condition="{newsItem.contentElements}">
+															<li class="nav-item">
+																<a class="nav-link active" href="#a-cura-di">
+																	<span class="title-medium">A cura di</span>
+																</a>
+															</li>
+														</f:if>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+
 					<div class="it-list-wrapper">
 						<ul class="it-list">
 							<f:if condition="{newsItem.author}">
@@ -255,6 +299,18 @@
 				<article id="descrizione" class="it-page-section anchor-offset" data-audio="">
 					<f:format.html>{newsItem.bodytext}</f:format.html>
 				</article>
+
+				<f:if condition="{newsItem.contentElements}">
+					<article id="a-cura-di" class="it-page-section anchor-offset mt-5">
+						<h2 class="mb-3">A cura di</h2>
+						<div class="row">
+							<div class="col-12">
+								<f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+							</div>
+						</div>
+					</article>
+				</f:if>
+
 				<article id="ultimo-aggiornamento" class="anchor-offset mt-5">
 					<h4 class="h6">Ultimo aggiornamento: <span class="h6 fw-normal"><f:format.date format="d/m/Y, H:i">{newsItem.datetime}</f:format.date></span></h4>
 				</article>

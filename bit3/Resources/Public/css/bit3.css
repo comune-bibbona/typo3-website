@@ -185,6 +185,9 @@ a.read-more .icon {
 .sidebar-wrapper .sidebar-linklist-wrapper .link-list-wrapper ul li a[data-bs-toggle="collapse"].active i {
     color: var(--primary-color);
 }
+aside .cmp-navscroll .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.active {
+    border-left: 2px solid var(--primary-color);
+}
 .sidebar-wrapper .sidebar-linklist-wrapper .link-list-wrapper ul li a.active::after {
     background-color: var(--primary-color);
 }

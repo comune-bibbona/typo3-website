@@ -10,52 +10,47 @@
 </f:section>
 <f:section name="PageHead">
     <div class="container">
-        <f:if condition="{data.backend_layout} == 'pagets__NewsDetail'">
-            <f:then>
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-10">
-                        <div class="cmp-hero">
-                            <section class="it-hero-wrapper bg-white align-items-start">
-                                <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
-                                    <f:if condition="{pageTitle}">
-                                        <h1 class="text-black hero-title" data-element="{data.data_element}"><f:format.htmlentitiesDecode>{pageTitle}</f:format.htmlentitiesDecode></h1>
-                                    </f:if>
-                                    <f:if condition="{teaserNews}">
-                                        <p class="text-black"><f:format.htmlentitiesDecode>{teaserNews}</f:format.htmlentitiesDecode></p>
-                                    </f:if>
-                                    <f:if condition="{newsDate}">
-                                        <div class="row mt-5 mb-4">
-                                            <div class="col-6">
-                                                <small>Data:</small>
-                                                <p class="fw-semibold font-monospace text-black">
-                                                    <time itemprop="datePublished" datetime="{f:format.date(date:newsDate, format:'%e %B %Y')}">
-                                                        <f:format.date format="%e %B %Y">{newsDate}</f:format.date>
-                                                    </time>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </f:if>
+        <f:switch expression="{data.backend_layout}">
+            <f:case value="pagets__NewsDetail">
+                <f:render partial="Header/PageHead" section="NewsDetailHead" arguments="{_all}" />
+            </f:case>
+            <f:case value="'pagets__Servizi'">
+                <f:render partial="Header/PageHead" section="ServiziHead" arguments="{_all}" />
+            </f:case>
+            <f:defaultCase>
+                <f:render partial="Header/PageHead" section="DefaultHead" arguments="{_all}" />
+            </f:defaultCase>
+        </f:switch>
+    </div>
+</f:section>
+<f:section name="NewsDetailHead">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <div class="cmp-hero">
+                <section class="it-hero-wrapper bg-white align-items-start">
+                    <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
+                        <f:if condition="{pageTitle}">
+                            <h1 class="text-black hero-title" data-element="{data.data_element}"><f:format.htmlentitiesDecode>{pageTitle}</f:format.htmlentitiesDecode></h1>
+                        </f:if>
+                        <f:if condition="{teaserNews}">
+                            <p class="text-black"><f:format.htmlentitiesDecode>{teaserNews}</f:format.htmlentitiesDecode></p>
+                        </f:if>
+                        <f:if condition="{newsDate}">
+                            <div class="row mt-5 mb-4">
+                                <div class="col-6">
+                                    <small>Data:</small>
+                                    <p class="fw-semibold font-monospace text-black">
+                                        <time itemprop="datePublished" datetime="{f:format.date(date:newsDate, format:'%e %B %Y')}">
+                                            <f:format.date format="%e %B %Y">{newsDate}</f:format.date>
+                                        </time>
+                                    </p>
                                 </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </f:then>
-            <f:else>
-                <div class="row justify-content-center row-shadow">
-                    <div class="col-12 col-lg-10">
-                        <f:if condition="{data.backend_layout} == 'pagets__Servizi'">
-                            <f:then>
-                                <f:render partial="Header/PageHead" section="ServiziHead" arguments="{_all}" />
-                            </f:then>
-                            <f:else>
-                                <f:render partial="Header/PageHead" section="DefaultHead" arguments="{_all}" />
-                            </f:else>
+                            </div>
                         </f:if>
                     </div>
-                </div>
-            </f:else>
-        </f:if>
+                </section>
+            </div>
+        </div>
     </div>
 </f:section>
 <f:section name="ServizioAttivo">

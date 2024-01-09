@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Default">
+    <div class="dropdown d-inline">
+        <button aria-label="condividi sui social" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0" type="button" id="shareActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-focus-mouse="false">
+            <svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-share"></use></svg><small>Condividi</small>
+        </button>
+        <div class="dropdown-menu shadow-lg" aria-labelledby="shareActions">
+            <div class="link-list-wrapper">
+                <ul class="link-list" role="menu">
+                    <li role="none"><a class="list-item" href="https://www.facebook.com/sharer/sharer.php?u={pageUrl}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-facebook"></use></svg><span>Facebook</span></a></li>
+                    <li role="none"><a class="list-item" href="https://twitter.com/intent/tweet?text=Ti+consiglio+di+visitare+questo+sito:+{pageUrl}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-twitter"></use></svg><span>Twitter</span></a></li>
+                    <li role="none"><a class="list-item" href="https://www.linkedin.com/sharing/share-offsite/?url={pageUrl}&title={pageTitle}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-linkedin"></use></svg><span>Linkedin</span></a></li>
+                    <li role="none"><a class="list-item" href="whatsapp://send" data-text="{pageTitle}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-whatsapp"></use></svg><span>Whatsapp</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</f:section>

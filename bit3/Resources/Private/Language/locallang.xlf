@@ -198,7 +198,7 @@
 				<source>Social Links</source>
 			</trans-unit>
             <trans-unit id="bit3.module.social.info" xml:space="preserve">
-				<source>Configurazione delle pagine social linkate nel sito.</source>
+				<source>Configurazione delle pagine social e dei tasti di condivisione.</source>
 			</trans-unit>
 			<trans-unit id="bit3.module.social.facebook" xml:space="preserve">
 				<source>Facebook</source>
@@ -226,6 +226,9 @@
 			</trans-unit>
 			<trans-unit id="bit3.module.social.rss" xml:space="preserve">
 				<source>RSS</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.social.sharing" xml:space="preserve">
+				<source>Mostra i bottoni di condivisione su tutte le pagine</source>
 			</trans-unit>
 
             <trans-unit id="bit3.module.cookies.title" xml:space="preserve">

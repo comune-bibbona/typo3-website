@@ -132,6 +132,8 @@ social {
     whatsapp.url =
     # cat=Site/08_Social/9; type=string; label= Link alla pagina RSS Feed
     rss.url =
+    # cat=Site/08_Social/10; type=string; label= Mostra i tasti di condivisione social
+    sharing = 0
 }
 
 contacts {

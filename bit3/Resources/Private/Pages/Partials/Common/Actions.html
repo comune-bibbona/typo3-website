@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Default">
+    <div class="dropdown d-inline">
+        <button aria-label="vedi azioni da compiere sulla pagina" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0" type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-more-items"></use></svg><small>Vedi azioni</small>
+        </button>
+        <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
+            <div class="link-list-wrapper">
+                <ul class="link-list" role="menu">
+                    <li role="none"><a class="list-item" href="#" role="menuitem" onclick="window.print()"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-print"></use></svg><span>Stampa</span></a></li>
+                    <li role="none"><a class="list-item" href="#" role="menuitem" onclick="listenElements(this, '[data-audio]')"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-hearing"></use></svg><span>Ascolta</span></a></li>
+                    <li role="none"><a class="list-item" href="mailto:?subject=Ti consiglio di visitare questo sito&body=link alla pagina: {pageUrl}" role="menuitem"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-mail"></use></svg><span>Invia</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</f:section>

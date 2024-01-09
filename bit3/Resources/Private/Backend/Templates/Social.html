@@ -49,6 +49,10 @@
 								<label for="social.rss.url"><f:translate key="bit3.module.social.rss" /></label>
 								<f:form.textfield name="social.rss.url" value="{f:if(condition: '{vettSocialConf.social.rss.url}', then: '{vettSocialConf.social.rss.url}')}" class="form-control" placeholder="{costantsExtensionSocial.social.rss.url}"/>
 							</div>
+							<div class="form-group col-sm-6 pt-3">
+								<label for="social.sharing"><f:translate key="bit3.module.social.sharing" /></label>
+								<f:form.checkbox name="social.sharing" value="1" checked="{vettSocialConf.social.sharing} == 1" />
+							</div>
 						</div>
 						<div class="card-footer mt-3">
 							<f:form.button class="btn btn-primary"><f:translate key="bit3.module.buttons.save" /></f:form.button>

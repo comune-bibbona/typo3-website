@@ -194,6 +194,7 @@ page.10 {
                 label = rss
                 url = {$social.rss.url}
             }
+            sharing = {$social.sharing}
         }
         credits {
             pnrr = {$copyrights.nextgenerationeu}

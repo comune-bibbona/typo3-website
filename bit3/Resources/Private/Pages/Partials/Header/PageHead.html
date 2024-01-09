@@ -8,13 +8,14 @@
         </div>
     </div>
 </f:section>
+
 <f:section name="PageHead">
     <div class="container">
         <f:switch expression="{data.backend_layout}">
             <f:case value="pagets__NewsDetail">
                 <f:render partial="Header/PageHead" section="NewsDetailHead" arguments="{_all}" />
             </f:case>
-            <f:case value="'pagets__Servizi'">
+            <f:case value="pagets__Servizi">
                 <f:render partial="Header/PageHead" section="ServiziHead" arguments="{_all}" />
             </f:case>
             <f:defaultCase>
@@ -23,6 +24,7 @@
         </f:switch>
     </div>
 </f:section>
+
 <f:section name="NewsDetailHead">
     <div class="row justify-content-center">
         <div class="col-lg-8 px-lg-4 py-lg-2">
@@ -52,6 +54,9 @@
             </div>
         </div>
         <div class="col-lg-3 offset-lg-1">
+
+            <f:render partial="Common/SocialShare" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+
             <f:if condition="{newsCategories}>0">
                 <div class="mt-4 mb-4">
                     <div class="row">
@@ -71,6 +76,7 @@
         </div>
     </div>
 </f:section>
+
 <f:section name="ServizioAttivo">
     <ul class="d-flex flex-wrap gap-1 my-3">
         <li>
@@ -145,40 +151,16 @@
                 </f:if>
             </div>
             <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
-                <div class="dropdown">
-                    <button aria-label="condividi sui social" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0" type="button" id="shareActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-focus-mouse="false">
-                        <svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-share"></use></svg><small>Condividi</small>
-                    </button>
-                    <div class="dropdown-menu shadow-lg" aria-labelledby="shareActions">
-                        <div class="link-list-wrapper">
-                            <ul class="link-list" role="menu">
-                                <li role="none"><a class="list-item" href="https://www.facebook.com/sharer/sharer.php?u={pageUrl}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-facebook"></use></svg><span>Facebook</span></a></li>
-                                <li role="none"><a class="list-item" href="https://twitter.com/intent/tweet?text=Ti+consiglio+di+visitare+questo+sito:+{pageUrl}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-twitter"></use></svg><span>Twitter</span></a></li>
-                                <li role="none"><a class="list-item" href="https://www.linkedin.com/sharing/share-offsite/?url={pageUrl}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-linkedin"></use></svg><span>Linkedin</span></a></li>
-                                <li role="none"><a class="list-item" href="whatsapp://send" data-text="{pageTitle}" role="menuitem" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-whatsapp"></use></svg><span>Whatsapp</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button aria-label="vedi azioni da compiere sulla pagina" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0" type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-more-items"></use></svg><small>Vedi azioni</small>
-                    </button>
-                    <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
-                        <div class="link-list-wrapper">
-                            <ul class="link-list" role="menu">
-                                <li role="none"><a class="list-item" href="#" role="menuitem" onclick="window.print()"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-print"></use></svg><span>Stampa</span></a></li>
-                                <li role="none"><a class="list-item" href="#" role="menuitem" onclick="listenElements(this, '[data-audio]')"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-hearing"></use></svg><span>Ascolta</span></a></li>
-                                <li role="none"><a class="list-item" href="mailto:?subject=Ti consiglio di visitare questo sito&body=link alla pagina: {pageUrl}" role="menuitem"><svg class="icon" aria-hidden="true"><use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-mail"></use></svg><span>Invia</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <f:if condition="{settings.social.sharing}">
+                    <f:render partial="Common/SocialShare" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+                </f:if>
+                <f:render partial="Common/Actions" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
             </div>
         </div>
     </div>
 </f:section>
-<f:section name="DefaultHead">
+
+<f:section name="DefaultMain">
     <div class="cmp-hero">
         <section class="it-hero-wrapper bg-white align-items-start">
             <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
@@ -193,4 +175,22 @@
             </div>
         </section>
     </div>
+</f:section>
+<f:section name="DefaultHead">
+    <f:if condition="{settings.social.sharing}">
+        <f:then>
+            <div class="row">
+                <div class="col-lg-8">
+                    <f:render partial="Header/PageHead" section="DefaultMain" arguments="{_all}" />
+                </div>
+                <div class="col-lg-3 offset-lg-1">
+                    <f:render partial="Common/SocialShare" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+                    <f:render partial="Common/Actions" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <f:render partial="Header/PageHead" section="DefaultMain" arguments="{_all}" />
+        </f:else>
+    </f:if>
 </f:section>

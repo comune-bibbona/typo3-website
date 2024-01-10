@@ -74,12 +74,11 @@
         </section>
     </f:if>
 
-    <f:if condition="{data.categories} || {data.lastUpdated}">
+    <f:if condition="{data.lastUpdated}">
         <section id="argomenti">
             <div class="container pb-5">
                 <div class="row">
                     <div class="col-12 mb-30">
-                        <f:render partial="Common/Categories" section="Default" arguments="{categories: data.categories, uid: data.uid, table : 'pages'}" />
                         <f:render partial="Common/LastUpdate" section="Default" arguments="{date : data.lastUpdated}" />
                     </div>
                 </div>

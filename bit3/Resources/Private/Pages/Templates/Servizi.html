@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:b="http://typo3.org/ns/Aip/Bit3/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 
 <f:section name="Main">
@@ -44,7 +44,10 @@
                         <section class="it-page-section mb-30" id="arguments">
                             <div class="row">
                                 <div class="col-12 mb-30">
-                                    <f:render partial="Common/Categories" section="Default" arguments="{categories: data.categories, uid: data.uid, table : 'pages'}" />
+                                    <f:if condition="{data.categories}">
+                                        <span class="text-paragraph-small">Argomenti:</span>
+                                        <f:render partial="Common/Categories" section="Default" arguments="{uid: data.uid, table : 'pages'}" />
+                                    </f:if>
                                     <f:render partial="Common/LastUpdate" section="Default" arguments="{date : data.lastUpdated}" />
                                 </div>
                             </div>

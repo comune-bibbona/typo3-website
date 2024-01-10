@@ -30,7 +30,15 @@
                     <span class="visually-hidden">Categoria:</span>
                     <div class="card-header border-0 p-0">
                         <f:for each="{b:CategoriesOutput(recUid: page.data.uid, tableName: 'pages')}" as="category" iteration="iterator">
-                            <f:if condition="{iterator.index}>0"> - </f:if><a class="text-decoration-none title-xsmall-bold mb-2 category text-uppercase" href="{category.slug}">{category.title}</a>
+                            <f:if condition="{iterator.index}>0"> - </f:if>
+                            <f:if condition="{category.single_pid}">
+                                <f:then>
+                                    <f:link.page pageUid="{category.single_pid}" id="cat-{category.uid}" class="text-decoration-none title-xsmall-bold mb-2 category text-uppercase">{category.title}</f:link.page>
+                                </f:then>
+                                <f:else>
+                                    <span class="text-decoration-none title-xsmall-bold mb-2 category text-uppercase">{category.title}</span>
+                                </f:else>
+                            </f:if>
                         </f:for>
                     </div>
                 </f:if>

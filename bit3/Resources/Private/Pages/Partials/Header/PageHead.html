@@ -55,7 +55,10 @@
         </div>
         <div class="col-lg-3 offset-lg-1">
 
-            <f:render partial="Common/SocialShare" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+            <f:if condition="{settings.social.sharing}">
+                <f:render partial="Common/SocialShare" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+                <f:render partial="Common/Actions" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+            </f:if>
 
             <f:if condition="{newsCategories}>0">
                 <div class="mt-4 mb-4">

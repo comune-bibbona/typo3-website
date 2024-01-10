@@ -1,16 +1,26 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:b="http://typo3.org/ns/Aip/Bit3/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:section name="Default">
 
-    <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
-        <f:for each="{b:CategoriesOutput(recUid: uid, tableName: table)}" as="category">
-            <f:if condition="{category.single_pid}">
-                <li>
-                    <f:link.page pageUid="{category.single_pid}" class="chip chip-simple" data="{element: 'service-topic', focus-mouse: 'false'}">
-                        <span class="chip-label">{category.title}</span>
-                    </f:link.page>
-                </li>
-            </f:if>
-        </f:for>
-    </ul>
+    <f:for each="{b:CategoriesOutput(recUid: uid, tableName: table)}" as="category">
+        <f:if condition="{category.single_pid}">
+            <f:variable name="argomento" value="1" />
+        </f:if>
+    </f:for>
+    <f:if condition="{argomento}">
+        <div class="row">
+            <span class="small">Argomenti:</span>
+        </div>
+        <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
+            <f:for each="{b:CategoriesOutput(recUid: uid, tableName: table)}" as="category">
+                <f:if condition="{category.single_pid}">
+                    <li>
+                        <f:link.page pageUid="{category.single_pid}" class="chip chip-simple" data="{element: 'service-topic', focus-mouse: 'false'}">
+                            <span class="chip-label">{category.title}</span>
+                        </f:link.page>
+                    </li>
+                </f:if>
+            </f:for>
+        </ul>
+    </f:if>
 
 </f:section>

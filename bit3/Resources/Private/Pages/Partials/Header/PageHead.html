@@ -60,9 +60,6 @@
             </f:if>
             <f:if condition="{newsCategories}>0">
                 <div class="mt-4 mb-4">
-                    <div class="row">
-                        <span class="small">Argomenti</span>
-                    </div>
                     <f:render partial="Common/Categories" section="Default" arguments="{uid: newsUid, table : 'tx_news_domain_model_news'}" />
                 </div>
             </f:if>

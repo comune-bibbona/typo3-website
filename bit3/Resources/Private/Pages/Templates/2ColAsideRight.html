@@ -4,36 +4,39 @@
 
     <f:render partial="Common/Hero" section="Default" arguments="{_all}" />
 
-    <div class="bg-grey-card">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-12 col-lg-8 pt-lg-50 pb-lg-50">
-                    <div class="it-page-sections-container">
-                        <f:cObject typoscriptObjectPath="lib.content.main" />
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5 order-first order-md-last">
-                    <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-aside">
-                        <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.column_right')}">
-                            <f:then>
-                                <f:cObject typoscriptObjectPath="lib.content.column_right" />
-                            </f:then>
-                            <f:else>
-                                <f:render partial="Menu/Menu" section="Sidebar" arguments="{_all}" />
-                            </f:else>
-                        </f:if>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container py-5">
         <div class="row">
-            <div class="col-12">
-                <f:cObject typoscriptObjectPath="lib.content.column_left" />
+            <div class="col-12 col-lg-8 pt-lg-50 pb-lg-50">
+                <div class="it-page-sections-container">
+                    <f:cObject typoscriptObjectPath="lib.content.main" />
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5 order-first order-md-last">
+                <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-aside">
+                    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.column_right')}">
+                        <f:then>
+                            <f:cObject typoscriptObjectPath="lib.content.column_right" />
+                        </f:then>
+                        <f:else>
+                            <f:render partial="Menu/Menu" section="Sidebar" arguments="{_all}" />
+                        </f:else>
+                    </f:if>
+                </div>
             </div>
         </div>
     </div>
+
+    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.column_left')}">
+        <div class="bg-grey-card py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <f:cObject typoscriptObjectPath="lib.content.column_left" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:if>
 
     <f:if condition="{data.categories}">
         <div class="container py-5">

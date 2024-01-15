@@ -5,7 +5,7 @@
 	<f:if condition="{newsItem.firstCategory}">
 		<f:if condition="{newsItem.firstCategory.shortcut}">
 			<f:then>
-				<f:link.page pageUid="{newsItem.firstCategory.shortcut}">{newsItem.firstCategory.title}</f:link.page>
+				<f:link.page pageUid="{newsItem.firstCategory.shortcut}" class="category text-decoration-none">{newsItem.firstCategory.title}</f:link.page>
 			</f:then>
 			<f:else>
 				<a class="category text-decoration-none">{newsItem.firstCategory.title}</a>

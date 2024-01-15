@@ -252,7 +252,9 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
         $vettPageConf = $this->populateForm('containers', $vettPageConf);
 
-        $this->view->assign('vettPageConf',$vettPageConf);
+		$vettPageConf = $this->populateForm('category', $vettPageConf);
+
+		$this->view->assign('vettPageConf',$vettPageConf);
 
 		$moduleTemplate = $this->moduleTemplateFactory->create($this->request);
 		// Adding title, menus, buttons, etc. using $moduleTemplate ...
@@ -261,7 +263,7 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     }
 
     /**
-     *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine e contenitori, nella sezione Pagine
+     *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine, Contenitori e Argomenti, nella sezione Categorie
      *
      * @return void
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
@@ -303,7 +305,7 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
     /**
      *
-     *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine e contenitori, nella sezione contenitori
+     *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine, Contenitori e Argomenti, nella sezione Categorie
      *
      * @return void
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
@@ -328,6 +330,35 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
 
         $this->updateContstants($constantNames);
+
+		return $this->redirect('page');
+	}
+
+	/**
+	 *
+	 *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine, Contenitori e Argomenti, nella sezione Categorie
+	 *
+	 * @return void
+	 * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
+	 * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
+	 */
+	public function salvaCategoryAction(): ResponseInterface {
+
+		$constantNames= array(
+			'category.id_argument');
+
+		foreach ($constantNames as $constantName) {
+			if ($this->request->hasArgument($constantName)) {
+
+				if( !is_numeric($this->request->getArgument($constantName)) && $this->request->getArgument($constantName)!==''){
+					//TODO: usare dei flash messages
+					throw new \Exception("Tutti i campi di questa form devono essere numeri interi o vuoti");
+				}
+
+			}
+		}
+
+		$this->updateContstants($constantNames);
 
 		return $this->redirect('page');
 	}

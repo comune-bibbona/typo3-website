@@ -4,12 +4,13 @@
 # customsubcategory=04_Fonts=Font
 # customsubcategory=05_Pages=Pagine
 # customsubcategory=06_Containers=Container
-# customsubcategory=07_Servizi=Servizi
-# customsubcategory=08_Social=Social
-# customsubcategory=09_Contacts=Contatti
-# customsubcategory=10_Footer=Footer
-# customsubcategory=11_Cookies=Cookies and Analytics
-# customsubcategory=12_Copyrights=Copyrights
+# customsubcategory=07_Category=Category
+# customsubcategory=08_Servizi=Servizi
+# customsubcategory=09_Social=Social
+# customsubcategory=10_Contacts=Contatti
+# customsubcategory=11_Footer=Footer
+# customsubcategory=12_Cookies=Cookies and Analytics
+# customsubcategory=13_Copyrights=Copyrights
 
 # cat=Site/01_BaseUrl/1; type=string; label= Base Url
 config.baseUrl = /
@@ -80,104 +81,109 @@ containers {
     id_folder_users =
 }
 
+category {
+    # cat=Site/07_Category/1; type=int; label= Id della categoria Argomenti
+    id_argument =
+}
+
 servizi {
     iscrizione_trasporto_scolastico {
-        # cat=Site/07_Servizi/1; type=string; label= Pagina col Dettaglio Servizio Iscrizione al Trasporto Scolastico
+        # cat=Site/08_Servizi/1; type=string; label= Pagina col Dettaglio Servizio Iscrizione al Trasporto Scolastico
         id =
-        # cat=Site/07_Servizi/2; type=string; label= Link Esterno Servizio Iscrizione al Trasporto Scolastico
+        # cat=Site/08_Servizi/2; type=string; label= Link Esterno Servizio Iscrizione al Trasporto Scolastico
         url =
     }
     iscrizione_mensa_scolastica {
-        # cat=Site/07_Servizi/3; type=string; label= Pagina col Dettaglio Servizio Iscrizione alla Mensa Scolastica
+        # cat=Site/08_Servizi/3; type=string; label= Pagina col Dettaglio Servizio Iscrizione alla Mensa Scolastica
         id =
-        # cat=Site/07_Servizi/4; type=string; label= Link Esterno Servizio Iscrizione alla Mensa Scolastica
+        # cat=Site/08_Servizi/4; type=string; label= Link Esterno Servizio Iscrizione alla Mensa Scolastica
         url =
     }
     iscrizione_asilo_nido {
-        # cat=Site/07_Servizi/5; type=string; label= Pagina col Dettaglio Servizio Iscrizione all'Asilo Nido
+        # cat=Site/08_Servizi/5; type=string; label= Pagina col Dettaglio Servizio Iscrizione all'Asilo Nido
         id =
-        # cat=Site/07_Servizi/6; type=string; label= Link Esterno Servizio Iscrizione all'Asilo Nido
+        # cat=Site/08_Servizi/6; type=string; label= Link Esterno Servizio Iscrizione all'Asilo Nido
         url =
     }
     pagamento_imu {
-        # cat=Site/07_Servizi/7; type=string; label= Pagina col Dettaglio Servizio Pagamento Tributo IMU
+        # cat=Site/08_Servizi/7; type=string; label= Pagina col Dettaglio Servizio Pagamento Tributo IMU
         id =
-        # cat=Site/07_Servizi/8; type=string; label= Link Esterno Servizio Pagamento Tributo IMU
+        # cat=Site/08_Servizi/8; type=string; label= Link Esterno Servizio Pagamento Tributo IMU
         url =
     }
     prenota_appuntamento {
-        # cat=Site/07_Servizi/5; type=string; label= Pagina Richiesta Appuntamento Sindaco
+        # cat=Site/08_Servizi/5; type=string; label= Pagina Richiesta Appuntamento Sindaco
         id =
-        # cat=Site/07_Servizi/5; type=string; label= Link Esterno Servizio Richiesta Appuntamento Sindaco
+        # cat=Site/08_Servizi/5; type=string; label= Link Esterno Servizio Richiesta Appuntamento Sindaco
         url =
     }
 }
 
 social {
-    # cat=Site/08_Social/1; type=string; label= Link alla pagina Facebook
+    # cat=Site/09_Social/1; type=string; label= Link alla pagina Facebook
     facebook.url =
-    # cat=Site/08_Social/2; type=string; label= Link alla pagina Twitter
+    # cat=Site/09_Social/2; type=string; label= Link alla pagina Twitter
     twitter.url =
-    # cat=Site/08_Social/3; type=string; label= Link alla pagina Instagram
+    # cat=Site/09_Social/3; type=string; label= Link alla pagina Instagram
     instagram.url =
-    # cat=Site/08_Social/4; type=string; label= Link alla pagina YouTube
+    # cat=Site/09_Social/4; type=string; label= Link alla pagina YouTube
     youtube.url =
-    # cat=Site/08_Social/5; type=string; label= Link alla pagina Vimeo
+    # cat=Site/09_Social/5; type=string; label= Link alla pagina Vimeo
     vimeo.url =
-    # cat=Site/08_Social/6; type=string; label= Link alla pagina LinkedIn
+    # cat=Site/09_Social/6; type=string; label= Link alla pagina LinkedIn
     linkedin.url =
-    # cat=Site/08_Social/7; type=string; label= Link alla canale Telegram
+    # cat=Site/09_Social/7; type=string; label= Link alla canale Telegram
     telegram.url =
-    # cat=Site/08_Social/8; type=string; label= Link alla canale Whatsapp
+    # cat=Site/09_Social/8; type=string; label= Link alla canale Whatsapp
     whatsapp.url =
-    # cat=Site/08_Social/9; type=string; label= Link alla pagina RSS Feed
+    # cat=Site/09_Social/9; type=string; label= Link alla pagina RSS Feed
     rss.url =
-    # cat=Site/08_Social/10; type=string; label= Mostra i tasti di condivisione social
+    # cat=Site/09_Social/10; type=string; label= Mostra i tasti di condivisione social
     sharing = 0
 }
 
 contacts {
-    # cat=Site/09_Contacts/1; type=string; label = Indirizzo
+    # cat=Site/10_Contacts/1; type=string; label = Indirizzo
     address =
-    # cat=Site/09_Contacts/2; type=string; label = Dati Fiscali (Partita IVA / Codice Fiscale, Codice Univoco)
+    # cat=Site/10_Contacts/2; type=string; label = Dati Fiscali (Partita IVA / Codice Fiscale, Codice Univoco)
     dati_fiscali =
-    # cat=Site/09_Contacts/3; type=string; label = Indirizzo email
+    # cat=Site/10_Contacts/3; type=string; label = Indirizzo email
     email =
-    # cat=Site/09_Contacts/4; type=string; label = Indirizzo PEC
+    # cat=Site/10_Contacts/4; type=string; label = Indirizzo PEC
     pec =
-    # cat=Site/09_Contacts/5; type=string; label = Telefono
+    # cat=Site/10_Contacts/5; type=string; label = Telefono
     tel =
-    # cat=Site/09_Contacts/6; type=string; label = Fax
+    # cat=Site/10_Contacts/6; type=string; label = Fax
     fax =
-    # cat=Site/09_Contacts/7; type=string; label = Numero Verde
+    # cat=Site/10_Contacts/7; type=string; label = Numero Verde
     numero_verde =
 }
 
 footer {
-    # cat=Site/10_Footer/1; type=string; label = Finanziato con i fondi dell'unione europea NextGenerationEU
+    # cat=Site/11_Footer/1; type=string; label = Finanziato con i fondi dell'unione europea NextGenerationEU
     nextgenerationeu = 0
-    # cat=Site/10_Footer/2; type=string; label = Copyright
+    # cat=Site/11_Footer/2; type=string; label = Copyright
     copyright =
-    # cat=Site/10_Footer/3; type=string; label = Credits
+    # cat=Site/11_Footer/3; type=string; label = Credits
     credits = website developed by: <a href="https://www.archicoop.it/">Archimede Informatica</a>
 }
 
 cookies {
-    # cat=Site/11_Cookies/1; type=int; label = Utilizzo di cookie di profilazione
+    # cat=Site/12_Cookies/1; type=int; label = Utilizzo di cookie di profilazione
     profiling =
-    # cat=Site/11_Cookies/2; type=int; label = Utilizzo e modalità di Web Analytics
+    # cat=Site/12_Cookies/2; type=int; label = Utilizzo e modalità di Web Analytics
     webanalytics =
-    # cat=Site/11_Cookies/3; type=string; label = url dell'Account Matomo Analytics
+    # cat=Site/12_Cookies/3; type=string; label = url dell'Account Matomo Analytics
     trackingurl =
-    # cat=Site/11_Cookies/4; type=string; label = Id del sito web da tracciare
+    # cat=Site/12_Cookies/4; type=string; label = Id del sito web da tracciare
     siteid =
 }
 
 copyrights {
-    # cat=Site/12_Copyrights/1; type=boolean; label = Finanziato dall'Unione europea NextGenerationEU
+    # cat=Site/13_Copyrights/1; type=boolean; label = Finanziato dall'Unione europea NextGenerationEU
     nextgenerationeu =
-    # cat=Site/12_Copyrights/2; type=string; label = Copyright
+    # cat=Site/13_Copyrights/2; type=string; label = Copyright
     copyright =
-    # cat=Site/12_Copyrights/3; type=string; label = Credits
+    # cat=Site/13_Copyrights/3; type=string; label = Credits
     credits =
 }

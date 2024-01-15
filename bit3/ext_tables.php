@@ -34,7 +34,7 @@ if (TYPO3 === 'BE') {
 		'tx_bit3_configuration',      // Name of the module
 		'top',  // Position of the module
 		[ // Controller configuration
-			\Aip\Bit3\Controller\ModuleConfController::class => 'index, cookies, skin, contatti, page, servizi, social, contatti, salvaCookies, salvaSkin, salvaContatti, salvaCopyrightAndCredits, salvaPage, salvaContainer, salvaServiziInformato, salvaServiziAttivo, salvaSocial'
+			\Aip\Bit3\Controller\ModuleConfController::class => 'index, cookies, skin, contatti, page, servizi, social, salvaCookies, salvaSkin, salvaContatti, salvaCopyrightAndCredits, salvaPage, salvaContainer, salvaCategory, salvaServiziInformato, salvaServiziAttivo, salvaSocial'
 		],
 		[  // Additional configuration
 			'access' => 'user,group',

@@ -114,8 +114,11 @@ page.10 {
             id_search_page = {$pages.id_search}
         }
         containers {
-            id_folder_news = {containers.id_folder_news}
-            id_folder_users = {containers.id_folder_users}
+            id_folder_news = {$containers.id_folder_news}
+            id_folder_users = {$containers.id_folder_users}
+        }
+        category {
+            id_argument = {$category.id_argument}
         }
         servizi {
             iscrizione_trasporto_scolastico {

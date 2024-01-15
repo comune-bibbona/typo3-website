@@ -3,7 +3,14 @@
 
 	<!-- category -->
 	<f:if condition="{newsItem.firstCategory}">
-		<a class="category text-decoration-none">{newsItem.firstCategory.title}</a>
+		<f:if condition="{newsItem.firstCategory.shortcut}">
+			<f:then>
+				<f:link.page pageUid="{newsItem.firstCategory.shortcut}">{newsItem.firstCategory.title}</f:link.page>
+			</f:then>
+			<f:else>
+				<a class="category text-decoration-none">{newsItem.firstCategory.title}</a>
+			</f:else>
+		</f:if>
 	</f:if>
 
 	<!-- date -->

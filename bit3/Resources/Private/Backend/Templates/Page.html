@@ -107,6 +107,23 @@
 					</div>
 				</f:form>
 			</div>
-		</div>
+			<div class="col-sm-12">
+				<f:form action="salvaCategory" name="pageconf">
+					<div class="card">
+						<div class="card-header">
+							<h2 class="card-title"><f:translate key="bit3.module.page.category" /></h2>
+						</div>
+						<div class="card-body row">
+							<div class="form-group col-sm-3">
+								<label for="category.id_argument"><f:translate key="bit3.module.page.category.argument" /></label>
+								<f:form.textfield name="category.id_argument" value="{f:if(condition: '{vettPageConf.category.id_argument}', then: '{vettPageConf.category.id_argument}')}" class="form-control" placeholder="{costantsExtension.category.id_argument}"/>
+							</div>
+						</div>
+						<div class="card-footer mt-3">
+							<f:form.button class="btn btn-primary"><f:translate key="bit3.module.buttons.save" /></f:form.button>
+						</div>
+					</div>
+				</f:form>
+			</div>
 	</div>
 </f:section>

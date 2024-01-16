@@ -33,9 +33,11 @@
 						<div class="category-top">
 							<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}" />
 						</div>
-						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="text-decoration-none">
-							<f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode>
-						</n:link>
+						<h3 class="card-title">
+							<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="text-decoration-none">
+								<f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode>
+							</n:link>
+						</h3>
 						<p class="card-text">
 							<n:removeMediaTags>
 								<f:if condition="{newsItem.teaser}">

@@ -15,9 +15,16 @@
 
 	<!-- date -->
 	<span class="data">
-		<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
-			<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
-		</time>
+		<f:if condition="{newsItem.eventEnd}">
+			<f:then>
+				DAL <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}"><f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date></time> AL <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}"><f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.eventEnd}</f:format.date></time>
+			</f:then>
+			<f:else>
+				<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+					<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+				</time>
+			</f:else>
+		</f:if>
 	</span>
 
 </div>

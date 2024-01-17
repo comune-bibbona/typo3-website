@@ -1,90 +1,92 @@
-<f:variable name="pageMin">{paginator.currentPageNumber - 4}</f:variable>
-<f:variable name="pageMax">{paginator.currentPageNumber + 4}</f:variable>
-<nav class="pagination-wrapper" aria-label="Navigazione delle novità">
-    <ul class="pagination">
-        <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
-            <f:then>
-                <li class="page-item">
-                    <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.previousPageNumber},addQueryString:1)}" title="{f:translate(key:'pagination.previous')}">
-                        <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-left"></use></svg>
-                        <span class="visually-hidden">{f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}</span>
-                    </a>
-                </li>
-            </f:then>
-            <f:else>
-                <li class="page-item disabled">
-                    <a class="page-link" href="#">
-                        <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-left"></use></svg>
-                        <span class="visually-hidden">{f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}</span>
-                    </a>
-                </li>
-            </f:else>
-        </f:if>
-        <f:if condition="{pagination.hasLessPages}">
-            <li class="page-item"><a class="page-link" href="#">…</a></li>
-        </f:if>
-        <f:for each="{pagination.allPageNumbers}" as="page">
-
-            <f:if condition="{pagination.lastPageNumber} < 10">
+<f:if condition="{paginator.numberOfPages}>1">
+    <f:variable name="pageMin">{paginator.currentPageNumber - 4}</f:variable>
+    <f:variable name="pageMax">{paginator.currentPageNumber + 4}</f:variable>
+    <nav class="pagination-wrapper" aria-label="Navigazione delle novità">
+        <ul class="pagination">
+            <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
                 <f:then>
                     <li class="page-item">
-                        <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}" {f:if(condition: '{page} == {paginator.currentPageNumber}', then:'aria-current="page"')}>{page}</a>
+                        <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.previousPageNumber},addQueryString:1)}" title="{f:translate(key:'pagination.previous')}">
+                            <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-left"></use></svg>
+                            <span class="visually-hidden">{f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}</span>
+                        </a>
                     </li>
                 </f:then>
                 <f:else>
-                    <f:if condition="{page} > {pageMin} && {page} < {pageMax}">
-                        <f:then>
-                            <li class="page-item">
-                                <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}" {f:if(condition: '{page} == {paginator.currentPageNumber}', then:'aria-current="page"')}>{page}</a>
-                            </li>
-                        </f:then>
-                        <f:else>
-                            <f:if condition="{page} == {pagination.firstPageNumber}">
-                                <li class="page-item">
-                                    <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}" {f:if(condition: '{page} == {paginator.currentPageNumber}', then:'aria-current="page"')}>{page}</a>
-                                </li>
-                                <f:if condition="{pageMin} > 2">
-                                    <li class="page-item disabled">
-                                        <a class="page-link">...</a>
-                                    </li>
-                                </f:if>
-                            </f:if>
-                            <f:if condition="{page} == {pagination.lastPageNumber}">
-                                <f:if condition="{pageMax} < {pagination.lastPageNumber - 2}">
-                                    <li class="page-item disabled">
-                                        <a class="page-link">...</a>
-                                    </li>
-                                </f:if>
-                                <li class="page-item">
-                                    <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}" {f:if(condition: '{page} == {paginator.currentPageNumber}', then:'aria-current="page"')}>{page}</a>
-                                </li>
-                            </f:if>
-                        </f:else>
-                    </f:if>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">
+                            <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-left"></use></svg>
+                            <span class="visually-hidden">{f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}</span>
+                        </a>
+                    </li>
                 </f:else>
             </f:if>
+            <f:if condition="{pagination.hasLessPages}">
+                <li class="page-item"><a class="page-link" href="#">…</a></li>
+            </f:if>
+            <f:for each="{pagination.allPageNumbers}" as="page">
 
-        </f:for>
-        <f:if condition="{pagination.hasMorePages}">
-            <li class="page-item"><a class="page-link" href="#">…</a></li>
-        </f:if>
-        <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
-            <f:then>
-                <li class="page-item">
-                    <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1)}" title="{f:translate(key:'pagination.next')}">
-                        <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-right"></use></svg>
-                        <span class="visually-hidden">{f:translate(key:'widget.pagination.next', extensionName: 'fluid')}</span>
-                    </a>
-                </li>
-            </f:then>
-            <f:else>
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" title="{f:translate(key:'pagination.last')}">
-                        <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-right"></use></svg>
-                        <span class="visually-hidden">{f:translate(key:'widget.pagination.next', extensionName: 'fluid')}</span>
-                    </a>
-                </li>
-            </f:else>
-        </f:if>
-    </ul>
-</nav>
+                <f:if condition="{pagination.lastPageNumber} < 10">
+                    <f:then>
+                        <li class="page-item">
+                            <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}" {f:if(condition: '{page} == {paginator.currentPageNumber}', then:'aria-current="page"')}>{page}</a>
+                        </li>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{page} > {pageMin} && {page} < {pageMax}">
+                            <f:then>
+                                <li class="page-item">
+                                    <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}" {f:if(condition: '{page} == {paginator.currentPageNumber}', then:'aria-current="page"')}>{page}</a>
+                                </li>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{page} == {pagination.firstPageNumber}">
+                                    <li class="page-item">
+                                        <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}" {f:if(condition: '{page} == {paginator.currentPageNumber}', then:'aria-current="page"')}>{page}</a>
+                                    </li>
+                                    <f:if condition="{pageMin} > 2">
+                                        <li class="page-item disabled">
+                                            <a class="page-link">...</a>
+                                        </li>
+                                    </f:if>
+                                </f:if>
+                                <f:if condition="{page} == {pagination.lastPageNumber}">
+                                    <f:if condition="{pageMax} < {pagination.lastPageNumber - 2}">
+                                        <li class="page-item disabled">
+                                            <a class="page-link">...</a>
+                                        </li>
+                                    </f:if>
+                                    <li class="page-item">
+                                        <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}" {f:if(condition: '{page} == {paginator.currentPageNumber}', then:'aria-current="page"')}>{page}</a>
+                                    </li>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+
+            </f:for>
+            <f:if condition="{pagination.hasMorePages}">
+                <li class="page-item"><a class="page-link" href="#">…</a></li>
+            </f:if>
+            <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
+                <f:then>
+                    <li class="page-item">
+                        <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1)}" title="{f:translate(key:'pagination.next')}">
+                            <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-right"></use></svg>
+                            <span class="visually-hidden">{f:translate(key:'widget.pagination.next', extensionName: 'fluid')}</span>
+                        </a>
+                    </li>
+                </f:then>
+                <f:else>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" title="{f:translate(key:'pagination.last')}">
+                            <svg class="icon icon-primary"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-chevron-right"></use></svg>
+                            <span class="visually-hidden">{f:translate(key:'widget.pagination.next', extensionName: 'fluid')}</span>
+                        </a>
+                    </li>
+                </f:else>
+            </f:if>
+        </ul>
+    </nav>
+</f:if>

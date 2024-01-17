@@ -126,6 +126,9 @@
             <trans-unit id="image.layout.thumbnail" xml:space="preserve">
                 <source>Thumbnail</source>
             </trans-unit>
-        </body>
+			<trans-unit id="eventnews.types" xml:space="preserve">
+				<source>Tipologia evento</source>
+			</trans-unit>
+		</body>
     </file>
 </xliff>

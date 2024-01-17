@@ -5,3 +5,8 @@ tx_news.templateLayouts {
         5 = Slideshow
         6 = Box Categorie
 }
+
+
+# Modifico il nome dei campi organizer e organizer_simple di news (aggiunti da eventnews)
+TCEFORM.tx_news_domain_model_news.organizer.label = Tipo di evento
+TCEFORM.tx_news_domain_model_news.organizer_simple.label = Tipo di evento semplice

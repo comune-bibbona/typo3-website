@@ -1,5 +1,4 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-
 <f:layout name="General" />
 <!--
 	=====================
@@ -7,48 +6,51 @@
 -->
 
 <f:section name="content">
-
-	<f:variable name="oggi"><f:format.date date="now" format="U" /></f:variable>
-
-	<f:if condition="{settings.templateLayout} == 4">
-		<f:then>
-			<f:for each="{news}" as="newsItem" iteration="iterator">
-				<f:variable name="dataNews"><f:format.date format="U">{newsItem.archive}</f:format.date></f:variable>
-				<f:if condition="{oggi}<{dataNews}">
-					<f:render partial="List/Item-Scadenze" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
-				</f:if>
-			</f:for>
-			<footer class="widgetFooter">
-				<f:link.typolink class="more" parameter="{settings.listPid}">Tutte le scadenze</f:link.typolink>
-			</footer>
-		</f:then>
-		<f:else>
-			<div class="news-menu-view">
-				<ul>
-					<f:for each="{data.single}" key="year" as="months">
-						<li>
-							{year}
-							<ul>
-								<f:for each="{months}" key="month" as="count">
-									<f:if condition="{0:year, 1:month} == {0:overwriteDemand.year, 1:overwriteDemand.month}">
-										<f:then>
-											<li class="item itemactive">
-										</f:then>
-										<f:else>
-											<li class="item">
-										</f:else>
-									</f:if>
-									<f:link.action pageUid="{listPid}" arguments="{overwriteDemand:{year: year, month: month}}"><f:translate key="month.{month}" /> {year}</f:link.action>
-									({count} <f:translate key="{f:if(condition: '{count} == 1', then: 'entry', else: 'entries')}" />)
-									</li>
-								</f:for>
-							</ul>
-						</li>
-					</f:for>
-				</ul>
+	<div class="cmp-navscroll sticky-top">
+		<nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INDICE PER ANNI" data-bs-navscroll="">
+			<div class="navbar-custom" id="navbarNavProgress">
+				<div class="menu-wrapper">
+					<div class="link-list-wrapper">
+						<div class="accordion">
+							<f:for each="{data.single}" key="year" as="monthsOfYear">
+								<div class="accordion-item border-bottom">
+								  <span class="accordion-header" id="accordion-title-{year}">
+									<button class="accordion-button pb-10 px-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{year}" aria-expanded="false" aria-controls="collapse-{year}" data-focus-mouse="false">
+									  ARCHIVIO DEL {year}
+									  <svg class="icon icon-xs right">
+										<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-expand"></use>
+									  </svg>
+									</button>
+								  </span>
+									<div id="collapse-{year}" class="accordion-collapse collapse" role="region" aria-labelledby="accordion-title-{year}" style="">
+										<div class="accordion-body">
+											<ul class="link-list">
+												<f:for each="{monthsOfYear}" key="month" as="count">
+													<li class="nav-item">
+														<f:if condition="{0:year, 1:month} == {0:overwriteDemand.year, 1:overwriteDemand.month}">
+															<f:then>
+																<f:variable name="addingClass"> active</f:variable>
+															</f:then>
+															<f:else>
+																<f:variable name="addingClass"></f:variable>
+															</f:else>
+														</f:if>
+														<f:link.action action="list" pageUid="{listPid}" arguments="{overwriteDemand:{year: year, month: month}}" class="nav-link{addingClass}">
+															<span class="title-medium"><f:translate key="month.{month}" /> {year}</span>({count} <f:translate key="{f:if(condition: '{count} == 1', then: 'entry', else: 'entries')}" />)
+														</f:link.action>
+													</li>
+												</f:for>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</f:for>
+						</div>
+					</div>
+				</div>
 			</div>
-		</f:else>
-	</f:if>
-
+		</nav>
+	</div>
 </f:section>
+
 </html>

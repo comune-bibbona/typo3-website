@@ -1,0 +1,57 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+<n:excludeDisplayedNews newsItem="{newsItem}" />
+
+<li>
+	<div  class="list-item">
+		<div class="it-thumb">
+			<f:if condition="{newsItem.mediaPreviews}">
+				<f:then>
+					<f:media file="{newsItem.mediaPreviews.0}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" width="40" height="40" />
+				</f:then>
+				<f:else>
+					<f:if condition="{settings.displayDummyIfNoMedia}">
+						<f:image class="img-dummy img-responsive" src="{settings.list.media.dummyImage}" width="40" height="40" />
+					</f:if>
+				</f:else>
+			</f:if>
+		</div>
+		<div class="it-right-zone">
+			<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+				<span class="text"><f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode></span>
+			</n:link>
+
+			<span class="it-multiple">
+           		 <span class="metadata">
+					 <f:for each="{newsItem.categories}" as="category" iteration="iterator">
+						 <f:if condition="{iterator.index}>0"> - </f:if>
+						 <f:if condition="{category.shortcut}">
+									<f:then>
+										<f:link.page pageUid="{category.shortcut}">{category.title}</f:link.page>
+									</f:then>
+									<f:else>
+										<a class="category text-decoration-none">{category.title}</a>
+									</f:else>
+								</f:if>
+					 </f:for>
+				 </span>
+				<span class="metadata">
+					<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'{f:translate(key:\'dateFormat\')}')}">
+						<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+					</time>
+				</span>
+          	</span>
+		</div>
+	</div>
+</li>
+
+
+</html>
+
+
+

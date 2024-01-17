@@ -1,6 +1,7 @@
 # Configurazione TemplateLayout News (usati in home page)
 tx_news.templateLayouts {
         1 = Home - Hero Section
+        2 = Elenco Compatto
         4 = Eventi
         5 = Slideshow
         6 = Box Categorie

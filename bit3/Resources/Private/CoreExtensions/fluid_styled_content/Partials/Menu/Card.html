@@ -17,7 +17,7 @@
                         </f:if>
                         <div class="card-body">
                             <h3 class="card-title"><a href="{page.link}" class="text-decoration-none" title="{page.title}" {f:if(condition: data_element, then: ' data-element="{data_element}"')} {f:if(condition: page.target, then: ' target="{page.target}"')}>{page.title}</a></h3>
-                            <p class="card-text text-secondary pb-3">
+                            <p class="text-secondary mb-0">
                                 <f:if condition="{page.data.abstract}">
                                     <f:then>
                                         {page.data.abstract}
@@ -27,13 +27,17 @@
                                     </f:else>
                                 </f:if>
                             </p>
-                            <a class="read-more t-primary text-uppercase" href="{page.link}" aria-label="Leggi di più su {page.title}" {f:if(condition: data_element, then: ' data-element="{data_element}"')}>
-                                <span class="text">Leggi di più</span>
-                                <span class="visually-hidden">Leggi di più su {page.title}</span>
-                                <svg class="icon icon-inverse icon-xs ml-10">
-                                    <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-arrow-right"></use>
-                                </svg>
-                            </a>
+                            <f:if condition="{data_element}==''">
+                                <div class="mt-5">
+                                    <a class="read-more t-primary text-uppercase" href="{page.link}" aria-label="Leggi di più su {page.title}" {f:if(condition: data_element, then: ' data-element="{data_element}"')}>
+                                    <span class="text">Leggi di più</span>
+                                    <span class="visually-hidden">Leggi di più su {page.title}</span>
+                                    <svg class="icon icon-inverse icon-xs ml-10">
+                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-arrow-right"></use>
+                                    </svg>
+                                    </a>
+                                </div>
+                            </f:if>
                         </div>
                     </div>
                 </div>

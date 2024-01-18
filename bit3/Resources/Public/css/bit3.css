@@ -238,6 +238,20 @@ aside .cmp-navscroll .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.act
 .calendar-vertical .calendar-date .calendar-date-day::before {
     background-color: var(--primary-color);
 }
+.it-timeline-wrapper .it-pin-wrapper.it-evidence .pin-icon,
+.it-timeline-wrapper .it-pin-wrapper.it-evidence .pin-text,
+.it-timeline-wrapper .it-pin-wrapper.it-evidence .pin-text span::after,
+.it-timeline-wrapper .row::after {
+    background: var(--primary-color);
+}
+.card .card-body h5.card-title, .card .card-body .card-title.h5 {
+    color: var(--primary-color);
+}
+@media (min-width: 992px) {
+    .it-timeline-wrapper .col-12:nth-child(2n+1) .it-pin-wrapper.it-evidence .pin-text span::after {
+        border-color: rgba(0,0,0,0) rgba(0,0,0,0) rgba(0,0,0,0) var(--primary-color);
+    }
+}
 
 /* Bugfix fluid_styled_content */
 @media(max-width: 767px) {

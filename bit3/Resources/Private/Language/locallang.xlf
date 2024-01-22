@@ -167,6 +167,12 @@
             <trans-unit id="bit3.module.service.info" xml:space="preserve">
 				<source>Configurazione dei servizi Pacchetto Cittadino Informato e Cittadino Attivo.</source>
 			</trans-unit>
+			<trans-unit id="bit3.module.service.id" xml:space="preserve">
+				<source>Pagina</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.service.url" xml:space="preserve">
+				<source>Url Servizio Esterno</source>
+			</trans-unit>
 			<trans-unit id="bit3.module.service.informed" xml:space="preserve">
 				<source>Cittadino Informato</source>
 			</trans-unit>
@@ -181,12 +187,6 @@
 			</trans-unit>
 			<trans-unit id="bit3.module.service.active" xml:space="preserve">
 				<source>Cittadino Attivo</source>
-			</trans-unit>
-			<trans-unit id="bit3.module.service.active.id" xml:space="preserve">
-				<source>Pagina</source>
-			</trans-unit>
-			<trans-unit id="bit3.module.service.active.url" xml:space="preserve">
-				<source>Url Servizio Esterno</source>
 			</trans-unit>
 			<trans-unit id="bit3.module.service.active.schoolBus" xml:space="preserve">
 				<source>Iscrizione Trasporto Scolastico</source>

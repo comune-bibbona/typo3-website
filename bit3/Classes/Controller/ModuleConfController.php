@@ -393,7 +393,9 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	public function salvaServiziInformatoAction(): ResponseInterface {
 
 		/* controllo i parametri inseriti o modificati nella Pagina di configurazione servizi  */
-		$constantNames= array('servizi.prenota_appuntamento.url');
+		$constantNames= array('servizi.prenota_appuntamento.id',
+			'servizi.prenota_appuntamento.url'
+		);
 
 		$this->updateContstants($constantNames);
 

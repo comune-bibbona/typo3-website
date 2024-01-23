@@ -15,13 +15,13 @@
         <f:if condition="{settings.contacts.tel}!=''">
             Telefono: {settings.contacts.tel}<br>
         </f:if>
-        <f:if condition="{settings.contacts.tel}!=''">
+        <f:if condition="{settings.contacts.fax}!=''">
             Fax: {settings.contacts.fax}<br>
         </f:if>
         <f:if condition="{settings.contacts.email}!=''">
             Email: <f:link.email email="{settings.contacts.email}" /><br>
         </f:if>
-        <f:if condition="{comune.bibbon@apec.it}!=''">
+        <f:if condition="{settings.contacts.pec}!=''">
             PEC: <f:link.email email="{settings.contacts.pec}" /><br>
         </f:if>
     </p>

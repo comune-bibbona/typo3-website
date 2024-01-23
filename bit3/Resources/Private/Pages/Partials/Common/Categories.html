@@ -15,9 +15,9 @@
             <f:for each="{b:CategoriesOutput(recUid: uid, tableName: table)}" as="category">
                 <f:if condition="{category.parent} == {settings.category.id_argument}">
                     <li>
-                        <f:if condition="{category.single_pid}">
+                        <f:if condition="{category.shortcut}">
                             <f:then>
-                                <f:link.page pageUid="{category.single_pid}" class="chip chip-simple" data="{element: 'service-topic', focus-mouse: 'false'}">
+                                <f:link.page pageUid="{category.shortcut}" class="chip chip-simple" data="{element: 'service-topic', focus-mouse: 'false'}">
                                     <span class="chip-label">{category.title}</span>
                                 </f:link.page>
                             </f:then>

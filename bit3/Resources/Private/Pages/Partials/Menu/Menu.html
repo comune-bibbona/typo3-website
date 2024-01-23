@@ -27,7 +27,7 @@
             <ul class="navbar-nav navbar-secondary">
                 <f:for each="{secondarynavigation}" as="secondarynavigationItem">
                     <li class="nav-item{f:if(condition: secondarynavigationItem.active, then: ' active')}">
-                        <a class="nav-link{f:if(condition: secondarynavigationItem.active, then: ' active')}" href="{secondarynavigationItem.link}" title="{secondarynavigationItem.title}" target="{secondarynavigationItem.target}" {f:if(condition: secondarynavigationItem.data.data_element, then: ' data-element="{secondarynavigationItem.data.data_element}"', else: 'data-element="custom-submenu"')}><f:format.htmlentitiesDecode>{secondarynavigationItem.title}</f:format.htmlentitiesDecode></a>
+                        <a class="nav-link{f:if(condition: secondarynavigationItem.active, then: ' active')}" href="{secondarynavigationItem.link}" title="{secondarynavigationItem.title}" target="{secondarynavigationItem.target}" {f:if(condition: secondarynavigationItem.data.data_element, then: ' data-element="{secondarynavigationItem.data.data_element}"')}><f:format.htmlentitiesDecode>{secondarynavigationItem.title}</f:format.htmlentitiesDecode></a>
                     </li>
                 </f:for>
             </ul>

@@ -27,25 +27,6 @@
 	die ('Access denied.');
 }
 
-if (TYPO3 === 'BE') {
-	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-		'aip.bit3',
-		'site',                       // Main area
-		'tx_bit3_configuration',      // Name of the module
-		'top',  // Position of the module
-		[ // Controller configuration
-			\Aip\Bit3\Controller\ModuleConfController::class => 'index, cookies, skin, contatti, page, servizi, social, salvaCookies, salvaSkin, salvaContatti, salvaCopyrightAndCredits, salvaPage, salvaContainer, salvaCategory, salvaServiziInformato, salvaServiziAttivo, salvaSocial'
-		],
-		[  // Additional configuration
-			'access' => 'user,group',
-			'iconIdentifier' => 'module-icon',
-			'labels' => 'LLL:EXT:bit3/Resources/Private/Language/locallang_mod.xlf',
-			'navigationComponentId' => 'TYPO3/CMS/Backend/PageTree/PageTreeElement',
-			'inheritNavigationComponentFromMainModule' => true,
-		]
-	);
-}
-
 # TCA configuration
 $boot = function () {
 	foreach (['child_item','timeline_item'] as $table) {

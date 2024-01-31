@@ -94,7 +94,16 @@
                                 </div>
                             </f:if>
                             <p class="card-title text-paragraph-regular-medium-semi mb-3">
-                                <a class="text-decoration-none" href="#" data-element="service-area">{data.header}</a>
+                                <f:if condition="{data.header_link}">
+                                    <f:then>
+                                        <f:link.typolink parameter="{data.header_link}">
+                                            {data.header}
+                                        </f:link.typolink>
+                                    </f:then>
+                                    <f:else>
+                                        <a class="text-decoration-none">{data.header}</a>
+                                    </f:else>
+                                </f:if>
                             </p>
                             <div class="card-text">
                                 <f:format.html>{data.bodytext}</f:format.html>

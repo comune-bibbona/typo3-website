@@ -1,14 +1,10 @@
 lib.newsdetail = USER
 lib.newsdetail {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-    extensionName = News
-    pluginName = Pi1
+    pluginName = NewsDetail
     vendorName = GeorgRinger
-    switchableControllerActions {
-        News {
-            1 = detail
-        }
-    }
+    extensionName = News
+    controller = News
     settings =< plugin.tx_news.settings
     settings {
         singleNews.field = uid
@@ -18,5 +14,6 @@ lib.newsdetail {
         backPid = {$id_archivio_news}
         templateLayout = 99
     }
+    persistence =< plugin.tx_news.persistence
     view =< plugin.tx_news.view
 }

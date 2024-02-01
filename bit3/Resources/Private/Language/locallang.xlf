@@ -25,13 +25,13 @@
 				<source>Configurazione dei nomi degli enti, dei loghi e dei colori primari e secondari utilizzate nel sito.</source>
 			</trans-unit>
             <trans-unit id="bit3.module.skin.belongInstitutionName" xml:space="preserve">
-				<source>Nome Ente di Appartenza</source>
+				<source>Nome Ente di Appartenenza</source>
 			</trans-unit>
             <trans-unit id="bit3.module.skin.belongInstitutionLogo" xml:space="preserve">
-				<source>Logo Ente di Appartenza</source>
+				<source>Logo Ente di Appartenenza</source>
 			</trans-unit>
             <trans-unit id="bit3.module.skin.belongInstitutionUrl" xml:space="preserve">
-				<source>Link Ente di Appartenza</source>
+				<source>Link Ente di Appartenenza</source>
 			</trans-unit>
             <trans-unit id="bit3.module.skin.institutionName" xml:space="preserve">
 				<source>Nome Istituzione</source>

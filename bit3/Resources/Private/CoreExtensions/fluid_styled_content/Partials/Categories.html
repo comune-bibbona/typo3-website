@@ -3,9 +3,9 @@
 
     <f:for each="{b:FileCategoriesOutput(recUid: fileReference.properties.uid_local, parentUid: fileReference.properties.uid_foreign)}" as="category" key="itemkey">
         {f:if(condition: '{itemkey} != 0', then: ' - ')}
-        <f:if condition="{category.single_pid}">
+        <f:if condition="{category.shortcut}">
             <f:then>
-                <f:link.page pageUid="{category.single_pid}" id="cat-{category.uid}" class="category text-decoration-none" data="{focus-mouse: 'false'}">{category.title}</f:link.page>
+                <f:link.page pageUid="{category.shortcut}" id="cat-{category.uid}" class="category text-decoration-none" data="{focus-mouse: 'false'}">{category.title}</f:link.page>
             </f:then>
             <f:else>
                 <a class="category text-decoration-none" id="cat-{category.uid}" data-focus-mouse="false">{category.title}</a>

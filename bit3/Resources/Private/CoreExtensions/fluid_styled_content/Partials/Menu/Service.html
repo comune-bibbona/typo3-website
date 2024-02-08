@@ -31,9 +31,9 @@
                     <div class="card-header border-0 p-0">
                         <f:for each="{b:CategoriesOutput(recUid: page.data.uid, tableName: 'pages')}" as="category" iteration="iterator">
                             <f:if condition="{iterator.index}>0"> - </f:if>
-                            <f:if condition="{category.single_pid}">
+                            <f:if condition="{category.shortcut}">
                                 <f:then>
-                                    <f:link.page pageUid="{category.single_pid}" id="cat-{category.uid}" class="text-decoration-none title-xsmall-bold mb-2 category text-uppercase">{category.title}</f:link.page>
+                                    <f:link.page pageUid="{category.shortcut}" id="cat-{category.uid}" class="text-decoration-none title-xsmall-bold mb-2 category text-uppercase">{category.title}</f:link.page>
                                 </f:then>
                                 <f:else>
                                     <span class="text-decoration-none title-xsmall-bold mb-2 category text-uppercase">{category.title}</span>

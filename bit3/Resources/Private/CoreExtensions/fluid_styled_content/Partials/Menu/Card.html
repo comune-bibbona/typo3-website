@@ -16,6 +16,22 @@
                             </div>
                         </f:if>
                         <div class="card-body">
+                            <div class="category-top">
+                                <f:if condition="{page.data.categories} > 0">
+                                    <span class="visually-hidden">Categoria</span>
+                                    <f:for each="{b:CategoriesOutput(recUid: page.data.uid, tableName: 'pages')}" as="category" iteration="iterator">
+                                        <f:if condition="{iterator.index}>0"> - </f:if>
+                                        <f:if condition="{category.shortcut}">
+                                            <f:then>
+                                                <f:link.page pageUid="{category.shortcut}" id="cat-{category.uid}" class="title-xsmall-semi-bold fw-semibold text-decoration-none">{category.title}</f:link.page>
+                                            </f:then>
+                                            <f:else>
+                                                <span class="title-xsmall-semi-bold fw-semibold text-decoration-none">{category.title}</span>
+                                            </f:else>
+                                        </f:if>
+                                    </f:for>
+                                </f:if>
+                            </div>
                             <h3 class="card-title"><a href="{page.link}" class="text-decoration-none" title="{page.title}" {f:if(condition: data_element, then: ' data-element="{data_element}"')} {f:if(condition: page.target, then: ' target="{page.target}"')}>{page.title}</a></h3>
                             <p class="text-secondary mb-0">
                                 <f:if condition="{page.data.abstract}">

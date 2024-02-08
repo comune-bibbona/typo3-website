@@ -52,6 +52,10 @@
     }
 }
 
+.card .categoryicon-top span.text {
+    color: var(--bs-link-color)
+}
+
 .cmp-breadcrumbs .breadcrumb-container .breadcrumb .breadcrumb-item a {
     color: var(--darken-primary-color);
 }

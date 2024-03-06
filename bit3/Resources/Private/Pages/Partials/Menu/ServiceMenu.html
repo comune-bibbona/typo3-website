@@ -85,6 +85,13 @@
                                                     </a>
                                                 </li>
                                             </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.documenti')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#documents">
+                                                        <span class="title-medium">Documenti</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
                                             <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.area')}">
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="#area">
@@ -92,7 +99,40 @@
                                                     </a>
                                                 </li>
                                             </f:if>
+                                            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.service.details.unitaorganizzativa')}">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#organizational-unit">
+                                                        <span class="title-medium">Unità Organizzativa Responsabile</span>
+                                                    </a>
+                                                </li>
+                                            </f:if>
                                         </ul>
+                                        <script data-element="metatag" type="application/ld+json">
+                                            {
+                                                "name": "<f:cObject typoscriptObjectPath='lib.service.name' />",
+                                                "serviceType": "<f:cObject typoscriptObjectPath='lib.service.serviceType' />",
+                                                "serviceOperator": {
+                                                    "name": "<f:cObject typoscriptObjectPath='lib.service.serviceOperator' />"
+                                                },
+                                                "areaServed": {
+                                                    "name": "<f:cObject typoscriptObjectPath='lib.service.areaServed' />"
+                                                },
+                                                "audience": {
+                                                    "audienceType": "<f:cObject typoscriptObjectPath='lib.service.audience' />"
+                                                },
+                                                "availableChannel": {
+                                                    "serviceUrl": "<f:cObject typoscriptObjectPath='lib.service.serviceUrl' />",
+                                                    "serviceLocation": {
+                                                        "name": "<f:cObject typoscriptObjectPath='lib.service.serviceLocation.name' />",
+                                                        "address": {
+                                                            "streetAddress": "<f:cObject typoscriptObjectPath='lib.service.serviceLocation.serviceAddress.street' />",
+                                                            "postalCode": "<f:cObject typoscriptObjectPath='lib.service.serviceLocation.serviceAddress.postalCode' />",
+                                                            "addressLocality": "<f:cObject typoscriptObjectPath='lib.service.serviceLocation.serviceAddress.locality' />"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        </script>
                                     </div>
                                 </div>
                             </div>

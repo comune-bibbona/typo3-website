@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2020-03-25T11:48:33Z" product-name="template-bootstrap">
-        <header/>
-        <body>
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-03-25T11:48:33Z" product-name="template-bootstrap">
+		<header/>
+		<body>
+			<trans-unit id="page.author" xml:space="preserve">
+				<source>Area geografica servita</source>
+			</trans-unit>
+			<trans-unit id="page.author_email" xml:space="preserve">
+				<source>Pubblico a cui è rivolto il servizio</source>
+			</trans-unit>
 			<trans-unit id="wizard.tab" xml:space="preserve">
 				<source>Bootstrap Italia</source>
 			</trans-unit>
@@ -115,20 +121,41 @@
 				<source>anni</source>
 			</trans-unit>
 			<trans-unit id="page.dataelement" xml:space="preserve">
-                <source>data-element</source>
-            </trans-unit>
+				<source>data-element</source>
+			</trans-unit>
+			<trans-unit id="page.service" xml:space="preserve">
+				<source>Metadati servizio</source>
+			</trans-unit>
+			<trans-unit id="page.areaserved.name" xml:space="preserve">
+				<source>Copertura geografica del servizio</source>
+			</trans-unit>
+			<trans-unit id="page.audience.audiencetype" xml:space="preserve">
+				<source>A chi è rivolto il servizio</source>
+			</trans-unit>
+			<trans-unit id="page.servicelocation.name" xml:space="preserve">
+				<source>Unità organizzativa (es ufficio o area) responsabile del servizio</source>
+			</trans-unit>
+			<trans-unit id="page.servicelocation.address.streetadress" xml:space="preserve">
+				<source>Indirizzo del luogo associato al canale fisico del servizio</source>
+			</trans-unit>
+			<trans-unit id="page.servicelocation.address.postalcode" xml:space="preserve">
+				<source>CAP del luogo associato al canale fisico del servizio</source>
+			</trans-unit>
+			<trans-unit id="page.servicelocation.address.addresslocality" xml:space="preserve">
+				<source>Il nome del comune </source>
+			</trans-unit>
 			<trans-unit id="image.layout" xml:space="preserve">
-                <source>Layout</source>
-            </trans-unit>
-            <trans-unit id="image.layout.default" xml:space="preserve">
-                <source>Default</source>
-            </trans-unit>
-            <trans-unit id="image.layout.thumbnail" xml:space="preserve">
-                <source>Thumbnail</source>
-            </trans-unit>
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="image.layout.default" xml:space="preserve">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="image.layout.thumbnail" xml:space="preserve">
+				<source>Thumbnail</source>
+			</trans-unit>
 			<trans-unit id="eventnews.types" xml:space="preserve">
 				<source>Tipologia evento</source>
 			</trans-unit>
 		</body>
-    </file>
+	</file>
 </xliff>

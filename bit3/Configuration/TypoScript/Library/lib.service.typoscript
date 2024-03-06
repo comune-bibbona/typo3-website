@@ -1,0 +1,27 @@
+lib.service = COA
+lib.service {
+    name = TEXT
+    name.data = page : title
+    serviceType = TEXT
+    serviceType.data = leveltitle:-2
+    serviceOperator = TEXT
+    serviceOperator.value = {$header.nome_istituzione}
+    areaServed = TEXT
+    areaServed.data = page : areaServed_name
+    audience = TEXT
+    audience.data = page : audience_audienceType
+    serviceUrl = TEXT
+    serviceUrl.data = getIndpEnv:TYPO3_REQUEST_URL
+    serviceLocation {
+        name = TEXT
+        name.data = page : serviceLocation_name
+        serviceAddress {
+            street = TEXT
+            street.data = page : serviceLocation_address_streetAdress
+            postalCode = TEXT
+            postalCode.data = page : serviceLocation_address_postalCode
+            locality = TEXT
+            locality.data = page : serviceLocation_address_addressLocality
+        }
+    }
+}

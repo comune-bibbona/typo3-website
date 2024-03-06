@@ -120,5 +120,15 @@ lib.content.service {
             10 < styles.content.get
             10.select.where = colPos=30
         }
+        documenti = COA
+        documenti {
+            10 < styles.content.get
+            10.select.where = colPos=31
+        }
+        unitaorganizzativa = COA
+        unitaorganizzativa {
+            10 < styles.content.get
+            10.select.where = colPos=32
+        }
     }
 }

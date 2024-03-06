@@ -15,14 +15,14 @@
 							<f:for each="{data.single}" key="year" as="monthsOfYear">
 								<div class="accordion-item border-bottom">
 								  <span class="accordion-header" id="accordion-title-{year}">
-									<button class="accordion-button pb-10 px-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{year}" aria-expanded="false" aria-controls="collapse-{year}" data-focus-mouse="false">
+									<button class="accordion-button pb-10 px-3{f:if(condition: '{year}!={overwriteDemand.year}', then: ' collapsed')}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{year}" aria-expanded="false" aria-controls="collapse-{year}" data-focus-mouse="false">
 									  ARCHIVIO DEL {year}
 									  <svg class="icon icon-xs right">
 										<use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-expand"></use>
 									  </svg>
 									</button>
 								  </span>
-									<div id="collapse-{year}" class="accordion-collapse collapse" role="region" aria-labelledby="accordion-title-{year}" style="">
+									<div id="collapse-{year}" class="accordion-collapse collapse{f:if(condition: '{year}=={overwriteDemand.year}', then: ' show')}" role="region" aria-labelledby="accordion-title-{year}" style="">
 										<div class="accordion-body">
 											<ul class="link-list">
 												<f:for each="{monthsOfYear}" key="month" as="count">

@@ -694,6 +694,10 @@ p.text-right {
     background-size: 70% 70%;
 }
 
+.card.card-teaser .card-body {
+    max-width: 80%;
+}
+
 
 /* IndexedSearch */
 .searchbox legend,

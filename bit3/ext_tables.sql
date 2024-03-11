@@ -1,8 +1,14 @@
 #
-# Aggiunto il data_element per gestire attributo data-element del link
+# Aggiunto campi a pages per gestire attributo data-element del link e il JSON Array dei servizi
 #
 CREATE TABLE pages (
-    data_element varchar(255) DEFAULT '' NOT NULL
+    data_element varchar(255) DEFAULT '' NOT NULL,
+    areaServed_name varchar(255) DEFAULT '' NOT NULL,
+    audience_audienceType varchar(255) DEFAULT '' NOT NULL,
+    serviceLocation_name varchar(255) DEFAULT '' NOT NULL,
+    serviceLocation_address_streetAdress varchar(255) DEFAULT '' NOT NULL,
+    serviceLocation_address_postalCode varchar(255) DEFAULT '' NOT NULL,
+    serviceLocation_address_addressLocality varchar(255) DEFAULT '' NOT NULL,
 );
 
 #

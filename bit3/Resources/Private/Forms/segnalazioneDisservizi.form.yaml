@@ -11,6 +11,7 @@ finishers:
       subject: 'segnalazione disservizio'
       recipients:
         abramotesoro@gmail.com: ''
+        urp@comune.bibbona.it: ''
       senderAddress: metsmtpsender@archicoop.it
       senderName: 'segnalazione disservizio'
       carbonCopyRecipients:
@@ -58,23 +59,23 @@ renderables:
       -
         type: Checkbox
         identifier: checkbox-1
-        label: 'Ho letto e compreso l''informativa sulla privacy.'
+        label: "Ho letto e compreso l'informativa sulla privacy."
         properties:
           fluidAdditionalAttributes:
             required: required
           validationErrorMessages:
             -
               code: 1221560910
-              message: 'E'' necessario leggere l''informativa sulla privacy e confermare'
+              message: "E' necessario leggere l'informativa sulla privacy e confermare"
             -
               code: 1221560718
-              message: 'E'' necessario leggere l''informativa sulla privacy e confermare'
+              message: "E' necessario leggere l'informativa sulla privacy e confermare"
             -
               code: 1347992400
-              message: 'E'' necessario leggere l''informativa sulla privacy e confermare'
+              message: "E' necessario leggere l'informativa sulla privacy e confermare"
             -
               code: 1347992453
-              message: 'E'' necessario leggere l''informativa sulla privacy e confermare'
+              message: "E' necessario leggere l'informativa sulla privacy e confermare"
         validators:
           -
             identifier: NotEmpty

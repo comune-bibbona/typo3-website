@@ -35,9 +35,18 @@
 																<f:variable name="addingClass"></f:variable>
 															</f:else>
 														</f:if>
-														<f:link.action action="list" pageUid="{listPid}" arguments="{overwriteDemand:{year: year, month: month}}" class="nav-link{addingClass}">
-															<span class="title-medium"><f:translate key="month.{month}" /> {year}</span>({count} <f:translate key="{f:if(condition: '{count} == 1', then: 'entry', else: 'entries')}" />)
-														</f:link.action>
+														<f:if condition="{overwriteDemand.categories}">
+															<f:then>
+																<f:link.action action="list" pageUid="{listPid}" arguments="{overwriteDemand:{year: year, month: month, categories: overwriteDemand.categories}}" class="nav-link{addingClass}">
+																	<span class="title-medium"><f:translate key="month.{month}" /> {year}</span>({count} <f:translate key="{f:if(condition: '{count} == 1', then: 'entry', else: 'entries')}" />)
+																</f:link.action>
+															</f:then>
+															<f:else>
+																<f:link.action action="list" pageUid="{listPid}" arguments="{overwriteDemand:{year: year, month: month}}" class="nav-link{addingClass}">
+																	<span class="title-medium"><f:translate key="month.{month}" /> {year}</span>({count} <f:translate key="{f:if(condition: '{count} == 1', then: 'entry', else: 'entries')}" />)
+																</f:link.action>
+															</f:else>
+														</f:if>
 													</li>
 												</f:for>
 											</ul>

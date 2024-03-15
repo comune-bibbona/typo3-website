@@ -14,7 +14,9 @@
 					<f:render section="categoryBoxes" arguments="{categories:categories,overwriteDemand:overwriteDemand}" />
 				</f:then>
 				<f:else>
-					<f:render section="categoryTree" arguments="{categories:categories,overwriteDemand:overwriteDemand}" />
+					<div class="link-list-wrapper">
+						<f:render section="categoryTree" arguments="{categories:categories,overwriteDemand:overwriteDemand,ulClass:'link-list',aClass:'list-item large medium',spanClass:'list-item-title'}" />
+					</div>
 				</f:else>
 			</f:if>
 		</f:then>
@@ -46,26 +48,36 @@
 </f:section>
 
 <f:section name="categoryTree">
-	<br><br>
-	<ul class="Linklist Linklist--padded u-layout-prose u-text-r-xs">
+	<ul class="{ulClass}">
 		<f:for each="{categories}" as="category">
-				<f:if condition="{category.item.uid} == {overwriteDemand.categories}">
+			<f:if condition="{category.item.uid} == {overwriteDemand.categories}">
+				<f:then><f:variable name="activeClass"> active</f:variable></f:then>
+				<f:else><f:variable name="activeClass"></f:variable></f:else>
+			</f:if>
+			<li>
+				<f:if condition="{overwriteDemand.year}">
 					<f:then>
-			<li class="u-color-50 menu-act">
-						<f:link.page title="{category.item.title}" class="Linklist-link Linklist-link--lev1" pageUid="{settings.listPid}"
-							additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">{category.item.title}
-						</f:link.page>
+						<f:if condition="{overwriteDemand.month}">
+							<f:then>
+								<f:link.page title="{category.item.title}" class="{aClass}{activeClass}" pageUid="{settings.listPid}" additionalParams="{tx_news_pi1:{overwriteDemand:{year: overwriteDemand.year, month: overwriteDemand.month, categories: category.item.uid}}}">
+									<span class="{spanClass}">{category.item.title}</span>
+								</f:link.page>
+							</f:then>
+							<f:else>
+								<f:link.page title="{category.item.title}" class="{aClass}{activeClass}" pageUid="{settings.listPid}" additionalParams="{tx_news_pi1:{overwriteDemand:{year: overwriteDemand.year, categories: category.item.uid}}}">
+									<span class="{spanClass}">{category.item.title}</span>
+								</f:link.page>
+							</f:else>
+						</f:if>
 					</f:then>
 					<f:else>
-			<li class="u-color-50">
-						<f:link.page title="{category.item.title}" class="Linklist-link" pageUid="{settings.listPid}"
-							additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">{category.item.title}
+						<f:link.page title="{category.item.title}" class="{aClass}{activeClass}" pageUid="{settings.listPid}" additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.item.uid}}}">
+							<span class="{spanClass}r">{category.item.title}</span>
 						</f:link.page>
 					</f:else>
 				</f:if>
-
 				<f:if condition="{category.children}">
-					<f:render section="categoryTree" arguments="{categories: category.children,overwriteDemand:overwriteDemand}" />
+					<f:render section="categoryTree" arguments="{categories: category.children,overwriteDemand:overwriteDemand,ulClass:'link-sublist',aClass:'list-item',spanClass:''}" />
 				</f:if>
 			</li>
 		</f:for>

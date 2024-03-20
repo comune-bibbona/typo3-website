@@ -119,6 +119,7 @@ page.10 {
         }
         category {
             id_argument = {$category.id_argument}
+            id_document = {$category.id_document}
         }
         servizi {
             iscrizione_trasporto_scolastico {

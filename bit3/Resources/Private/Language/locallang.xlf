@@ -93,10 +93,10 @@
 			</trans-unit>
 
             <trans-unit id="bit3.module.page.title" xml:space="preserve">
-				<source>Pagine, Contenitori e Argomenti</source>
+				<source>Pagine, Contenitori e Categorie</source>
 			</trans-unit>
             <trans-unit id="bit3.module.page.info" xml:space="preserve">
-				<source>Configurazione delle pagine utilizzate dalle varie funzionalità del sito, delle folder che contengono news e utenti e della categoria Argomenti. Puoi utilizzare l'albero delle pagine qui a sinistra per controllare gli id da inserire.</source>
+				<source>Configurazione delle pagine utilizzate dalle varie funzionalità del sito, delle folder che contengono news e utenti e delle categorie principali (Argomenti, Documenti). Puoi utilizzare l'albero delle pagine qui a sinistra per controllare gli id da inserire.</source>
 			</trans-unit>
 			<trans-unit id="bit3.module.page.page" xml:space="preserve">
 				<source>Pagine</source>
@@ -159,6 +159,9 @@
 			</trans-unit>
 			<trans-unit id="bit3.module.page.category.argument" xml:space="preserve">
 				<source>Id della categoria "Argomenti"</source>
+			</trans-unit>
+			<trans-unit id="bit3.module.page.category.document" xml:space="preserve">
+				<source>Id della categoria "Documenti"</source>
 			</trans-unit>
 
             <trans-unit id="bit3.module.service.title" xml:space="preserve">

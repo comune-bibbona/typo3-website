@@ -263,7 +263,7 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     }
 
     /**
-     *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine, Contenitori e Argomenti, nella sezione Categorie
+     *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine, Contenitori e Categorie, nella sezione Categorie
      *
      * @return void
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
@@ -305,7 +305,7 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
     /**
      *
-     *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine, Contenitori e Argomenti, nella sezione Categorie
+     *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine, Contenitori e Categorie, nella sezione Categorie
      *
      * @return void
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
@@ -336,7 +336,7 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
 	/**
 	 *
-	 *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine, Contenitori e Argomenti, nella sezione Categorie
+	 *  salva i parametri inseriti o modificati nella Pagina di configurazione Pagine, Contenitori e Categorie, nella sezione Categorie
 	 *
 	 * @return void
 	 * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
@@ -345,7 +345,8 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	public function salvaCategoryAction(): ResponseInterface {
 
 		$constantNames= array(
-			'category.id_argument');
+			'category.id_argument',
+			'category.id_document');
 
 		foreach ($constantNames as $constantName) {
 			if ($this->request->hasArgument($constantName)) {

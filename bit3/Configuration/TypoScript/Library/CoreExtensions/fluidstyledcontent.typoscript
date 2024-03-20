@@ -8,16 +8,10 @@ lib.contentElement {
     layoutRootPaths {
         100 = EXT:bit3/Resources/Private/CoreExtensions/fluid_styled_content/Layouts/
     }
-}
-# For compatibility with CMS7 can be removed with CMS9
-lib.fluidContent {
-    templateRootPaths {
-        100 = EXT:bit3/Resources/Private/CoreExtensions/fluid_styled_content/Templates/
-    }
-    partialRootPaths {
-        100 = EXT:bit3/Resources/Private/CoreExtensions/fluid_styled_content/Partials/
-    }
-    layoutRootPaths {
-        100 = EXT:bit3/Resources/Private/CoreExtensions/fluid_styled_content/Layouts/
+    settings {
+        categories {
+            id_argument = {$category.id_argument}
+            id_document = {$category.id_document}
+        }
     }
 }

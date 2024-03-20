@@ -84,6 +84,8 @@ containers {
 category {
     # cat=Site/07_Category/1; type=int; label= Id della categoria Argomenti
     id_argument =
+    # cat=Site/08_Category/2; type=int; label= Id della categoria Documenti
+    id_document =
 }
 
 servizi {

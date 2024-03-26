@@ -5,6 +5,10 @@ page.includeCSS {
         disableCompression = 1
     }
     style = EXT:bit3/Resources/Public/css/style.css
+    style {
+        excludeFromConcatenation = 1
+        disableCompression = 1
+    }
     fonts = EXT:bit3/Resources/Public/css/fonts.css
     bit3 = EXT:bit3/Resources/Public/css/bit3.css
 }

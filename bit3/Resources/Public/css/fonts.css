@@ -8,6 +8,7 @@
     url(../fonts/Lora/lora-v20-latin-ext_latin-regular.ttf) format('ttf'),
     url(../fonts/Lora/lora-v20-latin-ext_latin-regular.svg) format('svg'),
     url(../fonts/Lora/lora-v20-latin-ext_latin-regular.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Lora';
@@ -18,6 +19,7 @@
     url(../fonts/Lora/lora-v20-latin-ext_latin-italic.ttf) format('ttf'),
     url(../fonts/Lora/lora-v20-latin-ext_latin-italic.svg) format('svg'),
     url(../fonts/Lora/lora-v20-latin-ext_latin-italic.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Lora';
@@ -28,6 +30,7 @@
     url(../fonts/Lora/lora-v20-latin-ext_latin-700.ttf) format('ttf'),
     url(../fonts/Lora/lora-v20-latin-ext_latin-700.svg) format('svg'),
     url(../fonts/Lora/lora-v20-latin-ext_latin-700.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Lora';
@@ -38,6 +41,7 @@
     url(../fonts/Lora/lora-v20-latin-ext_latin-700italic.ttf) format('ttf'),
     url(../fonts/Lora/lora-v20-latin-ext_latin-700italic.svg) format('svg'),
     url(../fonts/Lora/lora-v20-latin-ext_latin-700italic.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Roboto Mono';
@@ -48,6 +52,7 @@
     url(../fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-regular.ttf) format('ttf'),
     url(../fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-regular.svg) format('svg'),
     url(../fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-regular.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Roboto Mono';
@@ -68,6 +73,7 @@
     url(../fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700.ttf) format('ttf'),
     url(../fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700.svg) format('svg'),
     url(../fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Roboto Mono';
@@ -78,6 +84,7 @@
     url(../fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.ttf) format('ttf'),
     url(../fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.svg) format('svg'),
     url(../fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Titillium Web';
@@ -88,6 +95,7 @@
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.ttf) format('ttf'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.svg) format('svg'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Titillium Web';
@@ -98,6 +106,7 @@
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.ttf) format('ttf'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.svg) format('svg'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Titillium Web';
@@ -108,6 +117,7 @@
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.ttf) format('ttf'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.svg) format('svg'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Titillium Web';
@@ -118,6 +128,7 @@
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.ttf) format('ttf'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.svg) format('svg'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Titillium Web';
@@ -128,6 +139,7 @@
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600.ttf) format('ttf'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600.svg) format('svg'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Titillium Web';
@@ -138,6 +150,7 @@
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600italic.ttf) format('ttf'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600italic.svg) format('svg'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600italic.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Titillium Web';
@@ -148,6 +161,7 @@
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.ttf) format('ttf'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.svg) format('svg'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.eot) format('eot');
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Titillium Web';
@@ -158,4 +172,5 @@
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.ttf) format('ttf'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.svg) format('svg'),
     url(../fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.eot) format('eot');
+    font-display: fallback;
 }

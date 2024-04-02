@@ -1,4 +1,4 @@
-["{$analytics.trackingurl}" != "" and "{$analytics.siteid}" > 0]
+["{$cookies.trackingurl}" != "" and "{$cookies.siteid}" > 0]
 page.headerData.10 = TEXT
 page.headerData.10.value (
 <!-- Matomo -->

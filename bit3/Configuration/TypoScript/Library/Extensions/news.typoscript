@@ -3,6 +3,7 @@ plugin.tx_news {
         detail.media.image.maxWidth = 400
         list.media {
             dummyImage = EXT:bit3/Resources/Public/Images/news-no-img.jpg
+            noImageNews = /typo3conf/ext/bit3/Resources/Public/Images/news-no-img.webp
             image.maxWidth = 443
             image.maxHeight = 245
         }

@@ -10,12 +10,12 @@
 					<f:image class="img-dummy img-responsive" src="/fileadmin/{newsItem.categories.0.images.0.originalResource.identifier}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
 				</f:then>
 				<f:else>
-					<img class="img-dummy img-responsive" src="{settings.list.media.noImageNews}" width="443" height="245" alt="Stemma Comune di Bibbona">
+					<f:image class="img-dummy img-responsive" src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
 				</f:else>
 			</f:if>
 		</f:then>
 		<f:else>
-			<img class="img-dummy img-responsive" src="{settings.list.media.noImageNews}" width="443" height="245" alt="Stemma Comune di Bibbona">
+			<f:image class="img-dummy img-responsive" src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
 		</f:else>
 	</f:if>
 </f:section>

@@ -346,7 +346,8 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
 		$constantNames= array(
 			'category.id_argument',
-			'category.id_document');
+			'category.id_document',
+			'category.id_place');
 
 		foreach ($constantNames as $constantName) {
 			if ($this->request->hasArgument($constantName)) {

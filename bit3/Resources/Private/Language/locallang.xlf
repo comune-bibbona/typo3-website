@@ -163,6 +163,9 @@
 			<trans-unit id="bit3.module.page.category.document" xml:space="preserve">
 				<source>Id della categoria "Documenti"</source>
 			</trans-unit>
+			<trans-unit id="bit3.module.page.category.place" xml:space="preserve">
+				<source>Id della categoria "Luoghi"</source>
+			</trans-unit>
 
             <trans-unit id="bit3.module.service.title" xml:space="preserve">
 				<source>Configurazione Servizi</source>

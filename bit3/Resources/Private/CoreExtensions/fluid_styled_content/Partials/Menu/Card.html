@@ -3,6 +3,7 @@
 <f:section name="Default">
 
     <div class="row g-4">
+        <f:variable name="CategorieDaMostrare" value="99" />
         <f:for each="{menu}" as="page">
             <div class="col-lg-6 col-xl-4">
                 <div class="card-wrapper border border-light rounded shadow-sm">
@@ -17,30 +18,24 @@
                             </div>
                         </f:if>
                         <div class="card-body">
-                            <f:variable name="EsisteCategoriaDocumenti" value="0" />
-                            <f:for each="{b:CategoriesOutput(recUid: page.data.uid, tableName: 'pages')}" as="category" iteration="iterator">
-                                <f:if condition="{category.parent} == {settings.categories.id_document}">
-                                    <f:variable name="EsisteCategoriaDocumenti" value="1" />
-                                </f:if>
-                            </f:for>
-                            <div class="{f:if(condition: '{EsisteCategoriaDocumenti}', then: 'categoryicon-top', else: 'category-top')}">
+                            <f:if condition="{settings.categories.id_document} || {settings.categories.id_place}">
+                                <f:for each="{b:CategoriesOutput(recUid: page.data.uid, tableName: 'pages')}" as="category" iteration="iterator">
+                                    <f:if condition="{category.parent} == {settings.categories.id_document}">
+                                        <f:variable name="CategorieDaMostrare" value="1" />
+                                    </f:if>
+                                    <f:if condition="{category.parent} == {settings.categories.id_place}">
+                                        <f:variable name="CategorieDaMostrare" value="2" />
+                                    </f:if>
+                                </f:for>
+                            </f:if>
+                            <div class="{f:if(condition: '{CategorieDaMostrare}==1', then: 'categoryicon-top', else: 'category-top')}">
                                 <f:if condition="{page.data.categories} > 0">
                                     <span class="visually-hidden">Categoria</span>
-                                    <f:if condition="{settings.categories.id_document}">
-                                        <f:then>
-                                            <f:if condition="{EsisteCategoriaDocumenti}">
-                                                <f:then>
-                                                    <f:render section="CatecoriesDocsCycle" arguments="{page: page}" />
-                                                </f:then>
-                                                <f:else>
-                                                    <f:render section="AllCategoriesCycle" arguments="{page: page}" />
-                                                </f:else>
-                                            </f:if>
-                                        </f:then>
-                                        <f:else>
-                                            <f:render section="AllCategoriesCycle" arguments="{page: page}" />
-                                        </f:else>
-                                    </f:if>
+                                    <f:switch expression="{CategorieDaMostrare}">
+                                        <f:case value="1"><f:render section="CatecoriesDocsCycle" arguments="{page: page}" /></f:case>
+                                        <f:case value="2"><f:render section="CatecoriesPlacesCycle" arguments="{page: page}" /></f:case>
+                                        <f:defaultCase><f:render section="AllCategoriesCycle" arguments="{page: page}" /></f:defaultCase>
+                                    </f:switch>
                                 </f:if>
                             </div>
                             <h3 class="card-title"><a href="{page.link}" class="text-decoration-none" title="{page.title}" {f:if(condition: data_element, then: ' data-element="{data_element}"')} {f:if(condition: page.target, then: ' target="{page.target}"')}>{page.title}</a></h3>
@@ -80,6 +75,26 @@
             <f:if condition="{moreThanOne}">
                 <f:then> - </f:then>
                 <f:else><svg class="icon"><use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-file"></use></svg><f:variable name="moreThanOne" value="1" /></f:else>
+            </f:if>
+            <f:if condition="{category.shortcut}">
+                <f:then>
+                    <f:link.page pageUid="{category.shortcut}" id="cat-{category.uid}" class="text fw-semibold">{category.title}</f:link.page>
+                </f:then>
+                <f:else>
+                    <span class="text fw-semibold">{category.title}</span>
+                </f:else>
+            </f:if>
+        </f:if>
+    </f:for>
+</f:section>
+
+<f:section name="CatecoriesPlacesCycle">
+    <f:variable name="moreThanOne" value="0" />
+    <f:for each="{b:CategoriesOutput(recUid: page.data.uid, tableName: 'pages')}" as="category" iteration="iterator">
+        <f:if condition="{category.parent} == {settings.categories.id_place}">
+            <f:if condition="{moreThanOne}">
+                <f:then> - </f:then>
+                <f:else><f:variable name="moreThanOne" value="1" /></f:else>
             </f:if>
             <f:if condition="{category.shortcut}">
                 <f:then>

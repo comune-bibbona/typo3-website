@@ -1,191 +1,193 @@
-# customsubcategory=01_BaseUrl=Base Url
-# customsubcategory=02_Skin=Immagini e Colori
-# customsubcategory=03_Header=Testata
-# customsubcategory=04_Fonts=Font
-# customsubcategory=05_Pages=Pagine
-# customsubcategory=06_Containers=Container
-# customsubcategory=07_Category=Category
-# customsubcategory=08_Servizi=Servizi
-# customsubcategory=09_Social=Social
-# customsubcategory=10_Contacts=Contatti
-# customsubcategory=11_Footer=Footer
-# customsubcategory=12_Cookies=Cookies and Analytics
-# customsubcategory=13_Copyrights=Copyrights
+# customsubcategory=baseurl=Base Url
+# customsubcategory=skin=Immagini e Colori
+# customsubcategory=header=Testata
+# customsubcategory=fonts=Font
+# customsubcategory=pages=Pagine
+# customsubcategory=containers=Container
+# customsubcategory=category=Category
+# customsubcategory=servizi=Servizi
+# customsubcategory=social=Social
+# customsubcategory=contacts=Contatti
+# customsubcategory=footer=Footer
+# customsubcategory=cookies=Cookies and Analytics
+# customsubcategory=copyrights=Copyrights
 
-# cat=Site/01_BaseUrl/1; type=string; label= Base Url
-config.baseUrl = /
+# cat=Site/baseurl/1; type=string; label= Base Url
+config.baseurl = /
 
 skin {
-    # cat=Site/02_Skin/1; type=string; label= path alla favicon
+    # cat=Site/skin/2; type=string; label= path alla favicon
     favicon = EXT:bit3/Resources/Public/Icons/favicon.ico
-    # cat=Site/02_Skin/2; type=string; label= path allo stemma del comune
+    # cat=Site/skin/2; type=string; label= path allo stemma del comune
     path_logo = /typo3conf/ext/bit3/Resources/Public/Images/logo.png
-    # cat=Site/02_Skin/3; type=string; label= path al logo dell'ente di appartenenza
+    # cat=Site/skin/3; type=string; label= path al logo dell'ente di appartenenza
     path_logo_ente_appartenenza =
-    # cat=Site/02_Skin/4; type=color; label= colore primario (header, link...)
+    # cat=Site/skin/4; type=color; label= colore primario (header, link...)
     primary_color = #007a52
-    # cat=site/02_Skin/5; type=string; label= colore primario scuro rgb (bgprimary)
+    # cat=site/skin/5; type=string; label= colore primario scuro rgb (bgprimary)
     bg_primary_rgb = 0, 122, 82
-    # cat=site/02_Skin/6; type=string; label= colore primario scuro (slimheader)
+    # cat=site/skin/6; type=string; label= colore primario scuro (slimheader)
     darken_primary_color = #00402b
-    # cat=site/02_Skin/7; type=string; label= colore primario chiaro (bottoni)
+    # cat=site/skin/7; type=string; label= colore primario chiaro (bottoni)
     lighten_primary_color = #008055
-    # cat=site/02_Skin/8; type=string; label= colore secondario (hover)
+    # cat=site/skin/8; type=string; label= colore secondario (hover)
     lightest_primary_color = #096
 }
 
 header {
-    # cat=Site/03_Header/1; type=string; label= nome istituzione
+    # cat=Site/header/1; type=string; label= nome istituzione
     nome_istituzione =
-    # cat=Site/03_Header/2; type=string; label= nome ente di appartenenza
+    # cat=Site/header/2; type=string; label= nome ente di appartenenza
     nome_ente_appartenenza =
-    # cat=Site/03_Header/3; type=string; label= link ente di appartenenza
+    # cat=Site/header/3; type=string; label= link ente di appartenenza
     link_ente_appartenenza =
 }
 
 pages {
-    # cat=Site/05_Pages/1; type=int; label= Id della pagina Domande Frequenti
+    # cat=Site/pages/1; type=int; label= Id della pagina Domande Frequenti
     id_faq =
-    # cat=Site/05_Pages/2; type=int; label= Id della pagina Richiedi Assistenza
+    # cat=Site/pages/2; type=int; label= Id della pagina Richiedi Assistenza
     id_assistenza =
-    # cat=Site/05_Pages/3; type=int; label= Id della pagina Prenota Appuntamento
+    # cat=Site/pages/3; type=int; label= Id della pagina Prenota Appuntamento
     id_prenota =
-    # cat=Site/05_Pages/4; type=int; label= Id della pagina Segnala Disservizio
+    # cat=Site/pages/4; type=int; label= Id della pagina Segnala Disservizio
     id_segnala =
-    # cat=Site/05_Pages/5; type=int; label= Id della pagina Archivio News
+    # cat=Site/pages/5; type=int; label= Id della pagina Archivio News
     id_archivio_news =
-    # cat=Site/05_Pages/6; type=int; label= Id della pagina di Login
+    # cat=Site/pages/6; type=int; label= Id della pagina di Login
     id_login =
-    # cat=Site/05_Pages/7; type=int; label= Id della pagina di Registrazione
+    # cat=Site/pages/7; type=int; label= Id della pagina di Registrazione
     id_registration =
-    # cat=Site/05_Pages/8; type=int; label= Id della pagina Accesso Civico
+    # cat=Site/pages/8; type=int; label= Id della pagina Accesso Civico
     id_privacy =
-    # cat=Site/05_Pages/9; type=int; label= Id della pagina Note Legali
+    # cat=Site/pages/9; type=int; label= Id della pagina Note Legali
     id_trasparenza =
-    # cat=Site/05_Pages/10; type=int; label= Id della pagina Amministrazione Trasparente
+    # cat=Site/pages/10; type=int; label= Id della pagina Amministrazione Trasparente
     id_note_legali =
-    # cat=Site/05_Pages/11; type=int; label= Id della pagina Mappa del Sito
+    # cat=Site/pages/11; type=int; label= Id della pagina Mappa del Sito
     id_accessibilita =
-    # cat=Site/05_Pages/12; type=int; label= Id della pagina Dichiarazione di Accessibilità
+    # cat=Site/pages/12; type=int; label= Id della pagina Dichiarazione di Accessibilità
     id_mappa =
-    # cat=Site/05_Pages/13; type=int; label= Id della pagina Credits
+    # cat=Site/pages/13; type=int; label= Id della pagina Credits
     id_credits =
-    # cat=Site/05_Pages/14; type=int; label= Id della pagina di Ricerca
+    # cat=Site/pages/14; type=int; label= Id della pagina di Ricerca
     id_search =
 }
 
 containers {
-    # cat=Site/06_Containers/1; type=int; label= Id della folder contenitore delle news
+    # cat=Site/containers/1; type=int; label= Id della folder contenitore delle news
     id_folder_news =
-    # cat=Site/06_Containers/2; type=int; label= Id della folder contenitore degli utenti
+    # cat=Site/containers/2; type=int; label= Id della folder contenitore degli utenti
     id_folder_users =
 }
 
 category {
-    # cat=Site/07_Category/1; type=int; label= Id della categoria Argomenti
+    # cat=Site/category/1; type=int; label= Id della categoria Argomenti
     id_argument =
-    # cat=Site/08_Category/2; type=int; label= Id della categoria Documenti
+    # cat=Site/category/2; type=int; label= Id della categoria Documenti
     id_document =
+    # cat=Site/category/3; type=int; label= Id della categoria Luoghi
+    id_place =
 }
 
 servizi {
     iscrizione_trasporto_scolastico {
-        # cat=Site/08_Servizi/1; type=string; label= Pagina col Dettaglio Servizio Iscrizione al Trasporto Scolastico
+        # cat=Site/servizi/1; type=string; label= Pagina col Dettaglio Servizio Iscrizione al Trasporto Scolastico
         id =
-        # cat=Site/08_Servizi/2; type=string; label= Link Esterno Servizio Iscrizione al Trasporto Scolastico
+        # cat=Site/servizi/2; type=string; label= Link Esterno Servizio Iscrizione al Trasporto Scolastico
         url =
     }
     iscrizione_mensa_scolastica {
-        # cat=Site/08_Servizi/3; type=string; label= Pagina col Dettaglio Servizio Iscrizione alla Mensa Scolastica
+        # cat=Site/servizi/3; type=string; label= Pagina col Dettaglio Servizio Iscrizione alla Mensa Scolastica
         id =
-        # cat=Site/08_Servizi/4; type=string; label= Link Esterno Servizio Iscrizione alla Mensa Scolastica
+        # cat=Site/servizi/4; type=string; label= Link Esterno Servizio Iscrizione alla Mensa Scolastica
         url =
     }
     iscrizione_asilo_nido {
-        # cat=Site/08_Servizi/5; type=string; label= Pagina col Dettaglio Servizio Iscrizione all'Asilo Nido
+        # cat=Site/servizi/5; type=string; label= Pagina col Dettaglio Servizio Iscrizione all'Asilo Nido
         id =
-        # cat=Site/08_Servizi/6; type=string; label= Link Esterno Servizio Iscrizione all'Asilo Nido
+        # cat=Site/servizi/6; type=string; label= Link Esterno Servizio Iscrizione all'Asilo Nido
         url =
     }
     pagamento_imu {
-        # cat=Site/08_Servizi/7; type=string; label= Pagina col Dettaglio Servizio Pagamento Tributo IMU
+        # cat=Site/servizi/7; type=string; label= Pagina col Dettaglio Servizio Pagamento Tributo IMU
         id =
-        # cat=Site/08_Servizi/8; type=string; label= Link Esterno Servizio Pagamento Tributo IMU
+        # cat=Site/servizi/8; type=string; label= Link Esterno Servizio Pagamento Tributo IMU
         url =
     }
     prenota_appuntamento {
-        # cat=Site/08_Servizi/5; type=string; label= Pagina Richiesta Appuntamento Sindaco
+        # cat=Site/servizi/5; type=string; label= Pagina Richiesta Appuntamento Sindaco
         id =
-        # cat=Site/08_Servizi/5; type=string; label= Link Esterno Servizio Richiesta Appuntamento Sindaco
+        # cat=Site/servizi/5; type=string; label= Link Esterno Servizio Richiesta Appuntamento Sindaco
         url =
     }
 }
 
 social {
-    # cat=Site/09_Social/1; type=string; label= Link alla pagina Facebook
+    # cat=Site/social/1; type=string; label= Link alla pagina Facebook
     facebook.url =
-    # cat=Site/09_Social/2; type=string; label= Link alla pagina Twitter
+    # cat=Site/social/2; type=string; label= Link alla pagina Twitter
     twitter.url =
-    # cat=Site/09_Social/3; type=string; label= Link alla pagina Instagram
+    # cat=Site/social/3; type=string; label= Link alla pagina Instagram
     instagram.url =
-    # cat=Site/09_Social/4; type=string; label= Link alla pagina YouTube
+    # cat=Site/social/4; type=string; label= Link alla pagina YouTube
     youtube.url =
-    # cat=Site/09_Social/5; type=string; label= Link alla pagina Vimeo
+    # cat=Site/social/5; type=string; label= Link alla pagina Vimeo
     vimeo.url =
-    # cat=Site/09_Social/6; type=string; label= Link alla pagina LinkedIn
+    # cat=Site/social/6; type=string; label= Link alla pagina LinkedIn
     linkedin.url =
-    # cat=Site/09_Social/7; type=string; label= Link alla canale Telegram
+    # cat=Site/social/7; type=string; label= Link alla canale Telegram
     telegram.url =
-    # cat=Site/09_Social/8; type=string; label= Link alla canale Whatsapp
+    # cat=Site/social/8; type=string; label= Link alla canale Whatsapp
     whatsapp.url =
-    # cat=Site/09_Social/9; type=string; label= Link alla pagina RSS Feed
+    # cat=Site/social/9; type=string; label= Link alla pagina RSS Feed
     rss.url =
-    # cat=Site/09_Social/10; type=string; label= Mostra i tasti di condivisione social
+    # cat=Site/social/10; type=string; label= Mostra i tasti di condivisione social
     sharing = 0
 }
 
 contacts {
-    # cat=Site/10_Contacts/1; type=string; label = Indirizzo
+    # cat=Site/contacts/1; type=string; label = Indirizzo
     address =
-    # cat=Site/10_Contacts/2; type=string; label = Dati Fiscali (Partita IVA / Codice Fiscale, Codice Univoco)
+    # cat=Site/contacts/2; type=string; label = Dati Fiscali (Partita IVA / Codice Fiscale, Codice Univoco)
     dati_fiscali =
-    # cat=Site/10_Contacts/3; type=string; label = Indirizzo email
+    # cat=Site/contacts/3; type=string; label = Indirizzo email
     email =
-    # cat=Site/10_Contacts/4; type=string; label = Indirizzo PEC
+    # cat=Site/contacts/4; type=string; label = Indirizzo PEC
     pec =
-    # cat=Site/10_Contacts/5; type=string; label = Telefono
+    # cat=Site/contacts/5; type=string; label = Telefono
     tel =
-    # cat=Site/10_Contacts/6; type=string; label = Fax
+    # cat=Site/contacts/6; type=string; label = Fax
     fax =
-    # cat=Site/10_Contacts/7; type=string; label = Numero Verde
+    # cat=Site/contacts/7; type=string; label = Numero Verde
     numero_verde =
 }
 
 footer {
-    # cat=Site/11_Footer/1; type=string; label = Finanziato con i fondi dell'unione europea NextGenerationEU
+    # cat=Site/footer/1; type=string; label = Finanziato con i fondi dell'unione europea NextGenerationEU
     nextgenerationeu = 0
-    # cat=Site/11_Footer/2; type=string; label = Copyright
+    # cat=Site/footer/2; type=string; label = Copyright
     copyright =
-    # cat=Site/11_Footer/3; type=string; label = Credits
+    # cat=Site/footer/3; type=string; label = Credits
     credits = website developed by: <a href="https://www.archicoop.it/">Archimede Informatica</a>
 }
 
 cookies {
-    # cat=Site/12_Cookies/1; type=int; label = Utilizzo di cookie di profilazione
+    # cat=Site/cookies/1; type=int; label = Utilizzo di cookie di profilazione
     profiling =
-    # cat=Site/12_Cookies/2; type=int; label = Utilizzo e modalità di Web Analytics
+    # cat=Site/cookies/2; type=int; label = Utilizzo e modalità di Web Analytics
     webanalytics =
-    # cat=Site/12_Cookies/3; type=string; label = url dell'Account Matomo Analytics
+    # cat=Site/cookies/3; type=string; label = url dell'Account Matomo Analytics
     trackingurl =
-    # cat=Site/12_Cookies/4; type=string; label = Id del sito web da tracciare
+    # cat=Site/cookies/4; type=string; label = Id del sito web da tracciare
     siteid =
 }
 
 copyrights {
-    # cat=Site/13_Copyrights/1; type=boolean; label = Finanziato dall'Unione europea NextGenerationEU
+    # cat=Site/copyrights/1; type=boolean; label = Finanziato dall'Unione europea NextGenerationEU
     nextgenerationeu =
-    # cat=Site/13_Copyrights/2; type=string; label = Copyright
+    # cat=Site/copyrights/2; type=string; label = Copyright
     copyright =
-    # cat=Site/13_Copyrights/3; type=string; label = Credits
+    # cat=Site/copyrights/3; type=string; label = Credits
     credits =
 }

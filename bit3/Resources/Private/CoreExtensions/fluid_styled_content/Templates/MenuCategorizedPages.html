@@ -13,6 +13,18 @@
 			<f:case value="103">
 				<f:render partial="Menu/FooterMenu" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
 			</f:case>
+			<f:case value="104">
+				<f:render partial="Menu/Card" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
+			</f:case>
+			<f:case value="105">
+				<f:render partial="Menu/Service" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
+			</f:case>
+			<f:case value="106">
+				<f:render partial="Menu/Argument" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
+			</f:case>
+			<f:case value="107">
+				<f:render partial="Menu/Argument" section="OnlyText" arguments="{menu: menu, abstract: 'true', data_element: data.data_element}" />
+			</f:case>
 			<f:defaultCase>
 				<f:render partial="Menu/Default" section="Default" arguments="{menu: menu, data_element: data.data_element}" />
 			</f:defaultCase>

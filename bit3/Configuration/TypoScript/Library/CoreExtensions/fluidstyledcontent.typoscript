@@ -12,6 +12,7 @@ lib.contentElement {
         categories {
             id_argument = {$category.id_argument}
             id_document = {$category.id_document}
+            id_place = {$category.id_place}
         }
     }
 }

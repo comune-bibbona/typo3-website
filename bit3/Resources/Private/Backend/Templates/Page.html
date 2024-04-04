@@ -122,6 +122,10 @@
 								<label for="category.id_document"><f:translate key="bit3.module.page.category.document" /></label>
 								<f:form.textfield name="category.id_document" value="{f:if(condition: '{vettPageConf.category.id_document}', then: '{vettPageConf.category.id_document}')}" class="form-control" placeholder="{costantsExtension.category.id_document}"/>
 							</div>
+							<div class="form-group col-sm-3">
+								<label for="category.id_place"><f:translate key="bit3.module.page.category.place" /></label>
+								<f:form.textfield name="category.id_place" value="{f:if(condition: '{vettPageConf.category.id_place}', then: '{vettPageConf.category.id_place}')}" class="form-control" placeholder="{costantsExtension.category.id_place}"/>
+							</div>
 						</div>
 						<div class="card-footer mt-3">
 							<f:form.button class="btn btn-primary"><f:translate key="bit3.module.buttons.save" /></f:form.button>

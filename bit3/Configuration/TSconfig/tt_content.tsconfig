@@ -85,6 +85,10 @@ TCEFORM.tt_content {
                     101 = List Box
                     102 = Bottoni
                     103 = Footer Menu
+                    104 = Card Menu
+                    105 = Service Menu
+                    106 = Menu Argomenti Immagine
+                    107 = Menu Argomenti Testo
                 }
             }
             menu_pages {

@@ -209,7 +209,7 @@ page.10 {
     }
     variables {
         baseUrl = TEXT
-        baseUrl.value = {$config.baseUrl}
+        baseUrl.value = {$config.baseurl}
         pageTitle = TEXT
         pageTitle.data = page : title
         pageSubTitle = TEXT

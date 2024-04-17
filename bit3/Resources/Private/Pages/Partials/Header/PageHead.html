@@ -1,9 +1,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
 <f:section name="Breadcrumbs">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
-                <f:render partial="Menu/Menu" section="Breadcrumbs" arguments="{_all}" />
+                <f:render partial="Menu/Menu" section="Breadcrumbs" arguments="{_all}"/>
             </div>
         </div>
     </div>
@@ -13,39 +14,73 @@
     <div class="container">
         <f:switch expression="{data.backend_layout}">
             <f:case value="pagets__NewsDetail">
-                <f:render partial="Header/PageHead" section="NewsDetailHead" arguments="{_all}" />
+                <f:render partial="Header/PageHead" section="NewsDetailHead" arguments="{_all}"/>
             </f:case>
             <f:case value="pagets__Servizi">
-                <f:render partial="Header/PageHead" section="ServiziHead" arguments="{_all}" />
+                <f:render partial="Header/PageHead" section="ServiziHead" arguments="{_all}"/>
             </f:case>
             <f:defaultCase>
-                <f:render partial="Header/PageHead" section="DefaultHead" arguments="{_all}" />
+                <f:render partial="Header/PageHead" section="DefaultHead" arguments="{_all}"/>
             </f:defaultCase>
         </f:switch>
     </div>
 </f:section>
 
 <f:section name="NewsDetailHead">
+    <f:debug title="NewsDetailHead">{_all}</f:debug>
     <div class="row justify-content-center">
         <div class="col-lg-8 px-lg-4 py-lg-2">
             <div class="cmp-hero">
                 <section class="it-hero-wrapper bg-white align-items-start">
-                    <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
+                    <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60" style="width: 100%;">
                         <f:if condition="{pageTitle}">
-                            <h1 class="text-black hero-title" data-element="{data.data_element}"><f:format.htmlentitiesDecode>{pageTitle}</f:format.htmlentitiesDecode></h1>
+                            <h1 class="text-black hero-title" data-element="{data.data_element}">
+                                <f:format.htmlentitiesDecode>{pageTitle}</f:format.htmlentitiesDecode>
+                            </h1>
                         </f:if>
                         <f:if condition="{teaserNews}">
-                            <p class="text-black"><f:format.htmlentitiesDecode>{teaserNews}</f:format.htmlentitiesDecode></p>
+                            <p class="text-black">
+                                <f:format.htmlentitiesDecode>{teaserNews}</f:format.htmlentitiesDecode>
+                            </p>
                         </f:if>
                         <f:if condition="{newsDate}">
                             <div class="row mt-5 mb-4">
-                                <div class="col-6">
-                                    <small>Data:</small>
-                                    <p class="fw-semibold font-monospace text-black">
-                                        <time itemprop="datePublished" datetime="{f:format.date(date:newsDate, format:'%e %B %Y')}">
-                                            <f:format.date format="%e %B %Y">{newsDate}</f:format.date>
-                                        </time>
-                                    </p>
+                                <div class="col-md-6">
+                                    <f:if condition="{newsDateEnd}">
+                                        <f:then>
+                                            <small>Data Inizio:</small>
+                                            <p class="fw-semibold font-monospace text-black">
+                                                <time itemprop="datePublished"
+                                                      datetime="{f:format.date(date:newsDate, format:'%e %B %Y')}">
+                                                    <f:format.date format="%e %B %Y">{newsDate}</f:format.date>
+                                                </time>
+                                            </p>
+                                            <small>Data Fine:</small>
+                                            <p class="fw-semibold font-monospace text-black">
+                                                <time itemprop="datePublishedEnd"
+                                                      datetime="{f:format.date(date:newsDate, format:'%e %B %Y')}">
+                                                    <f:format.date format="%e %B %Y">{newsDateEnd}</f:format.date>
+                                                </time>
+                                            </p>
+                                        </f:then>
+                                        <f:else>
+                                            <small>Data:</small>
+                                            <p class="fw-semibold font-monospace text-black">
+                                                <time itemprop="datePublished"
+                                                      datetime="{f:format.date(date:newsDate, format:'%e %B %Y')}">
+                                                    <f:format.date format="%e %B %Y">{newsDate}</f:format.date>
+                                                </time>
+                                            </p>
+                                        </f:else>
+                                    </f:if>
+                                </div>
+                                <div class="col-md-6">
+                                    <f:if condition="{location}">
+                                        <small>Luogo:</small>
+                                        <p class="fw-semibold font-monospace text-black">
+                                            {location}
+                                        </p>
+                                    </f:if>
                                 </div>
                             </div>
                         </f:if>
@@ -55,12 +90,30 @@
         </div>
         <div class="col-lg-3 offset-lg-1">
             <f:if condition="{settings.social.sharing}">
-                <f:render partial="Common/SocialShare" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
-                <f:render partial="Common/Actions" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+                <f:render partial="Common/SocialShare" section="Default"
+                          arguments="{pageTitle: pageTitle, pageUrl: pageUrl}"/>
+                <f:render partial="Common/Actions" section="Default"
+                          arguments="{pageTitle: pageTitle, pageUrl: pageUrl}"/>
             </f:if>
             <f:if condition="{newsCategories}>0">
                 <div class="mt-4 mb-4">
-                    <f:render partial="Common/Categories" section="Default" arguments="{uid: newsUid, table : 'tx_news_domain_model_news'}" />
+                    <f:render partial="Common/Categories" section="Default"
+                              arguments="{uid: newsUid, table : 'tx_news_domain_model_news'}"/>
+                </div>
+            </f:if>
+            <f:if condition="{tipologia}">
+                <div class="mt-4 mb-4">
+                    <div class="row">
+                        <span class="small">Tipologia:</span>
+                        <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
+                            <li>
+                                <span class="chip chip-simple">
+                                    <span class="chip-label">{tipologia}</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </f:if>
         </div>
@@ -89,62 +142,84 @@
                 <f:switch expression="{data.uid}">
                     <f:case value="{settings.servizi.iscrizione_trasporto_scolastico.id}">
                         <f:if condition="{settings.servizi.iscrizione_trasporto_scolastico.url}">
-                            <f:variable name="extLink">{settings.servizi.iscrizione_trasporto_scolastico.url}&callback_url={pageUrl}</f:variable>
+                            <f:variable name="extLink">
+                                {settings.servizi.iscrizione_trasporto_scolastico.url}&callback_url={pageUrl}
+                            </f:variable>
                         </f:if>
                         <f:variable name="dataElement">service-iscrizione-trasporto-scolastico</f:variable>
                         <f:variable name="extLabel">Richiedi Iscrizione Online</f:variable>
                     </f:case>
                     <f:case value="{settings.servizi.iscrizione_mensa_scolastica.id}">
                         <f:if condition="{settings.servizi.iscrizione_mensa_scolastica.url}">
-                            <f:variable name="extLink">{settings.servizi.iscrizione_mensa_scolastica.url}&callback_url={pageUrl}</f:variable>
+                            <f:variable name="extLink">
+                                {settings.servizi.iscrizione_mensa_scolastica.url}&callback_url={pageUrl}
+                            </f:variable>
                         </f:if>
                         <f:variable name="dataElement">service-iscrizione-mensa-scolastica</f:variable>
                         <f:variable name="extLabel">Richiedi Iscrizione Online</f:variable>
                     </f:case>
                     <f:case value="{settings.servizi.iscrizione_asilo_nido.id}">
                         <f:if condition="{settings.servizi.iscrizione_asilo_nido.url}">
-                            <f:variable name="extLink">{settings.servizi.iscrizione_asilo_nido.url}&callback_url={pageUrl}</f:variable>
+                            <f:variable name="extLink">
+                                {settings.servizi.iscrizione_asilo_nido.url}&callback_url={pageUrl}
+                            </f:variable>
                         </f:if>
                         <f:variable name="dataElement">service-iscrizione-asilo-nido</f:variable>
                         <f:variable name="extLabel">Richiedi Iscrizione Online</f:variable>
                     </f:case>
                     <f:case value="{settings.servizi.pagamento_imu.id}">
                         <f:if condition="{settings.servizi.pagamento_imu.url}">
-                            <f:variable name="extLink">{settings.servizi.pagamento_imu.url}&callback_url={pageUrl}</f:variable>
+                            <f:variable name="extLink">{settings.servizi.pagamento_imu.url}&callback_url={pageUrl}
+                            </f:variable>
                         </f:if>
                         <f:variable name="dataElement">appointment-booking</f:variable>
                         <f:variable name="extLabel">Pagamento IMU Online</f:variable>
                     </f:case>
                     <f:case value="{settings.servizi.prenota_appuntamento.id}">
                         <f:if condition="{settings.servizi.prenota_appuntamento.url}">
-                            <f:variable name="extLink">{settings.servizi.prenota_appuntamento.url}&callback_url={pageUrl}</f:variable>
+                            <f:variable name="extLink">
+                                {settings.servizi.prenota_appuntamento.url}&callback_url={pageUrl}
+                            </f:variable>
                         </f:if>
                         <f:variable name="dataElement">appointment-booking</f:variable>
                         <f:variable name="extLabel">Prenota Appuntamento Online</f:variable>
                     </f:case>
+                    <f:case value="{settings.servizi.segnala_disservizio.id}">
+                        <f:if condition="{settings.servizi.segnala_disservizio.url}">
+                            <f:variable name="extLink">
+                                {settings.servizi.segnala_disservizio.url}&callback_url={pageUrl}
+                            </f:variable>
+                        </f:if>
+                        <f:variable name="dataElement">report-inefficiency</f:variable>
+                        <f:variable name="extLabel">Segnala Disservizio Online</f:variable>
+                    </f:case>
                     <f:defaultCase>
                         <f:if condition="{data.data_element} == 'service-link'">
-                            <f:render partial="Header/PageHead" section="ServizioAttivo" arguments="{_all}" />
+                            <f:render partial="Header/PageHead" section="ServizioAttivo" arguments="{_all}"/>
                         </f:if>
-                        <f:cObject typoscriptObjectPath="lib.content.service.intro" />
+                        <f:cObject typoscriptObjectPath="lib.content.service.intro"/>
                     </f:defaultCase>
                 </f:switch>
                 <f:if condition="{extLink}">
-                    <f:render partial="Header/PageHead" section="ServizioAttivo" arguments="{_all}" />
+                    <f:render partial="Header/PageHead" section="ServizioAttivo" arguments="{_all}"/>
                     <p>
-                        <f:link.external uri="{extLink}" class="btn btn-primary" title="{extLabel}" data="{element: '{dataElement}'}" target="_blank">
+                        <f:link.external uri="{extLink}" class="btn btn-primary" title="{extLabel}"
+                                         data="{element: '{dataElement}'}" target="_blank">
                             <svg class="icon icon-primary icon-sm" aria-hidden="true">
                                 <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-inbox"></use>
-                            </svg><span>{extLabel}</span>
+                            </svg>
+                            <span>{extLabel}</span>
                         </f:link.external>
                     </p>
                 </f:if>
             </div>
             <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
                 <f:if condition="{settings.social.sharing}">
-                    <f:render partial="Common/SocialShare" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+                    <f:render partial="Common/SocialShare" section="Default"
+                              arguments="{pageTitle: pageTitle, pageUrl: pageUrl}"/>
                 </f:if>
-                <f:render partial="Common/Actions" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+                <f:render partial="Common/Actions" section="Default"
+                          arguments="{pageTitle: pageTitle, pageUrl: pageUrl}"/>
             </div>
         </div>
     </div>
@@ -169,18 +244,20 @@
 <f:section name="DefaultHead">
     <f:if condition="{settings.social.sharing}">
         <f:then>
-            <div class="row">
+            <div class="row justify-content-center row-shadow">
                 <div class="col-lg-8">
-                    <f:render partial="Header/PageHead" section="DefaultMain" arguments="{_all}" />
+                    <f:render partial="Header/PageHead" section="DefaultMain" arguments="{_all}"/>
                 </div>
                 <div class="col-lg-3 offset-lg-1">
-                    <f:render partial="Common/SocialShare" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
-                    <f:render partial="Common/Actions" section="Default" arguments="{pageTitle: pageTitle, pageUrl: pageUrl}" />
+                    <f:render partial="Common/SocialShare" section="Default"
+                              arguments="{pageTitle: pageTitle, pageUrl: pageUrl}"/>
+                    <f:render partial="Common/Actions" section="Default"
+                              arguments="{pageTitle: pageTitle, pageUrl: pageUrl}"/>
                 </div>
             </div>
         </f:then>
         <f:else>
-            <f:render partial="Header/PageHead" section="DefaultMain" arguments="{_all}" />
+            <f:render partial="Header/PageHead" section="DefaultMain" arguments="{_all}"/>
         </f:else>
     </f:if>
 </f:section>

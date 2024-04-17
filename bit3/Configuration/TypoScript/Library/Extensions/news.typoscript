@@ -3,7 +3,6 @@ plugin.tx_news {
         detail.media.image.maxWidth = 400
         list.media {
             dummyImage = EXT:bit3/Resources/Public/Images/news-no-img.jpg
-            noImageNews = /typo3conf/ext/bit3/Resources/Public/Images/news-no-img.webp
             image.maxWidth = 443
             image.maxHeight = 245
         }
@@ -52,19 +51,46 @@ plugin.tx_news {
         }
         wrap = |
     }
-    temp.newsUid < temp.newsTitle
-    temp.newsUid {
+    temp.newsDateEnd < temp.newsTitle
+    temp.newsDateEnd {
         conf.tx_news_domain_model_news {
-            field = uid
+            field = event_end
         }
         wrap = |
     }
-    temp.newsCategory < temp.newsTitle
-    temp.newsCategory {
-        conf.tx_news_domain_model_news {
-            field = categories
+
+    temp.location = CONTENT
+    temp.location {
+        if.isTrue.data = GP:tx_news_pi1|news
+        table = tx_news_domain_model_news
+        select {
+            uidInList.data = GP:tx_news_pi1|news
+            pidInList = 0
+            join = tx_eventnews_domain_model_location ON tx_news_domain_model_news.location = tx_eventnews_domain_model_location.uid
+            max = 1
         }
-        wrap = |
+        renderObj = TEXT
+        renderObj {
+            field = title
+            htmlSpecialChars = 1
+        }
+    }
+
+    temp.tipologia = CONTENT
+    temp.tipologia {
+        if.isTrue.data = GP:tx_news_pi1|news
+        table = tx_news_domain_model_news
+        select {
+            uidInList.data = GP:tx_news_pi1|news
+            pidInList = 0
+            join = tx_eventnews_domain_model_organizer ON tx_news_domain_model_news.location = tx_eventnews_domain_model_organizer.uid
+            max = 1
+        }
+        renderObj = TEXT
+        renderObj {
+            field = title
+            htmlSpecialChars = 1
+        }
     }
 
     config.pageTitle.stdWrap.override.cObject < temp.newsTitle
@@ -79,11 +105,14 @@ plugin.tx_news {
         newsDate = TEXT
         newsDate < temp.newsDate
 
-        newsUid = TEXT
-        newsUid < temp.newsUid
+        newsDateEnd = TEXT
+        newsDateEnd < temp.newsDateEnd
 
-        newsCategories = TEXT
-        newsCategories < temp.newsCategory
+        location = TEXT
+        location < temp.location
+
+        tipologia = TEXT
+        tipologia < temp.tipologia
     }
 
     page.meta {

@@ -668,6 +668,10 @@ p.text-right {
     list-style-type: none;
 }
 
+.cmp-hero .it-hero-wrapper .it-hero-text-wrapper{
+    width: 100%;
+}
+
 .pagination {
     margin: 0 auto;
 }

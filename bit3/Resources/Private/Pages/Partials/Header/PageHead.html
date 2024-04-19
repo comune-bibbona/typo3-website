@@ -27,7 +27,6 @@
 </f:section>
 
 <f:section name="NewsDetailHead">
-    <f:debug title="NewsDetailHead">{_all}</f:debug>
     <div class="row justify-content-center">
         <div class="col-lg-8 px-lg-4 py-lg-2">
             <div class="cmp-hero">
@@ -76,10 +75,20 @@
                                 </div>
                                 <div class="col-md-6">
                                     <f:if condition="{location}">
-                                        <small>Luogo:</small>
-                                        <p class="fw-semibold font-monospace text-black">
-                                            {location}
-                                        </p>
+                                        <f:then>
+                                            <small>Luogo:</small>
+                                            <p class="fw-semibold font-monospace text-black">
+                                                {location}
+                                            </p>
+                                        </f:then>
+                                        <f:else>
+                                            <f:if condition="{locationSimple}">
+                                                <small>Luogo:</small>
+                                                <p class="fw-semibold font-monospace text-black">
+                                                    {locationSimple}
+                                                </p>
+                                            </f:if>
+                                        </f:else>
                                     </f:if>
                                 </div>
                             </div>
@@ -102,19 +111,36 @@
                 </div>
             </f:if>
             <f:if condition="{tipologia}">
-                <div class="mt-4 mb-4">
-                    <div class="row">
-                        <span class="small">Tipologia:</span>
-                        <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
-                            <li>
+                <f:then>
+                    <div class="mt-4 mb-4">
+                        <div class="row">
+                            <span class="small">Tipologia:</span>
+                            <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
+                                <li>
                                 <span class="chip chip-simple">
                                     <span class="chip-label">{tipologia}</span>
                                 </span>
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-
-                </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{organizerSimple}">
+                        <div class="mt-4 mb-4">
+                            <div class="row">
+                                <span class="small">Tipologia:</span>
+                                <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
+                                    <li>
+                                <span class="chip chip-simple">
+                                    <span class="chip-label">{organizerSimple}</span>
+                                </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </f:if>
+                </f:else>
             </f:if>
         </div>
     </div>

@@ -58,6 +58,20 @@ plugin.tx_news {
         }
         wrap = |
     }
+    temp.locationSimple < temp.newsTitle
+    temp.locationSimple {
+        conf.tx_news_domain_model_news {
+            field = location_simple
+        }
+        wrap = |
+    }
+    temp.organizerSimple < temp.newsTitle
+    temp.organizerSimple {
+        conf.tx_news_domain_model_news {
+            field = organizer_simple
+        }
+        wrap = |
+    }
 
     temp.location = CONTENT
     temp.location {
@@ -83,7 +97,7 @@ plugin.tx_news {
         select {
             uidInList.data = GP:tx_news_pi1|news
             pidInList = 0
-            join = tx_eventnews_domain_model_organizer ON tx_news_domain_model_news.location = tx_eventnews_domain_model_organizer.uid
+            join = tx_eventnews_domain_model_organizer ON tx_news_domain_model_news.organizer = tx_eventnews_domain_model_organizer.uid
             max = 1
         }
         renderObj = TEXT
@@ -113,6 +127,12 @@ plugin.tx_news {
 
         tipologia = TEXT
         tipologia < temp.tipologia
+
+        locationSimple = TEXT
+        locationSimple < temp.locationSimple
+
+        organizerSimple = TEXT
+        organizerSimple < temp.organizerSimple
     }
 
     page.meta {

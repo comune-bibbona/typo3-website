@@ -44,6 +44,12 @@ plugin.tx_news {
         }
         wrap = |
     }
+    temp.newsCategory < temp.newsTitle
+    temp.newsCategory {
+        conf.tx_news_domain_model_news {
+            field = categories
+        }
+    }
     temp.newsDate < temp.newsTitle
     temp.newsDate {
         conf.tx_news_domain_model_news {
@@ -51,6 +57,14 @@ plugin.tx_news {
         }
         wrap = |
     }
+    temp.newsUid < temp.newsTitle
+    temp.newsUid {
+        conf.tx_news_domain_model_news {
+            field = uid
+        }
+        wrap = |
+    }
+
     temp.newsDateEnd < temp.newsTitle
     temp.newsDateEnd {
         conf.tx_news_domain_model_news {
@@ -72,7 +86,6 @@ plugin.tx_news {
         }
         wrap = |
     }
-
     temp.location = CONTENT
     temp.location {
         if.isTrue.data = GP:tx_news_pi1|news
@@ -89,7 +102,6 @@ plugin.tx_news {
             htmlSpecialChars = 1
         }
     }
-
     temp.tipologia = CONTENT
     temp.tipologia {
         if.isTrue.data = GP:tx_news_pi1|news
@@ -116,8 +128,14 @@ plugin.tx_news {
         teaserNews = TEXT
         teaserNews < temp.newsTeaser
 
+        newsCategories = TEXT
+        newsCategories < temp.newsCategory
+
         newsDate = TEXT
         newsDate < temp.newsDate
+
+        newsUid = TEXT
+        newsUid < temp.newsUid
 
         newsDateEnd = TEXT
         newsDateEnd < temp.newsDateEnd

@@ -27,14 +27,7 @@
 			</div>
 			<div class="card-body">
 				<div class="category-top">
-					<f:if condition="{newsItem.organizerSimple}">
-						<f:then>
-							<span class="category text-decoration-none">{newsItem.organizerSimple}</span>
-						</f:then>
-						<f:else>
-							<span class="category text-decoration-none">{newsItem.organizer.title}</span>
-						</f:else>
-					</f:if>
+					<a class="category text-decoration-none">{newsItem.location.title}</a>
 				</div>
 				<h3 class="card-title">
 					<n:link newsItem="{newsItem}" class="text-decoration-none" settings="{settings}" title="{newsItem.title}" additionalAttributes="{data-element: 'live-button-events'}">

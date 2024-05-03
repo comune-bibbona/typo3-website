@@ -53,15 +53,15 @@
                     <f:for each="{records}" as="record" iteration="iteration">
                         <div class="col-12">
                             <div class="timeline-element">
-                                <f:if condition="{lastmonth} != {f:format.date(format: 'F Y', date: '{record.data.date}')}">
-                                    <f:variable name="lastmonth">{f:format.date(format: 'F Y', date: '{record.data.date}')}</f:variable>
+                                <f:if condition="{lastmonth} != {f:format.date(format: '%B %Y', date: '{record.data.date}')}">
+                                    <f:variable name="lastmonth">{f:format.date(format: '%B %Y', date: '{record.data.date}')}</f:variable>
                                     <div class="it-pin-wrapper it-evidence">
                                         <div class="pin-icon">
                                             <svg class="icon">
                                                 <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-code-circle"></use>
                                             </svg>
                                         </div>
-                                        <div class="pin-text"><span><f:format.date format="F Y">{lastmonth}</f:format.date></span></div>
+                                        <div class="pin-text"><span>{lastmonth}</span></div>
                                     </div>
                                 </f:if>
                                 <div class="card-wrapper">

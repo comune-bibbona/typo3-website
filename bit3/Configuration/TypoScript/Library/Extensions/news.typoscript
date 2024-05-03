@@ -119,6 +119,23 @@ plugin.tx_news {
         }
     }
 
+    temp.linkTipologia = CONTENT
+    temp.linkTipologia {
+        if.isTrue.data = GP:tx_news_pi1|news
+        table = tx_news_domain_model_news
+        select {
+            uidInList.data = GP:tx_news_pi1|news
+            pidInList = 0
+            join = tx_eventnews_domain_model_organizer ON tx_news_domain_model_news.organizer = tx_eventnews_domain_model_organizer.uid
+            max = 1
+        }
+        renderObj = TEXT
+        renderObj {
+            field = link
+            htmlSpecialChars = 1
+        }
+    }
+
     config.pageTitle.stdWrap.override.cObject < temp.newsTitle
 
     page.10.variables {
@@ -145,6 +162,9 @@ plugin.tx_news {
 
         tipologia = TEXT
         tipologia < temp.tipologia
+
+        linkTipologia = TEXT
+        linkTipologia < temp.linkTipologia
 
         locationSimple = TEXT
         locationSimple < temp.locationSimple

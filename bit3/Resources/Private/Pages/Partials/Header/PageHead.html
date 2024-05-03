@@ -118,7 +118,14 @@
                             <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
                                 <li>
                                 <span class="chip chip-simple">
-                                    <span class="chip-label">{tipologia}</span>
+                                    <f:if condition="{linkTipologia}">
+                                        <f:then>
+                                            <f:link.typolink parameter="{linkTipologia}" class="chip-label">{tipologia}</f:link.typolink>
+                                        </f:then>
+                                        <f:else>
+                                            <span class="chip-label">{tipologia}</span>
+                                        </f:else>
+                                    </f:if>
                                 </span>
                                 </li>
                             </ul>

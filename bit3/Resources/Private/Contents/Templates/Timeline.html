@@ -17,7 +17,7 @@
                                 <f:then>
                                     <small class="calendar-date-day__year"><f:format.date format="Y">{record.data.date}</f:format.date></small>
                                     <span class="title-xxlarge-regular d-flex justify-content-center"><f:format.date format="d">{record.data.date}</f:format.date></span>
-                                    <small class="calendar-date-day__month"><f:format.date format="M">{record.data.date}</f:format.date></small>
+                                    <small class="calendar-date-day__month"><f:format.date format="%b">{record.data.date}</f:format.date></small>
                                 </f:then>
                                 <f:else>
                                     <f:if condition="{record.data.durata}>0">

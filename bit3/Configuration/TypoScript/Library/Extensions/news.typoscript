@@ -2,7 +2,7 @@ plugin.tx_news {
     settings {
         detail.media.image.maxWidth = 400
         list.media {
-            dummyImage = EXT:bit3/Resources/Public/Images/news-no-img.jpg
+            dummyImage = EXT:bit3/Resources/Public/Images/news-no-img.webp
             image.maxWidth = 443
             image.maxHeight = 245
         }

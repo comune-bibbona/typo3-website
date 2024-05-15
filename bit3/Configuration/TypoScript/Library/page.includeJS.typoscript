@@ -1,6 +1,6 @@
-page.includeJS {
-    boostrapitaliabundle = EXT:bit3/Resources/Public/js/bootstrap-italia.bundle.min.js
-    boostrapitaliabundle{
+page.includeJSFooter {
+    boostrapitalia = EXT:bit3/Resources/Public/js/bootstrap-italia.min.js
+    boostrapitalia{
         excludeFromConcatenation = 1
         disableCompression = 1
         defer = 1

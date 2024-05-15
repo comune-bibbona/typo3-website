@@ -5,6 +5,7 @@ plugin.tx_news {
             dummyImage = EXT:bit3/Resources/Public/Images/news-no-img.webp
             image.maxWidth = 443
             image.maxHeight = 245
+            image.width = 414
         }
         listPid = {$pages.id_archivio_news}
         startingpoint = {$containers.id_folder_news}

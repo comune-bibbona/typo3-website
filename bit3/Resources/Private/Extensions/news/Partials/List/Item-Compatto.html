@@ -12,7 +12,7 @@
 		<div class="it-thumb">
 			<f:if condition="{newsItem.mediaPreviews}">
 				<f:then>
-					<f:media file="{newsItem.mediaPreviews.0}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" width="40" height="40" />
+					<f:media file="{newsItem.mediaPreviews.0}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" width="40" height="40" fileExtension="webp" />
 				</f:then>
 				<f:else>
 					<f:if condition="{settings.displayDummyIfNoMedia}">

@@ -32,6 +32,9 @@ if (!defined('TYPO3'))
  */
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['bit3'] = 'EXT:bit3/Configuration/RTE/Default.yaml';
 
+
+$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'] = 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp';
+
 /**
  * Add PageTS
  */

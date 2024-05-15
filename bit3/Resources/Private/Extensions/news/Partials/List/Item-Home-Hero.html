@@ -43,7 +43,7 @@
 
 		<f:if condition="{newsItem.mediaPreviews}">
 			<f:then>
-				<f:media class="img-fluid" file="{newsItem.mediaPreviews.0}" title="{newsItem.mediaPreviews.0.originalResource.title}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" width="628" />
+				<f:media class="img-fluid" file="{newsItem.mediaPreviews.0}" title="{newsItem.mediaPreviews.0.originalResource.title}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" width="628" fileExtension="webp" />
 			</f:then>
 			<f:else>
 				<f:if condition="{settings.displayDummyIfNoMedia}">

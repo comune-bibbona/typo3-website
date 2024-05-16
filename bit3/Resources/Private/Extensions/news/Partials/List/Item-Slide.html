@@ -16,7 +16,7 @@
 						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 							<f:alias map="{mediaElement: '{newsItem.mediaPreviews.0}'}">
 								<f:if condition="{mediaElement.originalResource.type} == 2">
-									<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="1920" maxHeight="620" />
+									<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="1920" maxHeight="620" loading="{settings.list.media.image.lazyLoading}" fileExtension="webp" />
 								</f:if>
 								<f:if condition="{mediaElement.originalResource.type} == 4">
 									<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>

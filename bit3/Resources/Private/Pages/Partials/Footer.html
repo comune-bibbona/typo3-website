@@ -7,12 +7,12 @@
                     <div class="row clearfix">
                         <div class="col-12 footer-items-wrapper logo-wrapper">
                             <f:if condition="{settings.credits.pnrr} > 0">
-                                <img class="ue-logo" src="/typo3conf/ext/bit3/Resources/Public/svg/logo-eu-inverted.svg" width="176" height="56" alt="logo Unione Europea">
+                                <img class="ue-logo" src="/typo3conf/ext/bit3/Resources/Public/svg/logo-eu-inverted.svg" width="176" height="56" alt="logo Unione Europea" loading="lazy">
                             </f:if>
                             <div class="it-brand-wrapper">
                                 <a href="/" data-focus-mouse="false">
                                     <f:if condition="{settings.testata.logo_istituzione}">
-                                        <f:image class="icon" src="{settings.testata.logo_istituzione}" alt="{settings.testata.nome_istituzione}" maxWidth="48" maxHeight="48" />
+                                        <f:image class="icon" src="{settings.testata.logo_istituzione}" alt="{settings.testata.nome_istituzione}" maxWidth="48" maxHeight="48" loading="lazy" fileExtension="webp" />
                                     </f:if>
                                     <div class="it-brand-text">
                                         <h2 class="no_toc">{settings.testata.nome_istituzione}</h2>

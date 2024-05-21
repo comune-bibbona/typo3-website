@@ -2,11 +2,14 @@
 <f:section name="Box">
 
     <f:if condition="{settings.pages.id_login}>0">
-        <div class="it-access-top-wrapper">
-            <f:link.page pageUid="{settings.pages.id_login}" class="btn btn-primary btn-sm" additionalParams="{data-element: 'personal-area-login'}">
-                Accedi
-            </f:link.page>
-        </div>
+        <a class="btn btn-primary btn-icon btn-full" href="https://auth.toscana.it/auth/realms/enti/protocol/openid-connect/auth?response_type=code&redirect_uri=https%3A%2F%2Fservizi.comune.bibbona.li.it%2Fcallback&state=15f4c00c-8936-4aea-aba4-20087f12d36c%2COIDC&client_id=c_a852__argo&scope=profile" data-element="personal-area-login" data-focus-mouse="false">
+            <span class="rounded-icon" aria-hidden="true">
+                <svg class="icon icon-primary">
+                    <use xlink:href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-user"></use>
+                </svg>
+            </span>
+            <span class="d-none d-lg-block">Accedi all'area personale</span>
+        </a>
     </f:if>
 
 </f:section>

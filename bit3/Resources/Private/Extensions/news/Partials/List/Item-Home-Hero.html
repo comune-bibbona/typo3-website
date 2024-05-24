@@ -6,6 +6,7 @@
 		Partials/List/Item-Home-Hero.html
 -->
 
+
 	<div class="col-lg-6 order-2 order-lg-1">
 		<div class="card mb-5">
 			<div class="card-body pb-5 px-0">
@@ -40,14 +41,13 @@
 		</div>
 	</div>
 	<div class="col-lg-6 order-1 order-lg-2 px-0 px-lg-3">
-
-		<f:if condition="{newsItem.mediaPreviews}">
+		<f:if condition="{newsItem.mediaPreviews.0}">
 			<f:then>
 				<f:media class="img-fluid" file="{newsItem.mediaPreviews.0}" title="{newsItem.mediaPreviews.0.originalResource.title}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" width="628" fileExtension="webp" />
 			</f:then>
 			<f:else>
 				<f:if condition="{settings.displayDummyIfNoMedia}">
-					<f:image class="img-fluid" src="{settings.list.media.dummyImage}" alt="Comune di Bibbona" />
+					<f:image class="img-fluid" src="{settings.list.media.dummyImage}" alt="Comune di Bibbona" minWidth="443"  minHeight="245" />
 				</f:if>
 			</f:else>
 		</f:if>

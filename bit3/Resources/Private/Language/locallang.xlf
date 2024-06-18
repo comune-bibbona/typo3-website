@@ -204,7 +204,7 @@
 				<source>Iscrizione Asilo Nido</source>
 			</trans-unit>
 			<trans-unit id="bit3.module.service.active.imuPayment" xml:space="preserve">
-				<source>Pagamento Tributo IMU</source>
+				<source>Pagamento accertamento IMU</source>
 			</trans-unit>
 
             <trans-unit id="bit3.module.social.title" xml:space="preserve">

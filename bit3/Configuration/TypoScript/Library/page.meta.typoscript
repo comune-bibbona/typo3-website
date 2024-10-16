@@ -3,6 +3,7 @@ page {
         viewport = width=device-width, initial-scale=1, shrink-to-fit=no
         X-UA-Compatible = IE=edge
         X-UA-Compatible.attribute = http-equiv
+        robots = index,follow
         keywords =
         keywords {
             override.field = keywords

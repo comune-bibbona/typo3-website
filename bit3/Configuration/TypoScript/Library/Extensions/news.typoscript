@@ -180,6 +180,34 @@ plugin.tx_news {
     }
 [global]
 
+[page["uid"] == {$pages.id_archivio_news} && request && request.getPageArguments().get('type') == {$plugin.tx_news.rss.channel.typeNum}]
+    pageNewsRSS = PAGE
+    pageNewsRSS {
+        typeNum = {$plugin.tx_news.rss.channel.typeNum}
+        config {
+            disableAllHeaderCode = 1
+            xhtml_cleaning = none
+            admPanel = 0
+            debug = 0
+            disablePrefixComment = 1
+            metaCharset = utf-8
+            additionalHeaders.10.header = Content-Type:application/rss+xml;charset=utf-8
+            absRefPrefix = {$plugin.tx_news.rss.channel.link}
+            linkVars >
+        }
+        10 < tt_content.news_pi1.20
+        10 {
+            settings < plugin.tx_news.settings
+            settings {
+                categories = {$plugin.tx_news.rss.channel.category}
+                limit = 30
+                startingpoint = {$containers.id_folder_news}
+                format = xml
+            }
+        }
+    }
+[global]
+
 
 
 

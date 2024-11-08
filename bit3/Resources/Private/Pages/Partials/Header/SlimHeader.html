@@ -9,12 +9,12 @@
                             <f:if condition="{settings.testata.link_ente_appartenenza}!=''">
                                 <f:then>
                                     <f:link.external class="d-none d-lg-block navbar-brand" target="_blank" additionalAttributes="{aria-label: 'Vai al portale {settings.testata.nome_ente_appartenenza} - link esterno - apertura nuova scheda'}" title="Vai al portale {settings.testata.nome_ente_appartenenza}" uri="{settings.testata.link_ente_appartenenza}">
-                                        <f:if condition="{settings.testata.logo_ente_appartenenza}"><f:image src="{settings.testata.logo_ente_appartenenza}" alt="{settings.testata.logo_ente_appartenenza}" class="icon me-1" loading="lazy" fileExtension="webp" /></f:if> {settings.testata.nome_ente_appartenenza}
+                                        <f:if condition="{settings.testata.logo_ente_appartenenza}"><img src="{settings.testata.logo_ente_appartenenza}" alt="{settings.testata.logo_ente_appartenenza}" class="icon me-1" loading="lazy" /></f:if> {settings.testata.nome_ente_appartenenza}
                                     </f:link.external>
                                 </f:then>
                                 <f:else>
                                     <a id="ente-appartenenza" class="d-none d-lg-block navbar-brand">
-                                        <f:if condition="{settings.testata.logo_ente_appartenenza}"><img src="{settings.testata.logo_ente_appartenenza}" alt="{settings.testata.logo_ente_appartenenza}" class="icon me-1" />&nbsp;</f:if>{settings.testata.nome_ente_appartenenza}
+                                        <f:if condition="{settings.testata.logo_ente_appartenenza}"><img src="{settings.testata.logo_ente_appartenenza}" alt="{settings.testata.logo_ente_appartenenza}" class="icon me-1" loading="lazy" />&nbsp;</f:if>{settings.testata.nome_ente_appartenenza}
                                     </a>
                                 </f:else>
                             </f:if>

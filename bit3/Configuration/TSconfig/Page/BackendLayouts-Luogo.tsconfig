@@ -1,0 +1,48 @@
+mod.web_layout.BackendLayouts {
+    Luogo {
+        icon = EXT:bit3/Resources/Public/Icons/BackendLayouts/Luogo.jpg
+        name = Luogo
+        title = Luogo
+        config {
+            backend_layout {
+                colCount = 3
+                rowCount = 3
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Colonna Sinistra
+								colspan = 1
+                                rowspan = 2
+                                colPos = 1
+                            }
+                            2 {
+                                name = Colonna Destra Top
+								colspan = 2
+                                colPos = 3
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Colonna Destra Bottom
+                                colspan = 2
+                                colPos = 4
+                            }
+                        }
+                    }
+                    3 {
+                        columns {
+                            1 {
+                                name = Contenuto Bottom
+                                colspan = 3
+                                colPos = 2
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

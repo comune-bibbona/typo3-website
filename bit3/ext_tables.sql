@@ -3,6 +3,8 @@
 #
 CREATE TABLE pages (
     data_element varchar(255) DEFAULT '' NOT NULL,
+    lat double DEFAULT '0' NOT NULL,
+    lng double DEFAULT '0' NOT NULL,
     areaServed_name varchar(255) DEFAULT '' NOT NULL,
     audience_audienceType varchar(255) DEFAULT '' NOT NULL,
     serviceLocation_name varchar(255) DEFAULT '' NOT NULL,
@@ -18,6 +20,13 @@ CREATE TABLE tt_content (
     child_item int(11) unsigned DEFAULT '0',
     timeline_item int(11) unsigned DEFAULT '0',
     data_element varchar(255) DEFAULT '' NOT NULL,
+);
+
+#
+# Table structure for table 'tx_news_domain_model_news '
+#
+CREATE TABLE tx_news_domain_model_news (
+   price mediumtext,
 );
 
 #

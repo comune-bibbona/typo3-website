@@ -20,6 +20,24 @@ $customPagesColumns = [
 			'eval' => 'trim',
 		],
 	],
+	'lat' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.lat',
+		'config' => [
+			'type' => 'input',
+			'size' => 30,
+			'eval' => 'trim'
+		]
+	],
+	'lng' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.lng',
+		'config' => [
+			'type' => 'input',
+			'size' => 30,
+			'eval' => 'trim'
+		]
+	],
 	'areaServed_name' => [
 		'exclude' => true,
 		'l10n_mode' => 'prefixLangTitle',
@@ -88,6 +106,11 @@ $customPagesColumns = [
 	],
 ];
 
+$GLOBALS['TCA']['pages']['palettes']['geolocation'] = [
+	'label' => 'LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.geolocation',
+	'showitem' => 'lat;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.lat,lng;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.lng,',
+];
+
 $GLOBALS['TCA']['pages']['palettes']['metadataJson'] = [
 	'label' => 'LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.service',
 	'showitem' => 'areaServed_name;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.areaserved.name,audience_audienceType;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.audience.audiencetype, --linebreak--,serviceLocation_name;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.name, --linebreak--,serviceLocation_address_streetAdress;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.address.streetadress, serviceLocation_address_postalCode;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.address.postalcode, serviceLocation_address_addressLocality;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.address.addresslocality,',
@@ -95,5 +118,6 @@ $GLOBALS['TCA']['pages']['palettes']['metadataJson'] = [
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $customPagesColumns);
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages','--palette--;;metadataJson', '','after:lastUpdated');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages','--palette--;;geolocation', '','after:lastUpdated');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages','--palette--;;metadataJson', '','after:lng');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages','data_element', '','after:subtitle');

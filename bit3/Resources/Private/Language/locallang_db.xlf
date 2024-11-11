@@ -123,6 +123,15 @@
 			<trans-unit id="page.dataelement" xml:space="preserve">
 				<source>data-element</source>
 			</trans-unit>
+			<trans-unit id="page.geolocation" xml:space="preserve">
+				<source>Coordinate geografiche luogo</source>
+			</trans-unit>
+			<trans-unit id="page.lat" xml:space="preserve">
+				<source>Latitudine</source>
+			</trans-unit>
+			<trans-unit id="page.lng" xml:space="preserve">
+				<source>Longitudine</source>
+			</trans-unit>
 			<trans-unit id="page.service" xml:space="preserve">
 				<source>Metadati servizio</source>
 			</trans-unit>
@@ -155,6 +164,9 @@
 			</trans-unit>
 			<trans-unit id="eventnews.types" xml:space="preserve">
 				<source>Tipologia evento</source>
+			</trans-unit>
+			<trans-unit id="eventnews.costi" xml:space="preserve">
+				<source>Costi</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -1,0 +1,67 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:b="http://typo3.org/ns/Aip/Bit3/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:render partial="Common/Hero" section="Default" arguments="{_all}" />
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5">
+                <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-aside">
+                    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.column_left')}">
+                        <f:then>
+                            <f:cObject typoscriptObjectPath="lib.content.column_left" />
+                        </f:then>
+                        <f:else>
+                            <f:render partial="Menu/Menu" section="PageIndex" arguments="{_all}" />
+                        </f:else>
+                    </f:if>
+                </div>
+            </div>
+            <div class="col-12 col-lg-8 pt-lg-50 pb-lg-50">
+                <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.top')} || {f:cObject(typoscriptObjectPath: 'lib.content.bottom')}">
+                    <div class="it-page-sections-container">
+                        <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.top')}">
+                            <f:cObject typoscriptObjectPath="lib.content.top" />
+                        </f:if>
+                        <f:if condition="{data.lat} && {data.lng}">
+                            <f:variable name="latStart" value="{data.lat - 0.00092}" />
+                            <f:variable name="latEnd" value="{data.lat + 0.00092}" />
+                            <f:variable name="lngStart" value="{data.lng - 0.00222}" />
+                            <f:variable name="lngEnd" value="{data.lng + 0.00222}" />
+                            <iframe width="100%" height="430" style="border:0;" src="https://www.openstreetmap.org/export/embed.html?bbox={lngStart}%2C{latStart}%2C{lngEnd}%2C{latEnd}&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=19/{data.lat}/{data.lng}" target="_blank">Vedi a tutto schermo</a></small>
+                        </f:if>
+                        <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.bottom')}">
+                            <f:cObject typoscriptObjectPath="lib.content.bottom" />
+                        </f:if>
+                    </div>
+                </f:if>
+            </div>
+        </div>
+    </div>
+
+    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.column_right')}">
+        <div class="bg-grey-card py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <f:cObject typoscriptObjectPath="lib.content.column_right" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:if>
+
+    <f:if condition="{data.categories}">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 mb-30">
+                    <f:render partial="Common/Categories" section="Default" arguments="{categories: data.categories, uid: data.uid, table : 'pages'}" />
+                    <f:render partial="Common/LastUpdate" section="Default" arguments="{date : data.lastUpdated}" />
+                </div>
+            </div>
+        </div>
+    </f:if>
+
+</f:section>
+</html>

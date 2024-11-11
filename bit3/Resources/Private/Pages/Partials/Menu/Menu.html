@@ -158,4 +158,48 @@
         </div>
     </f:if>
 </f:section>
+<f:section name="PageIndex">
+    <f:if condition="{pageSectionIndex}">
+
+        <nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INDICE DELLA PAGINA" data-bs-navscroll="">
+            <div class="navbar-custom" id="navbarNavProgress">
+                <div class="menu-wrapper">
+                    <div class="link-list-wrapper">
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                  <span class="accordion-header" id="accordion-title-aside">
+                                    <button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-one" aria-expanded="true" aria-controls="collapse-one" data-focus-mouse="false">
+                                      <f:format.case mode="upper">Indice della pagina</f:format.case>
+                                      <svg class="icon icon-xs right">
+                                        <use href="/typo3conf/ext/bit3/Resources/Public/Icons/sprites.svg#it-expand"></use>
+                                      </svg>
+                                    </button>
+                                  </span>
+                                <div class="progress">
+                                    <div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 84.4072%;"></div>
+                                </div>
+                                <div id="collapse-one" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-aside" style="">
+                                    <div class="accordion-body">
+                                        <ul class="link-list" data-element="page-index">
+                                            <f:for each="{pageSectionIndex}" as="menuItem">
+                                                <f:if condition="{menuItem.data.header}">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#c{menuItem.data.uid}" title="{menuItem.data.header}">
+                                                            <span class="title-medium">{menuItem.data.header}</span>
+                                                        </a>
+                                                    </li>
+                                                </f:if>
+                                            </f:for>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </f:if>
+</f:section>
 </html>

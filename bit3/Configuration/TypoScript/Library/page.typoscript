@@ -28,6 +28,8 @@ page.10 {
         pagets__3Col.value = EXT:bit3/Resources/Private/Pages/Templates/3Col.html
         pagets__NewsDetail = TEXT
         pagets__NewsDetail.value = EXT:bit3/Resources/Private/Pages/Templates/NewsDetail.html
+        pagets__Luogo = TEXT
+        pagets__Luogo.value = EXT:bit3/Resources/Private/Pages/Templates/Luogo.html
         pagets__Argomento = TEXT
         pagets__Argomento.value = EXT:bit3/Resources/Private/Pages/Templates/Argomento.html
         pagets__Servizi = TEXT
@@ -89,6 +91,14 @@ page.10 {
         80 {
             as = heroimage
             references.fieldName = media
+        }
+        90 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        90 {
+            as = pageSectionIndex
+            table = tt_content
+            selectFields = uid, header
+            where = colpos = 0 || colpos = 3 || colpos = 4
+            orderBy = colpos, sorting
         }
     }
     settings {

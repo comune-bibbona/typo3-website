@@ -29,7 +29,7 @@
                             <f:variable name="latEnd" value="{data.lat + 0.00092}" />
                             <f:variable name="lngStart" value="{data.lng - 0.00222}" />
                             <f:variable name="lngEnd" value="{data.lng + 0.00222}" />
-                            <iframe width="100%" height="430" style="border:0;" src="https://www.openstreetmap.org/export/embed.html?bbox={lngStart}%2C{latStart}%2C{lngEnd}%2C{latEnd}&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=19/{data.lat}/{data.lng}" target="_blank">Vedi a tutto schermo</a></small>
+                            <iframe width="100%" height="430" style="border:0;" src="https://www.openstreetmap.org/export/embed.html?bbox={lngStart}%2C{latStart}%2C{lngEnd}%2C{latEnd}&amp;layer=mapnik&marker={data.lat}%2C{data.lng}" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=19/{data.lat}/{data.lng}" target="_blank">Vedi a tutto schermo</a></small>
                         </f:if>
                         <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.content.bottom')}">
                             <f:cObject typoscriptObjectPath="lib.content.bottom" />

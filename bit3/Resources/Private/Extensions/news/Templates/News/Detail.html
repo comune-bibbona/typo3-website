@@ -174,7 +174,7 @@
 																</a>
 															</li>
 														</f:if>
-														<f:if condition="{newsItem.datetime} || {newsItem.eventEnd}">
+														<f:if condition="{newsItem.isEvent}">
 															<li class="nav-item">
 																<a class="nav-link" href="#date-e-orari">
 																	<span class="title-medium">Date e orari</span>
@@ -406,7 +406,7 @@
 					</article>
 				</f:if>
 
-				<f:if condition="{newsItem.datetime}">
+				<f:if condition="{newsItem.isEvent} && {newsItem.datetime}">
 					<article id="date-e-orari" class="it-page-section mb-5">
 						<h2 class="mb-3">Date e orari</h2>
 						<div class="point-list-wrapper my-4">

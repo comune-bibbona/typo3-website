@@ -163,6 +163,8 @@ page.10 {
         cookies {
             profiling = {$cookies.profiling}
             webanalytics = {$cookies.webanalytics}
+            trackingurl = {$cookies.trackingurl}
+            siteid = {$cookies.siteid}
         }
         contacts {
             address = {$contacts.address}

@@ -180,7 +180,7 @@ cookies {
     # cat=Site/cookies/2; type=int; label = Utilizzo e modalità di Web Analytics
     webanalytics =
     # cat=Site/cookies/3; type=string; label = url dell'Account Matomo Analytics
-    trackingurl =
+    cookies =
     # cat=Site/cookies/4; type=string; label = Id del sito web da tracciare
     siteid =
 }

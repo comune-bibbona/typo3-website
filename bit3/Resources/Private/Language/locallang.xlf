@@ -140,6 +140,9 @@
 			<trans-unit id="bit3.module.page.page.siteMap" xml:space="preserve">
 				<source>Pagina con la Mappa del Sito Web</source>
 			</trans-unit>
+			<trans-unit id="bit3.module.page.page.miglioramento" xml:space="preserve">
+				<source>Pagina con il Piano Miglioramento del Sito</source>
+			</trans-unit>
 			<trans-unit id="bit3.module.page.page.credits" xml:space="preserve">
 				<source>Pagina dei Credits</source>
 			</trans-unit>

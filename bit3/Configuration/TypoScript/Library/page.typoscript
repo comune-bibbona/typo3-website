@@ -75,7 +75,7 @@ page.10 {
         60 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
         60 {
             special = list
-            special.value = {$pages.id_mappa},{$pages.id_credits}
+            special.value = {$pages.id_mappa},{$pages.id_miglioramento},{$pages.id_credits}
             includeNotInMenu = 1
             as = footermenu
         }
@@ -122,6 +122,7 @@ page.10 {
             id_login = {$pages.id_login}
             id_registration ={$pages.id_registration}
             id_search_page = {$pages.id_search}
+            id_miglioramento = {$pages.id_miglioramento}
         }
         containers {
             id_folder_news = {$containers.id_folder_news}

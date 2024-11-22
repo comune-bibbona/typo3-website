@@ -72,6 +72,8 @@ pages {
     id_credits =
     # cat=Site/pages/14; type=int; label= Id della pagina di Ricerca
     id_search =
+    # cat=Site/pages/15; type=int; label= Id della pagina Piano Miglioramento del Sito
+    id_miglioramento =
 }
 
 containers {

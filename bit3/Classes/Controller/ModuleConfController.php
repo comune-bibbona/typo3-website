@@ -285,7 +285,7 @@ class ModuleConfController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             'pages.id_mappa',
             'pages.id_credits',
             'pages.id_search',
-            'pages.id_archivio_news');
+            'pages.id_miglioramento');
 
         foreach ($constantNames as $constantName) {
             if ($this->request->hasArgument($constantName)) {

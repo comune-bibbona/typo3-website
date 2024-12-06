@@ -37,6 +37,13 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['bit3'] = 'EXT:bit3/Configuration/
  */
 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'] = 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp';
 
+
+/***********
+ * Extend EXT:news
+ */
+
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News'][] = 'bit3';
+
 /**
  * Add PageTS
  */

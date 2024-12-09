@@ -1,0 +1,226 @@
+restPage = PAGE
+restPage {
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders.10.header = Content-type:application/json
+        admPanel = 0
+    }
+    settings {
+        testata {
+            nome_istituzione = {$header.nome_istituzione}
+            logo_istituzione = {$skin.path_logo}
+            nome_ente_appartenenza = {$header.nome_ente_appartenenza}
+            logo_ente_appartenenza = {$skin.path_logo_ente_appartenenza}
+            link_ente_appartenenza = {$header.link_ente_appartenenza}
+        }
+        pages{
+            id_faq = {$pages.id_faq}
+            id_assistenza = {$pages.id_assistenza}
+            id_prenota = {$pages.id_prenota}
+            id_segnala = {$pages.id_segnala}
+            id_privacy = {$pages.id_privacy}
+            id_note_legali = {$pages.id_note_legali}
+            id_trasparenza = {$pages.id_trasparenza}
+            id_accessibilita = {$pages.id_accessibilita}
+            id_archivio_news = {$pages.id_archivio_news}
+            id_login = {$pages.id_login}
+            id_registration ={$pages.id_registration}
+            id_search_page = {$pages.id_search}
+        }
+        containers {
+            id_folder_news = {$containers.id_folder_news}
+            id_folder_users = {$containers.id_folder_users}
+        }
+        category {
+            id_argument = {$category.id_argument}
+            id_document = {$category.id_document}
+            id_place = {$category.id_place}
+        }
+        servizi {
+            iscrizione_trasporto_scolastico {
+                label = {$servizi.iscrizione_trasporto_scolastico.label}
+                url = {$servizi.iscrizione_trasporto_scolastico.url}
+                id = {$servizi.iscrizione_trasporto_scolastico.id}
+            }
+            iscrizione_mensa_scolastica {
+                label = {$servizi.iscrizione_mensa_scolastica.label}
+                url = {$servizi.iscrizione_mensa_scolastica.url}
+                id = {$servizi.iscrizione_mensa_scolastica.id}
+            }
+            iscrizione_asilo_nido {
+                label = {$servizi.iscrizione_asilo_nido.label}
+                url = {$servizi.iscrizione_asilo_nido.url}
+                id = {$servizi.iscrizione_asilo_nido.id}
+            }
+            pagamento_imu {
+                label = {$servizi.pagamento_imu.label}
+                url = {$servizi.pagamento_imu.url}
+                id = {$servizi.pagamento_imu.id}
+            }
+            prenota_appuntamento {
+                label = {$servizi.prenota_appuntamento.label}
+                url = {$servizi.prenota_appuntamento.url}
+                id = {$servizi.prenota_appuntamento.id}
+            }
+        }
+        cookies {
+            profiling = {$cookies.profiling}
+            webanalytics = {$cookies.webanalytics}
+        }
+        contacts {
+            address = {$contacts.address}
+            dati_fiscali = {$contacts.dati_fiscali}
+            email = {$contacts.email}
+            pec = {$contacts.pec}
+            tel = {$contacts.tel}
+            fax = {$contacts.fax}
+            numero_verde = {$contacts.numero_verde}
+        }
+        social {
+            facebook {
+                label = facebook
+                url = {$social.facebook.url}
+            }
+            twitter {
+                label = twitter
+                url = {$social.twitter.url}
+            }
+            instagram {
+                label = instagram
+                url = {$social.instagram.url}
+            }
+            youtube {
+                label = youtube
+                url = {$social.youtube.url}
+            }
+            vimeo {
+                label = vimeo
+                url = {$social.vimeo.url}
+            }
+            linkedin {
+                label = linkedin
+                url = {$social.linkedin.url}
+            }
+            telegram {
+                label = telegram
+                url = {$social.telegram.url}
+            }
+            whatsapp {
+                label = whatsapp
+                url = {$social.whatsapp.url}
+            }
+            rss {
+                label = rss
+                url = {$social.rss.url}
+            }
+            sharing = {$social.sharing}
+        }
+        credits {
+            pnrr = {$copyrights.nextgenerationeu}
+            copyright = {$copyrights.copyright}
+            credits = {$copyrights.credits}
+        }
+    }
+    variables {
+        baseUrl = TEXT
+        baseUrl.value = {$config.baseurl}
+        pageTitle = TEXT
+        pageTitle.data = page : title
+        pageSubTitle = TEXT
+        pageSubTitle.data = page : subtitle
+        pageUrl= TEXT
+        pageUrl.data = getIndpEnv:TYPO3_REQUEST_URL
+    }
+}
+
+restHeader = PAGE
+restHeader < restPage
+restHeader {
+    typeNum = 1357924680
+    10 = TEXT
+    10.value = {"header": "
+    20 = FLUIDTEMPLATE
+    20 {
+        format = html
+        file = EXT:bit3/Resources/Private/Pages/Templates/HeaderRest.html
+        layoutRootPath = EXT:bit3/Resources/Private/Pages/Layouts/
+        partialRootPath = EXT:bit3/Resources/Private/Pages/Partials/
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                levels = 2
+                expandAll = 1
+                includeSpacer = 1
+                as = mainnavigation
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                special = list
+                special.value = {$header.secondary_navigation}
+                includeNotInMenu = 1
+                as = secondarynavigation
+            }
+        }
+        settings < restPage.settings
+        varaibles < restPage.variables
+        stdWrap.replacement {
+            10 {
+                search = "
+                replace = \"
+            }
+            20 {
+                search = #\n#
+                replace = \\n
+                useRegExp = 1
+            }
+        }
+    }
+    30 = TEXT
+    30.value = "}
+}
+
+restFooter = PAGE
+restFooter < restPage
+restFooter {
+    typeNum = 2468013579
+    10 = TEXT
+    10.value = {"footer": "
+    20 = FLUIDTEMPLATE
+    20 {
+        format = html
+        file = EXT:bit3/Resources/Private/Pages/Templates/FooterRest.html
+        layoutRootPath = EXT:bit3/Resources/Private/Pages/Layouts/
+        partialRootPath = EXT:bit3/Resources/Private/Pages/Partials/
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                levels = 2
+                expandAll = 1
+                includeSpacer = 1
+                as = mainnavigation
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                special = list
+                special.value = {$header.secondary_navigation}
+                includeNotInMenu = 1
+                as = secondarynavigation
+            }
+        }
+        settings < restPage.settings
+        variables < restPage.variables
+        stdWrap.replacement {
+            10 {
+                search = "
+                replace = \"
+            }
+            20 {
+                search = #\n#
+                replace = \\n
+                useRegExp = 1
+            }
+        }
+    }
+    30 = TEXT
+    30.value = "}
+}

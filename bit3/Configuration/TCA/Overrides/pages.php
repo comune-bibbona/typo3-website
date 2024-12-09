@@ -26,7 +26,8 @@ $customPagesColumns = [
 		'config' => [
 			'type' => 'input',
 			'size' => 30,
-			'eval' => 'trim'
+			'eval' => 'trim',
+			'default' => 0
 		]
 	],
 	'lng' => [
@@ -35,7 +36,8 @@ $customPagesColumns = [
 		'config' => [
 			'type' => 'input',
 			'size' => 30,
-			'eval' => 'trim'
+			'eval' => 'trim',
+			'default' => 0
 		]
 	],
 	'areaServed_name' => [

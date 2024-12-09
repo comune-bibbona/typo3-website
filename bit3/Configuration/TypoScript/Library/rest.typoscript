@@ -139,8 +139,72 @@ restHeader {
     typeNum = 1357924680
     10 = TEXT
     10.value = {"header": "
-    20 = FLUIDTEMPLATE
+    20 = TEXT
     20 {
+        value (
+<!DOCTYPE html>
+<html lang="it" dir="ltr" class="no-js">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="https://comune.bibbona.li.it/typo3conf/ext/bit3/Resources/Public/Icons/favicon.ico" type="image/vnd.microsoft.icon">
+<title>Comune di Bibbona: Home page</title>
+<meta http-equiv="x-ua-compatible" content="IE=edge" />
+<meta name="generator" content="TYPO3 CMS" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="Home page" />
+<meta property="og:url" content="https://comune.bibbona.li.it/" />
+<meta property="og:locale" content="in_IT" />
+<meta property="og:image" content="https://comune.bibbona.li.it/var/www/vhosts/www.comune.bibbona.li.it//fileadmin/_processed_/a/8/csm_centro-storico_06be2020f6.jpeg" />
+<meta name="twitter:card" content="summary" />
+<link rel="stylesheet" href="/typo3temp/assets/css/7015c8c4ac5ff815b57530b221005fc6.css?1698752681" media="all">
+<link rel="stylesheet" href="https://comune.bibbona.li.it/typo3conf/ext/bit3/Resources/Public/css/bootstrap-italia-comuni.min.css?1697031018" media="all">
+<link rel="stylesheet" href="https://comune.bibbona.li.it/typo3conf/ext/bit3/Resources/Public/css/style.css?1696510603" media="all">
+<link rel="stylesheet" href="https://comune.bibbona.li.it/typo3conf/ext/bit3/Resources/Public/css/fonts.css?1711551969" media="all">
+<link rel="stylesheet" href="https://comune.bibbona.li.it/typo3conf/ext/bit3/Resources/Public/css/bit3.css?1731075193" media="all">
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://ingestion.webanalytics.italia.it/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '40581']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+<style>
+    :root{
+        --primary-color: #004275;
+        --bs-primary-rgb: 0, 66, 117;
+        --darken-primary-color: #002558;
+        --lighten-primary-color: #115386;
+        --lightest-primary-color: #3375a8;
+        --bs-link-color: #004275;
+        --bg-logo: url('https://comune.bibbona.li.it/typo3conf/ext/bit3/Resources/Public/Images/logo-bibbona.webp');
+    }
+</style>
+</head>
+<body>
+        )
+        stdWrap.replacement {
+            10 {
+                search = "
+                replace = \"
+            }
+            20 {
+                search = #\n#
+                replace = \\n
+                useRegExp = 1
+            }
+        }
+    }
+    30 = FLUIDTEMPLATE
+    30 {
         format = html
         file = EXT:bit3/Resources/Private/Pages/Templates/HeaderRest.html
         layoutRootPath = EXT:bit3/Resources/Private/Pages/Layouts/
@@ -161,8 +225,6 @@ restHeader {
                 as = secondarynavigation
             }
         }
-        settings < restPage.settings
-        varaibles < restPage.variables
         stdWrap.replacement {
             10 {
                 search = "
@@ -175,8 +237,8 @@ restHeader {
             }
         }
     }
-    30 = TEXT
-    30.value = "}
+    40 = TEXT
+    40.value = "}
 }
 
 restFooter = PAGE
@@ -207,8 +269,6 @@ restFooter {
                 as = secondarynavigation
             }
         }
-        settings < restPage.settings
-        variables < restPage.variables
         stdWrap.replacement {
             10 {
                 search = "
@@ -222,5 +282,26 @@ restFooter {
         }
     }
     30 = TEXT
-    30.value = "}
+    30 {
+        value (
+<script src="https://comune.bibbona.li.it/typo3conf/ext/bit3/Resources/Public/js/bootstrap-italia.bundle.min.js?1697031018" defer="defer"></script>
+<script src="https://comune.bibbona.li.it/typo3conf/ext/bit3/Resources/Public/js/moveToPagination.js?1705486073"></script>
+<script src="https://comune.bibbona.li.it/typo3conf/ext/bit3/Resources/Public/js/feedback.js?1681228878"></script>
+</body>
+</html>
+        )
+        stdWrap.replacement {
+            10 {
+                search = "
+                replace = \"
+            }
+            20 {
+                search = #\n#
+                replace = \\n
+                useRegExp = 1
+            }
+        }
+    }
+    40 = TEXT
+    40.value = "}
 }

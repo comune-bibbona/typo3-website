@@ -257,6 +257,15 @@ aside .cmp-navscroll .navbar.it-navscroll-wrapper .link-list-wrapper ul li a.act
         border-color: rgba(0,0,0,0) rgba(0,0,0,0) rgba(0,0,0,0) var(--primary-color);
     }
 }
+.point-list-wrapper .point-list .point-list-aside.point-list-primary {
+    color: var(--primary-color);
+}
+.point-list-wrapper .point-list .point-list-aside.point-list-primary {
+    border-color: var(--primary-color);
+}
+.point-list-wrapper .point-list .point-list-aside.point-list-primary::after {
+    background-color: var(--primary-color);
+}
 
 /* Bugfix fluid_styled_content */
 @media(max-width: 767px) {

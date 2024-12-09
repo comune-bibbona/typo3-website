@@ -78,14 +78,14 @@
                                         <f:then>
                                             <small>Luogo:</small>
                                             <p class="fw-semibold font-monospace text-black">
-                                                {location}
+                                                <f:format.htmlentitiesDecode>{location}</f:format.htmlentitiesDecode>
                                             </p>
                                         </f:then>
                                         <f:else>
                                             <f:if condition="{locationSimple}">
                                                 <small>Luogo:</small>
                                                 <p class="fw-semibold font-monospace text-black">
-                                                    {locationSimple}
+                                                    <f:format.htmlentitiesDecode>{locationSimple}</f:format.htmlentitiesDecode>
                                                 </p>
                                             </f:if>
                                         </f:else>

@@ -23,7 +23,7 @@ plugin.tx_news {
     }
 }
 
-[page["backend_layout"] == "pagets__NewsDetail"]
+[traverse(page, "backend_layout") == "pagets__NewsDetail"]
     temp.newsTitle = RECORDS
     temp.newsTitle {
         dontCheckPid = 1

@@ -68,3 +68,6 @@ altriDettagli.addEventListener("focusout", editInput);
 function editInput() {
     document.getElementById("feedbackForm--text-1").value = this.value;
 }
+
+let urlPagina = document.getElementById("feedbackForm--pageurl");
+urlPagina.value = location.href;

@@ -71,3 +71,8 @@ renderables:
         type: Text
         identifier: text-1
         label: 'Vuoi aggiungere altri dettagli?'
+      -
+        defaultValue: ''
+        type: Text
+        identifier: pageurl
+        label: pageUrl

@@ -168,6 +168,27 @@
 			<trans-unit id="eventnews.costi" xml:space="preserve">
 				<source>Costi</source>
 			</trans-unit>
+			<trans-unit id="feedback.header" xml:space="preserve">
+				<source>Feedback dal sito</source>
+			</trans-unit>
+			<trans-unit id="feedback.clarity_rating" xml:space="preserve">
+				<source>Valutazione</source>
+			</trans-unit>
+			<trans-unit id="feedback.clarity_rating.description" xml:space="preserve">
+				<source>Stelle assegnate nella form dall'utente</source>
+			</trans-unit>
+			<trans-unit id="feedback.difficulty_area" xml:space="preserve">
+				<source>Difficoltà segnalata</source>
+			</trans-unit>
+			<trans-unit id="feedback.preferred_aspects" xml:space="preserve">
+				<source>Aspetti positivi segnalati</source>
+			</trans-unit>
+			<trans-unit id="feedback.additional_details" xml:space="preserve">
+				<source>Note aggiuntive</source>
+			</trans-unit>
+			<trans-unit id="feedback.pageurl" xml:space="preserve">
+				<source>Url della pagina valutata</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

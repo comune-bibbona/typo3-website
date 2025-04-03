@@ -9,6 +9,10 @@ TYPO3:
 
       prototypes:
         standard:
+          finishersDefinition:
+            SaveFeedback:
+              implementationClassName: Aip\Bit3\Domain\Finishers\SaveFeedbackFinisher
+              title: 'Save Feedback to Database'
           formElementsDefinition:
             Form:
               renderingOptions:

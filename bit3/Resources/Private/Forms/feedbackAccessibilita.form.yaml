@@ -6,24 +6,24 @@ identifier: feedbackForm
 label: FeedbackForm
 prototypeName: standard
 finishers:
-  -
+  - identifier: EmailToSender
     options:
       subject: 'Feedback Accessibilità'
       recipients:
-        abramotesoro@gmail.com: ''
-        f.grauso@comune.bibbona.li.it: ''
+        tesoro@archicoop.it: ''
       senderAddress: metsmtpsender@archicoop.it
       senderName: 'Feedback dal sito'
       addHtmlPart: true
       attachUploads: true
       useFluidEmail: false
       title: ''
-    identifier: EmailToSender
-  -
+  - identifier: Confirmation
     options:
       message: 'Grazie, il tuo parere ci aiuterà a migliorare il servizio!'
       contentElementUid: ''
-    identifier: Confirmation
+  - identifier: SaveFeedback
+    options:
+      storagePid: 1746
 renderables:
   -
     renderingOptions:

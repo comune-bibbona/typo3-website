@@ -29,7 +29,7 @@ return [
 		'versioningWS' => true,
 		'origUid' => 't3_origuid',
 		'hideTable' => false,
-		'readOnly' => true,
+		'readOnly' => false,
 		'prependAtCopy' => 'LLL:' . $generalLanguageFile . ':LGL.prependAtCopy',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -66,7 +66,6 @@ return [
 	],
 	'columns' => [
 		'clarity_rating' => [
-			'readOnly' => true,
 			'exclude' => false,
 			'label' => $ll . 'feedback.clarity_rating',
 			'description' => $ll . 'feedback.clarity_rating.description',
@@ -94,6 +93,7 @@ return [
 						'value' => 5,
 					],
 				],
+				'readOnly' => true,
 			],
 		],
 		'difficulty_area' => [
@@ -102,7 +102,8 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 50,
-				'eval' => 'trim,required'
+				'eval' => 'trim',
+				'readOnly' => true,
 			],
 		],
 		'preferred_aspects' => [
@@ -111,7 +112,8 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 50,
-				'eval' => 'trim,required'
+				'eval' => 'trim',
+				'readOnly' => true,
 			],
 		],
 		'additional_details' => [
@@ -121,6 +123,7 @@ return [
 				'type' => 'text',
 				'cols' => '80',
 				'rows' => '15',
+				'readOnly' => true,
 			],
 		],
 		'pageurl' => [
@@ -129,7 +132,8 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 50,
-				'eval' => 'trim,required'
+				'eval' => 'trim,required',
+				'readOnly' => true,
 			],
 		],
 	],

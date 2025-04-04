@@ -40,7 +40,7 @@ return [
 			'endtime' => 'endtime',
 		],
 		'typeicon_classes' => [
-			'default' => 'ext-bit3-child-item'
+			'default' => 'ext-bit3-feedback-item'
 		],
 		'searchFields' => 'difficulty_area,preferred_aspects,additional_details,pageurl',
 		'security' => [

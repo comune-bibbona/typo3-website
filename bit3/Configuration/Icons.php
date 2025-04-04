@@ -28,6 +28,10 @@ return [
 		'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
 		'source' => 'EXT:bit3/Resources/Public/Icons/child-item.svg',
 	],
+	'ext-bit3-feedback-item'  => [
+		'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+		'source' => 'EXT:bit3/Resources/Public/Icons/feedback.svg',
+	],
 	'ext-bit3-module-icon' => [
 		'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
 		'source' => 'EXT:bit3/Resources/Public/Icons/module-icon.svg',

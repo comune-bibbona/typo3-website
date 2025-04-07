@@ -23,7 +23,7 @@ finishers:
       contentElementUid: ''
   - identifier: SaveFeedback
     options:
-      storagePid: 1746
+      storagePid: 1760
 renderables:
   -
     renderingOptions:

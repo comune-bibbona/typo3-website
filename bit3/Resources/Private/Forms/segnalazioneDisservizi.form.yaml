@@ -52,7 +52,7 @@ renderables:
     renderables:
       -
         properties:
-          text: "Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell’articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).\n\nPer i dettagli sul trattamento dei dati personali consulta l’ informativa sulla privacy."
+          text: "Il Comune di Bibbona gestisce i dati personali forniti e liberamente comunicati sulla base dell’articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).\n\nPer i dettagli sul trattamento dei dati personali consulta l’ informativa sulla privacy."
         type: StaticText
         identifier: statictext-1
         label: 'Accettazione Privacy'
@@ -106,6 +106,13 @@ renderables:
             properties:
               options:
                 'Danneggiamento ': 'Danneggiamento proprietà pubblica'
+                'Guasto illuminazione pubblica': 'Guasto illuminazione pubblica'
+                'Guasto rete idrica': 'Guasto rete idrica'
+                'Danneggiamento manto stradaledanneggiamento manto stradale': 'Danneggiamento manto stradale'
+                'Segnaletica stradale danneggiata o assentev': 'Segnaletica stradale danneggiata o assente'
+                'Intervento di manutenzione del verde pubblico': 'Intervento di manutenzione del verde pubblico'
+                'Segnala intervento di manutenzione da eseguire': 'Segnala intervento di manutenzione da eseguire'
+                'Malfunzionamento servizio online': 'Malfunzionamento servizio online'
               fluidAdditionalAttributes:
                 required: required
             type: SingleSelect

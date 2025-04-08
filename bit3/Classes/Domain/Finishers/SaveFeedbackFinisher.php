@@ -41,7 +41,7 @@ class SaveFeedbackFinisher extends AbstractFinisher
 		$storagePid = $this->parseOption('storagePid');
 
 		$formValues = $this->finisherContext->getFormValues();
-		$FeedbackPid = 1746;
+		$FeedbackPid = 1760;
 
 		$data = [
 			'pid' => (int)$FeedbackPid,

@@ -59,7 +59,7 @@ page {
             data = getIndpEnv:TYPO3_REQUEST_URL
         }
         og:url.attribute = property
-        og:locale = in_IT
+        og:locale = it_IT
         og:locale.attribute = property
         refresh.attribute = http-equiv
     }

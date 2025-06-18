@@ -135,6 +135,9 @@
 			<trans-unit id="page.service" xml:space="preserve">
 				<source>Metadati servizio</source>
 			</trans-unit>
+			<trans-unit id="page.services.enable" xml:space="preserve">
+				<source>Servizio Attivo</source>
+			</trans-unit>
 			<trans-unit id="page.areaserved.name" xml:space="preserve">
 				<source>Copertura geografica del servizio</source>
 			</trans-unit>

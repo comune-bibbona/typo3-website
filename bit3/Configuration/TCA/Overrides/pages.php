@@ -115,8 +115,12 @@ $GLOBALS['TCA']['pages']['palettes']['geolocation'] = [
 
 $GLOBALS['TCA']['pages']['palettes']['metadataJson'] = [
 	'label' => 'LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.service',
-	'showitem' => 'areaServed_name;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.areaserved.name,audience_audienceType;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.audience.audiencetype, --linebreak--,serviceLocation_name;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.name, --linebreak--,serviceLocation_address_streetAdress;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.address.streetadress, serviceLocation_address_postalCode;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.address.postalcode, serviceLocation_address_addressLocality;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.address.addresslocality,',
+	'showitem' => 'editlock, --linebreak--;areaServed_name;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.areaserved.name,audience_audienceType;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.audience.audiencetype, --linebreak--,serviceLocation_name;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.name, --linebreak--,serviceLocation_address_streetAdress;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.address.streetadress, serviceLocation_address_postalCode;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.address.postalcode, serviceLocation_address_addressLocality;LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.servicelocation.address.addresslocality,',
 ];
+
+// move edilock from access to metadata to use it for enable services
+$GLOBALS['TCA']['pages']['columns']['editlock']['label'] = 'LLL:EXT:bit3/Resources/Private/Language/locallang_db.xlf:page.services.enable';
+$GLOBALS['TCA']['pages']['palettes']['access']['showitem'] = 'starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.starttime_formlabel, endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.endtime_formlabel, extendToSubpages;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.extendToSubpages_formlabel, --linebreak--, fe_group;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.fe_group_formlabel';
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $customPagesColumns);
 

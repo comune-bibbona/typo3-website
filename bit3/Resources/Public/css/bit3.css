@@ -151,9 +151,11 @@ a:hover {
     color: var(--darken-primary-color);
 }
 
-.chip .chip-label {
+.chip .chip-label,
+.chip.chip-primary > .chip-label {
     color: var(--primary-color);
 }
+
 a.read-more {
     color: var(--primary-color);
 }

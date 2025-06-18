@@ -154,10 +154,20 @@
 </f:section>
 
 <f:section name="ServizioAttivo">
+    <f:if condition="{data.editlock}">
+        <f:then>
+            <f:variable name="chip-label">Servizio attivo</f:variable>
+            <f:variable name="chip-class">chip-primary</f:variable>
+        </f:then>
+        <f:else>
+            <f:variable name="chip-label">Servizio non attivo</f:variable>
+            <f:variable name="chip-class">chip-danger</f:variable>
+        </f:else>
+    </f:if>
     <ul class="d-flex flex-wrap gap-1 my-3">
         <li>
-            <div class="chip chip-simple text-button" data-element="service-status">
-                <span class="chip-label">Servizio attivo</span>
+            <div class="chip {chip-class} chip-simple text-button" data-element="service-status">
+                <span class="chip-label">{chip-label}</span>
             </div>
         </li>
     </ul>
@@ -216,9 +226,7 @@
                         <f:variable name="extLabel">Segnala Disservizio Online</f:variable>
                     </f:case>
                     <f:defaultCase>
-                        <f:if condition="{data.data_element} == 'service-link'">
-                            <f:render partial="Header/PageHead" section="ServizioAttivo" arguments="{_all}"/>
-                        </f:if>
+                        <f:render partial="Header/PageHead" section="ServizioAttivo" arguments="{_all}"/>
                         <f:cObject typoscriptObjectPath="lib.content.service.intro"/>
                     </f:defaultCase>
                 </f:switch>

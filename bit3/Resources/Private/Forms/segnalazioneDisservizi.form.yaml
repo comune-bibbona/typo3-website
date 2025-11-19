@@ -11,7 +11,8 @@ finishers:
       subject: 'segnalazione disservizio'
       recipients:
         abramotesoro@gmail.com: ''
-        urp@comune.bibbona.it: ''
+        urp@comune.bibbona.li.it: ''
+        f.grauso@comune.bibbona.li.it: ''
       senderAddress: metsmtpsender@archicoop.it
       senderName: 'segnalazione disservizio'
       carbonCopyRecipients:
@@ -38,7 +39,7 @@ finishers:
     identifier: EmailToSender
   -
     options:
-      message: "Grazie, abbiamo ricevuto la tua segnalazione AN4059281.\n\nSarà visibile sulla lista di tutte segnalazioni una volta presa in carico dall’amministrazione.\n\nAbbiamo inviato il riepilogo all’email:\ngiulia.bianchi@gmail.com"
+      message: "Grazie, abbiamo ricevuto la tua segnalazione.\n\nSarà visibile sulla lista di tutte segnalazioni una volta presa in carico dall’amministrazione.\n\n"
       contentElementUid: ''
     identifier: Confirmation
 renderables:
@@ -106,7 +107,6 @@ renderables:
             properties:
               options:
                 'Danneggiamento ': 'Danneggiamento proprietà pubblica'
-                'Guasto illuminazione pubblica': 'Guasto illuminazione pubblica'
                 'Guasto rete idrica': 'Guasto rete idrica'
                 'Danneggiamento manto stradaledanneggiamento manto stradale': 'Danneggiamento manto stradale'
                 'Segnaletica stradale danneggiata o assentev': 'Segnaletica stradale danneggiata o assente'

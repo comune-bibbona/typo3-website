@@ -150,12 +150,14 @@ a:hover {
 .chip:is(div):hover:not(.chip-disabled) .chip-label {
     color: var(--darken-primary-color);
 }
-
 .chip .chip-label,
 .chip.chip-primary > .chip-label {
     color: var(--primary-color);
 }
 
+.chip .chip-label {
+    color: var(--primary-color);
+}
 a.read-more {
     color: var(--primary-color);
 }
